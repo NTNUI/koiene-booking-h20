@@ -1,0 +1,34 @@
+Hi, and welcome to {{ koie.name }}, 
+
+Here is some useful information about the koie before your trip. 
+
+The koie is located in {{ koie.location.area }}, and the terrain is {{ koie.location.terrain_eng }}.
+
+Directions: 
+{{ koie.description.directions_eng }}
+
+Parking: 
+{{ koie.description.parking_eng }}
+
+Koie information: 
+{{ koie.description.description_eng }}
+
+Map of koie and are: 
+You can find the cabin at {{ koie.location.map_pdf }}. 
+If you want to by a map for the area of the cabin, it is the map "{{ koie.location.kartblad }}".
+
+Make sure to deress for the weather, the wether forecast can be found at this web adress: {{ koie.description.yr_link_eng }}
+
+If you have any other questions about the koie, please contact us on informasjon@koiene.org.ntnu.no.
+
+Have a nice stay! 
+
+Best regards, 
+
+NTNUI Koiene
+
+
+
+
+
+

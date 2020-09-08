@@ -1,0 +1,69 @@
+// This file is for our global variables and classes
+
+// Globals:
+$global-color-primary: #416cfd;
+$global-color-secondary: #faf089;
+$global-color-background: #1a202c;
+$global-color-background-light: #2f3a50;
+$global-color-background-lighter: #425270;
+$global-color-white: #f4f4f4;
+$global-color-black: #000000;
+// Breakpoints:
+$break-xs: 600px;
+$break-sm: 960px;
+$global-color-warning-low: #4CAF50;
+$global-color-warning-moderate: #40C4FF;
+$global-color-warning-considerable: #FBC02D;
+$global-color-warning-high: #FF8F00;
+$global-color-warning-very_high: #D32F2F;  
+
+
+
+
+
+.global-card-outlined {
+  border-color: $global-color-secondary !important;
+  background-color: $global-color-background-light !important;
+  border-radius: 4px !important;
+}
+
+.global-card-outlined-border-bottom {
+  border-width: 0 0 1px !important;
+  border-color: $global-color-secondary !important;
+  background-color: $global-color-background-light !important;
+  border-radius: 4px !important;
+}
+
+.global-max-width {
+  max-width: 1000px !important;
+  width: 80% !important;
+  @media screen and (max-width: $break-xs) {
+    width: 100% !important;
+    padding: 24px !important;
+  }
+  @media screen and (min-width: $break-xs) and (max-width: $break-sm) {
+    width: 90% !important;
+    padding: 24px !important;
+  }
+}
+
+a {
+  color: $global-color-secondary !important;
+}
+
+
+// Exports (for access within component template instead of style)
+:export {
+  globalColorPrimary: $global-color-primary;
+  globalColorSecondary: $global-color-secondary;
+  globalColorBackground: $global-color-background;
+  globalColorBackgroundLight: $global-color-background-light;
+  globalColorBackgroundLighter: $global-color-background-lighter;
+  globalColorWhite: $global-color-white;
+  globalColorBlack: $global-color-black;
+  globalColorWarningLow: $global-color-warning-low;
+  globalColorWarningModerate: $global-color-warning-moderate;
+  globalColorWarningConsiderable: $global-color-warning-considerable;
+  globalColorWarningHigh: $global-color-warning-high;
+  globalColorWarningVeryHigh: $global-color-warning-very_high;
+}

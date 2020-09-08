@@ -1,0 +1,166 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`View Koie.vue Matches snapshot 1`] = `
+<div class="container global-max-width">
+  <div class="row">
+    <div height="100%" class="pb-0 mb-0 col-sm-8 col-12">
+      <div class="global-card-outlined v-card v-card--outlined v-sheet v-sheet--tile theme--light imageCard">
+        <div class="v-responsive v-image" style="height: 100%;">
+          <div class="v-image__image v-image__image--preload v-image__image--cover" style="background-position: center center;" name="fade-transition" mode="in-out"></div>
+          <div class="v-responsive__content"></div>
+        </div>
+      </div>
+    </div>
+    <div xs="4" class="pt-0 d-xs-block d-sm-none col col-12">
+      <div class="global-card-outlined-border-bottom v-card v-card--outlined v-sheet v-sheet--tile theme--light titleCard">
+        <div id="koieTitle" class="v-card__title headline">flåkoia</div>
+      </div>
+    </div>
+    <div class="pb-0 col mb-0">
+      <div class="global-card-outlined v-card v-card--outlined v-sheet v-sheet--tile theme--light infoCard">
+        <div class="v-card__title">Key information</div>
+        <div role="list" inactive="" class="v-list global-card-outlined px-4 pt-0 pb-4 v-sheet v-sheet--tile theme--light v-list--dense v-list--flat">
+          <div role="listbox" class="v-item-group theme--light v-list-item-group primary--text">
+            <div tabindex="0" target="_blank" role="listitem" aria-selected="false" class="pa-0 v-list-item v-list-item--link theme--light">
+              <div class="v-list-item__icon listItemIcon"><i aria-hidden="true" class="v-icon notranslate mdi mdi-bed theme--light"></i></div>
+              <div class="v-list-item__content listItemContent">
+                <p style="margin-bottom: 0px;">
+                  Beds: <span class="infoValue"> </span></p>
+              </div>
+            </div>
+            <div tabindex="0" target="_blank" role="listitem" aria-selected="false" class="pa-0 v-list-item v-list-item--link theme--light">
+              <div class="v-list-item__icon listItemIcon"><i aria-hidden="true" class="v-icon notranslate mdi mdi-terrain theme--light"></i></div>
+              <div class="v-list-item__content listItemContent">
+                <p style="margin-bottom: 0px;">
+                  Terrain: <span class="infoValue"> </span></p>
+              </div>
+            </div>
+            <div tabindex="0" target="_blank" role="listitem" aria-selected="false" class="pa-0 v-list-item v-list-item--link theme--light">
+              <div class="v-list-item__icon listItemIcon"><i aria-hidden="true" class="v-icon notranslate mdi mdi-pine-tree theme--light"></i></div>
+              <div class="v-list-item__content listItemContent">
+                <p style="margin-bottom: 0px;">
+                  Altitude: <span class="infoValue"> undefinedm</span></p>
+              </div>
+            </div><a tabindex="0" href="https://www.google.com/maps/place/undefined,undefined" target="_blank" role="listitem" aria-selected="false" class="pa-0 v-list-item v-list-item--link theme--light">
+              <div class="v-list-item__icon listItemIcon"><i aria-hidden="true" class="v-icon notranslate mdi mdi-crosshairs-gps theme--light"></i></div>
+              <div class="v-list-item__content listItemContent">
+                <p style="margin-bottom: 0px;">
+                  Position:
+                  <span class="infoValue"><a href="https://www.google.com/maps/place/undefined,undefined" target="_blank">Google Maps</a></span></p>
+              </div>
+            </a>
+            <div tabindex="0" target="_blank" role="listitem" aria-selected="false" class="pa-0 v-list-item v-list-item--link theme--light">
+              <div class="v-list-item__icon listItemIcon"><i aria-hidden="true" class="v-icon notranslate mdi mdi-map theme--light"></i></div>
+              <div class="v-list-item__content listItemContent">
+                <p style="margin-bottom: 0px;">
+                  Pdf Map:
+                  <span class="infoValue"><a target="_blank">See pdf</a></span></p>
+              </div>
+            </div><a tabindex="0" href="http://org.ntnu.no/koiene/tips.php?p=3#1" target="_blank" role="listitem" aria-selected="false" class="pa-0 v-list-item v-list-item--link theme--light">
+              <div class="v-list-item__icon listItemIcon"><i aria-hidden="true" class="v-icon notranslate mdi mdi-map theme--light"></i></div>
+              <div class="v-list-item__content listItemContent">
+                <p style="margin-bottom: 0px;">
+                  Physical Map:
+                  <span class="infoValue"><a href="http://org.ntnu.no/koiene/tips.php?p=3#1" target="_blank"></a></span></p>
+              </div>
+            </a>
+            <div tabindex="0" target="_blank" role="listitem" aria-selected="false" class="pa-0 v-list-item v-list-item--link theme--light">
+              <div class="v-list-item__icon listItemIcon"><i aria-hidden="true" class="v-icon notranslate mdi mdi-weather-partly-cloudy theme--light"></i></div>
+              <div class="v-list-item__content listItemContent">
+                <p style="margin-bottom: 0px;">
+                  Weather forecast:
+                  <span class="infoValue"><a target="_blank">yr.no</a></span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row d-none d-sm-flex">
+    <div class="pt-0 col">
+      <div class="global-card-outlined-border-bottom v-card v-card--outlined v-sheet v-sheet--tile theme--light titleCard">
+        <div id="koieTitle" class="v-card__title display-1">flåkoia</div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4 order-sm-last col-12">
+      <div class="global-card-outlined mb-6 v-card v-card--outlined v-sheet v-sheet--tile theme--light calendarCard">
+        <div class="v-card__title">Booking</div>
+        <div class="container px-4 vbeds column">
+          <div class="v-input v-input--is-label-active v-input--is-dirty theme--dark v-text-field v-text-field--is-booted">
+            <div class="v-input__prepend-outer">
+              <div class="v-input__icon v-input__icon--prepend"><i aria-hidden="true" class="v-icon notranslate material-icons theme--dark">event</i></div>
+            </div>
+            <div class="v-input__control">
+              <div class="v-input__slot">
+                <div class="v-text-field__slot"><label for="input-35" class="v-label v-label--active theme--dark" style="left: 0px; position: absolute;">Arrival</label><input id="input-35" type="text"></div>
+              </div>
+              <div class="v-text-field__details">
+                <div class="v-messages theme--dark"><span name="message-transition" tag="div" class="v-messages__wrapper"></span></div>
+              </div>
+            </div>
+          </div>
+          <div class="v-menu">
+            <!---->
+          </div>
+          <div class="v-menu">
+            <!---->
+          </div>
+          <div class="v-input v-input--is-label-active v-input--is-dirty theme--dark v-text-field v-text-field--is-booted">
+            <div class="v-input__prepend-outer">
+              <div class="v-input__icon v-input__icon--prepend"><i aria-hidden="true" class="v-icon notranslate material-icons theme--dark">event</i></div>
+            </div>
+            <div class="v-input__control">
+              <div class="v-input__slot">
+                <div class="v-text-field__slot"><label for="input-41" class="v-label v-label--active theme--dark" style="left: 0px; position: absolute;">Departure</label><input id="input-41" type="text"></div>
+              </div>
+              <div class="v-text-field__details">
+                <div class="v-messages theme--dark"><span name="message-transition" tag="div" class="v-messages__wrapper"></span></div>
+              </div>
+            </div>
+          </div>
+          <div class="divBeds">
+            <p vbeds="true" class="bedsText">
+              Beds
+            </p>
+            <p class="availableBedsText">( Infinity available )</p>
+            <div class="v-input v-input--hide-details v-input--is-label-active v-input--is-dirty v-input--dense theme--dark v-text-field v-text-field--single-line v-text-field--is-booted v-text-field--enclosed v-text-field--outlined bedsInput">
+              <div class="v-input__control">
+                <div class="v-input__slot">
+                  <fieldset aria-hidden="true">
+                    <legend><span>​</span></legend>
+                  </fieldset>
+                  <div class="v-text-field__slot"><input min="1" max="Infinity" vbeds="true" id="input-46" type="number"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!---->
+        </div> <button type="button" class="mx-auto v-btn v-btn--contained theme--light v-size--default bookBtn" raised="true" data-test="bookBtn"><span class="v-btn__content">Book koie</span></button>
+        <!---->
+      </div>
+      <!---->
+    </div>
+    <div class="py-0 col-sm-8 order-sm-first col-12">
+      <div class="row">
+        <div class="col">
+          <div class="global-card-outlined v-card v-card--outlined v-sheet v-sheet--tile theme--light">
+            <div class="v-card__title">Description</div>
+            <div class="v-card__text"></div> <button type="button" class="mx-auto v-btn v-btn--contained theme--light v-size--default expandBtn"><span class="v-btn__content">more</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="global-card-outlined v-card v-card--outlined v-sheet v-sheet--tile theme--light">
+            <div class="v-card__title">Parking</div>
+            <div class="v-card__text"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

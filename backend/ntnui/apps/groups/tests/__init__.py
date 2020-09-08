@@ -1,0 +1,1 @@
+from groups.tests.test_membership_model import TestMembershipModel

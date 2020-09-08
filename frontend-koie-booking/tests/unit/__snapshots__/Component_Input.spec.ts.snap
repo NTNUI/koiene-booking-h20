@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component Input.vue Matches snapshot 1`] = `
+<div>
+  <div></div>
+  <div><input autocomplete="" type="text" class="input"></div>
+</div>
+`;

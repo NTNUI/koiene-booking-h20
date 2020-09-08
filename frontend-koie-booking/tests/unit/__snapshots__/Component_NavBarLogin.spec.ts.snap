@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component NavBarLogin.vue Matches snapshot 1`] = `
+<button type="button" class="mr-4 v-btn v-btn--contained theme--light v-size--default"><span class="v-btn__content">
+  LOG IN
+</span></button>
+`;

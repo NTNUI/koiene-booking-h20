@@ -1,0 +1,112 @@
+{
+  "allKoier": {
+    "beds": "beds"
+  },
+  "calendar": {
+    "beds": "Beds",
+    "departure": "Departure",
+    "arrival": "Arrival",
+    "errormsg": "Maximum available beds is ",
+    "error_fullbooked": "Cabin fully booked"
+  },
+  "koie": {
+    "booking": "Booking",
+    "bookingBtn": "Book koie",
+    "information": "Key information",
+    "description": "Description",
+    "parking": "Parking",
+    "avalanche": "Avalanche Warning",
+    "errorMsg": "The page information could not be loaded. Try again.",
+    "errorInstruction": " Still not working? Contact informasjon@koiene.org.ntnu.no",
+    "keyInfo": {
+      "beds": "Beds",
+      "terrain": "Terrain",
+      "altitude": "Altitude",
+      "position": "Position",
+      "physicalMap": "Physical Map",
+      "pdfMap": "Pdf Map",
+      "weather": "Weather forecast"
+    }
+  },
+  "booking": {
+    "reservation": "Reservation for",
+    "dates": "Dates",
+    "step1": "Koie",
+    "step2": "Register",
+    "step3": "Pay",
+    "step4": "Receipt",
+    "bed_reservation": "Bed Reservation",
+    "available_beds": "available beds",
+    "choose_numbers": "Choose number of beds: ",
+    "next_button": "next",
+    "back_button": "back",
+    "done_button": "done",
+    "guest_registration": "Guest Registration",
+    "full_name": "Full name",
+    "number": "Phone number",
+    "email": "E-mail (only contact person)",
+    "emailMobile": "E-mail",
+    "payment_site": "PAYMENT SITE",
+    "receipt_site": "RECEIPT SITE",
+    "member": "NTNUI Member",
+    "error_msg": "Something went wrong.",
+    "payment_completed": "Payment Completed",
+    "receipt_text": "Your payment is completed and further information about your stay has been sent to your e-mail."
+
+  },
+  "ntnui": {
+    "home": "Home",
+    "login": {
+      "email": "EMAIL",
+      "password": "PASSWORD",
+      "login": "LOG IN",
+      "logout": "LOG OUT",
+      "phone": "PHONE",
+      "title": "Member",
+      "pleaseVisit": "Please visit",
+      "activateUserOrForgottenPassword": "to activate your Ntnui user or if you have forgotten your password.",
+      "error": {
+        "emailInvalid": "Please enter a valid email",
+        "length": "Your password must be longer than 8 characters",
+        "noUser": "No account found with the given credentials"
+      }
+    },
+    "reset": {
+      "password": {
+        "title": "Reset password"
+      },
+      "user": {
+        "submit": "SUBMIT",
+        "back": "BACK",
+        "emailSent": "Email is sent!",
+        "error": {
+          "invalidPhone": "The phone number is invalid",
+          "noEmailPhone": "The email or phone number doesn't exist",
+          "invalidEmail": "The email is invalid"
+        }
+      },
+      "introText": "Choose email or phone and enter what you have registered with SIT. If you choose phone number, we will print the email registered to this number."
+    }
+  },
+  "avalanche":{
+    "error_msg": "Booking is disabled due to avalanche danger.",
+    "warningTypes": {
+      "low": "Low",
+      "moderate": "Moderate",
+      "considerable": "Considerable",
+      "high": "High",
+      "very_high": "Very high",
+      "avalanche_expected": "Natural avalanches are expected"
+    },
+    "weekdays": {
+      "monday": "Monday",
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday",
+      "thursday": "Thursday",
+      "friday": "Friday",
+      "saturday": "Saturday",
+      "sunday": "Sunday"
+    },
+    "reference": "Warnings from varsom.no"
+  }
+}

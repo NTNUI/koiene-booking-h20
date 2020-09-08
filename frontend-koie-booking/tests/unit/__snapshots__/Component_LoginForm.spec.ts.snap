@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component LoginForm.vue Matches snapshot 1`] = `
+<div class="wrapper">
+  <form style="display: flex; flex-direction: column;"><label for="username" class="label__description">
+      EMAIL
+      <div id="username" class="username__field">
+        <div></div>
+        <div><input autocomplete="username" type="text" class="input"></div>
+      </div></label> <label for="password" class="label__description">
+      PASSWORD
+      <div id="password">
+        <div></div>
+        <div><input autocomplete="current-password" type="password" class="input"></div>
+      </div></label>
+    <div class="error" style="display: none;">
+      <p></p>
+    </div> <button type="submit" class="v-btn v-btn--contained theme--light v-size--default"><span class="v-btn__content">
+      LOG IN
+    </span></button>
+  </form>
+</div>
+`;

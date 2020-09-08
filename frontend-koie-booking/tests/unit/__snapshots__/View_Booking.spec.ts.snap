@@ -1,0 +1,114 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`View Booking.vue Matches snapshot 1`] = `
+<div class="container global-max-width">
+  <div class="row">
+    <div class="mx-auto col-sm-8 col-12 mainColumn">
+      <div class="v-stepper v-stepper--alt-labels theme--light stepper">
+        <div class="v-stepper__header stepperHeader">
+          <div class="v-stepper__step v-stepper__step--active"><span class="v-stepper__step__step primary">1</span>
+            <div class="v-stepper__label">
+              Koie
+            </div>
+          </div>
+          <hr role="separator" aria-orientation="horizontal" class="v-divider theme--light">
+          <div class="v-stepper__step v-stepper__step--inactive"><span class="v-stepper__step__step">2</span>
+            <div class="v-stepper__label">
+              Register
+            </div>
+          </div>
+          <hr role="separator" aria-orientation="horizontal" class="v-divider theme--light">
+          <div class="v-stepper__step v-stepper__step--inactive"><span class="v-stepper__step__step">3</span>
+            <div class="v-stepper__label">
+              Pay
+            </div>
+          </div>
+          <hr role="separator" aria-orientation="horizontal" class="v-divider theme--light">
+          <div class="v-stepper__step v-stepper__step--inactive"><span class="v-stepper__step__step">4</span>
+            <div class="v-stepper__label">
+              Receipt
+            </div>
+          </div>
+        </div>
+        <div class="layout">
+          <div class="layout dark container">
+            <h1 class="heading">Reservation for flåkoia</h1>
+            <div class="layout separator">
+              <h3>Dates</h3>
+              <div class="layout px-1">
+                <div class="container row row">
+                  <div class="v-input v-input--is-label-active v-input--is-dirty theme--dark v-text-field rowTextFieldArrival">
+                    <div class="v-input__prepend-outer">
+                      <div class="v-input__icon v-input__icon--prepend"><i aria-hidden="true" class="v-icon notranslate material-icons theme--dark">event</i></div>
+                    </div>
+                    <div class="v-input__control">
+                      <div class="v-input__slot">
+                        <div class="v-text-field__slot"><label for="input-22" class="v-label v-label--active theme--dark" style="left: 0px; position: absolute;">Arrival</label><input id="input-22" type="text"></div>
+                      </div>
+                      <div class="v-text-field__details">
+                        <div class="v-messages theme--dark"><span name="message-transition" tag="div" class="v-messages__wrapper"></span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="v-menu">
+                    <!---->
+                  </div>
+                  <div class="v-menu">
+                    <!---->
+                  </div>
+                  <div class="v-input v-input--is-label-active v-input--is-dirty theme--dark v-text-field rowTextFieldDeparture bookingTabletRemovePadding">
+                    <div class="v-input__prepend-outer">
+                      <div class="v-input__icon v-input__icon--prepend"><i aria-hidden="true" class="v-icon notranslate material-icons theme--dark">event</i></div>
+                    </div>
+                    <div class="v-input__control">
+                      <div class="v-input__slot">
+                        <div class="v-text-field__slot"><label for="input-28" class="v-label v-label--active theme--dark" style="left: 0px; position: absolute;">Departure</label><input id="input-28" type="text"></div>
+                      </div>
+                      <div class="v-text-field__details">
+                        <div class="v-messages theme--dark"><span name="message-transition" tag="div" class="v-messages__wrapper"></span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="divBeds">
+                    <!---->
+                    <!---->
+                    <!---->
+                  </div>
+                  <!---->
+                </div>
+              </div>
+            </div>
+            <div class="layout separator">
+              <h3>Bed Reservation</h3>
+              <div class="layout availableBeds"><i aria-hidden="true" class="v-icon notranslate mdi mdi-bed theme--light icon"></i>
+                <p class="availableBedsText">
+                  Infinity / available beds
+                </p>
+              </div>
+              <div class="layout chooseBeds">
+                <p class="chooseText" style="margin-bottom: 0px;">Choose number of beds: </p>
+                <div class="v-input v-input--hide-details v-input--is-label-active v-input--is-dirty v-input--dense theme--light v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outlined bedPicker">
+                  <div class="v-input__control">
+                    <div class="v-input__slot">
+                      <fieldset aria-hidden="true">
+                        <legend><span>​</span></legend>
+                      </fieldset>
+                      <div class="v-text-field__slot"><input min="1" max="Infinity" id="input-34" type="number"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!---->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="btnWrapper">
+        <!----> <button type="button" class="v-btn v-btn--contained theme--dark v-size--default nextStepButton" raised="true" data-test="btnNext"><span class="v-btn__content">next</span></button>
+        <!---->
+        <!---->
+      </div>
+    </div>
+  </div>
+</div>
+`;

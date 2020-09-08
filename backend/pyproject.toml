@@ -1,0 +1,92 @@
+[tool.black]
+line-length = 100
+include = '\.pyi?$'
+exclude = '''
+
+(
+  /(
+      \.eggs         # exclude a few common directories in the
+    | \.git          # root of the project
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | _build
+    | buck-out
+    | build
+    | dist
+    | migrations
+    | media
+  )/
+  | foo.py           # also separately exclude a file named foo.py in
+                     # the root of the project
+)
+'''
+
+[tool.coverage]
+[tool.coverage.run]
+# whether to measure branch coverage in addition to statement coverage. The result only included in HTML and JSON reports
+branch = true
+
+# files to omit from coverage
+omit = [
+    "*/__init__.py",
+    "*/apps.py",
+    "*/factories/*",
+    "*/migrations/*",
+    "*/settings/*",
+    "*/tests/*",
+    "*/urls.py",
+    "*wsgi.py",
+    "manage.py",
+]
+
+[tool.coverage.report]
+# Exclude lines matching one of the RegEx-expressions in the list.
+exclude_lines = []
+
+# Target coverage. The test run will fail if this target is not reached
+fail_under = 72.5
+
+# Show missing lines in the report
+show_missing = true
+
+# Exclude 100% covered files from the report.
+skip_covered = true
+
+# Exclude empty files from the report
+skip_empty = true
+
+# Sort the text report. Allowed values are “Name”, “Stmts”, “Miss”, “Branch”, “BrPart”, or “Cover”.
+sort = "Name"
+
+
+[tool.coverage.html]
+# where to store the html report
+directory = "coverage_report"
+
+
+[tool.isort]
+line_length = 100
+use_parentheses = true
+known_django = "django"
+include_trailing_comma = true
+multi_line_output = 3
+forced_separate = [
+    "django.contrib",
+    "django.util"
+    ]
+
+skip = [
+    "__init__.py",
+    "migrations"
+    ]
+
+[tool.pytest.ini_options]
+python_files = "test_*.py"
+
+addopts = [
+    "--maxfail=3",
+    "--no-cov-on-fail",
+    "--failed-first"
+    ]

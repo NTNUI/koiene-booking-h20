@@ -1,0 +1,292 @@
+[
+    {
+        "model": "koie_booking.koiemodel",
+        "pk": 1,
+        "fields": {
+            "name": "Flåkoia",
+            "slug": "flåkoia",
+            "number_of_beds": "11",
+            "album": "https://plus.google.com/photos/112172516519597975801/albums/6080568101715065937",
+            "description": 1,
+            "location": 1
+        }
+    },
+    {
+        "model": "koie_booking.koiemodel",
+        "pk": 2,
+        "fields": {
+            "name": "Mevasskoia",
+            "slug": "mevasskoia",
+            "number_of_beds": 5,
+            "album": "https://www.flickr.com/photos/149269975@N06/albums/72157701029007575",
+            "description": 2,
+            "location": 2
+        }
+    },
+    {
+        "model": "koie_booking.koiemodel",
+        "pk": 3,
+        "fields": {
+            "name": "Øvensenget",
+            "slug": "øvensenget",
+            "number_of_beds": 8,
+            "album": "https://plus.google.com/photos/112172516519597975801/albums/6080573166409468049",
+            "description": 3,
+            "location": 3
+        }
+    },
+    {
+        "model": "koie_booking.koiemodel",
+        "pk": 4,
+        "fields": {
+            "name": "Kåsen",
+            "slug": "kåsen",
+            "number_of_beds": 8,
+            "album": "https://plus.google.com/photos/112172516519597975801/albums/6080578038282981441",
+            "description": 4,
+            "location": 4
+        }
+    },
+    {
+        "model": "koie_booking.koiemodel",
+        "pk": 5,
+        "fields": {
+            "name": "Stakkslettbua",
+            "slug": "stakkslettbua",
+            "number_of_beds": 11,
+            "album": "https://plus.google.com/photos/112172516519597975801/albums/6080575916278900625",
+            "description": 5,
+            "location": 5
+        }
+    },
+    {
+        "model": "koie_booking.koiemodel",
+        "pk": 6,
+        "fields": {
+            "name": "Holmsåkoia",
+            "slug": "holmsåkoia",
+            "number_of_beds": 20,
+            "album": "https://plus.google.com/photos/112172516519597975801/albums/6080569143281210241",
+            "description": 6,
+            "location": 6
+        }
+    },
+    {
+        "model": "koie_booking.koiemodel",
+        "pk": 7,
+        "fields": {
+            "name": "Sonvasskoia",
+            "slug": "sonvasskoia",
+            "number_of_beds": 8,
+            "album": "https://plus.google.com/photos/112172516519597975801/albums/6080576253029369089",
+            "description": 7,
+            "location": 7
+        }
+    },
+    {
+        "model": "koie_booking.koiemodel",
+        "pk": 8,
+        "fields": {
+            "name": "Nicokoia",
+            "slug": "nicokoia",
+            "price_member": 50,
+            "price_not_member": 100,
+            "number_of_beds": 8,
+            "album": "https://plus.google.com/photos/112172516519597975801/albums/6084629420460838385",
+            "description": 8,
+            "location": 8
+        }
+    },
+    {
+        "model": "koie_booking.koiemodel",
+        "pk": 9,
+        "fields": {
+            "name": "Telin",
+            "slug": "telin",
+            "number_of_beds": 9,
+            "album": "https://goo.gl/photos/s4vGaJFMDLQQUHG38",
+            "description": 9,
+            "location": 9
+        }
+    },
+    {
+        "model": "koie_booking.koiemodel",
+        "pk": 10,
+        "fields": {
+            "name": "Lyngli",
+            "slug": "lyngli",
+            "number_of_beds": 13,
+            "album": "http://goo.gl/photos/P2AYQB5BmKbWaZLPA",
+            "description": 10,
+            "location": 10
+        }
+    },
+    {
+        "model": "koie_booking.koiemodel",
+        "pk": 11,
+        "fields": {
+            "name": "Kråklikåten",
+            "slug": "kråklikåten",
+            "number_of_beds": 4,
+            "album": "https://plus.google.com/photos/112172516519597975801/albums/6080578400525335409",
+            "description": 11,
+            "location": 11
+        }
+    },
+    {
+        "model": "koie_booking.koiemodel",
+        "pk": 12,
+        "fields": {
+            "name": "Heinfjordstua",
+            "slug": "heinfjordstua",
+            "number_of_beds": 25,
+            "album": "https://plus.google.com/photos/112172516519597975801/albums/6080568597731563153",
+            "description": 12,
+            "location": 12
+        }
+    },
+    {
+        "model": "koie_booking.koiemodel",
+        "pk": 13,
+        "fields": {
+            "slug": "høgnabu",
+            "name": "Høgnabu",
+            "number_of_beds": 6,
+            "album": "https://plus.google.com/photos/112172516519597975801/albums/6080569052316127793",
+            "description": 13,
+            "location": 13
+        }
+    },
+    {
+        "model": "koie_booking.koiemodel",
+        "pk": 14,
+        "fields": {
+            "name": "Stabburet",
+            "slug": "stabburet",
+            "number_of_beds": 2,
+            "album": "https://plus.google.com/photos/112172516519597975801/albums/6080576106627731057",
+            "description": 14,
+            "location": 14
+        }
+    },
+    {
+        "model": "koie_booking.koiemodel",
+        "pk": 15,
+        "fields": {
+            "name": "Vekvessætra",
+            "slug": "vekvessætra",
+            "number_of_beds": 20,
+            "album": "https://plus.google.com/photos/112172516519597975801/albums/6080575085607014849",
+            "description": 15,
+            "location": 15
+        }
+    },
+    {
+        "model": "koie_booking.koiemodel",
+        "pk": 16,
+        "fields": {
+            "name": "Fosenkoia",
+            "slug": "fosenkoia",
+            "number_of_beds": 10,
+            "album": "https://plus.google.com/photos/112172516519597975801/albums/6080568274022875521",
+            "description": 16,
+            "location": 16
+        }
+    },
+    {
+        "model": "koie_booking.koiemodel",
+        "pk": 17,
+        "fields": {
+            "name": "Tågåbu",
+            "slug": "tågåbu",
+            "number_of_beds": 6,
+            "album": "https://plus.google.com/photos/112172516519597975801/albums/6080575784055585345",
+            "description": 17,
+            "location": 17
+        }
+    },
+    {
+        "model": "koie_booking.koiemodel",
+        "pk": 18,
+        "fields": {
+            "name": "Lynhøgen",
+            "slug": "lynhøgen",
+            "number_of_beds": 4,
+            "album": "https://plus.google.com/photos/112172516519597975801/albums/6080577892059621601",
+            "description": 18,
+            "location": 18
+        }
+    },
+    {
+        "model": "koie_booking.koiemodel",
+        "pk": 19,
+        "fields": {
+            "name": "Selbukåten",
+            "slug": "selbukåten",
+            "number_of_beds": 2,
+            "album": "https://plus.google.com/photos/112172516519597975801/albums/6080576505498474385",
+            "description": 19,
+            "location": 19
+        }
+    },
+    {
+        "model": "koie_booking.koiemodel",
+        "pk": 20,
+        "fields": {
+            "name": "Holvassgamma",
+            "slug": "holvassgamma",
+            "number_of_beds": 8,
+            "album": "https://plus.google.com/photos/112172516519597975801/albums/6080569376762701281",
+            "description": 20,
+            "location": 20
+        }
+    },
+    {
+        "model": "koie_booking.koiemodel",
+        "pk": 21,
+        "fields": {
+            "name": "Kamtjønnkoia",
+            "slug": "kamtjønnkoia",
+            "number_of_beds": 6,
+            "album": "https://plus.google.com/photos/112172516519597975801/albums/6080569664107330017",
+            "description": 21,
+            "location": 21
+        }
+    },
+    {
+        "model": "koie_booking.koiemodel",
+        "pk": 22,
+        "fields": {
+            "name": "Rindalsløa",
+            "slug": "rindalsløa",
+            "number_of_beds": 4,
+            "album": "https://plus.google.com/photos/112172516519597975801/albums/6080577014432205297",
+            "description": 22,
+            "location": 22
+        }
+    },
+    {
+        "model": "koie_booking.koiemodel",
+        "pk": 23,
+        "fields": {
+            "name": "Iglbu",
+            "slug": "iglbu",
+            "number_of_beds": 10,
+            "album": "https://plus.google.com/photos/112172516519597975801/albums/6080571363319819841",
+            "description": 23,
+            "location": 23
+        }
+    },
+    {
+        "model": "koie_booking.koiemodel",
+        "pk": 24,
+        "fields": {
+            "name": "Mortenskåten",
+            "slug": "mortenskåten",
+            "number_of_beds": 2,
+            "album": "https://plus.google.com/photos/112172516519597975801/albums/6080577671329718881",
+            "description": 24,
+            "location": 24
+        }
+    }
+]

@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`View AllKoier.vue Matches snapshot 1`] = `
+<div class="container global-max-width pa-3 fill-height">
+  <div class="row mx-auto">
+    <div class="mt-5 col-sm-6 col-md-4 col-12">
+      <div tabindex="0" class="global-card-outlined v-card v-card--link v-card--outlined v-sheet theme--light" title="flåkoia">
+        <div class="v-responsive v-image" style="height: 200px; width: 100%;">
+          <div class="v-image__image v-image__image--preload v-image__image--cover" style="background-position: center center;" name="fade-transition" mode="in-out"></div>
+          <div class="v-responsive__content"></div>
+        </div>
+        <div class="v-card__title">flåkoia</div>
+        <div class="v-card__subtitle">10 beds </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component BookingFourthStep.vue Matches snapshot 1`] = `
+<div class="layout layout">
+  <div class="row">
+    <div class="col">
+      <h1 class="receiptTitle">Payment Completed</h1>
+      <p>
+        Your payment is completed and further information about your stay has been sent to your e-mail.
+      </p>
+    </div>
+  </div>
+</div>
+`;

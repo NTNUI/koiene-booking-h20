@@ -1,0 +1,410 @@
+[
+    {
+        "model": "koie_booking.location",
+        "pk": 1,
+        "fields": {
+            "latitude": "63.15702",
+            "longitude": "10.36538",
+            "difficulty_info_nor": "ikke langt fra vei, enkel \u00e5 finne, lettg\u00e5tt terreng",
+            "difficulty_info_eng": "short distance from road, easy to find, simple terrain",
+            "area": "Brungmarka",
+            "terrain_nor": "skog",
+            "terrain_eng": "forest",
+            "altitude": "283",
+            "utm": "32V, 0568785, 7003816",
+            "kartblad": "Trondheim 106",
+            "map_pdf": "https://drive.google.com/file/d/19YWuyidl2nUCKECxtZZBYCQKdjHzdelo/view?usp=sharing"
+        }
+    },
+    {
+        "model": "koie_booking.location",
+        "pk": 2,
+        "fields": {
+            "latitude": "63.589740",
+            "longitude": "10.325875",
+            "difficulty_info_nor": "et lite stykke  g, lett  finne",
+            "difficulty_info_eng": "a bit of a distance to hike, easy to find",
+            "area": "Fosenhalvøya",
+            "terrain_nor": "skog/tregrense",
+            "terrain_eng": "forest/timberline",
+            "altitude": "360",
+            "map_pdf": "",
+            "utm": "32V, 0565797, 7051980",
+            "kartblad": "Fosen 113"
+        }
+    },
+    {
+        "model": "koie_booking.location",
+        "pk": 3,
+        "fields": {
+            "latitude": "62.41219",
+            "longitude": "11.18655",
+            "difficulty_info_nor": "relativt lett  finne, potensielt svrt kaldt vinterstid",
+            "difficulty_info_eng": "relatively easy to find, potentially very cold weather during winter",
+            "area": "Rørosvidda",
+            "terrain_nor": "skog/tregrense",
+            "terrain_eng": "forest/timberline",
+            "altitude": "856",
+            "map_pdf": "https://drive.google.com/open?id=1Ap1RNR51lV-sny0w7_IP9NMVvDIxweHU",
+            "utm": "32V, 0612960, 6922011",
+            "kartblad": "Tynset 90"
+        }
+    },
+    {
+        "model": "koie_booking.location",
+        "pk": 4,
+        "fields": {
+            "latitude": "63.12375",
+            "longitude": "09.44338",
+            "difficulty_info_nor": "litt vanskelig  finne, uoversiktelig terreng",
+            "difficulty_info_eng": "medium difficult navigation, tricky terrain",
+            "area": "Rindal",
+            "terrain_nor": "skog",
+            "terrain_eng": "forest",
+            "altitude": "469",
+            "map_pdf": "https://drive.google.com/open?id=1pZ5KPxeXmTpfRgeeHJ8_CcsLdr9v05Fk",
+            "utm": "32V, 0522363, 6999454",
+            "kartblad": "Orkanger 105"
+        }
+    },
+    {
+        "model": "koie_booking.location",
+        "pk": 5,
+        "fields": {
+            "latitude": "63.14713",
+            "longitude": "09.11576",
+            "difficulty_info_nor": "enkel  finne, potensielt vrutsatt vinterstid",
+            "difficulty_info_eng": "easy to find, potentially harsh weather conditions during winter",
+            "area": "Vinjeøra",
+            "terrain_nor": "tregrense",
+            "terrain_eng": "timberline",
+            "altitude": "427",
+            "map_pdf": "https://drive.google.com/open?id=1kyB2TCqG5y02NA77d3A9aRe2qK66Rni2",
+            "utm": "32V, 0505834, 7001988",
+            "kartblad": "Kyrksæterøra 104"
+        }
+    },
+    {
+        "model": "koie_booking.location",
+        "pk": 6,
+        "fields": {
+            "latitude": "63.08642",
+            "longitude": "11.64870",
+            "difficulty_info_nor": "et stykke fra buss/bil, enkel  finne",
+            "difficulty_info_eng": "some walking distance from bus/car, easy to find",
+            "area": "Sylane og Tydal",
+            "terrain_nor": "skog",
+            "terrain_eng": "forest",
+            "altitude": "496",
+            "map_pdf": "https://drive.google.com/file/d/1HCHK08J1uijubopk3C0XobzD6hLwAyDK/view?usp=sharing",
+            "utm": "32V, 0633739, 6997975",
+            "kartblad": "Meråker-Tydal 108"
+        }
+    },
+    {
+        "model": "koie_booking.location",
+        "pk": 7,
+        "fields": {
+            "latitude": "63.39030",
+            "longitude": "11.41852",
+            "difficulty_info_nor": "ikke langt fra sti, lang innmarsj fra kollektiv transport",
+            "difficulty_info_eng": "short walking distance from path, long walking distance from public transport",
+            "area": "Meråker",
+            "terrain_nor": "skog",
+            "terrain_eng": "forest",
+            "altitude": "420",
+            "map_pdf": "",
+            "utm": "32V, 0620844, 7031357",
+            "kartblad": "Selbu 107"
+        }
+    },
+    {
+        "model": "koie_booking.location",
+        "pk": 8,
+        "fields": {
+            "latitude": "63.16349",
+            "longitude": "10.52637",
+            "difficulty_info_nor": "terreng med f variasjoner, middels vanskelig  finne, lang innmarsj",
+            "difficulty_info_eng": "terrain with few variations, medium difficult navigation, long walking distance",
+            "area": "Brungmarka",
+            "terrain_nor": "skog/tregrense",
+            "terrain_eng": "forest/timberline",
+            "altitude": "563",
+            "map_pdf": "https://drive.google.com/open?id=1unVk5nrBKsHlnxRMuyM7hqhqbMMJM7WP",
+            "utm": "32V, 0576877, 7004719",
+            "kartblad": "Trondheim 106"
+        }
+    },
+    {
+        "model": "koie_booking.location",
+        "pk": 9,
+        "fields": {
+            "latitude": "62.87615",
+            "longitude": "09.66196",
+            "difficulty_info_nor": "vei helt fram sommerstid, annen rute vinterstid, enkel  finne",
+            "difficulty_info_eng": "road to the cabin in summer, different route in winter, easy to find",
+            "area": "Trollheimen",
+            "terrain_nor": "tregrense",
+            "terrain_eng": "timberline",
+            "altitude": "623",
+            "map_pdf": "",
+            "utm": "32V, 0533672, 6971964",
+            "kartblad": "Oppdal 98"
+        }
+    },
+    {
+        "model": "koie_booking.location",
+        "pk": 10,
+        "fields": {
+            "latitude": "62.96657",
+            "longitude": "10.52138",
+            "difficulty_info_nor": "Lett  finne",
+            "difficulty_info_eng": "Easy to find",
+            "area": "Singss",
+            "terrain_nor": "skog",
+            "terrain_eng": "forest",
+            "altitude": "500",
+            "map_pdf": "",
+            "utm": "32V, 577144, 6982776",
+            "kartblad": "Forollhogna 99"
+        }
+    },
+    {
+        "model": "koie_booking.location",
+        "pk": 11,
+        "fields": {
+            "latitude": "63.12292",
+            "longitude": "10.59167",
+            "difficulty_info_nor": "godt gjemt i terrenget, lang innmarsj fra kollektiv transport",
+            "difficulty_info_eng": "hidden in the terrain, long walking distance from public transport",
+            "area": "Brungmarka",
+            "terrain_nor": "skog",
+            "terrain_eng": "forest",
+            "altitude": "455",
+            "map_pdf": "https://drive.google.com/open?id=1Ga6e7JPsUDzPIwo7ndws7pa-Zbsuv3wG",
+            "utm": "32V, 0580277, 7000271",
+            "kartblad": "Trondheim 106"
+        }
+    },
+    {
+        "model": "koie_booking.location",
+        "pk": 12,
+        "fields": {
+            "latitude": "63.31492",
+            "longitude": "10.75206",
+            "difficulty_info_nor": "kort innmarsj, enkel  finne",
+            "difficulty_info_eng": "short walking distance, easy to find",
+            "area": "Mostadmarka",
+            "terrain_nor": "skog",
+            "terrain_eng": "forest",
+            "altitude": "270",
+            "map_pdf": "https://drive.google.com/file/d/1BcFBQr6mnQedDl4b1NJtGr2I2UTGG_CF/view?usp=sharing",
+            "utm": "32V, 0587781, 7021877",
+            "kartblad": "Selbu 107"
+        }
+    },
+    {
+        "model": "koie_booking.location",
+        "pk": 13,
+        "fields": {
+            "latitude": "63.10875",
+            "longitude": "11.53450",
+            "difficulty_info_nor": "middels vanskelig  finne, potensielt vrutsatt vinterstid",
+            "difficulty_info_eng": "medium difficult navigation, potentially harsh weather conditions during winter",
+            "area": "Sylane og Tydal",
+            "terrain_nor": "tregrense",
+            "terrain_eng": "timberline",
+            "altitude": "620",
+            "map_pdf": "https://drive.google.com/file/d/1uF8zurZG6HOydbEInQ5mfltvSbPKk19d/view?usp=sharing",
+            "utm": "32V, 0627876, 7000229",
+            "kartblad": "Mer&aring;ker-Tydal 108"
+        }
+    },
+    {
+        "model": "koie_booking.location",
+        "pk": 14,
+        "fields": {
+            "latitude": "63.14200",
+            "longitude": "11.72236",
+            "difficulty_info_nor": "ikke langt fra vei, tett bjrkeskog rundt koia",
+            "difficulty_info_eng": "short walking distance from road, dense birch vegetation near/around cabin",
+            "area": "Sylane og Tydal",
+            "terrain_nor": "tregrense",
+            "terrain_eng": "timberline",
+            "altitude": "675",
+            "map_pdf": "https://drive.google.com/open?id=1f_fz8Cslg6wBi12U0awCqdTKymWv_NRM",
+            "utm": "32V, 0637194, 7004319",
+            "kartblad": "Meråker-Tydal 108"
+        }
+    },
+    {
+        "model": "koie_booking.location",
+        "pk": 15,
+        "fields": {
+            "latitude": "62.70850",
+            "longitude": "09.80087",
+            "difficulty_info_nor": "vei helt fram sommerstid, potensielt vrutsatt vinterstid",
+            "difficulty_info_eng": "road to the cabin in summer, potentially harsh weather conditions during winter",
+            "area": "Oppdal",
+            "terrain_nor": "tregrense",
+            "terrain_eng": "timberline",
+            "altitude": "715",
+            "map_pdf": "https://drive.google.com/open?id=1ul5lUT_GkY3RJrGL250QyavP3ise3rhZ",
+            "utm": "32V, 0540969, 6953366",
+            "kartblad": "Oppdal 98"
+        }
+    },
+    {
+        "model": "koie_booking.location",
+        "pk": 16,
+        "fields": {
+            "latitude": "63.56813",
+            "longitude": "10.29541",
+            "difficulty_info_nor": "krevende terreng, vanskelig orientering",
+            "difficulty_info_eng": "demanding terrain, difficult navigation",
+            "area": "Fosenhalvøya",
+            "terrain_nor": "skog/tregrense",
+            "terrain_eng": "forest/timberline",
+            "altitude": "425",
+            "map_pdf": "https://drive.google.com/file/d/1mTuoklUkTTEQTtI7je6_3xcFxK3OexqI/view?usp=sharing",
+            "utm": "32V, 0564334, 7049543",
+            "kartblad": "Fosen 113"
+        }
+    },
+    {
+        "model": "koie_booking.location",
+        "pk": 17,
+        "fields": {
+            "latitude": "62.82197",
+            "longitude": "10.60875",
+            "difficulty_info_nor": "ikke langt fra vei, mange like bekkedaler i omrdet",
+            "difficulty_info_eng": "short walking distance from road, several similar looking valleys in the area",
+            "area": "Gauldalen",
+            "terrain_nor": "tregrense",
+            "terrain_eng": "timberline",
+            "altitude": "745",
+            "map_pdf": "https://drive.google.com/open?id=1jJu0KchgNviYf_urICWW52Xxedb67WOB",
+            "utm": "32V, 0581974, 6966772",
+            "kartblad": "Forollhogna 99"
+        }
+    },
+    {
+        "model": "koie_booking.location",
+        "pk": 18,
+        "fields": {
+            "latitude": "63.21028",
+            "longitude": "10.70875",
+            "difficulty_info_nor": "krevende navigasjon siste stykket, lang innmarsj fra kollektiv transport",
+            "difficulty_info_eng": "demanding navigation on the last part, long walking distance from public transport",
+            "area": "Brungmarka",
+            "terrain_nor": "skog/tregrense",
+            "terrain_eng": "forest/timberline",
+            "altitude": "532",
+            "map_pdf": "https://drive.google.com/open?id=128KlcngX16CGWltT6IYPjtGjrBXjqpqc",
+            "utm": "32V, 0585922, 7010162",
+            "kartblad": "Trondheim 106"
+        }
+    },
+    {
+        "model": "koie_booking.location",
+        "pk": 19,
+        "fields": {
+            "latitude": "63.32851",
+            "longitude": "11.02758",
+            "difficulty_info_nor": "godt gjemt i terrenget, vanskelig orientering",
+            "difficulty_info_eng": "hidden in the terrain, difficult navigation",
+            "area": "Mostadmarka",
+            "terrain_nor": "skog",
+            "terrain_eng": "forest",
+            "altitude": "480",
+            "map_pdf": "https://drive.google.com/open?id=1AdK0CSaE_OFK2N4Qw5RkLqz3WiRnELzP",
+            "utm": "32V, 0601534, 7023798",
+            "kartblad": "Selbu 107"
+        }
+    },
+    {
+        "model": "koie_booking.location",
+        "pk": 20,
+        "fields": {
+            "latitude": "63.82745",
+            "longitude": "10.37133",
+            "difficulty_info_nor": "lang innmarsj, flomutsatt ved mye nedbr",
+            "difficulty_info_eng": "long walking distance, exposed to flood during heavy rain",
+            "area": "Fosenhalvøya",
+            "terrain_nor": "skog",
+            "terrain_eng": "forest",
+            "altitude": "220",
+            "map_pdf": "https://drive.google.com/file/d/1GimbJN2gAgd9ovC_OMxm12AFzMGyrQXh/view?usp=sharing",
+            "utm": "32V, 0567484, 7078511",
+            "kartblad": "Fosen 113"
+        }
+    },
+    {
+        "model": "koie_booking.location",
+        "pk": 21,
+        "fields": {
+            "latitude": "62.74317",
+            "longitude": "09.29119",
+            "difficulty_info_nor": "veldig værutsatt vinterstid, veldig lang innmarsj",
+            "difficulty_info_eng": "very exposed to weather conditions during winter, very long walking distance",
+            "area": "Trollheimen",
+            "terrain_nor": "høyfjell",
+            "terrain_eng": "mountain",
+            "altitude": "1180",
+            "map_pdf": "https://drive.google.com/open?id=1pZ5KPxeXmTpfRgeeHJ8_CcsLdr9v05Fk",
+            "utm": "32V, 0514879, 6957008",
+            "kartblad": "Oppdal 98"
+        }
+    },
+    {
+        "model": "koie_booking.location",
+        "pk": 22,
+        "fields": {
+            "latitude": "63.01999",
+            "longitude": "09.19786",
+            "difficulty_info_nor": "ikke langt fra vei, uoversiktelig terreng, vanskelig orientering",
+            "difficulty_info_eng": "short walking distance from road, tricky terrain, difficult navigation",
+            "area": "Trollheimen",
+            "terrain_nor": "skog",
+            "terrain_eng": "forest",
+            "altitude": "355",
+            "map_pdf": "https://drive.google.com/open?id=1ZM-3BHiJsIjhlZjNz4Bdm2Y8diR-6kCD",
+            "utm": "32V, 0510015, 6987831",
+            "kartblad": "Kyrksæterøra 104"
+        }
+    },
+    {
+        "model": "koie_booking.location",
+        "pk": 23,
+        "fields": {
+            "latitude": "62.96119",
+            "longitude": "10.09028",
+            "difficulty_info_nor": "krevende navigasjon siste stykket, middels lang innmarsj fra kollektiv transport",
+            "difficulty_info_eng": "demanding navigation on the last part, medium long walking distance from public transport",
+            "area": "Ilfjellet",
+            "terrain_nor": "tregrense",
+            "terrain_eng": "timberline",
+            "altitude": "600",
+            "map_pdf": "https://drive.google.com/file/d/1nBio56qWl0BcZfgCLplDuZHYseAgs1vz/view?usp=sharing",
+            "utm": "32V, 0555297, 6981734",
+            "kartblad": "Oppdal 98"
+        }
+    },
+    {
+        "model": "koie_booking.location",
+        "pk": 24,
+        "fields": {
+            "latitude": "63.01650",
+            "longitude": "10.95894",
+            "difficulty_info_nor": "godt gjemt i terrenget, merket rute fra sommerparkering",
+            "difficulty_info_eng": "hidden in the terrain, marked path from the summer parking",
+            "area": "Gauldalen",
+            "terrain_nor": "tregrense",
+            "terrain_eng": "timberline",
+            "altitude": "654",
+            "map_pdf": "https://drive.google.com/open?id=1LnakYxC8xA4Iyh5ED5zU3IbNSjaGQkDv",
+            "utm": "32V, 0599158, 6988938",
+            "kartblad": "Forollhogna 99,Selbu 107"
+        }
+    }
+]

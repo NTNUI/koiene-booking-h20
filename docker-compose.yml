@@ -1,0 +1,26 @@
+version: '3.4'
+
+services:
+   backend:
+     container_name: ntnui_backend_koiene
+     command: python manage.py runserver 0.0.0.0:9000
+     build:
+       context: .
+       dockerfile: config/django/Dockerfile
+     volumes:
+        - .:/code
+     env_file:
+       - .env
+     ports:
+      - "9000:9000"
+     networks:
+       - membership-system_default
+     environment:
+       PRODUCTION: 'false'
+       DJANGO_SETTINGS_MODULE: 'ntnui.settings.local'
+volumes:
+  postgres_data:
+networks:
+  membership-system_default:
+    external:
+      name: membership-system_default

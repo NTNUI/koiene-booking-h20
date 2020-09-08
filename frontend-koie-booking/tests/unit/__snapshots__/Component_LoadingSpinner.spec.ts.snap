@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component LoadingSpinner.vue Matches snapshot 1`] = `
+<div class="container fill-height">
+  <div class="container global-max-width">
+    <div class="row mx-auto">
+      <div align="center" class="mt-5 col-sm-12 col-md-12 col-lg-12 col-12">
+        <div role="progressbar" aria-valuemin="0" aria-valuemax="100" class="v-progress-circular v-progress-circular--indeterminate" style="height: 70px; width: 70px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="22.22222222222222 22.22222222222222 44.44444444444444 44.44444444444444" style="transform: rotate(0deg);">
+            <circle fill="transparent" cx="44.44444444444444" cy="44.44444444444444" r="20" stroke-width="4.444444444444445" stroke-dasharray="125.664" stroke-dashoffset="125.66370614359172px" class="v-progress-circular__overlay"></circle>
+          </svg>
+          <div class="v-progress-circular__info"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

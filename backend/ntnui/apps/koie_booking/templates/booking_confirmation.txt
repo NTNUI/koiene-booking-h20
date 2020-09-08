@@ -1,0 +1,13 @@
+Hi {{ booking.user.first_name }},
+
+This is a confirmation of your order for {{ booking.koie.name }} from {{ booking.arrival_date }} to {{ booking.departure_date }}
+
+Your booking has reference {{ booking.id }}. 
+
+To get the key you have to provide the reference. 
+The kays can be picked up at one of the sit-gyms. 
+The adresses to these gyms can be found here: https://www.sit.no/trening/treningssenter. 
+
+If you have any questions about your booking, please contact us on informasjon@koiene.org.ntnu.no.
+
+

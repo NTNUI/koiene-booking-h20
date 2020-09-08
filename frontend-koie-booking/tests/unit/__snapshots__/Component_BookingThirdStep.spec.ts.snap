@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component BookingThirdStep.vue Matches snapshot 1`] = `
+<div class="container container">
+  <div class="row">
+    <div class="global-card-outlined col">
+      <div class="global-card-outlined v-card v-sheet theme--light">
+        <h3 class="priceStyle">Total price: 120kr</h3>
+        <card-stub stripe="pk_test_TagT9jGDj7CN9NOQfTnueTxz" options="[object Object]" class="stripeCard"></card-stub> <button type="button" disabled="disabled" class="pay-with-stripe v-btn v-btn--contained v-btn--disabled theme--light v-size--default payCardBtn" style="width: 100%;"><span class="v-btn__content">Pay with credit card</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
