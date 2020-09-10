@@ -15,9 +15,9 @@ Vue.use(Vuetify);
 import { mount, createLocalVue } from '@vue/test-utils';
 
 // Components or views
-import ErrorCard from '../../src/components/ErrorCard.vue';
+import NavBarLogin from '../../../../src/components/navBar/NavBarLogin.vue';
 
-describe('Component ErrorCard.vue', () => {
+describe('Component NavBarLogin.vue', () => {
   const router = new VueRouter({ routes, mode: 'abstract' });
   let wrapper: any;
   let localVue: any;
@@ -40,7 +40,7 @@ describe('Component ErrorCard.vue', () => {
   });
 
   it('Matches snapshot', async () => {
-    wrapper = mount(ErrorCard, {
+    wrapper = mount(NavBarLogin, {
       localVue,
       router,
       vuetify,

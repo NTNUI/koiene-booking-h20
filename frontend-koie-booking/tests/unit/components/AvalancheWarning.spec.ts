@@ -6,8 +6,10 @@ import { storeConfig } from '@/store';
 import { cloneDeep } from 'lodash';
 import i18n from '@/i18n';
 import scssVars from '@/styles/variables.scss';
+import flushPromises from 'flush-promises';
 import mockAxios from 'jest-mock-axios';
 import { routes } from '@/router';
+import { getDateString } from '@/utils/dates';
 
 Vue.use(Vuetify);
 
@@ -15,9 +17,9 @@ Vue.use(Vuetify);
 import { mount, createLocalVue } from '@vue/test-utils';
 
 // Components or views
-import NavBarLogin from '../../src/components/navBar/NavBarLogin.vue';
+import AvalancheWarning from '../../../src/components/AvalancheWarning.vue';
 
-describe('Component NavBarLogin.vue', () => {
+describe('Component AvalancheWarning.vue', () => {
   const router = new VueRouter({ routes, mode: 'abstract' });
   let wrapper: any;
   let localVue: any;
@@ -40,7 +42,7 @@ describe('Component NavBarLogin.vue', () => {
   });
 
   it('Matches snapshot', async () => {
-    wrapper = mount(NavBarLogin, {
+    wrapper = mount(AvalancheWarning, {
       localVue,
       router,
       vuetify,
@@ -49,5 +51,34 @@ describe('Component NavBarLogin.vue', () => {
     });
 
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it('Disabling booking if dangerLevel >2', async () => {
+    const dates = [new Date().toISOString(), getDateString(undefined, 1), getDateString(undefined, 2)];
+    store.dispatch('booking/SET_DATE_FROM', dates[0]);
+    store.dispatch('booking/SET_DATE_TO', dates[2]);
+
+    wrapper = mount(AvalancheWarning, {
+      localVue,
+      router,
+      vuetify,
+      i18n,
+      store
+    });
+
+    const spy = jest.spyOn(wrapper.vm.$store, 'dispatch');
+
+    const responseObj = {
+      data: [
+        { DangerLevel: '3', ValidTo: dates[0] },
+        { DangerLevel: '3', ValidTo: dates[1] },
+        { DangerLevel: '3', ValidTo: dates[2] }
+      ]
+    };
+    mockAxios.mockResponse(responseObj);
+    await flushPromises();
+
+    expect(spy).toBeCalledWith('avalanche/DISABLE_BOOKING', true);
+    expect(spy).not.toBeCalledWith('avalanche/DISABLE_BOOKING', false);
   });
 });
