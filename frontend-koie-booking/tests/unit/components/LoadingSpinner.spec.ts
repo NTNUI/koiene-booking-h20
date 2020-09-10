@@ -15,9 +15,9 @@ Vue.use(Vuetify);
 import { mount, createLocalVue } from '@vue/test-utils';
 
 // Components or views
-import NavBar from '../../src/components/navBar/NavBar.vue';
+import LoadingSpinner from '../../../src/components/LoadingSpinner.vue';
 
-describe('Component NavBar.vue', () => {
+describe('Component LoadingSpinner.vue', () => {
   const router = new VueRouter({ routes, mode: 'abstract' });
   let wrapper: any;
   let localVue: any;
@@ -40,7 +40,7 @@ describe('Component NavBar.vue', () => {
   });
 
   it('Matches snapshot', async () => {
-    wrapper = mount(NavBar, {
+    wrapper = mount(LoadingSpinner, {
       localVue,
       router,
       vuetify,

@@ -15,9 +15,9 @@ Vue.use(Vuetify);
 import { mount, createLocalVue } from '@vue/test-utils';
 
 // Components or views
-import LoginForm from '../../src/components/login/LoginForm.vue';
+import Input from '../../../../src/components/login/Input.vue';
 
-describe('Component LoginForm.vue', () => {
+describe('Component Input.vue', () => {
   const router = new VueRouter({ routes, mode: 'abstract' });
   let wrapper: any;
   let localVue: any;
@@ -40,7 +40,7 @@ describe('Component LoginForm.vue', () => {
   });
 
   it('Matches snapshot', async () => {
-    wrapper = mount(LoginForm, {
+    wrapper = mount(Input, {
       localVue,
       router,
       vuetify,

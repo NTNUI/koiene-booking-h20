@@ -13,7 +13,7 @@ Vue.use(Vuetify);
 import { mount, createLocalVue } from '@vue/test-utils';
 
 // Components or views
-import BookingFourthStep from '../../src/components/BookingFourthStep.vue';
+import BookingFourthStep from '../../../src/components/BookingFourthStep.vue';
 
 describe('Component BookingFourthStep.vue', () => {
   // Router not needed for this test-suite

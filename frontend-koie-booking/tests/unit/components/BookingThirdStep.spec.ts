@@ -1,13 +1,11 @@
 import Vue from 'vue';
 import Vuetify from 'vuetify';
-import VueRouter from 'vue-router';
 import Vuex from 'vuex';
-import { storeConfig } from '@/store';
-import { cloneDeep } from 'lodash';
+import store from '@/store';
 import i18n from '@/i18n';
 import scssVars from '@/styles/variables.scss';
+import flushPromises from 'flush-promises';
 import mockAxios from 'jest-mock-axios';
-import { routes } from '@/router';
 
 Vue.use(Vuetify);
 
@@ -15,23 +13,19 @@ Vue.use(Vuetify);
 import { mount, createLocalVue } from '@vue/test-utils';
 
 // Components or views
-import LoadingSpinner from '../../src/components/LoadingSpinner.vue';
+import BookingThirdStep from '../../../src/components/BookingThirdStep.vue';
 
-describe('Component LoadingSpinner.vue', () => {
-  const router = new VueRouter({ routes, mode: 'abstract' });
+describe('Component BookingThirdStep.vue', () => {
+  // Router not needed for this test-suite
   let wrapper: any;
   let localVue: any;
   let vuetify: any;
-  let store: any;
 
   beforeEach(() => {
     localVue = createLocalVue();
     vuetify = new Vuetify();
-    localVue.use(VueRouter);
     localVue.use(Vuetify);
     localVue.use(Vuex);
-    // Hard resets the store between tests
-    store = new Vuex.Store(cloneDeep(storeConfig));
     localVue.prototype.$scssVars = scssVars;
   });
 
@@ -40,12 +34,17 @@ describe('Component LoadingSpinner.vue', () => {
   });
 
   it('Matches snapshot', async () => {
-    wrapper = mount(LoadingSpinner, {
+    wrapper = mount(BookingThirdStep, {
       localVue,
-      router,
       vuetify,
       i18n,
-      store
+      store,
+      computed: {
+        price() {
+          return 120;
+        }
+      },
+      stubs: ['Card']
     });
 
     expect(wrapper).toMatchSnapshot();
