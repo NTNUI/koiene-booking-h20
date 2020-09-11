@@ -17,7 +17,7 @@ Vue.use(Vuetify);
 import { mount, createLocalVue } from '@vue/test-utils';
 
 // Components or views
-import AllKoier from '../../src/views/AllKoier.vue';
+import AllKoier from '../../../src/views/AllKoier.vue';
 
 describe('View AllKoier.vue', () => {
   const router = new VueRouter({ routes, mode: 'abstract' });

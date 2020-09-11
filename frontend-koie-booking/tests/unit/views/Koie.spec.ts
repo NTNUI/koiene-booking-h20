@@ -18,7 +18,7 @@ Vue.use(Vuetify);
 import { mount, createLocalVue } from '@vue/test-utils';
 
 // Components or views
-import Koie from '../../src/views/Koie.vue';
+import Koie from '../../../src/views/Koie.vue';
 
 describe('View Koie.vue', () => {
   let router = new VueRouter({ routes, mode: 'abstract' });

@@ -16,7 +16,7 @@ Vue.use(Vuetify);
 import { mount, createLocalVue } from '@vue/test-utils';
 
 // Components or views
-import Calendar from '../../src/components/Calendar.vue';
+import Calendar from '../../../src/components/Calendar.vue';
 
 describe('Component Calendar.vue', () => {
   const router = new VueRouter({ routes, mode: 'abstract' });

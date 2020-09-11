@@ -6,7 +6,6 @@ import { storeConfig } from '@/store';
 import { cloneDeep } from 'lodash';
 import i18n from '@/i18n';
 import scssVars from '@/styles/variables.scss';
-import flushPromises from 'flush-promises';
 import mockAxios from 'jest-mock-axios';
 import { routes } from '@/router';
 
@@ -16,10 +15,10 @@ Vue.use(Vuetify);
 import { mount, createLocalVue } from '@vue/test-utils';
 
 // Components or views
-import BookingFirstStep from '../../src/components/BookingFirstStep.vue';
+import NavBar from '../../../../src/components/navBar/NavBar.vue';
 
-describe('Component BookingFirstStep.vue', () => {
-  // Router not needed for this test-suite
+describe('Component NavBar.vue', () => {
+  const router = new VueRouter({ routes, mode: 'abstract' });
   let wrapper: any;
   let localVue: any;
   let vuetify: any;
@@ -28,6 +27,7 @@ describe('Component BookingFirstStep.vue', () => {
   beforeEach(() => {
     localVue = createLocalVue();
     vuetify = new Vuetify();
+    localVue.use(VueRouter);
     localVue.use(Vuetify);
     localVue.use(Vuex);
     // Hard resets the store between tests
@@ -40,21 +40,13 @@ describe('Component BookingFirstStep.vue', () => {
   });
 
   it('Matches snapshot', async () => {
-    wrapper = mount(BookingFirstStep, {
+    wrapper = mount(NavBar, {
       localVue,
+      router,
       vuetify,
       i18n,
-      store,
-      mocks: {
-        $route: {
-          params: { id: 'flåkoia' }
-        }
-      }
+      store
     });
-
-    const responseObj = { data: { koie: { name: 'flåkoia' } } };
-    mockAxios.mockResponse(responseObj);
-    await flushPromises();
 
     expect(wrapper).toMatchSnapshot();
   });
