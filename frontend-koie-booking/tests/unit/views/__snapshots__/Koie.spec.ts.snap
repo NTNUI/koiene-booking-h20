@@ -46,7 +46,8 @@ exports[`View Koie.vue Matches snapshot 1`] = `
               <div class="v-list-item__content listItemContent">
                 <p style="margin-bottom: 0px;">
                   Position:
-                  <span class="infoValue"><a href="https://www.google.com/maps/place/undefined,undefined" target="_blank">Google Maps</a></span></p>
+                  <span class="infoValue"><a href="https://www.google.com/maps/place/undefined,undefined" target="_blank">Google Maps</a></span>
+                </p>
               </div>
             </a>
             <div tabindex="0" target="_blank" role="listitem" aria-selected="false" class="pa-0 v-list-item v-list-item--link theme--light">
@@ -54,14 +55,16 @@ exports[`View Koie.vue Matches snapshot 1`] = `
               <div class="v-list-item__content listItemContent">
                 <p style="margin-bottom: 0px;">
                   Pdf Map:
-                  <span class="infoValue"><a target="_blank">See pdf</a></span></p>
+                  <span class="infoValue"><a target="_blank">See pdf</a></span>
+                </p>
               </div>
             </div><a tabindex="0" href="http://org.ntnu.no/koiene/tips.php?p=3#1" target="_blank" role="listitem" aria-selected="false" class="pa-0 v-list-item v-list-item--link theme--light">
               <div class="v-list-item__icon listItemIcon"><i aria-hidden="true" class="v-icon notranslate mdi mdi-map theme--light"></i></div>
               <div class="v-list-item__content listItemContent">
                 <p style="margin-bottom: 0px;">
                   Physical Map:
-                  <span class="infoValue"><a href="http://org.ntnu.no/koiene/tips.php?p=3#1" target="_blank"></a></span></p>
+                  <span class="infoValue"><a href="http://org.ntnu.no/koiene/tips.php?p=3#1" target="_blank"></a></span>
+                </p>
               </div>
             </a>
             <div tabindex="0" target="_blank" role="listitem" aria-selected="false" class="pa-0 v-list-item v-list-item--link theme--light">
@@ -69,7 +72,8 @@ exports[`View Koie.vue Matches snapshot 1`] = `
               <div class="v-list-item__content listItemContent">
                 <p style="margin-bottom: 0px;">
                   Weather forecast:
-                  <span class="infoValue"><a target="_blank">yr.no</a></span></p>
+                  <span class="infoValue"><a target="_blank">yr.no</a></span>
+                </p>
               </div>
             </div>
           </div>

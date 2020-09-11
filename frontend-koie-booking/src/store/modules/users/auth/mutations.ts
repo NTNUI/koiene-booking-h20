@@ -8,6 +8,9 @@ const setAccessToken = (state: any, newToken: any) => {
 };
 
 export const mutations: MutationTree<AuthState> = {
+  setAdmin(state, payload: boolean) {
+    state.isAdmin = payload;
+  },
   setToken(state, newToken) {
     setAccessToken(state, newToken);
     localStorage.setItem('r', newToken.refresh);

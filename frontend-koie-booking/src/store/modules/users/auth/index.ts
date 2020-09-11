@@ -5,6 +5,7 @@ import { mutations } from './mutations';
 import { RootState, AuthState } from '@/store/types';
 
 export const state: AuthState = {
+  isAdmin: false,
   tokens: {
     access: localStorage.getItem('a'),
     refresh: localStorage.getItem('r')

@@ -6,18 +6,29 @@
       </v-btn>
     </div>
     <v-spacer />
-    <NavBarLogin />
+    <NavBarAdmin v-if="isAdmin" style="margin-right: 10px" />
+    <NavBarLogin :is-logged-in="isLoggedIn" />
   </v-app-bar>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
 import NavBarLogin from './NavBarLogin.vue';
+import NavBarAdmin from '@/components/navBar/NavBarAdmin.vue';
 
 export default Vue.extend({
-  name: 'App',
+  name: 'NavBar',
   components: {
+    NavBarAdmin,
     NavBarLogin
+  },
+  computed: {
+    isAdmin(): boolean {
+      return this.$store.getters['auth/isAdmin'] || false;
+    },
+    isLoggedIn(): boolean {
+      return this.$store.getters['auth/isLoggedIn'] || false;
+    }
   },
   methods: {
     goToAllKoier() {

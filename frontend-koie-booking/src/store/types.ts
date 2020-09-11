@@ -1,6 +1,9 @@
 // rootState = generic type, defines the root state type
 export interface RootState {
   version: string;
+  koie: KoieState;
+  booking: BookingState;
+  auth: AuthState;
 }
 
 export interface KoieState {
@@ -104,6 +107,7 @@ export interface BookingInfo {
 }
 
 export interface AuthState {
+  isAdmin: boolean;
   tokens: {
     access: string | null;
     refresh: string | null;
