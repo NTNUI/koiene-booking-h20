@@ -15,10 +15,10 @@ import axios from 'axios';
 
 export default Vue.extend({
   name: 'NavBarLogin',
-  computed: {
-    isLoggedIn(): boolean {
-      const isLoggedIn = this.$store.getters['auth/getToken'];
-      return isLoggedIn ? isLoggedIn.length !== 0 : false;
+  props: {
+    isLoggedIn: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {

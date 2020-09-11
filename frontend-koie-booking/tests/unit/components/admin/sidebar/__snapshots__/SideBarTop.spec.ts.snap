@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component SideBarTop.vue Matches snapshot 1`] = `
+<div tabindex="-1" class="v-list-item v-list-item--two-line theme--light">
+  <div class="v-avatar v-list-item__avatar" style="height: 40px; min-width: 40px; width: 40px;"><img src="https://ntnui.no/wp-content/uploads/2018/04/ntnui-logo-liten.png"></div>
+  <div class="v-list-item__content">
+    <div class="v-list-item__title">Admin</div>
+    <div class="v-list-item__subtitle">Koie-styret</div>
+  </div>
+</div>
+`;
