@@ -7,8 +7,5 @@ from koie_booking.views.koie import KoieViewSet
 router = routers.DefaultRouter()
 
 router.register("koie", KoieViewSet, basename="koie")
-router.register("booking", BookingViewSet, basename="booking")
-
-
 """ Include URL Patterns """
 urlpatterns = [path("", include(router.urls))]
