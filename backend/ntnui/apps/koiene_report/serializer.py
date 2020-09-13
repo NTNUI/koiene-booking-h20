@@ -7,4 +7,4 @@ class KoieneReportSerializer(serializers.ModelSerializer):
     class Meta:
         model = KoieneReport
         # Include all fields from KoieneReport model
-        fields = (__all__)
+        fields = '__all__'
