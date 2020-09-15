@@ -54,6 +54,15 @@
     "receipt_text": "Your payment is completed and further information about your stay has been sent to your e-mail."
 
   },
+  "report": {
+    "step1": "Info",
+    "step2": "Supplies",
+    "step3": "Equipment",
+    "step4": "Comments",
+    "next_button": "next",
+    "back_button": "back",
+    "done_button": "done"
+  },
   "ntnui": {
     "home": "Home",
     "login": {
