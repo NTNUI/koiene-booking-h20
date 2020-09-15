@@ -47,7 +47,7 @@ LOCAL_APPS = [
     "accounts.apps.AccountsConfig",
     "payments.apps.PaymentsConfig",
     "koie_booking.apps.KoieBookingConfig",
-    "koiene_report.apps.KoieneReportConfig"
+    "koie_report.apps.KoieReportConfig"
 ]
 
 INSTALLED_APPS = LOCAL_APPS + THIRD_PARTY_APPS + DJANGO_APPS
