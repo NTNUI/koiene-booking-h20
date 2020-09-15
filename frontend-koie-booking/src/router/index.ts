@@ -35,10 +35,17 @@ const routes = [
     name: 'Admin',
     component: () => import('../views/Admin.vue'),
     meta: { requiresAuth: true, requiresAdmin: true }
+  },
+  {
+    path: '/report',
+    name: 'Report',
+    component: () => import('../views/Report.vue'),
+    meta: { requiresAuth: false, requiresAdmin: false }
   }
 ];
 
 const router = new VueRouter({
+  mode: 'history',
   routes
 });
 
