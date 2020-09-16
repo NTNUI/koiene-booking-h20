@@ -69,6 +69,14 @@ export interface BookingState {
   paymentConfirmed: boolean;
 }
 
+export interface ReportState {
+  validForm: boolean;
+  edited: boolean;
+  isLoading: boolean;
+  error: boolean;
+  step: number;
+}
+
 export interface AvalancheState {
   warningLevels: Array<Warning>;
   disableBooking: boolean;

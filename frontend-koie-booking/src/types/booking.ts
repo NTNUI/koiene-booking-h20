@@ -5,11 +5,6 @@ export interface BookingData {
   labels: Array<TranslateResult>;
 }
 
-export interface ReportData {
-  step: number;
-  labels: Array<TranslateResult>;
-}
-
 export interface BookingFirstStepData {
   bedsTotal: number;
   bedsChosen: number;

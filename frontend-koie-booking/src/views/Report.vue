@@ -28,29 +28,29 @@
             <FourthStep v-else-if="step === 4" />
           </v-layout>
         </v-stepper>
-        <div v-show="!apiError" :class="$style.btnWrapper">
+        <div v-show="true" :class="$style.btnWrapper">
           <v-btn
-            v-if="step > 1 && step < 4"
+            v-if="step > 1"
             :color="this.$scssVars.globalColorPrimary"
             raised="true"
             :dark="true"
             data-test="btnPrev"
-            @click="prevStep"
+            @click="prevStep(step)"
             >{{ $t('report.back_button') }}</v-btn
           >
           <v-btn
-            v-if="step < 3"
-            :disabled="!checkValid || disableBooking"
+            v-if="step < steps"
+            :disabled="!isValid"
             :color="this.$scssVars.globalColorPrimary"
             :class="$style.nextStepButton"
             raised="true"
             :dark="true"
             data-test="btnNext"
-            @click="nextStep"
+            @click="nextStep(step)"
             >{{ $t('report.next_button') }}</v-btn
           >
           <v-btn
-            v-if="step === 4"
+            v-if="step === steps"
             :color="this.$scssVars.globalColorPrimary"
             :class="$style.nextStepButton"
             raised="true"
@@ -71,7 +71,7 @@ import SecondStep from '../components/report/SecondStep.vue';
 import ThirdStep from '../components/report/ThirdStep.vue';
 import FourthStep from '../components/report/FourthStep.vue';
 import LoadingSpinner from '../components/LoadingSpinner.vue';
-import { ReportData } from '../types/booking';
+import { ReportData } from '../types/report';
 import Vue from 'vue';
 export default Vue.extend({
   name: 'Report',
@@ -87,6 +87,7 @@ export default Vue.extend({
   data(): ReportData {
     return {
       step: 1,
+      steps: 4,
       labels: [
         this.$i18n.t('report.step1'),
         this.$i18n.t('report.step2'),
@@ -95,8 +96,27 @@ export default Vue.extend({
       ]
     };
   },
-  mounted() {
-    this.step = 1;
+  computed: {
+    isValid(): string {
+      return this.$store.state.report.validForm;
+    },
+    isLoading(): boolean {
+      return this.$store.state.report.isLoading;
+    },
+    error(): boolean {
+      return this.$store.state.report.error;
+    }
+  },
+  methods: {
+    nextStep(n: number) {
+      this.step = ++n % (this.steps + 1);
+    },
+    prevStep(n: number) {
+      this.step = --n % (this.steps + 1);
+    },
+    done() {
+      this.$router.push(`/`);
+    }
   }
 });
 </script>
