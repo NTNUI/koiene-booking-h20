@@ -47,6 +47,7 @@ LOCAL_APPS = [
     "accounts.apps.AccountsConfig",
     "payments.apps.PaymentsConfig",
     "koie_booking.apps.KoieBookingConfig",
+    "koie_report.apps.KoieReportConfig"
 ]
 
 INSTALLED_APPS = LOCAL_APPS + THIRD_PARTY_APPS + DJANGO_APPS
@@ -164,3 +165,5 @@ REST_FRAMEWORK = {
 
 PHONENUMBER_DB_FORMAT = "E164"
 PHONENUMBER_DEFAULT_REGION = "NO"
+
+
