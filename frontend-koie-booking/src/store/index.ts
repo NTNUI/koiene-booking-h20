@@ -6,6 +6,7 @@ import { RootState } from './types';
 import { koie } from './modules/users/koie/index';
 import { booking } from './modules/users/booking/index';
 import { avalanche } from './modules/users/avalanche/index';
+import { report } from './modules/users/report/index';
 import { auth } from './modules/users/auth/index';
 
 Vue.use(Vuex, VueAxios, axios);
@@ -15,6 +16,7 @@ const store: StoreOptions<RootState> = {
     koie,
     booking,
     avalanche,
+    report,
     auth
   }
 };
