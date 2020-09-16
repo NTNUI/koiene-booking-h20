@@ -71,7 +71,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import { Guest, BookingSecondStepData } from '../types/booking';
+import { Guest, BookingSecondStepData } from '@/types/booking';
 export default Vue.extend({
   data(): BookingSecondStepData {
     return {

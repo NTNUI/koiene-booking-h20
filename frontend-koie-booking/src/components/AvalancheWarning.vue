@@ -32,7 +32,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import { AvalancheData } from '../types/avalanche';
+import { AvalancheData } from '@/types/avalanche';
 import { getDateString, getDate } from '@/utils/dates';
 
 export default Vue.extend({
