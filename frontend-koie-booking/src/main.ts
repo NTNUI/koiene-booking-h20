@@ -11,7 +11,7 @@ Vue.config.productionTip = false;
 
 // Make scssVars available for every vue component, so global-exported scss-vars are referenceable within template
 Vue.prototype.$scssVars = scssVars;
-Vue.prototype.$apiUrl = 'http://localhost:8000';
+Vue.prototype.$apiUrl = 'http://localhost:9000';
 
 Vue.use(Notifications);
 
