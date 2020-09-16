@@ -120,12 +120,12 @@
 </template>
 
 <script lang="ts">
-import Calendar from '../components/Calendar.vue';
-import ErrorCard from '../components/ErrorCard.vue';
-import LoadingSpinner from '../components/LoadingSpinner.vue';
-import AvalancheWarning from '../components/AvalancheWarning.vue';
+import Calendar from '@/components/Calendar.vue';
+import ErrorCard from '@/components/ErrorCard.vue';
+import LoadingSpinner from '@/components/LoadingSpinner.vue';
+import AvalancheWarning from '@/components/AvalancheWarning.vue';
 import Vue from 'vue';
-import { KoieData, KeyInfoItems } from '../types/koie';
+import { KoieData, KeyInfoItems } from '@/types/koie';
 
 export default Vue.extend({
   name: 'Koie',
