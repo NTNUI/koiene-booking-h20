@@ -21,7 +21,13 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: '12.x'
-    - run: cd frontend-koie-booking
+    - name: Lint
+    - working-directory: ./frontend-koie-booking
+    - run: npm run lint
+    - name: Install and build
+    - working-directory: ./frontend-koie-booking
     - run: npm run install
     - run: npm run build --if-present
+    - name: Unit tests
+    - working-directory: ./frontend-koie-booking
     - run: npm test:unit
