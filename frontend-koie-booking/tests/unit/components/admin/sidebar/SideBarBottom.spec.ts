@@ -39,8 +39,7 @@ describe('Component SideBarBottom.vue', () => {
     wrapper = mount(SideBarBottom, {
       localVue,
       vuetify,
-      store,
-
+      store
     });
 
     // Assert

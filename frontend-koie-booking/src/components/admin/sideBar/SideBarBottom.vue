@@ -4,7 +4,8 @@
       v-for="(item, index) in views"
       :id="'sideBar' + item.id"
       :key="'sideBar' + item.id"
-      link
+      :style="'background-color: ' + (index === currentView() ? $scssVars.globalColorBackgroundLighter : '')"
+      class="v-list-item"
       @click="updateViewFn(index)"
     >
       <v-list-item-icon>
@@ -23,14 +24,20 @@ import adminViews from '@/components/admin/AdminViews';
 
 export default Vue.extend({
   name: 'SideBarBottom',
-  inject: ['updateView'],
+  inject: ['setCurrentView', 'getCurrentView'],
   data() {
     return {
+      currentView: (this as any).getCurrentView as () => number,
       views: adminViews,
-      updateViewFn: (this as any).updateView as (index: string) => void // Little type hack.
+      updateViewFn: (this as any).setCurrentView as (index: number) => void // Little type hack.
     };
   }
 });
 </script>
 
-<style scoped></style>
+<style scoped lang="scss">
+.v-list-item {
+  margin: 10px;
+  border-radius: 10px;
+}
+</style>

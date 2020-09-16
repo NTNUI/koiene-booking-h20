@@ -13,16 +13,20 @@ exports[`Component SideBar.vue Matches snapshot 1`] = `
           </div>
         </div>
         <div>
-          <div tabindex="0" id="sideBarallCabins" class="v-list-item v-list-item--link theme--dark">
-            <div class="v-list-item__icon"><i aria-hidden="true" v-text="calendar-month" class="v-icon notranslate material-icons theme--dark"></i></div>
-            <div class="v-list-item__content">
-              <div class="v-list-item__title">Alle koier</div>
+          <div id="sideBarallCabins">
+            <div tabindex="0" class="v-list-item v-list-item--link theme--dark">
+              <div class="v-list-item__icon"><i aria-hidden="true" v-text="calendar-month" class="v-icon notranslate material-icons theme--dark"></i></div>
+              <div class="v-list-item__content">
+                <div class="v-list-item__title">Alle koier</div>
+              </div>
             </div>
           </div>
-          <div tabindex="0" id="sideBarreports" class="v-list-item v-list-item--link theme--dark">
-            <div class="v-list-item__icon"><i aria-hidden="true" v-text="file-document-outline" class="v-icon notranslate material-icons theme--dark"></i></div>
-            <div class="v-list-item__content">
-              <div class="v-list-item__title">Rapporter</div>
+          <div id="sideBarreports">
+            <div tabindex="0" class="v-list-item v-list-item--link theme--dark">
+              <div class="v-list-item__icon"><i aria-hidden="true" v-text="file-document-outline" class="v-icon notranslate material-icons theme--dark"></i></div>
+              <div class="v-list-item__content">
+                <div class="v-list-item__title">Rapporter</div>
+              </div>
             </div>
           </div>
         </div>
