@@ -5,134 +5,89 @@
     <title>Koieinformasjon</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <style>
-        * {
-            color: black;
-            font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-        }
-        .button {
-            height: 35px;
-            width: 180px;
-            margin: 30px 0;
-            background-color: #069;
-            color: white;
-            font-size: 14px;
-            text-align: center;
-            border: 1px solid #069;
-            -webkit-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75);
-            -moz-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75);
-            box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75);
-            border-radius: 6px;
-            position: relative;
-        }
-        .button:hover {
-            background-color: white;
-        }
-        .button:hover .text {
-            color: #069;
-        }
-        .link {
-            text-decoration: none;
-        }
-        .text {
-            text-align: center;
-            margin-top: 7px;
-            color: white;
-        }
-        .thanks {
-            color: #666666;
-            padding-bottom: 20px;
-        }
-        body {
-            background-color: #f8f8f8;
-        }
-        .box {
-            width: 800px;
-            background-color: #ffffff;
-            text-align: center;
-            padding-bottom: 32px;
-        }
-        .titleWrapper {
-            width: 100%;
-            height: 100px;
-            background-color: #00722a;
-            margin-bottom: 30px;
-        }
-        .titleText {
-            text-align: center;
-            padding-top: 35px;
-            margin: 0;
-            color: white;
-        }
-        p {
-            padding: 10px 25px;
-        }
-        .topBoxes a {
-            font-weight: bold;
-            padding: 15px 20px;
-            color: #000000 !important;
-            text-decoration: none !important;
-        }
+
     </style>
 </head>
 <body>
-    <center style="background-color: #f8f8f8; padding-bottom: 20px;">
         <div class="box">
-            <center>
-            <table style="width:100%!important;border-collapse:separate;min-width:100%!important">
-                <tbody>
-                    <tr>
-                        <td align="left">
-                            <img class="topBoxes" src="https://ntnui.no/wp-content/uploads/2018/04/ntnui-logo-liten-300x120.png" height="50" width="110" uk-svg alt="NTNUI LOGO">
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            </center>
-
-            <div class="titleWrapper">
-                <h2 class="titleText">Information on {{ koie.name }}</h2>
+            <div class = "topBar">
+                <img class="logo" src="https://ntnui.no/wp-content/uploads/2018/04/ntnui-logo-liten-300x120.png" height="50" width="110" uk-svg alt="NTNUI LOGO">
+                <div class="titleWrapper">
+                    <h2 class="title">Information on {{ koie.name }}</h2>
+                </div>
             </div>
 
-            <p>
-                Hi, and welcome to {{ koie.name }}, <br>
-                Here is some useful information about the koie before your trip. 
-            </p> 
+           <div class = "infoBox">
+               <p>
+                    Hello, and welcome to {{ koie.name }}, <br>
+                    Here is some useful information about the koie before your trip. 
+                </p> 
+           </div>
 
-            <h3>Location and directions</h3>
-            <p>
-                The koie is located in {{ koie.location.area }}, and the terrain is {{ koie.location.terrain_eng }}.<br>
-                {{ koie.description.directions_eng }}
+           <div class = "infoBox">
+                <h3>Location and directions</h3>
+                <p>
+                    The koie is located in {{ koie.location.area }}, and the terrain is {{ koie.location.terrain_eng }}.<br>
+                    {{ koie.description.directions_eng }}
 
-                Parking: <br>
-                {{ koie.description.parking_eng }}      
-            </p>
+                    Parking: <br>
+                    {{ koie.description.parking_eng }}      
+                </p>
+            </div>
 
-            <h3>Koie information</h3>
-            <p>
-                {{ koie.description.description_eng }}
-            </p>
-
-            <h3>Map of koie and area</h3>
-            <p>
-                You can find a map to the cabin <a hhref="{{ koie.location.map_pdf }}">here</a>. <br>
-                If you want to by a map for the area of the cabin, it is the map "{{ koie.location.kartblad }}".
-            </p>
-
-
-            <p>
-                Make sure to deress for the weather, the wether forecast can be found at <a hhref="{{ koie.description.yr_link_eng }}">this web adress</a>. 
-                <br><br>
-                If you have any other questions about the koie, please contact us on <a href="mailto:informasjon@koiene.org.ntnu.no">informasjon@koiene.org.ntnu.no</a>.
-                <br><br>
-                Have a nice stay! 
-                <br>
+            
+            <div class = "infoBox">
+                <h3>Koie information</h3>
+                <p>
+                    {{ koie.description.description_eng }}
+                </p>
+            </div>
+            
+            <div class = "infoBox">
+                <h3>Map of koie and area</h3>
+                <p>
+                    You can find a map to the cabin <a hhref="{{ koie.location.map_pdf }}">here</a>. <br>
+                    If you want to purchase a physical map for the area surrounding the cabin, buy this map: "{{ koie.location.kartblad }}".
+                </p>
+            </div>
+            
+            
+            <div class = "infoBox">
+                <h3>Map of koie and area</h3>
+                <p>
+                    You can find a map to the cabin <a hhref="{{ koie.location.map_pdf }}">here</a>. <br>
+                    If you want to purchase a physical map for the area surrounding the cabin, buy this map: "{{ koie.location.kartblad }}".
+                </p>
+            </div>
+            <div class = "infoBox">
+                <h3>Report on cabin resources</h3>
+                <p>
+                    At the end of your stay you will be sent a form to fill out. This is so we know how when to check on equipment and refill on wood and gas for future trips. 
+                    <br>
+                    While you are there, please make yourself aware of: 
+                    <ul>
+                        <li>Does the smoke detector work?</li>
+                        <li>How much wood is left?</li>
+                        <li>How much gas is left?</li>
+                    </ul>
+                </p>
+            </div>
+            <div class = "infoBox"></div>
+                <p>
+                    Make sure to dress for the weather! The weather forecast can be found <a hhref="{{ koie.description.yr_link_eng }}">here</a>. 
+                    <br><br>
+                    If you have any other questions about the koie, please contact us on <a href="mailto:informasjon@koiene.org.ntnu.no">informasjon@koiene.org.ntnu.no</a>.
+                    <br><br>
+                    Have a nice stay! 
+                </p>
+            </div>
+            <div class = "footer">
                 Best regards, 
                 <br><br>
                 NTNUI Koiene
-            </p>
+            </div>
 
         </div>
-    </center>
 </body>
 </html>
 
