@@ -1,7 +1,9 @@
 <template>
   <v-card>
     <v-navigation-drawer id="sideBarDrawer" :color="$scssVars.globalColorBackground" :src="chosenPicture" permanent app>
-      <v-list style="background: linear-gradient(rgba(70,70,70,0.4) 0%, rgba(73,64,228,0) 100%); height: 100vh">
+      <v-list
+        style="background: linear-gradient(rgba(70,70,70,0.5) 0%, rgba(70,70,70,0.5) 40%, rgba(73,64,228,0) 80%); height: 100vh"
+      >
         <SideBarTop />
         <SideBarBottom />
       </v-list>
