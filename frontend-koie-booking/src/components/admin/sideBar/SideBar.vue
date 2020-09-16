@@ -1,7 +1,9 @@
 <template>
   <v-card>
-    <v-navigation-drawer id="sideBarDrawer" v-model="drawer" :color="$scssVars.globalColorPrimary" permanent dark app>
-      <v-list>
+    <v-navigation-drawer id="sideBarDrawer" :color="$scssVars.globalColorBackground" :src="chosenPicture" permanent app>
+      <v-list
+        style="background: linear-gradient(rgba(70,70,70,0.5) 0%, rgba(70,70,70,0.5) 40%, rgba(73,64,228,0) 80%); height: 100vh"
+      >
         <SideBarTop />
         <SideBarBottom />
       </v-list>
@@ -21,24 +23,27 @@ export default Vue.extend({
     currentView: {
       type: Number,
       default: 0
+    },
+    testing: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
     return {
-      drawer: this.currentView
+      allPictures: ['fosenkoia1.jpg', 'kamtjønnkoia1.jpg', 'lyngli1.jpg', 'stabburet1.jpg'],
+      chosenPicture: 'navbar_pictures/fosenkoia1.jpg'
     };
   },
-  watch: {
-    currentView(newVal: number) {
-      this.drawer = newVal;
-    }
+  mounted() {
+    if (!this.testing)
+      this.chosenPicture = 'navbar_pictures/' + this.allPictures[Math.floor(Math.random() * this.allPictures.length)];
   }
 });
 </script>
 
 <style lang="scss">
 #sideBarDrawer {
-  border-top-left-radius: 0 !important;
-  border-top-right-radius: 0 !important;
+  border-radius: 0 !important;
 }
 </style>

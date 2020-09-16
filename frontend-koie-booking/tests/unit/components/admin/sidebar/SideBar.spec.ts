@@ -18,7 +18,6 @@ import SideBarTop from '@/components/admin/sideBar/SideBarTop.vue';
 import SideBar from '@/components/admin/sideBar/SideBar.vue';
 
 describe('Component SideBar.vue', () => {
-  let wrapper: Wrapper<any>;
   let localVue: VueConstructor<Vue>;
   let vuetify: VuetifyType;
   let store: Store<RootState>;
@@ -41,7 +40,11 @@ describe('Component SideBar.vue', () => {
     const wrapper = mount(SideBar, {
       localVue,
       vuetify,
-      store
+      store,
+      provide: {
+        getCurrentView: () => null,
+        setCurrentView: (index: number) => null
+      }
     });
 
     // Assert
@@ -56,7 +59,8 @@ describe('Component SideBar.vue', () => {
       vuetify,
       store,
       provide: {
-        updateView: (index: number) => null
+        getCurrentView: () => null,
+        setCurrentView: (index: number) => null
       }
     });
 
@@ -70,7 +74,8 @@ describe('Component SideBar.vue', () => {
       vuetify,
       store,
       provide: {
-        updateView: (index: number) => null
+        getCurrentView: () => null,
+        setCurrentView: (index: number) => null
       }
     });
 
