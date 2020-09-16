@@ -39,7 +39,11 @@ describe('Component SideBarBottom.vue', () => {
     wrapper = mount(SideBarBottom, {
       localVue,
       vuetify,
-      store
+      store,
+      provide: {
+        getCurrentView: () => null,
+        setCurrentView: (index: number) => null
+      }
     });
 
     // Assert
