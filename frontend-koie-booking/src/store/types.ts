@@ -76,6 +76,7 @@ export interface ReportState {
   error: boolean;
   step: number;
   gasStatus: number;
+  woodLevel: number;
 }
 
 export interface AvalancheState {

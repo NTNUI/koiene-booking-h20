@@ -123,6 +123,9 @@ export default Vue.extend({
     prevStep(n: number) {
       this.step = --n % (this.steps + 1);
       this.$store.dispatch('report/SET_STEP', Number(this.$store.state.report.step) - 1);
+      if (this.step === 1) {
+        this.$store.dispatch('report/SET_VALID_FORM', true);
+      }
     },
     done() {
       this.$router.push(`/`);

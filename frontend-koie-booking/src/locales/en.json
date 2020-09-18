@@ -69,7 +69,7 @@
     "almost_empty": "No, it was almost empty",
     "empty": "Yes, it was empty",
     "not_sure": "I don't know",
-    "gas_bottles": "How many bottles of gas is at the cabin?"
+    "wood_level": "How much firewood was there at the cabin?"
   },
   "ntnui": {
     "home": "Home",

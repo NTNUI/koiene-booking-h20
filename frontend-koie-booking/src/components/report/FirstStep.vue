@@ -4,7 +4,7 @@
   <v-layout v-else :class="$style.container" :dark="true">
     <h1 :class="$style.heading">{{ $t('report.reportTitle') }}</h1>
     <v-layout :class="$style.separator">
-      <v-layout class="px-1">
+      <v-layout class="px-4">
         <p>{{ $t('report.reportDescription') }}</p>
       </v-layout>
     </v-layout>

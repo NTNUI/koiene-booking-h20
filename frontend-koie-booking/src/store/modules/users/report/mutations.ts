@@ -19,5 +19,8 @@ export const mutations: MutationTree<ReportState> = {
   },
   setGasStatus(state, status: number) {
     state.gasStatus = status;
+  },
+  setWoodLevel(state, level: number) {
+    state.woodLevel = level;
   }
 };

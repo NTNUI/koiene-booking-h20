@@ -13,7 +13,8 @@ export const state: ReportState = {
   isLoading: false,
   error: false,
   step: 1,
-  gasStatus: 0
+  gasStatus: 0,
+  woodLevel: 0
 };
 const namespaced: boolean = true;
 

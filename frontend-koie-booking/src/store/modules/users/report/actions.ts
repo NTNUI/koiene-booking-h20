@@ -10,6 +10,9 @@ export const actions = {
   },
   SET_GAS_STATUS: (ctx: any, status: number): any => {
     ctx.commit('setGasStatus', status);
+  },
+  SET_WOOD_LEVEL: (ctx: any, level: number): any => {
+    ctx.commit('setWoodLevel', level);
   }
 };
 

@@ -7,8 +7,9 @@ export interface ReportData {
 }
 
 export interface ReportSecondStepData {
-  gasStatus: number;
-  numberOfGasContainers: number;
   edited: boolean;
   validForm: boolean;
+  gasStatus: number;
+  woodLevel: number;
+  woodLabels: Array<String>;
 }
