@@ -2,7 +2,7 @@
   <ErrorCard v-if="apiError" />
   <LoadingSpinner v-else-if="isLoading" />
   <v-layout v-else :class="$style.container" :dark="true">
-    <h1 :class="$style.heading">{{ $t('report.step2') }} {{ koieTitle }}</h1>
+    <h1 :class="$style.heading">{{ $t('report.step2') }}</h1>
     <v-layout :class="$style.separator">
       <h3 class="py-4" :class="$style.supplyRegistration">{{ $t('report.gass_level') }}</h3>
       <v-form v-model="validForm" :class="$style.form">
@@ -14,24 +14,46 @@
             <v-radio :label="$t('report.not_sure')"></v-radio>
           </v-radio-group>
         </v-layout>
-        <v-text-field
-          :label="$t('report.gas_bottles')"
-          placeholder="1"
-          number
-          :rules="numberRules"
-          :class="$style.numberField"
-          required
-          @blur="setGuests"
-        />
       </v-form>
     </v-layout>
   </v-layout>
 </template>
 
 <script lang="ts">
+import ErrorCard from '@/components/ErrorCard.vue';
+import LoadingSpinner from '@/components/LoadingSpinner.vue';
+import { ReportSecondStepData } from '@/types/report';
 import Vue from 'vue';
 export default Vue.extend({
-  name: 'ReportSecondStep'
+  name: 'ReportSecondStep',
+  components: {
+    ErrorCard,
+    LoadingSpinner
+  },
+  data(): ReportSecondStepData {
+    return {
+      gasStatus: 0,
+      numberOfGasContainers: 0,
+      edited: false,
+      validForm: true
+    };
+  },
+  computed: {
+    step(): number {
+      return this.$store.state.report.step;
+    },
+    apiError(): boolean {
+      return this.$store.state.koie.error;
+    },
+    isLoading(): boolean {
+      return this.$store.state.koie.isLoading;
+    }
+  },
+  watch: {
+    validForm: function() {
+      this.$store.dispatch('booking/SET_VALID_FORM', this.validForm);
+    }
+  }
 });
 </script>
 

@@ -107,15 +107,28 @@ export default Vue.extend({
       return this.$store.state.report.error;
     }
   },
+  mounted() {
+    //resetting everything when component mounts
+    this.step = 1;
+    this.resetReportInfo();
+    this.$store.dispatch('report/SET_STEP', 1);
+    this.$store.dispatch('report/SET_VALID_FORM', true);
+    this.$store.dispatch('report/SET_EDITED', false);
+  },
   methods: {
     nextStep(n: number) {
       this.step = ++n % (this.steps + 1);
+      this.$store.dispatch('report/SET_STEP', Number(this.$store.state.report.step) + 1);
     },
     prevStep(n: number) {
       this.step = --n % (this.steps + 1);
+      this.$store.dispatch('report/SET_STEP', Number(this.$store.state.report.step) - 1);
     },
     done() {
       this.$router.push(`/`);
+    },
+    resetReportInfo() {
+      this.$store.dispatch('report/SET_GAS_STATUS', 0);
     }
   }
 });

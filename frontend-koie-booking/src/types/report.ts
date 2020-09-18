@@ -5,3 +5,10 @@ export interface ReportData {
   steps: number;
   labels: Array<TranslateResult>;
 }
+
+export interface ReportSecondStepData {
+  gasStatus: number;
+  numberOfGasContainers: number;
+  edited: boolean;
+  validForm: boolean;
+}

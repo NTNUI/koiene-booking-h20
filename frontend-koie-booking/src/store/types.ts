@@ -75,6 +75,7 @@ export interface ReportState {
   isLoading: boolean;
   error: boolean;
   step: number;
+  gasStatus: number;
 }
 
 export interface AvalancheState {

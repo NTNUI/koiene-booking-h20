@@ -2,14 +2,28 @@
   <ErrorCard v-if="apiError" />
   <LoadingSpinner v-else-if="isLoading" />
   <v-layout v-else :class="$style.container" :dark="true">
-    <h1 :class="$style.heading">{{ $t('report.step4') }} {{ koieTitle }}</h1>
+    <h1 :class="$style.heading">{{ $t('report.step4') }}</h1>
   </v-layout>
 </template>
 
 <script lang="ts">
+import ErrorCard from '@/components/ErrorCard.vue';
+import LoadingSpinner from '@/components/LoadingSpinner.vue';
 import Vue from 'vue';
 export default Vue.extend({
-  name: 'ReportFourthStep'
+  name: 'ReportFourthStep',
+  components: {
+    ErrorCard,
+    LoadingSpinner
+  },
+  computed: {
+    apiError(): boolean {
+      return this.$store.state.koie.error;
+    },
+    isLoading(): boolean {
+      return this.$store.state.report.isLoading;
+    }
+  }
 });
 </script>
 

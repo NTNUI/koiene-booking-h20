@@ -3,7 +3,7 @@ import Vuex, { Module } from 'vuex';
 import { mutations } from './mutations';
 import { actions } from './actions';
 import { getters } from './getters';
-import { ReportState, RootState } from '../../../types';
+import { ReportState, RootState } from '@/store/types';
 
 Vue.use(Vuex);
 
@@ -12,7 +12,8 @@ export const state: ReportState = {
   edited: false,
   isLoading: false,
   error: false,
-  step: 1
+  step: 1,
+  gasStatus: 0
 };
 const namespaced: boolean = true;
 

@@ -2,7 +2,7 @@
   <ErrorCard v-if="apiError" />
   <LoadingSpinner v-else-if="isLoading" />
   <v-layout v-else :class="$style.container" :dark="true">
-    <h1 :class="$style.heading">{{ $t('report.reportTitle') }} {{ koieTitle }}</h1>
+    <h1 :class="$style.heading">{{ $t('report.reportTitle') }}</h1>
     <v-layout :class="$style.separator">
       <v-layout class="px-1">
         <p>{{ $t('report.reportDescription') }}</p>
@@ -12,12 +12,25 @@
 </template>
 
 <script lang="ts">
-import ErrorCard from '../components/ErrorCard.vue';
-import LoadingSpinner from '../components/LoadingSpinner.vue';
+import ErrorCard from '@/components/ErrorCard.vue';
+import LoadingSpinner from '@/components/LoadingSpinner.vue';
 import Vue from 'vue';
+import { component } from 'vue/types/umd';
 
 export default Vue.extend({
-  name: 'ReportFirstStep'
+  name: 'ReportFirstStep',
+  components: {
+    ErrorCard,
+    LoadingSpinner
+  },
+  computed: {
+    apiError(): boolean {
+      return this.$store.state.koie.error;
+    },
+    isLoading(): boolean {
+      return this.$store.state.koie.isLoading;
+    }
+  }
 });
 </script>
 

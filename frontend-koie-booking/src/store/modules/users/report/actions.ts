@@ -7,6 +7,9 @@ export const actions = {
   },
   SET_VALID_FORM: (ctx: any, valid: boolean): any => {
     ctx.commit('setValidForm', valid);
+  },
+  SET_GAS_STATUS: (ctx: any, status: number): any => {
+    ctx.commit('setGasStatus', status);
   }
 };
 

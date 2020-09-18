@@ -16,5 +16,8 @@ export const mutations: MutationTree<ReportState> = {
   },
   setError(state, error: boolean) {
     state.error = error;
+  },
+  setGasStatus(state, status: number) {
+    state.gasStatus = status;
   }
 };
