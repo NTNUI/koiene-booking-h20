@@ -59,9 +59,17 @@
     "step2": "Supplies",
     "step3": "Equipment",
     "step4": "Comments",
+    "reportTitle": "Digital Cabin Report",
+    "reportDescription": "The cabin group is run purely on volunteer work and we rely on your feedback to be able to run the cabins.",
     "next_button": "next",
     "back_button": "back",
-    "done_button": "done"
+    "done_button": "done",
+    "gass_level": "Was the gas empty?",
+    "full": "No, it was full",
+    "almost_empty": "No, it was almost empty",
+    "empty": "Yes, it was empty",
+    "not_sure": "I don't know",
+    "gas_bottles": "How many bottles of gas is at the cabin?"
   },
   "ntnui": {
     "home": "Home",
