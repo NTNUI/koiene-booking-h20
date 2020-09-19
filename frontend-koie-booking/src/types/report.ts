@@ -13,3 +13,9 @@ export interface ReportSecondStepData {
   woodLevel: number;
   woodLabels: Array<String>;
 }
+
+export interface ReportThirdStepData {
+  edited: boolean;
+  validForm: boolean;
+  equipment: Array<object>;
+}
