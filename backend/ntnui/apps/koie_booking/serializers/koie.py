@@ -13,7 +13,6 @@ class KoieSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = KoieModel
-        lookup_field = "slug"
 
         fields = "__all__"
 

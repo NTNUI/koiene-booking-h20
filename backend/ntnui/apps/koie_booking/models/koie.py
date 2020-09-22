@@ -54,6 +54,38 @@ class KoieModel(models.Model):
                 day.strftime("%Y-%m-%d")
             ] = self.number_of_beds - self.get_beds_available_for_day(day)
         return date_availability
+    
+    def get_beds_available_for_next_days(self, days):
+        """
+        This function returns a dictionary containing the possible booking-dates
+        with associated available number of beds.
+        Function uses help-functions below,
+        that goes through every date to find the beds occupied in a koie on each date.
+        """
+        date_availability = {}
+        for day in date_utils.get_daterange(
+            now().date(), (now().date() + timedelta(days=days))
+        ):
+            date_availability[
+                day.strftime("%Y-%m-%d")
+            ] = self.number_of_beds - self.get_beds_available_for_day(day)
+        return date_availability
+
+    def get_beds_available_in_date_range(self, fromDate, toDate):
+        """
+        This function returns a dictionary containing the possible booking-dates
+        with associated available number of beds.
+        Function uses help-functions below,
+        that goes through every date to find the beds occupied in a koie on each date.
+        """
+        date_availability = {}
+        for day in date_utils.get_daterange(
+            fromDate, toDate
+        ):
+            date_availability[
+                day.strftime("%Y-%m-%d")
+            ] = self.number_of_beds - self.get_beds_available_for_day(day)
+        return date_availability
 
     def get_beds_available_for_day(self, day):
         """
