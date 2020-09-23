@@ -5,5 +5,5 @@ from koie_report.views import ReportViewSet
 
 
 """ Include URL Patterns """
-urlpatterns = [path("reports/<int:pk>", ReportViewSet.as_view({'post' : 'create'}),name = 'koie_create'),
-path('reports/', ReportViewSet.as_view({'get' : 'list'}), name = "koie_list")]
+urlpatterns = [path("reports/<int:pk>", ReportViewSet.as_view({'post': 'create'}), name='koie_create'),
+               path('reports/', ReportViewSet.as_view({'get': 'list'}), name="koie_list")]
