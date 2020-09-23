@@ -11,7 +11,7 @@ import store from '@/store/index';
 export default Vue.extend({
   name: 'AllCabinsTable',
   mounted() {
-    store.dispatch('adminBookings/mountCabinsWithBookings', { startDate: '2020-09-23', endDate: '2020-09-30' });
+    store.dispatch('adminBookings/MOUNT_CABINS_WITH_BOOKINGS', { startDate: '2020-09-23', endDate: '2020-09-30' });
   }
 });
 </script>
