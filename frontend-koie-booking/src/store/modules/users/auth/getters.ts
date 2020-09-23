@@ -4,10 +4,10 @@ import { isLoggedIn } from '@/store/modules/users/auth/helpers';
 
 export const getters: GetterTree<AuthState, RootState> = {
   isAdmin(state): boolean {
-    return true; // isLoggedIn(state.tokens.access) && state.isAdmin;
+    return isLoggedIn(state.tokens.access) && state.isAdmin;
   },
   isLoggedIn(state): boolean {
-    return true; // isLoggedIn(state.tokens.access);
+    return isLoggedIn(state.tokens.access);
   },
   getToken(state): string | null {
     const { tokens } = state;
