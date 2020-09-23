@@ -96,7 +96,10 @@
       "candle_holders": "Candle holders",
       "fire_blanket": "Fire blanket",
       "fire_extinguisher": "Fire extinguisher"
-    }
+    },
+    "other_faults": "Did you see any other defects or missing items?",
+    "other_faults_label": "Other defects/missing items",
+    "other_faults_placeholder": "There was a noise when I tried to ..."
   },
   "ntnui": {
     "home": "Home",

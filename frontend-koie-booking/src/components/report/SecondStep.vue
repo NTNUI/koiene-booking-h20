@@ -71,7 +71,7 @@ export default Vue.extend({
       edited: false,
       validForm: true,
       gasIsFull: 0,
-      firewoodSupply: -1,
+      firewoodSupply: 2,
       firewoodSupplyLabels: [
         `${this.$t('report.firewood_supply_empty')}`,
         '',
@@ -79,7 +79,7 @@ export default Vue.extend({
         '',
         `${this.$t('report.firewood_supply_full')}`
       ],
-      choppedUpWoodSupply: -1,
+      choppedUpWoodSupply: 2,
       choppedUpSupplyLabels: [
         `${this.$t('report.chopped_up_wood_supply_empty')}`,
         '',

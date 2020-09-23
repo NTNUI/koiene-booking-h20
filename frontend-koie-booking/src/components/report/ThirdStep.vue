@@ -20,8 +20,8 @@
     </v-layout>
 
     <v-layout :class="$style.separator">
-      <h3 class="py-4" :class="$style.form">{{ $t('report.equipment_status') }}</h3>
       <v-form v-model="validForm" :class="$style.form">
+        <h3 class="py-4" :class="$style.form">{{ $t('report.equipment_status') }}</h3>
         <v-row justify="space-between">
           <v-col align-self="center" xs="2" sm="4">
             <strong>{{ $t('report.equipment_name') }}</strong>
@@ -46,15 +46,15 @@
         <v-row v-for="item in equipment" :key="item.name" dense justify="space-between">
           <v-col align-self="center" xs="2" sm="4">{{ item.name }}</v-col>
           <v-col align-self="center" xs="10" sm="6">
-            <v-radio-group v-model="item.status" hide-details="true" justify="center" row>
+            <v-radio-group v-model="item.value" hide-details="true" row :rules="equipmentRules(item.value)">
               <v-row>
-                <v-col align-self="center">
+                <v-col>
                   <v-radio :color="$scssVars.globalColorWarningLow"></v-radio>
                 </v-col>
-                <v-col align-self="center">
+                <v-col>
                   <v-radio :color="$scssVars.globalColorWarningConsiderable"></v-radio>
                 </v-col>
-                <v-col align-self="center">
+                <v-col>
                   <v-radio :color="$scssVars.globalColorWarningVeryHigh"></v-radio>
                 </v-col>
               </v-row>
@@ -62,6 +62,18 @@
           </v-col>
         </v-row>
       </v-form>
+    </v-layout>
+    <v-layout :class="$style.separator">
+      <h3 class="py-4" :class="$style.form">{{ $t('report.other_faults') }}</h3>
+      <v-layout class="px-4">
+        <v-text-field
+          v-model="otherFaults"
+          :label="$t('report.other_faults_label')"
+          :placeholder="$t('report.other_faults_placeholder')"
+          :class="$style.otherFaultsField"
+          @blur="setOtherFAults"
+        />
+      </v-layout>
     </v-layout>
   </v-layout>
 </template>
@@ -71,6 +83,7 @@ import ErrorCard from '@/components/ErrorCard.vue';
 import LoadingSpinner from '@/components/LoadingSpinner.vue';
 import { ReportThirdStepData } from '@/types/report';
 import Vue from 'vue';
+import { TranslateResult } from 'vue-i18n';
 export default Vue.extend({
   name: 'ReportThirdStep',
   components: {
@@ -110,9 +123,6 @@ export default Vue.extend({
     },
     isLoading(): boolean {
       return this.$store.state.koie.isLoading;
-    },
-    equipmentRules(): (true | string)[] {
-      return [this.equipment.length >= 0 || 'At least one item should be selected'];
     }
   },
   watch: {
@@ -123,6 +133,11 @@ export default Vue.extend({
   mounted() {
     this.edited = this.$store.state.report.edited;
     this.$store.dispatch('booking/SET_VALID_FORM', this.validForm);
+  },
+  methods: {
+    equipmentRules(itemValue: number): (true | string)[] {
+      return [itemValue >= 0 || 'Please select an item.'];
+    }
   }
 });
 </script>
@@ -158,5 +173,9 @@ export default Vue.extend({
   display: flex;
   width: 100%;
   align-items: center;
+}
+.otherFaultsField {
+  width: 100%;
+  padding-right: 10px;
 }
 </style>
