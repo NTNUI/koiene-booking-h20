@@ -40,7 +40,10 @@ describe('Component SideBarBottom.vue', () => {
       localVue,
       vuetify,
       store,
-
+      provide: {
+        getCurrentView: () => null,
+        setCurrentView: (index: number) => null
+      }
     });
 
     // Assert

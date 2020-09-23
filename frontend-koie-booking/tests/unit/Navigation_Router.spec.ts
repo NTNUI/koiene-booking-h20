@@ -19,10 +19,10 @@ describe('Router navigationGuard.vue', () => {
 
   it('Send to requested path if logged in ', async () => {
     const to = {
-      matched: [{ meta: { requiresAuth: true } }],
+      matched: [{ meta: { requiresAuth: true, requiresAdmin: false } }],
       path: '/booking/flåkoia'
     };
-    jest.doMock('@/store', () => ({ getters: { 'auth/getToken': true } }));
+    jest.doMock('@/store', () => ({ getters: { 'auth/isLoggedIn': true, 'auth/isAdmin': false } }));
     const { beforeEach } = require('@/router');
     const next = jest.fn();
 

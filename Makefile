@@ -39,17 +39,31 @@ force-makemigrations: ##@Docker Forcibly perform makemigrations on the separate 
 	$(foreach app,$(filter-out __pycache__ common, $(APPDIR)),docker-compose run backend python manage.py makemigrations ($(app) &))
 	@echo "Migrations completed successfully"
 
-migrate: ##@Docker Perform migrations to database
-	docker-compose run backend python manage.py migrate
-	@echo "Migrate completed successfully"
 
 dev-clean-install: ##@TestEnv Delete the old database and re-apply testdata
 	docker-compose down -v
 	docker-compose build
-	make force-makemigrations
+	make makemigrations-koie
+	make fake-migrate
 	make migrate
 	make load-data
 	make start
+
+makemigrations-koie: ##$Docker Set up migrations files for koie_booking app
+	docker-compose run backend python manage.py makemigrations koie_booking
+	@echo "Migrations have been made for koie_booking"
+	docker-compose run backend python manage.py makemigrations koie_report
+	@echo "Migrations have been made for koie_report"
+fake-migrate: ##@Docker Fake migrations for existing table instances
+	docker-compose run backend python manage.py migrate --fake accounts
+	docker-compose run backend python manage.py migrate --fake groups
+	docker-compose run backend python manage.py migrate --fake payments
+	@echo "Fake migrations have been successfully migrated"
+migrate: ##@Docker Perform migrations to database
+	docker-compose run backend python manage.py migrate koie_booking
+	@echo "Migrate completed successfully"
+	docker-compose run backend python manage.py migrate koie_report
+	@echo "Migrate completed successfully for koiene_report"
 
 clean: ##@TestEnv Delete the project files in docker, and all not in use containers
 	docker-compose down -v

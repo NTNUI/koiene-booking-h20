@@ -17,7 +17,8 @@ export default Vue.extend({
   components: { AdminContentView, SideBar },
   provide() {
     return {
-      updateView: (index: number) => {
+      getCurrentView: () => this.currentView,
+      setCurrentView: (index: number) => {
         this.updateView(index);
       }
     };
