@@ -5,8 +5,7 @@
       <v-row justify="center">
         <v-col cols="2">
           <v-menu
-            v-model="dateMenu"
-            :close-on-content-click="false"
+            :close-on-content-click="true"
             :nudge-right="20"
             :nudgeTop="20"
             :first-day-of-week="1"
@@ -18,7 +17,7 @@
           >
             <template v-slot:activator="{ on, attrs }">
               <v-text-field
-                v-model="date"
+                v-model="date1"
                 label="Select starting date"
                 prepend-icon="event"
                 readonly
@@ -26,60 +25,86 @@
                 v-on="on"
               ></v-text-field>
             </template>
-            <v-date-picker v-model="date" @input="dateMenu = false"></v-date-picker>
+            <v-date-picker v-model="date1" @input="selectDate"></v-date-picker>
           </v-menu>
         </v-col>
       </v-row>
       <!-- Date selction menu bar -->
       <v-row>
-        <v-col cols="3">
+        <!-- Buttons for back in time -->
+        <v-col cols="2">
           <v-row justify="space-around">
-            <v-btn class="navBtn" small height="50px" width="23%">
-              -1 year
+            <v-btn class="navBtn" height="50px" width="23%" @click="date1 = addToDate(-1, 'year')">
+              -1 y
             </v-btn>
-            <v-btn class="navBtn" small height="50px" width="23%">
-              -1 month
+            <v-btn class="navBtn" height="50px" width="23%" @click="date1 = addToDate(-1, 'month')">
+              -1 m
             </v-btn>
-            <v-btn class="navBtn" small height="50px" width="23%">
-              -1 week
+            <v-btn class="navBtn" height="50px" width="23%" @click="date1 = addToDate(-1, 'week')">
+              -1 w
             </v-btn>
-            <v-btn class="navBtn" small height="50px" width="23%">
-              -1 day
+            <v-btn class="navBtn" height="50px" width="23%" @click="date1 = addToDate(-1, 'day')">
+              -1 d
             </v-btn>
           </v-row>
         </v-col>
         <!-- Show dates and day of week here -->
-        <v-col justify="center" cols="6">
-          <v-card class="pa-3" outlined tile>Dates go here</v-card>
+        <v-col v-for="d in 7" :key="d" class="px-1">
+          <v-card class="py-0" outlined tile>
+            {{ formatDate(addToDate(d - 1, 'day'), 'dddd') }}
+            <br />
+            {{ addToDate(d - 1, 'day') }}
+          </v-card>
         </v-col>
         <!-- Buttons for forward in time -->
-        <v-col cols="3">
+        <v-col cols="2">
           <v-row justify="space-around">
-            <v-btn class="navBtn" small height="50px" width="23%">
-              +1 day
+            <v-btn class="navBtn" height="50px" width="23%" @click="date1 = addToDate(1, 'day')">
+              +1 d
             </v-btn>
-            <v-btn class="navBtn" small height="50px" width="23%">
-              +1 week
+            <v-btn class="navBtn" height="50px" width="23%" @click="date1 = addToDate(1, 'week')">
+              +1 w
             </v-btn>
-            <v-btn class="navBtn" small height="50px" width="23%">
-              +1 month
+            <v-btn class="navBtn" height="50px" width="23%" @click="date1 = addToDate(1, 'month')">
+              +1 m
             </v-btn>
-            <v-btn class="navBtn" small height="50px" width="23%">
-              +1 year
+            <v-btn class="navBtn" height="50px" width="23%" @click="date1 = addToDate(1, 'year')">
+              +1 y
             </v-btn>
           </v-row>
         </v-col>
       </v-row>
     </v-col>
-    <!-- Buttons for back in time -->
   </v-row>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
+import * as dayjs from 'dayjs';
+dayjs().format();
 
 export default Vue.extend({
-  name: 'AllCabinsTable'
+  name: 'AllCabinsTable',
+
+  data() {
+    return {
+      date1: dayjs().format('YYYY-MM-DD')
+    };
+  },
+
+  methods: {
+    selectDate(date: string): void {
+      console.log('Updated date through date picker to ' + date);
+    },
+    addToDate(howMany: number, what: dayjs.OpUnitType): string {
+      let date: dayjs.Dayjs = dayjs(this.date1 + 'T00:00:00.000Z');
+      return date.add(howMany, what).format('YYYY-MM-DD');
+    },
+    formatDate(dateISO: string, formatString: string): string {
+      let date: dayjs.Dayjs = dayjs(dateISO + 'T00:00:00.000Z');
+      return date.format(formatString);
+    }
+  }
 });
 </script>
 
