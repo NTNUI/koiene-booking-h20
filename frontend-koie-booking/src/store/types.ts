@@ -75,8 +75,22 @@ export interface ReportState {
   isLoading: boolean;
   error: boolean;
   step: number;
-  gasStatus: number;
-  woodLevel: number;
+  gasIsFull: boolean;
+  woodSupply: number;
+  reportData: ReportInfo;
+}
+
+export interface ReportInfo {
+  id: number;
+  user: number;
+  koie: string;
+  gasIsFull: boolean;
+  woodSupply: number;
+}
+
+export interface CreateReportInfo {
+  gasIsFull: boolean;
+  woodSupply: number;
 }
 
 export interface AvalancheState {

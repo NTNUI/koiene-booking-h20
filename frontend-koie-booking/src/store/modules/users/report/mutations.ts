@@ -1,5 +1,5 @@
 import { MutationTree } from 'vuex';
-import { ReportState } from '../../../types';
+import { ReportState, ReportInfo } from '../../../types';
 
 export const mutations: MutationTree<ReportState> = {
   setStep(state, step: number) {
@@ -17,10 +17,13 @@ export const mutations: MutationTree<ReportState> = {
   setError(state, error: boolean) {
     state.error = error;
   },
-  setGasStatus(state, status: number) {
-    state.gasStatus = status;
+  setGasIsEmpty(state, isEmpty: boolean) {
+    state.gasIsFull = isEmpty;
   },
-  setWoodLevel(state, level: number) {
-    state.woodLevel = level;
+  setWoodSupply(state, supply: number) {
+    state.woodSupply = supply;
+  },
+  setReport(state, report: ReportInfo) {
+    state.reportData = report;
   }
 };

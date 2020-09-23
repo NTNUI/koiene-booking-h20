@@ -9,9 +9,9 @@ export interface ReportData {
 export interface ReportSecondStepData {
   edited: boolean;
   validForm: boolean;
-  gasStatus: number;
-  woodLevel: number;
-  woodLabels: Array<String>;
+  gasIsFull: number;
+  woodSupply: number;
+  woodSupplyLabels: Array<String>;
 }
 
 export interface ReportThirdStepData {

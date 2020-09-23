@@ -5,40 +5,29 @@
     <h1 :class="$style.heading">{{ $t('report.step3') }}</h1>
     <v-layout :class="$style.separator">
       <v-form v-model="validForm" :class="$style.form">
-        <v-data-table
-          class="transparent"
-          disable-sort
-          disable-filtering
-          disable-pagination
-          hide-default-footer
-          :headers="equipmentHeaders"
-          :items="equipment"
-        >
-          <template v-slot:[`item.status[0]`]="{ item }">
-            <v-checkbox
-              v-model="item.status[0]"
-              class="align-center justify-center"
-              on-icon="$radioOn"
-              off-icon="$radioOff"
-            ></v-checkbox>
-          </template>
-          <template v-slot:[`item.status[1]`]="{ item }">
-            <v-checkbox
-              v-model="item.status[1]"
-              class="align-center justify-center"
-              on-icon="$radioOn"
-              off-icon="$radioOff"
-            ></v-checkbox>
-          </template>
-          <template v-slot:[`item.status[2]`]="{ item }">
-            <v-checkbox
-              v-model="item.status[2]"
-              class="align-center justify-center"
-              on-icon="$radioOn"
-              off-icon="$radioOff"
-            ></v-checkbox>
-          </template>
-        </v-data-table>
+        <v-list class="transparent">
+          <v-row>
+            <v-col align-self="center" xs="2">Item</v-col>
+            <v-col align-self="center" xs="10">
+              <v-col xs="4">Ok</v-col>
+              <v-col xs="4">Not sure</v-col>
+              <v-col xs="4">Broken/missing</v-col>
+            </v-col>
+          </v-row>
+
+          <v-row v-for="item in equipment" :key="item.name" justify="space-around">
+            <v-col align-self="center" xs="4">{{ item.name }}</v-col>
+            <v-col align-self="center" xs="8">
+              <v-radio-group v-model="item.status" row>
+                <v-row>
+                  <v-col xs="4"><v-radio></v-radio></v-col>
+                  <v-col xs="4"><v-radio></v-radio></v-col>
+                  <v-col xs="4"><v-radio></v-radio></v-col>
+                </v-row>
+              </v-radio-group>
+            </v-col>
+          </v-row>
+        </v-list>
       </v-form>
     </v-layout>
   </v-layout>
@@ -60,21 +49,21 @@ export default Vue.extend({
       edited: false,
       validForm: true,
       equipment: [
-        { name: 'Gas Burner/Primus', status: [true, false, false] },
-        { name: 'Axe', status: [true, false, false] },
-        { name: 'Saw', status: [true, false, false] },
-        { name: 'Saw blade', status: [true, false, false] },
-        { name: 'Spade', status: [true, false, false] },
-        { name: 'Kerosene lamp', status: [true, false, false] },
-        { name: 'Saw bench', status: [true, false, false] },
-        { name: 'Detergent', status: [true, false, false] },
-        { name: 'Plates, cups, and cutlery', status: [true, false, false] },
-        { name: 'Pots and frying pan', status: [true, false, false] },
-        { name: 'Cabin book', status: [true, false, false] },
-        { name: 'Hammer', status: [true, false, false] },
-        { name: 'Fire blanket', status: [true, false, false] },
-        { name: 'Fire extinguisher', status: [true, false, false] },
-        { name: 'Candle holders', status: [true, false, false] }
+        { name: 'Gas Burner/Primus', status: -1 },
+        { name: 'Axe', status: -1 },
+        { name: 'Saw', status: -1 },
+        { name: 'Saw blade', status: -1 },
+        { name: 'Spade', status: -1 },
+        { name: 'Kerosene lamp', status: -1 },
+        { name: 'Saw bench', status: -1 },
+        { name: 'Detergent', status: -1 },
+        { name: 'Plates, cups, and cutlery', status: -1 },
+        { name: 'Pots and frying pan', status: -1 },
+        { name: 'Cabin book', status: -1 },
+        { name: 'Hammer', status: -1 },
+        { name: 'Fire blanket', status: -1 },
+        { name: 'Fire extinguisher', status: -1 },
+        { name: 'Candle holders', status: -1 }
       ]
     };
   },
@@ -90,31 +79,6 @@ export default Vue.extend({
     },
     equipmentRules(): (true | string)[] {
       return [this.equipment.length >= 0 || 'At least one item should be selected'];
-    },
-    equipmentHeaders() {
-      return [
-        {
-          text: 'Item',
-          align: 'start',
-          sortable: false,
-          value: 'name'
-        },
-        {
-          text: 'Ok',
-          align: 'center',
-          value: 'status[0]'
-        },
-        {
-          text: 'Uncertain',
-          align: 'center',
-          value: 'status[1]'
-        },
-        {
-          text: 'Missing/broken',
-          align: 'center',
-          value: 'status[2]'
-        }
-      ];
     }
   },
   watch: {

@@ -52,7 +52,6 @@
     "error_msg": "Something went wrong.",
     "payment_completed": "Payment Completed",
     "receipt_text": "Your payment is completed and further information about your stay has been sent to your e-mail."
-
   },
   "report": {
     "step1": "Info",
@@ -64,12 +63,12 @@
     "next_button": "next",
     "back_button": "back",
     "done_button": "done",
-    "gass_level": "Was the gas empty?",
-    "full": "No, it was full",
-    "almost_empty": "No, it was almost empty",
-    "empty": "Yes, it was empty",
-    "not_sure": "I don't know",
-    "wood_level": "How much firewood was there at the cabin?"
+    "gass_is_full": "Was the gas full?",
+    "gass_full": "Yes, it was full",
+    "gass_empty": "No, it was empty",
+    "wood_supply": "How much firewood was there at the cabin?",
+    "wood_supply_empty": "No logs",
+    "wood_supply_full": "A lot of logs"
   },
   "ntnui": {
     "home": "Home",
@@ -105,7 +104,7 @@
       "introText": "Choose email or phone and enter what you have registered with SIT. If you choose phone number, we will print the email registered to this number."
     }
   },
-  "avalanche":{
+  "avalanche": {
     "error_msg": "Booking is disabled due to avalanche danger.",
     "warningTypes": {
       "low": "Low",

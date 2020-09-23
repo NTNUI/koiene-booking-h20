@@ -5,36 +5,33 @@
     <h1 :class="$style.heading">{{ $t('report.step2') }}</h1>
     <v-form v-model="validForm" :class="$style.form">
       <v-layout :class="$style.separator">
-        <h3 class="py-4" :class="$style.supplyRegistration">{{ $t('report.gass_level') }}</h3>
+        <h3 class="py-4" :class="$style.supplyRegistration">{{ $t('report.gass_is_full') }}</h3>
         <v-layout class="px-4">
           <v-radio-group
-            v-model="gasStatus"
+            v-model="gasIsFull"
+            mandatory
             required
-            hide-details="false"
-            :rules="gasRules"
             :color="$scssVars.globalColorBackgroundLight"
-            @blur="setGuests"
+            @blur="setGasIsFull"
           >
-            <v-radio :label="$t('report.full')"></v-radio>
-            <v-radio :label="$t('report.almost_empty')"></v-radio>
-            <v-radio :label="$t('report.empty')"></v-radio>
-            <v-radio :label="$t('report.not_sure')"></v-radio>
+            <v-radio :label="$t('report.gass_full')"></v-radio>
+            <v-radio :label="$t('report.gass_empty')"></v-radio>
           </v-radio-group>
         </v-layout>
       </v-layout>
       <v-layout :class="$style.separator">
-        <h3 class="py-4" :class="$style.supplyRegistration">{{ $t('report.wood_level') }}</h3>
+        <h3 class="py-4" :class="$style.supplyRegistration">{{ $t('report.wood_supply') }}</h3>
         <v-layout class="px-4">
           <v-slider
-            v-model="woodLevel"
+            v-model="woodSupply"
             required
-            :rules="woodRules"
-            :tick-labels="woodLabels"
+            :rules="woodSupply"
+            :tick-labels="woodSupplyLabels"
             :max="4"
             step="1"
             ticks="always"
             tick-size="5"
-            @blur="setWoodLevel"
+            @blur="setWoodSupply"
           ></v-slider>
         </v-layout>
       </v-layout>
@@ -57,9 +54,9 @@ export default Vue.extend({
     return {
       edited: false,
       validForm: true,
-      gasStatus: -1,
-      woodLevel: -1,
-      woodLabels: ['No logs', '', '', '', 'A lot of logs']
+      gasIsFull: 1,
+      woodSupply: -1,
+      woodSupplyLabels: [`${t('report.wood_supply_empty')}`, '', '', '', `${t('report.wood_supply_full')}`]
     };
   },
   computed: {
@@ -72,16 +69,12 @@ export default Vue.extend({
     isLoading(): boolean {
       return this.$store.state.koie.isLoading;
     },
-    gasRules(): (true | string)[] {
-      return [this.gasStatus >= 0 || 'At least one item should be selected'];
-    },
-    woodRules(): (true | string)[] {
-      return [this.woodLevel >= 0 || 'At least one item should be selected'];
+    woodSupplyRules(): (true | string)[] {
+      return [this.woodSupply >= 0 || 'At least one item should be selected'];
     }
   },
   watch: {
     validForm: function() {
-      console.log(this.gasStatus);
       this.$store.dispatch('report/SET_VALID_FORM', this.validForm);
     }
   },
@@ -90,12 +83,13 @@ export default Vue.extend({
     this.$store.dispatch('booking/SET_VALID_FORM', this.validForm);
   },
   methods: {
-    setGasStatus() {
-      this.$store.dispatch('report/SET_GAS_STATUS', this.gasStatus);
+    setGasIsFull() {
+      console.log(this.gasIsFull);
+      this.$store.dispatch('report/SET_GAS_IS_EMPTY', this.gasIsFull);
       this.$store.dispatch('report/SET_EDITED', true);
     },
-    setWoodLevel() {
-      this.$store.dispatch('report/SET_WOOD_LEVEL', this.woodLevel);
+    setWoodSupply() {
+      this.$store.dispatch('report/SET_WOOD_SUPPLY', this.woodSupply);
       this.$store.dispatch('report/SET_EDITED', true);
     }
   }
