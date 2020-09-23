@@ -15,8 +15,11 @@ export const actions = {
   SET_GAS_IS_EMPTY: (ctx: any, status: number): any => {
     ctx.commit('setGasIsEmpty', status);
   },
-  SET_WOOD_SUPPLY: (ctx: any, level: number): any => {
-    ctx.commit('setWoodSupply', level);
+  SET_FIREWOOD_SUPPLY: (ctx: any, supply: number): any => {
+    ctx.commit('setFirewoodSupply', supply);
+  },
+  SET_CHPOPPED_UP_WOOD_SUPPLY: (ctx: any, supply: number): any => {
+    ctx.commit('setChoppedUpWoodSupply', supply);
   },
   CREATE_REPORT: (ctx: any, values: CreateReportInfo): any => {
     const headers = { 'content-type': 'application/json' }; //, Authorization: ''

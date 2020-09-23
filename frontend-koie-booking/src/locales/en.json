@@ -66,9 +66,12 @@
     "gass_is_full": "Was the gas full?",
     "gass_full": "Yes, it was full",
     "gass_empty": "No, it was empty",
-    "wood_supply": "How much firewood was there at the cabin?",
-    "wood_supply_empty": "No logs",
-    "wood_supply_full": "A lot of logs"
+    "firewood_supply": "How much firewood was there at the cabin?",
+    "firewood_supply_empty": "No logs",
+    "firewood_supply_full": "A lot of logs",
+    "chopped_up_wood_supply": "Did you find a lot of chopped up wood at the cabin?",
+    "chopped_up_wood_supply_empty": "No chopped up wood",
+    "chopped_up_wood_supply_full": "A lot of chopped up wood"
   },
   "ntnui": {
     "home": "Home",

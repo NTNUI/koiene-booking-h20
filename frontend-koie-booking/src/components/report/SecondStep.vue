@@ -20,18 +20,34 @@
         </v-layout>
       </v-layout>
       <v-layout :class="$style.separator">
-        <h3 class="py-4" :class="$style.supplyRegistration">{{ $t('report.wood_supply') }}</h3>
+        <h3 class="py-4" :class="$style.form">{{ $t('report.firewood_supply') }}</h3>
         <v-layout class="px-4">
           <v-slider
-            v-model="woodSupply"
+            v-model="firewoodSupply"
             required
-            :rules="woodSupply"
-            :tick-labels="woodSupplyLabels"
+            :rules="firewoodSupplyRules"
+            :tick-labels="firewoodSupplyLabels"
             :max="4"
             step="1"
             ticks="always"
             tick-size="5"
-            @blur="setWoodSupply"
+            @blur="setFirewoodSupply"
+          ></v-slider>
+        </v-layout>
+      </v-layout>
+      <v-layout :class="$style.separator">
+        <h3 class="py-4" :class="$style.form">{{ $t('report.chopped_up_wood_supply') }}</h3>
+        <v-layout class="px-4">
+          <v-slider
+            v-model="choppedUpWoodSupply"
+            required
+            :rules="firewoodSupply"
+            :tick-labels="choppedUpSupplyLabels"
+            :max="4"
+            step="1"
+            ticks="always"
+            tick-size="5"
+            @blur="setChoppedUpWoodSupply"
           ></v-slider>
         </v-layout>
       </v-layout>
@@ -55,8 +71,22 @@ export default Vue.extend({
       edited: false,
       validForm: true,
       gasIsFull: 1,
-      woodSupply: -1,
-      woodSupplyLabels: [`${t('report.wood_supply_empty')}`, '', '', '', `${t('report.wood_supply_full')}`]
+      firewoodSupply: -1,
+      firewoodSupplyLabels: [
+        `${this.$t('report.firewood_supply_empty')}`,
+        '',
+        '',
+        '',
+        `${this.$t('report.firewood_supply_full')}`
+      ],
+      choppedUpWoodSupply: -1,
+      choppedUpSupplyLabels: [
+        `${this.$t('report.chopped_up_wood_supply_empty')}`,
+        '',
+        '',
+        '',
+        `${this.$t('report.chopped_up_wood_supply_full')}`
+      ]
     };
   },
   computed: {
@@ -68,9 +98,6 @@ export default Vue.extend({
     },
     isLoading(): boolean {
       return this.$store.state.koie.isLoading;
-    },
-    woodSupplyRules(): (true | string)[] {
-      return [this.woodSupply >= 0 || 'At least one item should be selected'];
     }
   },
   watch: {
@@ -88,8 +115,12 @@ export default Vue.extend({
       this.$store.dispatch('report/SET_GAS_IS_EMPTY', this.gasIsFull);
       this.$store.dispatch('report/SET_EDITED', true);
     },
-    setWoodSupply() {
-      this.$store.dispatch('report/SET_WOOD_SUPPLY', this.woodSupply);
+    setFirewoodSupply() {
+      this.$store.dispatch('report/SET_FIREWOOD_SUPPLY', this.firewoodSupply);
+      this.$store.dispatch('report/SET_EDITED', true);
+    },
+    setChoppedUpWoodSupply() {
+      this.$store.dispatch('report/SET_CHOPPED_UP_WOOD_SUPPLY', this.choppedUpWoodSupply);
       this.$store.dispatch('report/SET_EDITED', true);
     }
   }
@@ -115,8 +146,7 @@ export default Vue.extend({
 .separator > h3 {
   padding: 16px;
 }
-.form,
-.supplyRegistration {
+.form {
   padding-left: 16px;
   padding-right: 16px;
   @media only screen and (max-width: 600px) {

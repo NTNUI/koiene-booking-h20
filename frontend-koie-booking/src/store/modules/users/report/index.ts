@@ -15,12 +15,14 @@ export const state: ReportState = {
   step: 1,
   gasIsFull: true,
   woodSupply: -1,
+  choppedUpWoodSupply: -1,
   reportData: {
     id: 0,
     user: 0,
     koie: '',
     gasIsFull: true,
-    woodSupply: -1
+    woodSupply: -1,
+    choppedUpWoodSupply: -1
   }
 };
 const namespaced: boolean = true;

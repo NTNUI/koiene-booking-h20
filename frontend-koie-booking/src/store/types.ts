@@ -77,6 +77,7 @@ export interface ReportState {
   step: number;
   gasIsFull: boolean;
   woodSupply: number;
+  choppedUpWoodSupply: number;
   reportData: ReportInfo;
 }
 
@@ -86,11 +87,13 @@ export interface ReportInfo {
   koie: string;
   gasIsFull: boolean;
   woodSupply: number;
+  choppedUpWoodSupply: number;
 }
 
 export interface CreateReportInfo {
   gasIsFull: boolean;
   woodSupply: number;
+  choppedUpWoodSupply: number;
 }
 
 export interface AvalancheState {

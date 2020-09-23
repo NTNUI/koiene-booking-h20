@@ -10,8 +10,10 @@ export interface ReportSecondStepData {
   edited: boolean;
   validForm: boolean;
   gasIsFull: number;
-  woodSupply: number;
-  woodSupplyLabels: Array<String>;
+  firewoodSupply: number;
+  firewoodSupplyLabels: Array<String>;
+  choppedUpWoodSupply: number;
+  choppedUpSupplyLabels: Array<String>;
 }
 
 export interface ReportThirdStepData {

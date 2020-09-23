@@ -5,29 +5,35 @@
     <h1 :class="$style.heading">{{ $t('report.step3') }}</h1>
     <v-layout :class="$style.separator">
       <v-form v-model="validForm" :class="$style.form">
-        <v-list class="transparent">
-          <v-row>
-            <v-col align-self="center" xs="2">Item</v-col>
-            <v-col align-self="center" xs="10">
-              <v-col xs="4">Ok</v-col>
-              <v-col xs="4">Not sure</v-col>
-              <v-col xs="4">Broken/missing</v-col>
-            </v-col>
-          </v-row>
+        <v-row justify="space-between">
+          <v-col align-self="center" xs="2" sm="4">Item</v-col>
+          <v-col align-self="center" xs="10" sm="6">
+            <v-row>
+              <v-col align-self="center">Ok</v-col>
+              <v-col style="white-space: nowrap" align-self="center">Not sure</v-col>
+              <v-col align-self="center">Broken/missing</v-col>
+            </v-row>
+          </v-col>
+        </v-row>
 
-          <v-row v-for="item in equipment" :key="item.name" justify="space-around">
-            <v-col align-self="center" xs="4">{{ item.name }}</v-col>
-            <v-col align-self="center" xs="8">
-              <v-radio-group v-model="item.status" row>
-                <v-row>
-                  <v-col xs="4"><v-radio></v-radio></v-col>
-                  <v-col xs="4"><v-radio></v-radio></v-col>
-                  <v-col xs="4"><v-radio></v-radio></v-col>
-                </v-row>
-              </v-radio-group>
-            </v-col>
-          </v-row>
-        </v-list>
+        <v-row v-for="item in equipment" :key="item.name" dense justify="space-between">
+          <v-col align-self="center" xs="2" sm="4">{{ item.name }}</v-col>
+          <v-col align-self="center" xs="10" sm="6">
+            <v-radio-group v-model="item.status" hide-details="true" justify="center" row>
+              <v-row>
+                <v-col align-self="center">
+                  <v-radio :color="$scssVars.globalColorWarningLow"></v-radio>
+                </v-col>
+                <v-col align-self="center">
+                  <v-radio :color="$scssVars.globalColorWarningConsiderable"></v-radio>
+                </v-col>
+                <v-col align-self="center">
+                  <v-radio :color="$scssVars.globalColorWarningVeryHigh"></v-radio>
+                </v-col>
+              </v-row>
+            </v-radio-group>
+          </v-col>
+        </v-row>
       </v-form>
     </v-layout>
   </v-layout>

@@ -20,7 +20,10 @@ export const mutations: MutationTree<ReportState> = {
   setGasIsEmpty(state, isEmpty: boolean) {
     state.gasIsFull = isEmpty;
   },
-  setWoodSupply(state, supply: number) {
+  setFirewoodSupply(state, supply: number) {
+    state.woodSupply = supply;
+  },
+  setChoppedUpWoodSupply(state, supply: number) {
     state.woodSupply = supply;
   },
   setReport(state, report: ReportInfo) {
