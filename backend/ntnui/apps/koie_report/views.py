@@ -1,5 +1,5 @@
 from koie_report.models import KoieReportModel
-from koie_report.serializers.report_serializer import ReportSerializer
+from koie_report.report_serializer import ReportSerializer
 from koie_booking.models.booking import BookingModel
 from rest_framework import mixins, viewsets
 from rest_framework.response import Response
