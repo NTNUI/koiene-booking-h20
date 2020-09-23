@@ -3,7 +3,6 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 
 from koie_booking.models.koie import KoieModel
-from koie_booking.serializers.koie import KoieSerializer
 from koie_booking.serializers.all_koier_detailed import KoierDetailedSerializer, KoierDetailedRangeSerializer
 
 from django.utils.translation import gettext as _

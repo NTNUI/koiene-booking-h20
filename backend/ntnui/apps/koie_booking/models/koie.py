@@ -58,7 +58,7 @@ class KoieModel(models.Model):
     def get_beds_available_for_next_days(self, days):
         """
         This function returns a dictionary containing the possible booking-dates
-        with associated available number of beds.
+        with associated available number of beds for the next specified amount of days.
         Function uses help-functions below,
         that goes through every date to find the beds occupied in a koie on each date.
         """
@@ -74,7 +74,8 @@ class KoieModel(models.Model):
     def get_beds_available_in_date_range(self, fromDate, toDate):
         """
         This function returns a dictionary containing the possible booking-dates
-        with associated available number of beds.
+        with associated available number of beds within the given daterange.
+        Dates must be provided as datetime.date object.
         Function uses help-functions below,
         that goes through every date to find the beds occupied in a koie on each date.
         """
