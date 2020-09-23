@@ -11,4 +11,6 @@ class ReportSerializer(serializers.ModelSerializer):
                   "axe", "hammer", "saw", "saw_blade", "saw_bench", "spade",
                   "kerosene_lamp", "detergent", "dishware", "cookware",
                   "cabin_book", "candle_holders", "fire_blanket",
-                  "fire_extinguisher"]
+                  "fire_extinguisher", "boat_status", "canoe_status",
+                  "life_jackets_status", "other_faults"
+                  "chopped_up_wood"]

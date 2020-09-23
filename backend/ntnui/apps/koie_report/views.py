@@ -14,7 +14,8 @@ class ReportViewSet(viewsets.GenericViewSet, mixins.ListModelMixin
         serializer = ReportSerializer(data=request.data)
         booking = BookingModel.objects.get(pk=pk)
         if serializer.is_valid():
-            report = KoieReportModel.objects.create(booking=booking, **serializer.validated_data)
+            report = KoieReportModel.objects.create(
+                booking=booking, **serializer.validated_data)
             report.save()
             return Response(serializer.data, status=201)
         return Response(serializer.errors, status=400)

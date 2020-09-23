@@ -1,6 +1,5 @@
 from django.db import models
 from koie_booking.models.booking import BookingModel
-# Create your models here.
 
 
 class KoieReportModel(models.Model):
@@ -28,13 +27,12 @@ class KoieReportModel(models.Model):
 
     booking = models.ForeignKey(BookingModel, on_delete=models.CASCADE)
     date_created_at = models.DateField(auto_now=True)
-    feedback = models.TextField(blank=True)
+    feedback = models.TextField(blank=True, null=True)
 
-    wood = models.IntegerField(choices=WOOD_SUPPLY)
+    firewood = models.IntegerField(choices=WOOD_SUPPLY)
+    chopped_up_wood = models.IntegerField(choices=WOOD_SUPPLY)
     smoke_detector_is_working = models.BooleanField(default=True)
     gas_is_full = models.BooleanField(default=True)
-
-    # Equipment status
 
     gas_burner_primus = models.IntegerField(choices=EQUIPMENT_STATUS)
     axe = models.IntegerField(choices=EQUIPMENT_STATUS)
@@ -51,6 +49,36 @@ class KoieReportModel(models.Model):
     candle_holders = models.IntegerField(choices=EQUIPMENT_STATUS)
     fire_blanket = models.IntegerField(choices=EQUIPMENT_STATUS)
     fire_extinguisher = models.IntegerField(choices=EQUIPMENT_STATUS)
+    other_faults = models.TextField(null=True, blank=True)
+
+    NO_FAULTS = 0
+    BROKEN = 1
+    MISSING_PADDLES = 2
+    MISSING_BOAT_OR_CANOE = 3
+    NOT_USED = 4
+    BOAT_CANOE_STATUS = [
+        (NO_FAULTS, 'No faults'),
+        (BROKEN, 'Broken / can not use'),
+        (MISSING_PADDLES, 'Missing paddles'),
+        (MISSING_BOAT_OR_CANOE, 'Missing boat'),
+        (NOT_USED, 'Did not use/do not know')
+    ]
+    boat_status = models.IntegerField(choices=BOAT_CANOE_STATUS)
+    canoe_status = models.IntegerField(choices=BOAT_CANOE_STATUS)
+    NO_FAULTS_LIFE_JACKET = 0
+    BROKEN_LIFE_JACKET = 1
+    MISSING_LIFE_JACKET = 2
+    NOT_USED_LIFE_JACKET = 3
+
+    LIFE_JACKET_STATUS = [
+        (NO_FAULTS_LIFE_JACKET, 'No faults'),
+        (BROKEN_LIFE_JACKET, 'Broken / can not use'),
+        (MISSING_LIFE_JACKET, 'Missing life jackets or too few'),
+        (NOT_USED_LIFE_JACKET, 'Did not use/ do not know'),
+    ]
+    life_jackets_status = models.IntegerField(
+        choices=LIFE_JACKET_STATUS
+    )
 
     class Meta:
         """ Configure the name displayed in the admin panel """
