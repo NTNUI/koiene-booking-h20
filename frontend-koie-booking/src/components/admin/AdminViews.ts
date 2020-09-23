@@ -1,4 +1,4 @@
-import { AdminView } from '@/types/admin';
+import { AdminView } from '@/types/admin/AdminView';
 import AllCabinsTable from '@/components/admin/allCabinsTable/AllCabinsTable.vue';
 import Reports from '@/components/admin/reports/Reports.vue';
 
