@@ -70,7 +70,7 @@ export default Vue.extend({
     return {
       edited: false,
       validForm: true,
-      gasIsFull: 1,
+      gasIsFull: 0,
       firewoodSupply: -1,
       firewoodSupplyLabels: [
         `${this.$t('report.firewood_supply_empty')}`,

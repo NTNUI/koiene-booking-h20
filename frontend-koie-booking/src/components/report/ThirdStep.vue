@@ -4,17 +4,44 @@
   <v-layout v-else :class="$style.container" :dark="true">
     <h1 :class="$style.heading">{{ $t('report.step3') }}</h1>
     <v-layout :class="$style.separator">
+      <h3 class="py-4" :class="$style.form">{{ $t('report.smoke_detector_is_working') }}</h3>
+      <v-layout class="px-4">
+        <v-radio-group
+          v-model="smokeDetectorIsWorking"
+          mandatory
+          required
+          :color="$scssVars.globalColorBackgroundLight"
+          @blur="setSmokeDetectorIsWorking"
+        >
+          <v-radio :label="$t('report.smoke_detector_working')"></v-radio>
+          <v-radio :label="$t('report.smoke_detector_not_working')"></v-radio>
+        </v-radio-group>
+      </v-layout>
+    </v-layout>
+
+    <v-layout :class="$style.separator">
+      <h3 class="py-4" :class="$style.form">{{ $t('report.equipment_status') }}</h3>
       <v-form v-model="validForm" :class="$style.form">
         <v-row justify="space-between">
-          <v-col align-self="center" xs="2" sm="4">Item</v-col>
-          <v-col align-self="center" xs="10" sm="6">
+          <v-col align-self="center" xs="2" sm="4">
+            <strong>{{ $t('report.equipment_name') }}</strong>
+          </v-col>
+          <v-col xs="10" sm="6">
             <v-row>
-              <v-col align-self="center">Ok</v-col>
-              <v-col style="white-space: nowrap" align-self="center">Not sure</v-col>
-              <v-col align-self="center">Broken/missing</v-col>
+              <v-col>
+                <strong>{{ $t('report.equipment_ok') }}</strong>
+              </v-col>
+              <v-col style="white-space: nowrap">
+                <strong>{{ $t('report.equipment_unsure') }}</strong>
+              </v-col>
+              <v-col>
+                <strong>{{ $t('report.equipment_broken_or_missing') }}</strong>
+              </v-col>
             </v-row>
           </v-col>
         </v-row>
+
+        <v-divider></v-divider>
 
         <v-row v-for="item in equipment" :key="item.name" dense justify="space-between">
           <v-col align-self="center" xs="2" sm="4">{{ item.name }}</v-col>
@@ -54,22 +81,23 @@ export default Vue.extend({
     return {
       edited: false,
       validForm: true,
+      smokeDetectorIsWorking: 0,
       equipment: [
-        { name: 'Gas Burner/Primus', status: -1 },
-        { name: 'Axe', status: -1 },
-        { name: 'Saw', status: -1 },
-        { name: 'Saw blade', status: -1 },
-        { name: 'Spade', status: -1 },
-        { name: 'Kerosene lamp', status: -1 },
-        { name: 'Saw bench', status: -1 },
-        { name: 'Detergent', status: -1 },
-        { name: 'Plates, cups, and cutlery', status: -1 },
-        { name: 'Pots and frying pan', status: -1 },
-        { name: 'Cabin book', status: -1 },
-        { name: 'Hammer', status: -1 },
-        { name: 'Fire blanket', status: -1 },
-        { name: 'Fire extinguisher', status: -1 },
-        { name: 'Candle holders', status: -1 }
+        { name: this.$t('report.equipment.gas_burner_primus'), value: -1 },
+        { name: this.$t('report.equipment.axe'), value: -1 },
+        { name: this.$t('report.equipment.hammer'), value: -1 },
+        { name: this.$t('report.equipment.saw'), value: -1 },
+        { name: this.$t('report.equipment.saw_blade'), value: -1 },
+        { name: this.$t('report.equipment.saw_bench'), value: -1 },
+        { name: this.$t('report.equipment.spade'), value: -1 },
+        { name: this.$t('report.equipment.kerosene_lamp'), value: -1 },
+        { name: this.$t('report.equipment.detergent'), value: -1 },
+        { name: this.$t('report.equipment.dishware'), value: -1 },
+        { name: this.$t('report.equipment.cookware'), value: -1 },
+        { name: this.$t('report.equipment.cabin_book'), value: -1 },
+        { name: this.$t('report.equipment.candle_holders'), value: -1 },
+        { name: this.$t('report.equipment.fire_blanket'), value: -1 },
+        { name: this.$t('report.equipment.fire_extinguisher'), value: -1 }
       ]
     };
   },

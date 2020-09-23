@@ -19,5 +19,6 @@ export interface ReportSecondStepData {
 export interface ReportThirdStepData {
   edited: boolean;
   validForm: boolean;
+  smokeDetectorIsWorking: number;
   equipment: Array<object>;
 }
