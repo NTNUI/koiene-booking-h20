@@ -17,7 +17,7 @@
           >
             <template v-slot:activator="{ on, attrs }">
               <v-text-field
-                v-model="date1"
+                v-model="firstDisplayedDate"
                 label="Select starting date"
                 prepend-icon="event"
                 readonly
@@ -25,7 +25,7 @@
                 v-on="on"
               ></v-text-field>
             </template>
-            <v-date-picker v-model="date1" @input="selectDate"></v-date-picker>
+            <v-date-picker v-model="firstDisplayedDate" @input="selectDate"></v-date-picker>
           </v-menu>
         </v-col>
       </v-row>
@@ -34,23 +34,23 @@
         <!-- Buttons for back in time -->
         <v-col cols="2">
           <v-row justify="space-around">
-            <v-btn class="navBtn" height="50px" width="23%" @click="date1 = addToDate(-1, 'year')">
+            <v-btn class="navBtn" height="50px" width="23%" @click="firstDisplayedDate = addToDate(-1, 'year')">
               -1 y
             </v-btn>
-            <v-btn class="navBtn" height="50px" width="23%" @click="date1 = addToDate(-1, 'month')">
+            <v-btn class="navBtn" height="50px" width="23%" @click="firstDisplayedDate = addToDate(-1, 'month')">
               -1 m
             </v-btn>
-            <v-btn class="navBtn" height="50px" width="23%" @click="date1 = addToDate(-1, 'week')">
+            <v-btn class="navBtn" height="50px" width="23%" @click="firstDisplayedDate = addToDate(-1, 'week')">
               -1 w
             </v-btn>
-            <v-btn class="navBtn" height="50px" width="23%" @click="date1 = addToDate(-1, 'day')">
+            <v-btn class="navBtn" height="50px" width="23%" @click="firstDisplayedDate = addToDate(-1, 'day')">
               -1 d
             </v-btn>
           </v-row>
         </v-col>
         <!-- Show dates and day of week here -->
         <v-col v-for="d in 7" :key="d" class="px-1">
-          <v-card class="py-0" outlined tile>
+          <v-card class="py-0 px-4" outlined tile>
             {{ formatDate(addToDate(d - 1, 'day'), 'dddd') }}
             <br />
             {{ addToDate(d - 1, 'day') }}
@@ -59,18 +59,36 @@
         <!-- Buttons for forward in time -->
         <v-col cols="2">
           <v-row justify="space-around">
-            <v-btn class="navBtn" height="50px" width="23%" @click="date1 = addToDate(1, 'day')">
+            <v-btn class="navBtn" height="50px" width="23%" @click="firstDisplayedDate = addToDate(1, 'day')">
               +1 d
             </v-btn>
-            <v-btn class="navBtn" height="50px" width="23%" @click="date1 = addToDate(1, 'week')">
+            <v-btn class="navBtn" height="50px" width="23%" @click="firstDisplayedDate = addToDate(1, 'week')">
               +1 w
             </v-btn>
-            <v-btn class="navBtn" height="50px" width="23%" @click="date1 = addToDate(1, 'month')">
+            <v-btn class="navBtn" height="50px" width="23%" @click="firstDisplayedDate = addToDate(1, 'month')">
               +1 m
             </v-btn>
-            <v-btn class="navBtn" height="50px" width="23%" @click="date1 = addToDate(1, 'year')">
+            <v-btn class="navBtn" height="50px" width="23%" @click="firstDisplayedDate = addToDate(1, 'year')">
               +1 y
             </v-btn>
+          </v-row>
+        </v-col>
+      </v-row>
+      <!-- Cabin info starts below here -->
+      <!-- All this is ready to be replaced by Adam's component -->
+      <!-- At the moment it always shows info for the same 7 dates in the mock file -->
+      <v-row justify="center">
+        <v-col cols="12">
+          <h3 align="center">Cabin info goes here</h3>
+          <!-- <v-row v-for="cabin in fetchCabinsForSelectedDate(firstDisplayedDate, addToDate(6, 'day'))" :key="cabin.slug"> -->
+          <v-row v-for="cabin in cabinsWithBookings" :key="cabin.slug">
+            <v-col cols="2">
+              {{ cabin.name }}
+            </v-col>
+            <v-col v-for="date in Object.keys(cabin.bedsAvailableInDateRange).slice(0, 7)" :key="date">
+              {{ cabin.bedsAvailableInDateRange[date] }}
+            </v-col>
+            <v-col cols="2"></v-col>
           </v-row>
         </v-col>
       </v-row>
@@ -89,7 +107,7 @@ export default Vue.extend({
 
   data() {
     return {
-      date1: dayjs().format('YYYY-MM-DD')
+      firstDisplayedDate: dayjs().format('YYYY-MM-DD')
     };
   },
 
@@ -98,12 +116,21 @@ export default Vue.extend({
       console.log('Updated date through date picker to ' + date);
     },
     addToDate(howMany: number, what: dayjs.OpUnitType): string {
-      let date: dayjs.Dayjs = dayjs(this.date1 + 'T00:00:00.000Z');
+      let date: dayjs.Dayjs = dayjs(this.firstDisplayedDate + 'T00:00:00.000Z');
       return date.add(howMany, what).format('YYYY-MM-DD');
     },
     formatDate(dateISO: string, formatString: string): string {
       let date: dayjs.Dayjs = dayjs(dateISO + 'T00:00:00.000Z');
       return date.format(formatString);
+    },
+    fetchCabinsForSelectedDate(startDate: string, endDate: string) {
+      this.$store.dispatch('adminBookings/MOUNT_CABINS_WITH_BOOKINGS');
+    }
+  },
+
+  computed: {
+    cabinsWithBookings() {
+      return this.$store.getters['adminBookings/getCabinsWithBookings'];
     }
   },
 
