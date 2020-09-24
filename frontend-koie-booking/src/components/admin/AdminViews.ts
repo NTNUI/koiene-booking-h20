@@ -1,13 +1,13 @@
 import { AdminView } from '@/types/admin/AdminView';
-import AllCabinsTable from '@/components/admin/allCabinsTable/AllCabinsTable.vue';
+import AllCabinsView from '@/components/admin/allCabinsView/AllCabinsView.vue';
 import Reports from '@/components/admin/reports/Reports.vue';
 
 const adminViews: Array<AdminView> = [
   {
-    id: 'allCabins',
-    title: 'Alle koier',
+    id: 'allCabins1',
+    title: 'Alle koier1',
     icon: 'calendar-month',
-    component: AllCabinsTable
+    component: AllCabinsView
   },
   {
     id: 'reports',
