@@ -82,6 +82,7 @@
 import Vue from 'vue';
 import * as dayjs from 'dayjs';
 dayjs().format();
+import store from '@/store/index';
 
 export default Vue.extend({
   name: 'AllCabinsTable',
@@ -104,6 +105,10 @@ export default Vue.extend({
       let date: dayjs.Dayjs = dayjs(dateISO + 'T00:00:00.000Z');
       return date.format(formatString);
     }
+  },
+
+  mounted() {
+    store.dispatch('adminBookings/MOUNT_CABINS_WITH_BOOKINGS', { startDate: '2020-09-23', endDate: '2020-09-30' });
   }
 });
 </script>
