@@ -76,11 +76,10 @@
       </v-row>
       <!-- Cabin info starts below here -->
       <!-- All this is ready to be replaced by Adam's component -->
-      <!-- At the moment it always shows info for the same 7 dates in the mock file -->
+      <!-- At the moment it always shows info for the same 7 dates in the mock file and how I access it using v-for -->
       <v-row justify="center">
         <v-col cols="12">
           <h3 align="center">Cabin info goes here</h3>
-          <!-- <v-row v-for="cabin in fetchCabinsForSelectedDate(firstDisplayedDate, addToDate(6, 'day'))" :key="cabin.slug"> -->
           <v-row v-for="cabin in cabinsWithBookings" :key="cabin.slug">
             <v-col cols="2">
               {{ cabin.name }}
