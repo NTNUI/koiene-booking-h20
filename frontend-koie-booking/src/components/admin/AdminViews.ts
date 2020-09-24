@@ -4,8 +4,8 @@ import Reports from '@/components/admin/reports/Reports.vue';
 
 const adminViews: Array<AdminView> = [
   {
-    id: 'allCabins1',
-    title: 'Alle koier1',
+    id: 'allCabins',
+    title: 'Alle koier',
     icon: 'calendar-month',
     component: AllCabinsView
   },
