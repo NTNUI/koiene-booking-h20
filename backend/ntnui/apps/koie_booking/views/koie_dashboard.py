@@ -2,6 +2,7 @@ from rest_framework import mixins, viewsets
 from rest_framework.decorators import action
 from rest_framework.response import Response
 
+import koie_booking.constants as constants
 from koie_booking.models.koie import KoieModel
 from koie_booking.serializers.all_koier_detailed import KoierDetailedSerializer, KoierDetailedRangeSerializer
 
@@ -22,17 +23,21 @@ class KoieDashboardViewSet(
         methods=["get"],
         serializer_class=KoierDetailedRangeSerializer
     )
-    def range(self, request, fromDate=None, toDate=None):
+    def range(self, request):
         """ List dashboard details of all koier within given timerange.
-            Dates are supplied as query_parameters {fromDate} and {toDate}.
+            Dates are supplied as query_parameters {from_date} and {to_date}.
             Format: "YYYY-MM-DD"
         """
-        fromDate = request.query_params.get("fromDate")
-        if fromDate is None: fromDate = now().date().isoformat()
-        toDate = request.query_params.get("toDate")
-        if toDate is None: toDate = (now().date() + timedelta(days=14)).isoformat()
+        from_date = request.query_params.get("from_date")
+        if not from_date: 
+            from_date = now().date().isoformat()
+
+        to_date = request.query_params.get("to_date")
+        if not to_date: 
+            to_date = (now().date() + timedelta(days=constants.DEFAULT_BOOKING_WINDOW)).isoformat()
+
         serializer = KoierDetailedRangeSerializer(self.queryset, context={
-            "request": request, "fromDate": fromDate, "toDate": toDate
+            "request": request, "from_date": from_date, "to_date": to_date
         }, many=True)
         return Response({"koier": serializer.data})
 
@@ -41,6 +46,8 @@ class KoieDashboardViewSet(
             {days} is supplied as query_parameter
         """
         days = request.query_params.get("days")
-        if days is None: days = 14 #Default booking window
+        if not days: 
+            days = constants.DEFAULT_BOOKING_WINDOW
+
         serializer = KoierDetailedSerializer(self.queryset, context={"request": request, "days": days}, many=True)
         return Response({"koier": serializer.data})

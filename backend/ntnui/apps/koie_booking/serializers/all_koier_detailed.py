@@ -1,7 +1,9 @@
 from rest_framework import serializers
 
 from koie_booking.models.koie import KoieModel
+
 from datetime import date
+from django.utils.timezone import now, timedelta
 
 class KoierDetailedSerializer(serializers.ModelSerializer):
     beds_available_in_next_days = serializers.SerializerMethodField()
@@ -19,7 +21,8 @@ class KoierDetailedSerializer(serializers.ModelSerializer):
 
     def get_beds_available_in_next_days(self, obj):
         days = int(self.context["days"])
-        return obj.get_beds_available_for_next_days(days)
+        current_date = now().date()
+        return obj.get_beds_available_in_date_range(current_date, (current_date + timedelta(days=days)))
 
 class KoierDetailedRangeSerializer(serializers.ModelSerializer):
     beds_available_in_date_range = serializers.SerializerMethodField()
@@ -36,6 +39,6 @@ class KoierDetailedRangeSerializer(serializers.ModelSerializer):
         )
 
     def get_beds_available_in_date_range(self, obj):
-        fromDate = date.fromisoformat(self.context["fromDate"])
-        toDate = date.fromisoformat(self.context["toDate"])
-        return obj.get_beds_available_in_date_range(fromDate, toDate)
+        from_date = date.fromisoformat(self.context["from_date"])
+        to_date = date.fromisoformat(self.context["to_date"])
+        return obj.get_beds_available_in_date_range(from_date, to_date)
