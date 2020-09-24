@@ -30,7 +30,7 @@ def send_koie_information_mail(booking):
     receiver = ["sondrehalt@gmail.com"]
     subject = "Koie information"
 
-    context = {"koie": booking.koie}
+    context = {"koie": booking.koie, "id" : booking.id}
 
     # Mail body.
 
