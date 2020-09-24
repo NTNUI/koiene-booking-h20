@@ -20,16 +20,18 @@ export const actions = {
   },
   SET_CHPOPPED_UP_WOOD_SUPPLY: (ctx: any, supply: number): any => {
     ctx.commit('setChoppedUpWoodSupply', supply);
-  },
+  }, //en set for hver felt i databasen?
   CREATE_REPORT: (ctx: any, values: CreateReportInfo): any => {
     const headers = { 'content-type': 'application/json' }; //, Authorization: ''
     // const authToken = store.getters['auth/getToken'];
     // if (authToken) {
     //   headers.Authorization = `Bearer ${authToken}`;
     // }
+    //Hva gjør commit?
     ctx.commit('setLoadingStatus', true);
     axios
-      .post(Vue.prototype.$apiUrl + '/koie/reports/', values, { headers })
+      //Hvordan sender vi inn booking id? riktig det her?
+      .post(Vue.prototype.$apiUrl + `/koie/reports/${values.booking}$`, values, { headers })
       .then((res) => {
         ctx.commit('setReport', res.data);
         ctx.commit('setLoadingStatus', false);

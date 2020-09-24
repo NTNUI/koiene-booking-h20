@@ -75,25 +75,65 @@ export interface ReportState {
   isLoading: boolean;
   error: boolean;
   step: number;
-  gasIsFull: boolean;
-  woodSupply: number;
-  choppedUpWoodSupply: number;
   reportData: ReportInfo;
 }
 
 export interface ReportInfo {
   id: number;
-  user: number;
-  koie: string;
-  gasIsFull: boolean;
-  woodSupply: number;
-  choppedUpWoodSupply: number;
+  booking: number;
+  feedback: string;
+  firewood: number;
+  chopped_up_wood: number;
+  smoke_detector_is_working: boolean;
+  gas_is_full: boolean;
+  gas_burner_primus: number;
+  axe: number;
+  hammer: number;
+  saw: number;
+  saw_blade: number;
+  saw_bench: number;
+  spade: number;
+  kerosene_lamp: number;
+  detergent: number;
+  dishware: number;
+  cookware: number;
+  cabin_book: number;
+  candle_holders: number;
+  fire_blanket: number;
+  fire_extinguisher: number;
+  other_faults: string;
+  boat_status: number;
+  canoe_status: number;
+  life_jackets_status: number;
 }
 
 export interface CreateReportInfo {
-  gasIsFull: boolean;
-  woodSupply: number;
-  choppedUpWoodSupply: number;
+  id: number;
+  booking: number;
+  feedback: string;
+  firewood: number;
+  chopped_up_wood: number;
+  smoke_detector_is_working: boolean;
+  gas_is_full: boolean;
+  gas_burner_primus: number;
+  axe: number;
+  hammer: number;
+  saw: number;
+  saw_blade: number;
+  saw_bench: number;
+  spade: number;
+  kerosene_lamp: number;
+  detergent: number;
+  dishware: number;
+  cookware: number;
+  cabin_book: number;
+  candle_holders: number;
+  fire_blanket: number;
+  fire_extinguisher: number;
+  other_faults: string;
+  boat_status: number;
+  canoe_status: number;
+  life_jackets_status: number;
 }
 
 export interface AvalancheState {

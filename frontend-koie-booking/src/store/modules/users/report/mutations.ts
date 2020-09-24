@@ -17,15 +17,16 @@ export const mutations: MutationTree<ReportState> = {
   setError(state, error: boolean) {
     state.error = error;
   },
-  setGasIsEmpty(state, isEmpty: boolean) {
-    state.gasIsFull = isEmpty;
-  },
-  setFirewoodSupply(state, supply: number) {
-    state.woodSupply = supply;
-  },
-  setChoppedUpWoodSupply(state, supply: number) {
-    state.woodSupply = supply;
-  },
+  //Trenger vel ikke å ha disse som en egen state? Er vel en del av reportData?
+  // setGasIsEmpty(state, isEmpty: boolean) {
+  //   state.gasIsFull = isEmpty;
+  // },
+  // setFirewoodSupply(state, supply: number) {
+  //   state.woodSupply = supply;
+  // },
+  // setChoppedUpWoodSupply(state, supply: number) {
+  //   state.woodSupply = supply;
+  // },
   setReport(state, report: ReportInfo) {
     state.reportData = report;
   }
