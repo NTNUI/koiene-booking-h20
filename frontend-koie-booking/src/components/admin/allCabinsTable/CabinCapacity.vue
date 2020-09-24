@@ -21,11 +21,11 @@ export default Vue.extend({
       let allBedsOccupied = this.occupiedBeds === this.numberOfBeds;
       let mostBedsAvailable = this.occupiedBeds / this.numberOfBeds < this.threshold;
       if (allBedsOccupied) {
-        return '#ed2712';
+        return '#red';
       } else if (mostBedsAvailable) {
-        return '#00ff5a';
+        return '#green';
       }
-      return '#feeb01';
+      return '#yellow';
     }
   }
 });

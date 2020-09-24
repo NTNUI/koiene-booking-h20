@@ -37,27 +37,6 @@ export default Vue.extend({
         };
       }
     }
-  },
-  data() {
-    return {
-      cabinGreen: {
-        backgroundColor: '#00ff5a'
-      },
-      cabinYellow: {
-        backgroundColor: '#feeb01'
-      },
-      cabinRed: {
-        backgroundColor: '#ed2712'
-      }
-    };
-  },
-  computed: {
-    cabinColor: function() {
-      if (this.cabinInfo.bedsAvailableInDateRange[0] === this.cabinInfo.numberOfBeds) {
-        return '#ed2712';
-      }
-      return '#00ff5a';
-    }
   }
 });
 </script>
