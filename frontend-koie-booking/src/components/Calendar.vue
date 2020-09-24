@@ -108,7 +108,7 @@
 </template>
 
 <script lang="ts">
-import { CalendarData } from '../types/calendar';
+import { CalendarData } from '@/types/calendar';
 import Vue from 'vue';
 import { getDateString, getDate } from '@/utils/dates';
 

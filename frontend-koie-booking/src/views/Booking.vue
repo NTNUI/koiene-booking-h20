@@ -76,12 +76,12 @@
 </template>
 
 <script lang="ts">
-import BookingFirstStep from '../components/BookingFirstStep.vue';
-import BookingSecondStep from '../components/BookingSecondStep.vue';
-import BookingThirdStep from '../components/BookingThirdStep.vue';
-import BookingFourthStep from '../components/BookingFourthStep.vue';
-import LoadingSpinner from '../components/LoadingSpinner.vue';
-import { BookingData } from '../types/booking';
+import BookingFirstStep from '@/components/booking/BookingFirstStep.vue';
+import BookingSecondStep from '@/components/booking/BookingSecondStep.vue';
+import BookingThirdStep from '@/components/booking/BookingThirdStep.vue';
+import BookingFourthStep from '@/components/booking/BookingFourthStep.vue';
+import LoadingSpinner from '@/components/LoadingSpinner.vue';
+import { BookingData } from '@/types/booking';
 import Vue from 'vue';
 export default Vue.extend({
   name: 'Booking',

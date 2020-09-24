@@ -1,0 +1,231 @@
+<template>
+  <ErrorCard v-if="apiError" />
+  <LoadingSpinner v-else-if="isLoading" />
+  <v-layout v-else :class="$style.container" :dark="true">
+    <h1 :class="$style.heading">{{ $t('report.step3') }}</h1>
+    <v-layout :class="$style.separator">
+      <h3 class="py-4" :class="$style.form">{{ $t('report.smoke_detector_is_working') }}</h3>
+      <v-layout class="px-4">
+        <v-radio-group
+          v-model="smokeDetectorIsWorking"
+          mandatory
+          required
+          :color="$scssVars.globalColorBackgroundLight"
+          @change="setSmokeDetectorIsWorking"
+        >
+          <v-radio :label="$t('report.smoke_detector_working')"></v-radio>
+          <v-radio :label="$t('report.smoke_detector_not_working')"></v-radio>
+        </v-radio-group>
+      </v-layout>
+    </v-layout>
+
+    <v-layout :class="$style.separator">
+      <v-form v-model="validForm" :class="$style.form">
+        <h3 class="py-4" :class="$style.form">{{ $t('report.equipment_status') }}</h3>
+        <v-row justify="space-between">
+          <v-col align-self="center" xs="2" sm="4">
+            <strong>{{ $t('report.equipment_name') }}</strong>
+          </v-col>
+          <v-col xs="10" sm="6">
+            <v-row>
+              <v-col>
+                <strong>{{ $t('report.equipment_ok') }}</strong>
+              </v-col>
+              <v-col style="white-space: nowrap">
+                <strong>{{ $t('report.equipment_unsure') }}</strong>
+              </v-col>
+              <v-col>
+                <strong>{{ $t('report.equipment_broken_or_missing') }}</strong>
+              </v-col>
+            </v-row>
+          </v-col>
+        </v-row>
+
+        <v-divider></v-divider>
+
+        <v-row v-for="item in equipment" :key="item.name" dense justify="space-between">
+          <v-col align-self="center" xs="2" sm="4">{{ item.name }}</v-col>
+          <v-col align-self="center" xs="10" sm="6">
+            <v-radio-group
+              v-model="item.value"
+              hide-details="true"
+              row
+              :rules="equipmentRules(item.value)"
+              @change="setEquipment(item.value)"
+            >
+              <v-row>
+                <v-col>
+                  <v-radio :color="$scssVars.globalColorWarningLow"></v-radio>
+                </v-col>
+                <v-col>
+                  <v-radio :color="$scssVars.globalColorWarningConsiderable"></v-radio>
+                </v-col>
+                <v-col>
+                  <v-radio :color="$scssVars.globalColorWarningVeryHigh"></v-radio>
+                </v-col>
+              </v-row>
+            </v-radio-group>
+          </v-col>
+        </v-row>
+      </v-form>
+    </v-layout>
+    <v-layout :class="$style.separator">
+      <h3 class="py-4" :class="$style.form">{{ $t('report.other_faults') }}</h3>
+      <v-layout class="px-4">
+        <v-text-field
+          v-model="otherFaults"
+          :label="$t('report.other_faults_label')"
+          :placeholder="$t('report.other_faults_placeholder')"
+          :class="$style.otherFaultsField"
+          @change="setOtherFaults"
+        />
+      </v-layout>
+    </v-layout>
+  </v-layout>
+</template>
+
+<script lang="ts">
+import ErrorCard from '@/components/ErrorCard.vue';
+import LoadingSpinner from '@/components/LoadingSpinner.vue';
+import { ReportThirdStepData } from '@/types/report';
+import Vue from 'vue';
+import { TranslateResult } from 'vue-i18n';
+export default Vue.extend({
+  name: 'ReportThirdStep',
+  components: {
+    ErrorCard,
+    LoadingSpinner
+  },
+  data(): ReportThirdStepData {
+    return {
+      edited: false,
+      validForm: true,
+      smokeDetectorIsWorking: 0,
+      equipment: [
+        { name: this.$t('report.equipment.gas_burner_primus'), value: -1 },
+        { name: this.$t('report.equipment.axe'), value: -1 },
+        { name: this.$t('report.equipment.hammer'), value: -1 },
+        { name: this.$t('report.equipment.saw'), value: -1 },
+        { name: this.$t('report.equipment.saw_blade'), value: -1 },
+        { name: this.$t('report.equipment.saw_bench'), value: -1 },
+        { name: this.$t('report.equipment.spade'), value: -1 },
+        { name: this.$t('report.equipment.kerosene_lamp'), value: -1 },
+        { name: this.$t('report.equipment.detergent'), value: -1 },
+        { name: this.$t('report.equipment.dishware'), value: -1 },
+        { name: this.$t('report.equipment.cookware'), value: -1 },
+        { name: this.$t('report.equipment.cabin_book'), value: -1 },
+        { name: this.$t('report.equipment.candle_holders'), value: -1 },
+        { name: this.$t('report.equipment.fire_blanket'), value: -1 },
+        { name: this.$t('report.equipment.fire_extinguisher'), value: -1 }
+      ],
+      otherFaults: ''
+    };
+  },
+  computed: {
+    step(): number {
+      return this.$store.state.report.step;
+    },
+    apiError(): boolean {
+      return this.$store.state.koie.error;
+    },
+    isLoading(): boolean {
+      return this.$store.state.koie.isLoading;
+    }
+  },
+  watch: {
+    validForm: function() {
+      this.$store.dispatch('report/SET_VALID_FORM', this.validForm);
+    }
+  },
+  mounted() {
+    this.edited = this.$store.state.report.edited;
+    this.$store.dispatch('booking/SET_VALID_FORM', this.validForm);
+  },
+  methods: {
+    equipmentRules(itemValue: number): (true | string)[] {
+      //console.log('hi' + itemValue);
+      return [itemValue >= 0 || 'Please select an item.'];
+    },
+    setSmokeDetectorIsWorking() {
+      //console.log(!this.smokeDetectorIsWorking);
+      this.$store.dispatch('report/SET_SMOKE_DETECTOR_IS_WORKING', !this.smokeDetectorIsWorking);
+    },
+    setOtherFaults() {
+      //console.log(this.otherFaults);
+      this.$store.dispatch('report/SET_OTHER_FAULTS', this.otherFaults);
+    },
+    setEquipment(itemName: string, itemValue: number) {
+      console.log(itemName);
+      if (itemName === this.$t('report.equipment.gas_burner_primus')) {
+        this.$store.dispatch('report/SET_GAS_BURNER_PRIMUS', itemValue);
+      } else if (itemName === this.$t('report.equipment.axe')) {
+        this.$store.dispatch('report/SET_AXE', itemValue);
+      } else if (itemName === this.$t('report.equipment.hammer')) {
+        this.$store.dispatch('report/SET_HAMMER', itemValue);
+      } else if (itemName === this.$t('report.equipment.saw')) {
+        this.$store.dispatch('report/SET_SAW', itemValue);
+      } else if (itemName === this.$t('report.equipment.saw_blade')) {
+        this.$store.dispatch('report/SET_SAW_BLADE', itemValue);
+      } else if (itemName === this.$t('report.equipment.saw_bench')) {
+        this.$store.dispatch('report/SET_SAW_BENCH', itemValue);
+      } else if (itemName === this.$t('report.equipment.spade')) {
+        this.$store.dispatch('report/SET_SPADE', itemValue);
+      } else if (itemName === this.$t('report.equipment.kerosene_lamp')) {
+        this.$store.dispatch('report/SET_KEROSENE_LAMP', itemValue);
+      } else if (itemName === this.$t('report.equipment.detergent')) {
+        this.$store.dispatch('report/SET_DETERGENT', itemValue);
+      } else if (itemName === this.$t('report.equipment.dishware')) {
+        this.$store.dispatch('report/SET_DISHWARE', itemValue);
+      } else if (itemName === this.$t('report.equipment.cookware')) {
+        this.$store.dispatch('report/SET_COOKWARE', itemValue);
+      } else if (itemName === this.$t('report.equipment.cabin_book')) {
+        this.$store.dispatch('report/SET_CABIN_BOOK', itemValue);
+      } else if (itemName === this.$t('report.equipment.candle_holders')) {
+        this.$store.dispatch('report/SET_CANDLE_HOLDERS', itemValue);
+      } else if (itemName === this.$t('report.equipment.fire_blanket')) {
+        this.$store.dispatch('report/SET_FIRE_BLANKET', itemValue);
+      } else if (itemName === this.$t('report.equipment.fire_extinguisher')) {
+        this.$store.dispatch('report/SET_FIRE_EXTINGUISHER', itemValue);
+      }
+    }
+  }
+});
+</script>
+
+<style lang="scss" module>
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.heading {
+  margin-top: 20px;
+  align-self: center;
+}
+.separator {
+  border-left: solid 4px;
+  border-color: #2f3a50;
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+}
+.separator > h3 {
+  padding: 16px;
+}
+.form {
+  padding-left: 16px;
+  padding-right: 16px;
+  @media only screen and (max-width: 600px) {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+.fieldWrapper {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.otherFaultsField {
+  width: 100%;
+  padding-right: 10px;
+}
+</style>

@@ -15,7 +15,7 @@ Vue.use(Vuetify);
 import { mount, createLocalVue } from '@vue/test-utils';
 
 // Components or views
-import LoginForm from '../../../../src/components/login/LoginForm.vue';
+import LoginForm from '@/components/login/LoginForm.vue';
 
 describe('Component LoginForm.vue', () => {
   const router = new VueRouter({ routes, mode: 'abstract' });

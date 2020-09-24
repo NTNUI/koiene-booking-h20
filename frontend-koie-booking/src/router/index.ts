@@ -8,37 +8,44 @@ const routes = [
   {
     path: '/',
     name: 'AllKoier',
-    component: () => import(/* webpackChunkName: "about" */ '../views/AllKoier.vue'),
+    component: () => import(/* webpackChunkName: "about" */ '@/views/AllKoier.vue'),
     meta: { requiresAuth: false, requiresAdmin: false }
   },
   {
     path: '/koie/:id',
     name: 'koie',
-    component: () => import('../views/Koie.vue'),
+    component: () => import('@/views/Koie.vue'),
     props: true,
     meta: { requiresAuth: false, requiresAdmin: false }
   },
   {
     path: '/booking/:id',
     name: 'booking',
-    component: () => import('../views/Booking.vue'),
-    meta: { requiresAuth: true, requiresAdmin: false }
+    component: () => import('@/views/Booking.vue'),
+    meta: { requiresAuth: false, requiresAdmin: false } //TODO: change this back to requiresAuth: true
   },
   {
     path: '/login',
     name: 'Login',
-    component: () => import('../views/Login.vue'),
+    component: () => import('@/views/Login.vue'),
     meta: { requiresAuth: false, requiresAdmin: false }
   },
   {
     path: '/admin',
     name: 'Admin',
-    component: () => import('../views/Admin.vue'),
+    component: () => import('@/views/Admin.vue'),
     meta: { requiresAuth: true, requiresAdmin: true }
+  },
+  {
+    path: '/report/:booking_id',
+    name: 'Report',
+    component: () => import('@/views/Report.vue'),
+    meta: { requiresAuth: false, requiresAdmin: false } //TODO: add id to path
   }
 ];
 
 const router = new VueRouter({
+  mode: 'history',
   routes
 });
 
