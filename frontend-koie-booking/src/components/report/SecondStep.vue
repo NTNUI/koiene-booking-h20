@@ -12,7 +12,7 @@
             mandatory
             required
             :color="$scssVars.globalColorBackgroundLight"
-            @blur="setGasIsFull"
+            @change="setGasIsFull"
           >
             <v-radio :label="$t('report.gass_full')"></v-radio>
             <v-radio :label="$t('report.gass_empty')"></v-radio>
@@ -25,13 +25,12 @@
           <v-slider
             v-model="firewoodSupply"
             required
-            :rules="firewoodSupplyRules"
             :tick-labels="firewoodSupplyLabels"
             :max="4"
             step="1"
             ticks="always"
             tick-size="5"
-            @blur="setFirewoodSupply"
+            @change="setFirewoodSupply"
           ></v-slider>
         </v-layout>
       </v-layout>
@@ -41,13 +40,12 @@
           <v-slider
             v-model="choppedUpWoodSupply"
             required
-            :rules="firewoodSupply"
             :tick-labels="choppedUpSupplyLabels"
             :max="4"
             step="1"
             ticks="always"
             tick-size="5"
-            @blur="setChoppedUpWoodSupply"
+            @change="setChoppedUpWoodSupply"
           ></v-slider>
         </v-layout>
       </v-layout>
@@ -111,8 +109,8 @@ export default Vue.extend({
   },
   methods: {
     setGasIsFull() {
-      console.log(this.gasIsFull);
-      this.$store.dispatch('report/SET_GAS_IS_EMPTY', this.gasIsFull);
+      console.log(!this.gasIsFull);
+      this.$store.dispatch('report/SET_GAS_IS_FULL', !this.gasIsFull);
       this.$store.dispatch('report/SET_EDITED', true);
     },
     setFirewoodSupply() {

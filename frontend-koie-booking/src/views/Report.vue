@@ -110,10 +110,11 @@ export default Vue.extend({
   mounted() {
     //resetting everything when component mounts
     this.step = 1;
-    this.resetReportInfo();
+    //this.resetReportInfo();
     this.$store.dispatch('report/SET_STEP', 1);
     this.$store.dispatch('report/SET_VALID_FORM', true);
     this.$store.dispatch('report/SET_EDITED', false);
+    this.$store.dispatch('report/SET_BOOKING_ID', this.$route.params.booking_id);
   },
   methods: {
     nextStep(n: number) {
@@ -128,10 +129,11 @@ export default Vue.extend({
       }
     },
     done() {
+      this.$store.dispatch('report/CREATE_REPORT', this.$store.state.report.reportData);
       this.$router.push(`/`);
     },
     resetReportInfo() {
-      this.$store.dispatch('report/SET_GAS_STATUS', 0);
+      //this.$store.dispatch('report/SET_GAS_STATUS', 0);
     }
   }
 });

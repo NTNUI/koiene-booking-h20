@@ -11,7 +11,7 @@
           mandatory
           required
           :color="$scssVars.globalColorBackgroundLight"
-          @blur="setSmokeDetectorIsWorking"
+          @change="setSmokeDetectorIsWorking"
         >
           <v-radio :label="$t('report.smoke_detector_working')"></v-radio>
           <v-radio :label="$t('report.smoke_detector_not_working')"></v-radio>
@@ -46,7 +46,13 @@
         <v-row v-for="item in equipment" :key="item.name" dense justify="space-between">
           <v-col align-self="center" xs="2" sm="4">{{ item.name }}</v-col>
           <v-col align-self="center" xs="10" sm="6">
-            <v-radio-group v-model="item.value" hide-details="true" row :rules="equipmentRules(item.value)">
+            <v-radio-group
+              v-model="item.value"
+              hide-details="true"
+              row
+              :rules="equipmentRules(item.value)"
+              @change="setEquipment(item.value)"
+            >
               <v-row>
                 <v-col>
                   <v-radio :color="$scssVars.globalColorWarningLow"></v-radio>
@@ -71,7 +77,7 @@
           :label="$t('report.other_faults_label')"
           :placeholder="$t('report.other_faults_placeholder')"
           :class="$style.otherFaultsField"
-          @blur="setOtherFAults"
+          @change="setOtherFaults"
         />
       </v-layout>
     </v-layout>
@@ -111,7 +117,8 @@ export default Vue.extend({
         { name: this.$t('report.equipment.candle_holders'), value: -1 },
         { name: this.$t('report.equipment.fire_blanket'), value: -1 },
         { name: this.$t('report.equipment.fire_extinguisher'), value: -1 }
-      ]
+      ],
+      otherFaults: ''
     };
   },
   computed: {
@@ -136,7 +143,50 @@ export default Vue.extend({
   },
   methods: {
     equipmentRules(itemValue: number): (true | string)[] {
+      //console.log('hi' + itemValue);
       return [itemValue >= 0 || 'Please select an item.'];
+    },
+    setSmokeDetectorIsWorking() {
+      //console.log(!this.smokeDetectorIsWorking);
+      this.$store.dispatch('report/SET_SMOKE_DETECTOR_IS_WORKING', !this.smokeDetectorIsWorking);
+    },
+    setOtherFaults() {
+      //console.log(this.otherFaults);
+      this.$store.dispatch('report/SET_OTHER_FAULTS', this.otherFaults);
+    },
+    setEquipment(itemName: string, itemValue: number) {
+      console.log(itemName);
+      if (itemName === this.$t('report.equipment.gas_burner_primus')) {
+        this.$store.dispatch('report/SET_GAS_BURNER_PRIMUS', itemValue);
+      } else if (itemName === this.$t('report.equipment.axe')) {
+        this.$store.dispatch('report/SET_AXE', itemValue);
+      } else if (itemName === this.$t('report.equipment.hammer')) {
+        this.$store.dispatch('report/SET_HAMMER', itemValue);
+      } else if (itemName === this.$t('report.equipment.saw')) {
+        this.$store.dispatch('report/SET_SAW', itemValue);
+      } else if (itemName === this.$t('report.equipment.saw_blade')) {
+        this.$store.dispatch('report/SET_SAW_BLADE', itemValue);
+      } else if (itemName === this.$t('report.equipment.saw_bench')) {
+        this.$store.dispatch('report/SET_SAW_BENCH', itemValue);
+      } else if (itemName === this.$t('report.equipment.spade')) {
+        this.$store.dispatch('report/SET_SPADE', itemValue);
+      } else if (itemName === this.$t('report.equipment.kerosene_lamp')) {
+        this.$store.dispatch('report/SET_KEROSENE_LAMP', itemValue);
+      } else if (itemName === this.$t('report.equipment.detergent')) {
+        this.$store.dispatch('report/SET_DETERGENT', itemValue);
+      } else if (itemName === this.$t('report.equipment.dishware')) {
+        this.$store.dispatch('report/SET_DISHWARE', itemValue);
+      } else if (itemName === this.$t('report.equipment.cookware')) {
+        this.$store.dispatch('report/SET_COOKWARE', itemValue);
+      } else if (itemName === this.$t('report.equipment.cabin_book')) {
+        this.$store.dispatch('report/SET_CABIN_BOOK', itemValue);
+      } else if (itemName === this.$t('report.equipment.candle_holders')) {
+        this.$store.dispatch('report/SET_CANDLE_HOLDERS', itemValue);
+      } else if (itemName === this.$t('report.equipment.fire_blanket')) {
+        this.$store.dispatch('report/SET_FIRE_BLANKET', itemValue);
+      } else if (itemName === this.$t('report.equipment.fire_extinguisher')) {
+        this.$store.dispatch('report/SET_FIRE_EXTINGUISHER', itemValue);
+      }
     }
   }
 });
