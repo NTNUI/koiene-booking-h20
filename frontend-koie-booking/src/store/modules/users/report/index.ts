@@ -15,7 +15,7 @@ export const state: ReportState = {
   step: 1,
   reportData: {
     id: 0,
-    booking_id: 1,
+    booking_id: 0,
     firewood: 0,
     chopped_up_wood: 0,
     smoke_detector_is_working: true,
