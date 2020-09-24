@@ -35,4 +35,5 @@ urlpatterns = [
     path("token/refresh/", TokenRefreshView.as_view(), name="token-refresh"),
     path("token/verify/", TokenVerifyView.as_view(), name="token-verify"),
     path("koie/", include("koie_booking.urls")),
+    path("koie/", include("koie_report.urls"))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
