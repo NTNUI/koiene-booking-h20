@@ -80,7 +80,7 @@ export interface ReportState {
 
 export interface ReportInfo {
   id: number;
-  booking: number;
+  booking_id: number;
   feedback: string;
   firewood: number;
   chopped_up_wood: number;
