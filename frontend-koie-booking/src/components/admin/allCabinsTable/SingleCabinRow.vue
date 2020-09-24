@@ -1,25 +1,22 @@
 <template>
   <v-row>
-    <h4 id="cabin-name">{{ cabinInfo.name }}</h4>
-
-    <h4 :class="{ cabinBedGreen: mondayGreen }">
-      {{ cabinInfo.bedsAvailableInDateRange['2020-09-15'] }} / {{ cabinInfo.numberOfBeds }}
-    </h4>
-    <h4 id="cabin-bed-info">{{ cabinInfo.bedsAvailableInDateRange['2020-09-16'] }} / {{ cabinInfo.numberOfBeds }}</h4>
-    <h4 id="cabin-bed-info">{{ cabinInfo.bedsAvailableInDateRange['2020-09-17'] }} / {{ cabinInfo.numberOfBeds }}</h4>
-    <h4 id="cabin-bed-info">{{ cabinInfo.bedsAvailableInDateRange['2020-09-18'] }} / {{ cabinInfo.numberOfBeds }}</h4>
-    <h4 id="cabin-bed-info">{{ cabinInfo.bedsAvailableInDateRange['2020-09-19'] }} / {{ cabinInfo.numberOfBeds }}</h4>
-    <h4 id="cabin-bed-info">{{ cabinInfo.bedsAvailableInDateRange['2020-09-20'] }} / {{ cabinInfo.numberOfBeds }}</h4>
-    <h4 id="cabin-bed-info">{{ cabinInfo.bedsAvailableInDateRange['2020-09-21'] }} / {{ cabinInfo.numberOfBeds }}</h4>
+    <v-col>
+      <h4 id="cabin-name">{{ cabinInfo.name }}</h4>
+    </v-col>
+    <v-col v-for="bookingInfo in cabinInfo.bedsAvailableInDateRange" :key="bookingInfo">
+      <CabinCapacity :number-of-beds="cabinInfo.numberOfBeds" :occupied-beds="bookingInfo" />
+    </v-col>
   </v-row>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
+import CabinCapacity from '@/components/admin/allCabinsTable/CabinCapacity.vue';
 import { KoieAdmin } from '@/types/admin';
 
 export default Vue.extend({
   name: 'SingleCabinRow',
+  components: { CabinCapacity },
   props: {
     cabinInfo: {
       type: Object as () => KoieAdmin,
@@ -27,7 +24,7 @@ export default Vue.extend({
         return {
           name: 'error',
           slug: 'error',
-          numberOfBeds: 0,
+          numberOfBeds: 1,
           bedsAvailableInDateRange: {
             ['2020-01-01']: 0,
             ['2020-01-02']: 0,
@@ -43,41 +40,31 @@ export default Vue.extend({
   },
   data() {
     return {
-      cabinBedGreen: 'cabin-bed-green'
+      cabinGreen: {
+        backgroundColor: '#00ff5a'
+      },
+      cabinYellow: {
+        backgroundColor: '#feeb01'
+      },
+      cabinRed: {
+        backgroundColor: '#ed2712'
+      }
     };
   },
   computed: {
-    mondayGreen: function() {
-      return true;
+    cabinColor: function() {
+      if (this.cabinInfo.bedsAvailableInDateRange[0] === this.cabinInfo.numberOfBeds) {
+        return '#ed2712';
+      }
+      return '#00ff5a';
     }
   }
 });
 </script>
 
 <style scoped>
+/** TODO: Set cabin-name column width in a smarter, more responsive way */
 #cabin-name {
-  padding-right: 5%;
-  padding-left: 5%;
-}
-
-.cabin-bed {
-  margin-left: 3%;
-  margin-right: 3%;
-}
-
-.cabin-bed-green {
-  background-color: green;
-}
-
-#cabin-bed-yellow {
-  background-color: yellow;
-  margin-left: 3%;
-  margin-right: 3%;
-}
-
-#cabin-bed-red {
-  background-color: red;
-  margin-left: 3%;
-  margin-right: 3%;
+  width: 200px;
 }
 </style>
