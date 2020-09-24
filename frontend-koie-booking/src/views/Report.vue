@@ -66,12 +66,12 @@
 </template>
 
 <script lang="ts">
-import FirstStep from '../components/report/FirstStep.vue';
-import SecondStep from '../components/report/SecondStep.vue';
-import ThirdStep from '../components/report/ThirdStep.vue';
-import FourthStep from '../components/report/FourthStep.vue';
-import LoadingSpinner from '../components/LoadingSpinner.vue';
-import { ReportData } from '../types/report';
+import FirstStep from '@/components/report/FirstStep.vue';
+import SecondStep from '@/components/report/SecondStep.vue';
+import ThirdStep from '@/components/report/ThirdStep.vue';
+import FourthStep from '@/components/report/FourthStep.vue';
+import LoadingSpinner from '@/components/LoadingSpinner.vue';
+import { ReportData } from '@/types/report';
 import Vue from 'vue';
 export default Vue.extend({
   name: 'Report',

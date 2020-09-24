@@ -40,7 +40,7 @@ const routes = [
     path: '/report/:booking_id',
     name: 'Report',
     component: () => import('@/views/Report.vue'),
-    meta: { requiresAuth: false, requiresAdmin: false } //TODO: add id to path
+    meta: { requiresAuth: false, requiresAdmin: false }
   }
 ];
 

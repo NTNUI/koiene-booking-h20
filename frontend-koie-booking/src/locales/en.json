@@ -57,7 +57,7 @@
     "step1": "Info",
     "step2": "Supplies",
     "step3": "Equipment",
-    "step4": "Comments",
+    "step4": "Boat and canoe",
     "reportTitle": "Digital Cabin Report",
     "reportDescription": "The cabin group is run purely on volunteer work and we rely on your feedback to be able to run the cabins.",
     "next_button": "next",
@@ -99,7 +99,22 @@
     },
     "other_faults": "Did you see any other defects or missing items?",
     "other_faults_label": "Other defects/missing items",
-    "other_faults_placeholder": "There was a noise when I tried to ..."
+    "other_faults_placeholder": "One of the ...",
+    "water_equipment": {
+      "boat": "What was the status for the boat?",
+      "canoe": "What was the status for the canoe?",
+      "life_jackets": "What was the status for the life jackets?",
+      "no_faults": "No faults",
+      "broken": "Broken / useless",
+      "missing_paddles": "Missing paddles",
+      "missing_boat": "Missing boat",
+      "missing_canoe": "Missing canoe",
+      "missing_life_jackets": "Missing / too few life jackets",
+      "unsure": "Didn't use / don't know"
+    },
+    "general_feedback": "Finally, is there anything else you wish to add which hasn't been covered by the report already?",
+    "general_feedback_label": "Additional comments",
+    "general_feedback_placeholder": "There was one window that ..."
   },
   "ntnui": {
     "home": "Home",

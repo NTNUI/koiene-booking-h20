@@ -109,7 +109,6 @@ export default Vue.extend({
   },
   methods: {
     setGasIsFull() {
-      console.log(!this.gasIsFull);
       this.$store.dispatch('report/SET_GAS_IS_FULL', !this.gasIsFull);
       this.$store.dispatch('report/SET_EDITED', true);
     },

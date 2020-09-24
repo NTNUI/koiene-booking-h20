@@ -80,8 +80,7 @@ export interface ReportState {
 
 export interface ReportInfo {
   id: number;
-  booking: number;
-  feedback: string;
+  booking_id: number;
   firewood: number;
   chopped_up_wood: number;
   smoke_detector_is_working: boolean;
@@ -105,6 +104,7 @@ export interface ReportInfo {
   boat_status: number;
   canoe_status: number;
   life_jackets_status: number;
+  feedback: string;
 }
 
 // export interface CreateReportInfo {

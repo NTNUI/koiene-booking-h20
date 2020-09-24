@@ -102,21 +102,21 @@ export default Vue.extend({
       validForm: true,
       smokeDetectorIsWorking: 0,
       equipment: [
-        { name: this.$t('report.equipment.gas_burner_primus'), value: -1 },
-        { name: this.$t('report.equipment.axe'), value: -1 },
-        { name: this.$t('report.equipment.hammer'), value: -1 },
-        { name: this.$t('report.equipment.saw'), value: -1 },
-        { name: this.$t('report.equipment.saw_blade'), value: -1 },
-        { name: this.$t('report.equipment.saw_bench'), value: -1 },
-        { name: this.$t('report.equipment.spade'), value: -1 },
-        { name: this.$t('report.equipment.kerosene_lamp'), value: -1 },
-        { name: this.$t('report.equipment.detergent'), value: -1 },
-        { name: this.$t('report.equipment.dishware'), value: -1 },
-        { name: this.$t('report.equipment.cookware'), value: -1 },
-        { name: this.$t('report.equipment.cabin_book'), value: -1 },
-        { name: this.$t('report.equipment.candle_holders'), value: -1 },
-        { name: this.$t('report.equipment.fire_blanket'), value: -1 },
-        { name: this.$t('report.equipment.fire_extinguisher'), value: -1 }
+        { name: this.$t('report.equipment.gas_burner_primus'), value: 1 },
+        { name: this.$t('report.equipment.axe'), value: 1 },
+        { name: this.$t('report.equipment.hammer'), value: 1 },
+        { name: this.$t('report.equipment.saw'), value: 1 },
+        { name: this.$t('report.equipment.saw_blade'), value: 1 },
+        { name: this.$t('report.equipment.saw_bench'), value: 1 },
+        { name: this.$t('report.equipment.spade'), value: 1 },
+        { name: this.$t('report.equipment.kerosene_lamp'), value: 1 },
+        { name: this.$t('report.equipment.detergent'), value: 1 },
+        { name: this.$t('report.equipment.dishware'), value: 1 },
+        { name: this.$t('report.equipment.cookware'), value: 1 },
+        { name: this.$t('report.equipment.cabin_book'), value: 1 },
+        { name: this.$t('report.equipment.candle_holders'), value: 1 },
+        { name: this.$t('report.equipment.fire_blanket'), value: 1 },
+        { name: this.$t('report.equipment.fire_extinguisher'), value: 1 }
       ],
       otherFaults: ''
     };
@@ -143,15 +143,12 @@ export default Vue.extend({
   },
   methods: {
     equipmentRules(itemValue: number): (true | string)[] {
-      //console.log('hi' + itemValue);
       return [itemValue >= 0 || 'Please select an item.'];
     },
     setSmokeDetectorIsWorking() {
-      //console.log(!this.smokeDetectorIsWorking);
       this.$store.dispatch('report/SET_SMOKE_DETECTOR_IS_WORKING', !this.smokeDetectorIsWorking);
     },
     setOtherFaults() {
-      //console.log(this.otherFaults);
       this.$store.dispatch('report/SET_OTHER_FAULTS', this.otherFaults);
     },
     setEquipment(itemName: string, itemValue: number) {

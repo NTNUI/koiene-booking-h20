@@ -80,6 +80,15 @@ export const mutations: MutationTree<ReportState> = {
   setOtherFaults(state, comment: string) {
     state.reportData.other_faults = comment;
   },
+  setBoatStatus(state, status: string) {
+    state.reportData.other_faults = status;
+  },
+  setCanoeStatus(state, status: string) {
+    state.reportData.other_faults = status;
+  },
+  setLifeJacketsStatus(state, status: string) {
+    state.reportData.other_faults = status;
+  },
   setFeedback(state, feedback: string) {
     state.reportData.feedback = feedback;
   },

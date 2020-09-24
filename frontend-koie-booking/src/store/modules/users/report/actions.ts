@@ -76,11 +76,23 @@ export const actions = {
   SET_OTHER_FAULTS: (ctx: any, comment: string): any => {
     ctx.commit('setOtherFaults', comment);
   },
+  SET_BOAT_SATUS: (ctx: any, status: string): any => {
+    console.log(status);
+    ctx.commit('setBoatStatus', status);
+  },
+  SET_CANOE_STATUS: (ctx: any, status: string): any => {
+    console.log(status);
+    ctx.commit('setCanoeStatus', status);
+  },
+  SET_LIFE_JACKETS_STATUS: (ctx: any, status: string): any => {
+    console.log(status);
+    ctx.commit('setLifeJacketsStatus', status);
+  },
   SET_FEEDBACK: (ctx: any, feedback: string): any => {
     ctx.commit('setFeedback', feedback);
   },
   CREATE_REPORT: (ctx: any, reportData: ReportInfo): any => {
-    const headers = { 'content-type': 'application/json' }; //, Authorization: ''
+    const headers = { 'content-type': 'application/json' }; //, Authorization: '' };
     // const authToken = store.getters['auth/getToken'];
     // if (authToken) {
     //   headers.Authorization = `Bearer ${authToken}`;

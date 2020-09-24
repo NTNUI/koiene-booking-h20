@@ -3,7 +3,7 @@ import Vuex, { Module } from 'vuex';
 import { mutations } from './mutations';
 import { actions } from './actions';
 import { getters } from './getters';
-import { ReportState, RootState, ReportInfo } from '@/store/types';
+import { ReportState, RootState } from '@/store/types';
 
 Vue.use(Vuex);
 
@@ -16,7 +16,6 @@ export const state: ReportState = {
   reportData: {
     id: 0,
     booking_id: 1,
-    feedback: '',
     firewood: 0,
     chopped_up_wood: 0,
     smoke_detector_is_working: true,
@@ -39,7 +38,8 @@ export const state: ReportState = {
     other_faults: '',
     boat_status: 0,
     canoe_status: 0,
-    life_jackets_status: 0
+    life_jackets_status: 0,
+    feedback: ''
   }
 };
 const namespaced: boolean = true;
