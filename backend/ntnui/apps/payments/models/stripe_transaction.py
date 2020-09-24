@@ -105,15 +105,17 @@ class StripeTransaction(models.Model):
         Sends a request to Stripe to create a charge. If successful both token_id and charge_id
         will be saved.
         """
+        print("a")
 
-        charge = stripe.Charge.create(
-            api_key=payment_key,
-            amount=amount,
-            currency="nok",
-            description=description,
-            source=token_id,
-        )
-
+        #charge = stripe.Charge.create(
+        #    api_key=payment_key,
+        #    amount=amount,
+        #    currency="nok",
+        #    description=description,
+        #    source=token_id,
+        #)
+        charge  = {'id': token_id}
+        print("b")
         logger.info(f"Created charge on Stripe: {charge}")
 
         self.token_id = token_id
@@ -123,6 +125,7 @@ class StripeTransaction(models.Model):
 
     def send_paid_status(self):
         try:
+            print("c")
             self.get_payment().send_paid_status()
         except AttributeError:
             pass

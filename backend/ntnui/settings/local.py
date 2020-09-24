@@ -13,7 +13,12 @@ ALLOWED_HOSTS = ["*"]
 CORS_ORIGIN_ALLOW_ALL = True
 
 """ EMAIL """
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+EMAIL_HOST = "mail.smtp2go.com"
+EMAIL_PORT =  2525
+EMAIL_HOST_USER = "sondrehalt@hotmail.com"
+EMAIL_HOST_PASSWORD = "inb2KqXtPKyI"
+EMAIL_USE_TLS = True
+
 
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=30),

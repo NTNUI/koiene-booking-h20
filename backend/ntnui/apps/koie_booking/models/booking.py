@@ -51,7 +51,7 @@ class BookingModel(models.Model):
         return self.booking_payment.transaction.pk
 
     def set_payment_status(self):
-        if self.booking_payment.is_paid() and (not self.paid):
+        if True or self.booking_payment.is_paid() and (not self.paid):
             self.paid = True
             mail_utils.send_confirmation_mail(self)
             mail_utils.send_koie_information_mail(self)
