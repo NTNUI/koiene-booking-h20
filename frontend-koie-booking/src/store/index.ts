@@ -8,11 +8,13 @@ import { booking } from './modules/users/booking/index';
 import { avalanche } from './modules/users/avalanche/index';
 import { report } from './modules/users/report/index';
 import { auth } from './modules/users/auth/index';
+import { adminBookings } from '@/store/modules/admin/bookings';
 
 Vue.use(Vuex, VueAxios, axios);
 
 const store: StoreOptions<RootState> = {
   modules: {
+    adminBookings,
     koie,
     booking,
     avalanche,

@@ -91,5 +91,9 @@ export const mutations: MutationTree<ReportState> = {
   },
   setFeedback(state, feedback: string) {
     state.reportData.feedback = feedback;
+  },
+
+  setReport(state, report: ReportInfo) {
+    state.reportData = report;
   }
 };
