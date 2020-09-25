@@ -78,15 +78,12 @@ export const actions = {
     ctx.commit('setOtherFaults', comment);
   },
   SET_BOAT_SATUS: (ctx: any, status: string): any => {
-    console.log(status);
     ctx.commit('setBoatStatus', status);
   },
   SET_CANOE_STATUS: (ctx: any, status: string): any => {
-    console.log(status);
     ctx.commit('setCanoeStatus', status);
   },
   SET_LIFE_JACKETS_STATUS: (ctx: any, status: string): any => {
-    console.log(status);
     ctx.commit('setLifeJacketsStatus', status);
   },
   SET_FEEDBACK: (ctx: any, feedback: string): any => {
@@ -99,7 +96,6 @@ export const actions = {
       headers.Authorization = `Bearer ${authToken}`;
     }
     ctx.commit('setLoadingStatus', true);
-    console.log(Vue.prototype.$apiUrl + `/koie/reports/${reportData.booking_id}`);
     axios
       .post(Vue.prototype.$apiUrl + `/koie/reports/${reportData.booking_id}`, reportData, { headers })
       .then((res) => {
