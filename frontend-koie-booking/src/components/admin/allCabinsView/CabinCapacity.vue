@@ -23,7 +23,7 @@ export default Vue.extend({
     style() {
       const progress = Math.floor((this.availableBeds / this.numberOfBeds) * 100);
       return {
-        color: progress === 0 ? 'black' : progress >= 99 ? 'white' : 'black',
+        color: 'black',
         width: '90%',
         height: '90%',
         margin: 'auto',
@@ -33,7 +33,7 @@ export default Vue.extend({
             ? 'red'
             : progress >= 99
             ? 'green'
-            : 'linear-gradient(90deg, yellow, yellow ' + progress + '%, green ' + progress + '%)'
+            : 'linear-gradient(-90deg, green, green ' + progress + '%, yellow ' + progress + '%)'
       };
     }
   }

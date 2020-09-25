@@ -1,4 +1,6 @@
 import dayjs from 'dayjs';
+require('dayjs/locale/nb');
+dayjs.locale('nb');
 
 export function getDateString(baseDate?: string, addDays?: number): string {
   let resultString: string;

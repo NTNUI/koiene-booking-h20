@@ -5,16 +5,17 @@
     :items="allCabinsWithBookings"
     :items-per-page="24"
     :hide-default-footer="true"
+    :custom-sort="customSort"
     loading-text="Henter inn bookinger"
     no-data-text="Det skjedde noe feil da vi prøvde å hente bookinger"
   >
     <template slot="item" slot-scope="row">
       <tr>
-        <td v-for="(header, index) in headers" :key="index + row.item.slug">
-          <span v-if="index === 0">
-            {{ row.item.name }}
-          </span>
-          <div v-else style="width: 60px; height: 60px; margin: auto">
+        <td>
+          {{ row.item.name }}
+        </td>
+        <td v-for="(header, index) in dateHeaders" :key="index + row.item.slug">
+          <div style="width: 60px; height: 60px; margin: auto">
             <CabinCapacity
               :available-beds="Object.values(row.item.bedsAvailableInDateRange)[index]"
               :number-of-beds="row.item.numberOfBeds"
@@ -47,6 +48,9 @@ export default Vue.extend({
     allCabinsWithBookings(): Array<AdminBooking> {
       return store.getters['adminBookings/getCabinsWithBookingsArray'];
     },
+    dateHeaders(): Array<Header> {
+      return this.headers.slice(1);
+    },
     headers(): Array<Header> {
       const startDate = store.getters['adminBookings/getStartDate'];
       const res: Array<Header> = [
@@ -59,7 +63,7 @@ export default Vue.extend({
         {
           text: startDate + '\n (' + formatDate(startDate, 'dddd') + ')',
           sortable: true,
-          value: 'date' + 0,
+          value: startDate,
           align: 'center'
         }
       ];
@@ -68,12 +72,34 @@ export default Vue.extend({
         const header: Header = {
           text: date + '\n (' + formatDate(date, 'dddd') + ')',
           sortable: true,
-          value: 'date' + i,
+          value: date,
           align: 'center'
         };
         res.push(header);
       }
       return res;
+    }
+  },
+  methods: {
+    customSort(items: Array<AdminBooking>, index: Array<string>, isDesc: Array<boolean>) {
+      return items.sort((a, b) => {
+        if (index[0] === 'name') {
+          if (!isDesc[0]) {
+            return a.slug.localeCompare(b.slug);
+          } else {
+            return b.slug.localeCompare(a.slug);
+          }
+        } else if (index[0] && index[0].length) {
+          const bedsAvailableInA = a.bedsAvailableInDateRange[index[0]];
+          const bedsAvailableInB = b.bedsAvailableInDateRange[index[0]];
+          if (!isDesc[0]) {
+            return bedsAvailableInA > bedsAvailableInB ? 1 : bedsAvailableInA < bedsAvailableInB ? -1 : 0;
+          } else {
+            return bedsAvailableInA > bedsAvailableInB ? -1 : bedsAvailableInA < bedsAvailableInB ? 1 : 0;
+          }
+        }
+        return 0;
+      });
     }
   }
 });

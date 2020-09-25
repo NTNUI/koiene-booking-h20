@@ -40,7 +40,7 @@ export default Vue.extend({
     menuButtons(): Array<SkipButton> {
       const buttons: Array<SkipButton> = [
         {
-          label: '-1 y',
+          label: '-1 å',
           method: () => this.skipDates(-1, 'year')
         },
         {
@@ -48,7 +48,7 @@ export default Vue.extend({
           method: () => this.skipDates(-1, 'month')
         },
         {
-          label: '-1 w',
+          label: '-1 u',
           method: () => this.skipDates(-1, 'week')
         },
         {
@@ -57,19 +57,19 @@ export default Vue.extend({
         },
         {
           label: '+1 d',
-          method: () => this.skipDates(-1, 'day')
+          method: () => this.skipDates(+1, 'day')
         },
         {
-          label: '+1 w',
-          method: () => this.skipDates(-1, 'week')
+          label: '+1 u',
+          method: () => this.skipDates(+1, 'week')
         },
         {
           label: '+1 m',
-          method: () => this.skipDates(-1, 'month')
+          method: () => this.skipDates(+1, 'month')
         },
         {
-          label: '+1 y',
-          method: () => this.skipDates(-1, 'year')
+          label: '+1 å',
+          method: () => this.skipDates(+1, 'year')
         }
       ];
       if (this.menuVersion === 'NEGATIVE') return buttons.slice(0, 4);
