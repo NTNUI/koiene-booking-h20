@@ -115,6 +115,7 @@ export default Vue.extend({
     this.$store.dispatch('report/SET_VALID_FORM', true);
     this.$store.dispatch('report/SET_EDITED', false);
     this.$store.dispatch('report/SET_BOOKING_ID', Number(this.$route.params.booking_id));
+    console.log(this.$route.params.booking_id);
   },
   methods: {
     nextStep(n: number) {

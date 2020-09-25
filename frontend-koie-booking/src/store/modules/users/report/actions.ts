@@ -1,7 +1,8 @@
 import { ReportInfo } from '@/store/types';
 import axios from 'axios';
+import { head } from 'lodash';
 import Vue from 'vue';
-
+import store from '@/store';
 export const actions = {
   SET_STEP: (ctx: any, step: number): any => {
     ctx.commit('setStep', step);
@@ -92,16 +93,15 @@ export const actions = {
     ctx.commit('setFeedback', feedback);
   },
   CREATE_REPORT: (ctx: any, reportData: ReportInfo): any => {
-    const headers = { 'content-type': 'application/json' }; //, Authorization: '' };
-    // const authToken = store.getters['auth/getToken'];
-    // if (authToken) {
-    //   headers.Authorization = `Bearer ${authToken}`;
-    // }
-
+    const headers = { 'content-type': 'application/json', Authorization: '' };
+    const authToken = store.getters['auth/getToken'];
+    if (authToken) {
+      headers.Authorization = `Bearer ${authToken}`;
+    }
     ctx.commit('setLoadingStatus', true);
+    console.log(Vue.prototype.$apiUrl + `/koie/reports/${reportData.booking_id}`);
     axios
-      //Hvordan sender vi inn booking id? riktig det her?
-      .post(Vue.prototype.$apiUrl + `/koie/reports/${reportData.booking_id}$`, reportData, { headers })
+      .post(Vue.prototype.$apiUrl + `/koie/reports/${reportData.booking_id}`, reportData, { headers })
       .then((res) => {
         ctx.commit('setLoadingStatus', false);
       })
