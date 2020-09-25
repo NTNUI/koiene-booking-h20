@@ -16,8 +16,8 @@ export const actions = {
   SET_BOOKING_ID: (ctx: any, booking_id: number): any => {
     ctx.commit('setBookingID', booking_id);
   },
-  SET_GAS_IS_FULL: (ctx: any, status: number): any => {
-    ctx.commit('setGasIsFull', status);
+  SET_GAS_IS_FULL: (ctx: any, gasIsFull: boolean): any => {
+    ctx.commit('setGasIsFull', gasIsFull);
   },
   SET_FIREWOOD_SUPPLY: (ctx: any, supply: number): any => {
     ctx.commit('setFirewoodSupply', supply);
@@ -25,8 +25,8 @@ export const actions = {
   SET_CHOPPED_UP_WOOD_SUPPLY: (ctx: any, supply: number): any => {
     ctx.commit('setChoppedUpWoodSupply', supply);
   },
-  SET_SMOKE_DETECTOR_IS_WORKING: (ctx: any, smoke_detector_status: boolean): any => {
-    ctx.commit('setSmokeDetectorIsWorking', smoke_detector_status);
+  SET_SMOKE_DETECTOR_IS_WORKING: (ctx: any, smokeDetectorIsWorking: boolean): any => {
+    ctx.commit('setSmokeDetectorIsWorking', smokeDetectorIsWorking);
   },
   SET_GAS_BURNER_PRIMUS: (ctx: any, status: number): any => {
     ctx.commit('setGasBurnerPrimus', status);
@@ -103,8 +103,6 @@ export const actions = {
       //Hvordan sender vi inn booking id? riktig det her?
       .post(Vue.prototype.$apiUrl + `/koie/reports/${reportData.booking_id}$`, reportData, { headers })
       .then((res) => {
-        // Trenger vi setter for hver enkel felt i databasen egentlig når vi setter inn i rapportend data definert i setReport?
-        // ctx.commit('setReport', res.data);
         ctx.commit('setLoadingStatus', false);
       })
       .catch((error) => {

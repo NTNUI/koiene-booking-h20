@@ -63,7 +63,7 @@
           v-model="feedback"
           :label="$t('report.general_feedback_label')"
           :placeholder="$t('report.general_feedback_placeholder')"
-          :class="$style.otherFaultsField"
+          :class="$style.feedbackField"
           @change="setFeedback"
         />
       </v-layout>
@@ -93,8 +93,11 @@ export default Vue.extend({
     };
   },
   computed: {
+    step(): number {
+      return this.$store.state.report.step;
+    },
     apiError(): boolean {
-      return this.$store.state.koie.error;
+      return this.$store.state.report.error;
     },
     isLoading(): boolean {
       return this.$store.state.report.isLoading;

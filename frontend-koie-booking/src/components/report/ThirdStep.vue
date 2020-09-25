@@ -51,7 +51,7 @@
               hide-details="true"
               row
               :rules="equipmentRules(item.value)"
-              @change="setEquipment(item.value)"
+              @change="setEquipment(item.name, item.value)"
             >
               <v-row>
                 <v-col>
@@ -126,10 +126,10 @@ export default Vue.extend({
       return this.$store.state.report.step;
     },
     apiError(): boolean {
-      return this.$store.state.koie.error;
+      return this.$store.state.report.error;
     },
     isLoading(): boolean {
-      return this.$store.state.koie.isLoading;
+      return this.$store.state.report.isLoading;
     }
   },
   watch: {
@@ -152,7 +152,6 @@ export default Vue.extend({
       this.$store.dispatch('report/SET_OTHER_FAULTS', this.otherFaults);
     },
     setEquipment(itemName: string, itemValue: number) {
-      console.log(itemName);
       if (itemName === this.$t('report.equipment.gas_burner_primus')) {
         this.$store.dispatch('report/SET_GAS_BURNER_PRIMUS', itemValue);
       } else if (itemName === this.$t('report.equipment.axe')) {

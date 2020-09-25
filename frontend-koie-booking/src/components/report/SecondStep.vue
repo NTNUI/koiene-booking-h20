@@ -92,10 +92,10 @@ export default Vue.extend({
       return this.$store.state.report.step;
     },
     apiError(): boolean {
-      return this.$store.state.koie.error;
+      return this.$store.state.report.error;
     },
     isLoading(): boolean {
-      return this.$store.state.koie.isLoading;
+      return this.$store.state.report.isLoading;
     }
   },
   watch: {
