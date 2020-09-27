@@ -69,7 +69,7 @@ clean: ##@TestEnv Delete the project files in docker, and all not in use contain
 	docker-compose down -v
 	docker system prune
 
-setup-tests:
+test-setup:
 	docker-compose -f docker-compose.test.yml run -e POSTGRES_HOST=test_db -e POSTGRES_PORT=5433 backend python manage.py migrate
 
 pytest: ##@Test (test) Run all docker-tests with pytest, and output a report in the terminal
