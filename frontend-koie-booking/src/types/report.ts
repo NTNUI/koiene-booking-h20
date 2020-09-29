@@ -20,7 +20,11 @@ export interface ReportThirdStepData {
   edited: boolean;
   validForm: boolean;
   smokeDetectorIsWorking: number;
-  equipment: Array<{ name: TranslateResult; value: number }>;
+  equipment: Array<{
+    displayName: TranslateResult;
+    value: number;
+    action: string;
+  }>;
   otherFaults: string;
 }
 
