@@ -4,29 +4,21 @@ services:
    test_db:
      restart: always
      image: postgres
-     container_name: test_ntnui_db
+     container_name: test_db
      environment:
-       NTNUI_SECRET_KEY: ${NTNUI_SECRET_KEY}
+       POSTGRES_DB: ${POSTGRES_DB}
        POSTGRES_USER: ${POSTGRES_USER}
        POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-       POSTGRES_DB: ${POSTGRES_DB}
-       POSTGRES_HOST: test_db
-       POSTGRES_PORT: 5433
-     volumes:
-       - postgres_data:/var/lib/postgresql/data
      ports:
       - "5433:5433"
      command: -p 5433
    backend:
-     container_name: ntnui_backend
-     command: python manage.py runserver 0.0.0.0:8000
+     container_name: ntnui_backend_koiene
      build:
        context: .
        dockerfile: config/django/Dockerfile
      volumes:
         - .:/code
-     env_file:
-       - .env
      depends_on:
        - test_db
      ports:
@@ -34,5 +26,8 @@ services:
      environment:
        PRODUCTION: 'false'
        DJANGO_SETTINGS_MODULE: 'ntnui.settings.local'
-volumes:
-  postgres_data:
+       POSTGRES_DB: ${POSTGRES_DB}
+       POSTGRES_USER: ${POSTGRES_USER}
+       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+       POSTGRES_HOST: test_db
+       POSTGRES_PORT: 5433

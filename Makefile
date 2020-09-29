@@ -71,10 +71,10 @@ clean: ##@TestEnv Delete the project files in docker, and all not in use contain
 
 pytest: ##@Test (test) Run all docker-tests with pytest, and output a report in the terminal
 	make setup-tests
-	docker-compose -f docker-compose.test.yml run -e POSTGRES_HOST=test_db -e POSTGRES_PORT=5433 backend pytest --cov=. $(ARGS)
+	docker-compose -f docker-compose.test.yml run backend pytest --cov=. $(ARGS)
 
 setup-tests:
-	docker-compose -f docker-compose.test.yml run -e POSTGRES_HOST=test_db -e POSTGRES_PORT=5433 backend python manage.py migrate
+	docker-compose -f docker-compose.test.yml run backend python manage.py migrate
 
 pytest-clean: ##@Test (test) Run all docker-tests with pytest without coverage report
 	docker-compose -f docker-compose.test.yml run backend pytest $(ARGS)
