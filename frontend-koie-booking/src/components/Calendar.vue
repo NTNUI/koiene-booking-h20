@@ -28,6 +28,7 @@
         :max="maximumDate"
         :color="this.$scssVars.globalColorPrimary"
         :allowed-dates="allowedDatesFrom"
+        :first-day-of-week="1"
         no-title
         @input="menu1 = false"
         @change="updateDisabledDatesInMenu"
