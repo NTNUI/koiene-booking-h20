@@ -202,6 +202,7 @@ export default Vue.extend({
           koie: await this.$store.state.koie.koieData.name.toLowerCase(),
           arrival_date: await this.$store.state.booking.dateFrom,
           departure_date: await this.$store.state.booking.dateTo,
+          guests: await this.$store.state.booking.guests,
           guests_member: await this.$store.state.booking.numberOfMembers,
           guests_not_member: await this.$store.state.booking.numberOfNonMembers
         };

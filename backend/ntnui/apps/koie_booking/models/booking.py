@@ -1,8 +1,10 @@
 from django.db import models
+from django.contrib.postgres.fields import JSONField
 from enumchoicefield import EnumChoiceField
 
 from accounts.models.user import UserModel
 from koie_booking.models.booking_payment import BookingPayment
+from koie_booking.models.guest import GuestModel,get_default_guest
 from koie_booking.models.koie import KoieModel
 from koie_booking.utils import mail_utils
 from ntnui.enums import KeyStatus
@@ -11,6 +13,8 @@ from ntnui.enums import KeyStatus
 class BookingModel(models.Model):
     user = models.ForeignKey(UserModel, on_delete=models.CASCADE)
     koie = models.ForeignKey(KoieModel, null=True, on_delete=models.CASCADE)
+    guests = JSONField("Guests",default=get_default_guest)
+
     arrival_date = models.DateField()
     departure_date = models.DateField()
     guests_member = models.PositiveIntegerField(null=False, default=1)
@@ -49,6 +53,9 @@ class BookingModel(models.Model):
 
     def get_transaction_id(self):
         return self.booking_payment.transaction.pk
+    
+    def get_guests(self):
+        return self.guests
 
     def set_payment_status(self):
         if True or self.booking_payment.is_paid() and (not self.paid):

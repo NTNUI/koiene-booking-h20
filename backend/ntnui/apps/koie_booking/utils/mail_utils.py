@@ -1,3 +1,4 @@
+import json
 from django.core.mail import send_mail
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
@@ -8,7 +9,11 @@ def send_confirmation_mail(booking):
 
     # Mail header.
     sender = "sondrehalt@hotmail.com"
-    receiver = ["sondrehalt@gmail.com"]
+    receiver = []
+    for guest in booking.guests:
+        if guest["email"]:
+            receiver.append(guest["email"])
+
     subject = "Confirmation email"
 
     context = {"booking": booking}
@@ -38,4 +43,4 @@ def send_koie_information_mail(booking):
     html_content = render_to_string("koie_information.html", context)
     msg = EmailMultiAlternatives(subject, text_content, sender, receiver)
     msg.attach_alternative(html_content, "text/html")
-    msg.send(fail_silently=False)
+    #msg.send(fail_silently=False)

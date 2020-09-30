@@ -94,6 +94,7 @@ export interface CreateBookingInfo {
   koie: string;
   from_date: string;
   to_date: string;
+  guests: Array<Guest>;
   guests_member: number;
   guests_not_member: number;
 }
@@ -106,6 +107,7 @@ export interface BookingInfo {
   booking_transaction_id: string;
   from_date: string;
   to_date: string;
+  guests: Array<Guest>;
   guests_member: number;
   guests_not_member: number;
 }
