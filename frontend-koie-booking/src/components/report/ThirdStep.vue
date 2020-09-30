@@ -20,50 +20,51 @@
     <v-layout :class="$style.separator">
       <v-form v-model="validForm" :class="$style.form">
         <h3 class="py-4" :class="$style.form">{{ $t('report.equipment_status') }}</h3>
-        <v-row justify="space-between">
-          <v-col align-self="center" xs="2" sm="4">
-            <strong>{{ $t('report.equipment_name') }}</strong>
-          </v-col>
-          <v-col xs="10" sm="6">
-            <v-row>
-              <v-col>
-                <strong>{{ $t('report.equipment_ok') }}</strong>
-              </v-col>
-              <v-col style="white-space: nowrap">
-                <strong>{{ $t('report.equipment_unsure') }}</strong>
-              </v-col>
-              <v-col>
-                <strong>{{ $t('report.equipment_broken_or_missing') }}</strong>
-              </v-col>
-            </v-row>
-          </v-col>
-        </v-row>
-
-        <v-divider></v-divider>
-
-        <v-row v-for="item in equipment" :key="item.displayName" dense justify="space-between">
-          <v-col align-self="center" xs="2" sm="4">{{ item.displayName }}</v-col>
-          <v-col align-self="center" xs="10" sm="6">
-            <v-radio-group
-              v-model="item.value"
-              hide-details="true"
-              row
-              @change="setEquipment(item.mutation, item.value)"
-            >
-              <v-row>
+        <v-list class="overflow-x-auto" color="transparent">
+          <v-row class="flex-nowrap" justify="space-between">
+            <v-col align-self="center" sm="4">
+              <strong>{{ $t('report.equipment_name') }}</strong>
+            </v-col>
+            <v-col sm="6">
+              <v-row class="flex-nowrap">
                 <v-col>
-                  <v-radio :color="$scssVars.globalColorWarningLow"></v-radio>
+                  <strong>{{ $t('report.equipment_ok') }}</strong>
+                </v-col>
+                <v-col style="white-space: nowrap">
+                  <strong>{{ $t('report.equipment_unsure') }}</strong>
                 </v-col>
                 <v-col>
-                  <v-radio :color="$scssVars.globalColorWarningConsiderable"></v-radio>
-                </v-col>
-                <v-col>
-                  <v-radio :color="$scssVars.globalColorWarningVeryHigh"></v-radio>
+                  <strong>{{ $t('report.equipment_broken_or_missing') }}</strong>
                 </v-col>
               </v-row>
-            </v-radio-group>
-          </v-col>
-        </v-row>
+            </v-col>
+          </v-row>
+
+          <v-divider></v-divider>
+          <v-row v-for="item in equipment" :key="item.displayName" class="flex-nowrap" dense justify="space-between">
+            <v-col style="white-space: nowrap" align-self="center" xs="6" sm="4">{{ item.displayName }}</v-col>
+            <v-col xs="4" sm="6">
+              <v-radio-group
+                v-model="item.value"
+                hide-details="true"
+                row
+                @change="setEquipment(item.mutation, item.value)"
+              >
+                <v-row class="flex-nowrap">
+                  <v-col>
+                    <v-radio :color="$scssVars.globalColorWarningLow"></v-radio>
+                  </v-col>
+                  <v-col>
+                    <v-radio :color="$scssVars.globalColorWarningConsiderable"></v-radio>
+                  </v-col>
+                  <v-col>
+                    <v-radio :color="$scssVars.globalColorWarningVeryHigh"></v-radio>
+                  </v-col>
+                </v-row>
+              </v-radio-group>
+            </v-col>
+          </v-row>
+        </v-list>
       </v-form>
     </v-layout>
     <v-layout :class="$style.separator">
