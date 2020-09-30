@@ -1,5 +1,5 @@
 from django.utils.timezone import now
-from models.py import KoieReportModel
+from koie_report.models import KoieReportModel
 from koie_booking.factories.booking_factory import BookingFactory
 import factory.django
 

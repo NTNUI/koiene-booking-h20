@@ -5,6 +5,8 @@ from django.urls import reverse
 # from rest_framework.exceptions import ValidationError
 from django.utils.timezone import now
 import pytest
+# from rest_framework.test import Client
+# client = Client()
 
 
 @pytest.fixture()
