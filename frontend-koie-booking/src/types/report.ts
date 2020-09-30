@@ -23,7 +23,7 @@ export interface ReportThirdStepData {
   equipment: Array<{
     displayName: TranslateResult;
     value: number;
-    action: string;
+    mutation: string;
   }>;
   otherFaults: string;
 }

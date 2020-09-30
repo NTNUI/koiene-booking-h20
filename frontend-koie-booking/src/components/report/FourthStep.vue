@@ -1,7 +1,5 @@
 <template>
-  <ErrorCard v-if="apiError" />
-  <LoadingSpinner v-else-if="isLoading" />
-  <v-layout v-else :class="$style.container" :dark="true">
+  <v-layout :class="$style.container" :dark="true">
     <h1 :class="$style.heading">{{ $t('report.step4') }}</h1>
     <v-layout :class="$style.separator">
       <h3 class="py-4" :class="$style.supplyRegistration">{{ $t('report.water_equipment.boat') }}</h3>
@@ -72,16 +70,11 @@
 </template>
 
 <script lang="ts">
-import ErrorCard from '@/components/ErrorCard.vue';
-import LoadingSpinner from '@/components/LoadingSpinner.vue';
-import { ReportFourthStepData } from '@/types/report';
 import Vue from 'vue';
+import { ReportFourthStepData } from '../../types/report';
+
 export default Vue.extend({
   name: 'ReportFourthStep',
-  components: {
-    ErrorCard,
-    LoadingSpinner
-  },
   data(): ReportFourthStepData {
     return {
       edited: false,
@@ -95,29 +88,24 @@ export default Vue.extend({
   computed: {
     step(): number {
       return this.$store.state.report.step;
-    },
-    apiError(): boolean {
-      return this.$store.state.report.error;
-    },
-    isLoading(): boolean {
-      return this.$store.state.report.isLoading;
     }
   },
   methods: {
     setBoatStatus() {
-      this.$store.dispatch('report/SET_BOAT_SATUS', this.boat_status);
-      this.$store.dispatch('report/SET_EDITED', true);
+      this.$store.commit('report/setBoatStatus', this.boat_status);
+      this.$store.commit('report/setEdited', true);
     },
     setCanoeStatus() {
-      this.$store.dispatch('report/SET_CANOE_STATUS', this.canoe_status);
-      this.$store.dispatch('report/SET_EDITED', true);
+      this.$store.commit('report/setCanoeStatus', this.canoe_status);
+      this.$store.commit('report/setEdited', true);
     },
     setLifeJacketsStatus() {
-      this.$store.dispatch('report/SET_LIFE_JACKETS_STATUS', this.life_jackets_status);
-      this.$store.dispatch('report/SET_EDITED', true);
+      this.$store.commit('report/setLifeJacketsStatus', this.life_jackets_status);
+      this.$store.commit('report/setEdited', true);
     },
     setFeedback() {
-      this.$store.dispatch('report/SET_FEEDBACK', this.feedback);
+      this.$store.commit('report/setFeedback', this.feedback);
+      this.$store.commit('report/setEdited', true);
     }
   }
 });

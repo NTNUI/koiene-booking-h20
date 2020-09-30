@@ -44,7 +44,12 @@
         <v-row v-for="item in equipment" :key="item.displayName" dense justify="space-between">
           <v-col align-self="center" xs="2" sm="4">{{ item.displayName }}</v-col>
           <v-col align-self="center" xs="10" sm="6">
-            <v-radio-group v-model="item.value" hide-details="true" row @change="setEquipment(item.action, item.value)">
+            <v-radio-group
+              v-model="item.value"
+              hide-details="true"
+              row
+              @change="setEquipment(item.mutation, item.value)"
+            >
               <v-row>
                 <v-col>
                   <v-radio :color="$scssVars.globalColorWarningLow"></v-radio>
@@ -77,10 +82,10 @@
 </template>
 
 <script lang="ts">
+import Vue from 'vue';
 import ErrorCard from '@/components/ErrorCard.vue';
 import LoadingSpinner from '@/components/LoadingSpinner.vue';
 import { ReportThirdStepData } from '../../types/report';
-import Vue from 'vue';
 import { TranslateResult } from 'vue-i18n';
 export default Vue.extend({
   name: 'ReportThirdStep',
@@ -93,37 +98,37 @@ export default Vue.extend({
         {
           displayName: this.$t('report.equipment.gas_burner_primus'),
           value: 1,
-          action: 'SET_GAS_BURNER_PRIMUS'
+          mutation: 'setGasBurnerPrimus'
         },
-        { displayName: this.$t('report.equipment.axe'), value: 1, action: 'SET_AXE' },
-        { displayName: this.$t('report.equipment.hammer'), value: 1, action: 'SET_HAMMER' },
-        { displayName: this.$t('report.equipment.saw'), value: 1, action: 'SET_SAW' },
-        { displayName: this.$t('report.equipment.saw_blade'), value: 1, action: 'SET_SAW_BLADE' },
-        { displayName: this.$t('report.equipment.saw_bench'), value: 1, action: 'SET_SAW_BENCH' },
-        { displayName: this.$t('report.equipment.spade'), value: 1, action: 'SET_SPADE' },
+        { displayName: this.$t('report.equipment.axe'), value: 1, mutation: 'setAxe' },
+        { displayName: this.$t('report.equipment.hammer'), value: 1, mutation: 'setHammer' },
+        { displayName: this.$t('report.equipment.saw'), value: 1, mutation: 'setSaw' },
+        { displayName: this.$t('report.equipment.saw_blade'), value: 1, mutation: 'setSawBlade' },
+        { displayName: this.$t('report.equipment.saw_bench'), value: 1, mutation: 'setSawBench' },
+        { displayName: this.$t('report.equipment.spade'), value: 1, mutation: 'setSpade' },
         {
           displayName: this.$t('report.equipment.kerosene_lamp'),
           value: 1,
-          action: 'SET_KEROSENE_LAMP'
+          mutation: 'setKeroseneLamp'
         },
-        { displayName: this.$t('report.equipment.detergent'), value: 1, action: 'SET_DETERGENT' },
-        { displayName: this.$t('report.equipment.dishware'), value: 1, action: 'SET_DISHWARE' },
-        { displayName: this.$t('report.equipment.cookware'), value: 1, action: 'SET_COOKWARE' },
-        { displayName: this.$t('report.equipment.cabin_book'), value: 1, action: 'SET_CABIN_BOOK' },
+        { displayName: this.$t('report.equipment.detergent'), value: 1, mutation: 'setDetergent' },
+        { displayName: this.$t('report.equipment.dishware'), value: 1, mutation: 'setDishware' },
+        { displayName: this.$t('report.equipment.cookware'), value: 1, mutation: 'setCookware' },
+        { displayName: this.$t('report.equipment.cabin_book'), value: 1, mutation: 'setCabinBook' },
         {
           displayName: this.$t('report.equipment.candle_holders'),
           value: 1,
-          action: 'SET_CANDLE_HOLDERS'
+          mutation: 'setCandleHolders'
         },
         {
           displayName: this.$t('report.equipment.fire_blanket'),
           value: 1,
-          action: 'SET_FIRE_BLANKET'
+          mutation: 'setFireBlanket'
         },
         {
           displayName: this.$t('report.equipment.fire_extinguisher'),
           value: 1,
-          action: 'SET_FIRE_EXTINGUISHER'
+          mutation: 'setFireExtinguisher'
         }
       ],
       otherFaults: ''
@@ -136,22 +141,25 @@ export default Vue.extend({
   },
   watch: {
     validForm: function() {
-      this.$store.dispatch('report/SET_VALID_FORM', this.validForm);
+      this.$store.commit('report/setValidForm', this.validForm);
     }
   },
   mounted() {
     this.edited = this.$store.state.report.edited;
-    this.$store.dispatch('booking/SET_VALID_FORM', this.validForm);
+    this.$store.commit('report/setValidForm', this.validForm);
   },
   methods: {
     setSmokeDetectorIsWorking() {
-      this.$store.dispatch('report/SET_SMOKE_DETECTOR_IS_WORKING', !this.smokeDetectorIsWorking);
+      this.$store.commit('report/setSmokeDetectorIsWorking', !this.smokeDetectorIsWorking);
+      this.$store.commit('report/setEdited', true);
+    },
+    setEquipment(mutation: string, equipmentStatus: number) {
+      this.$store.commit(`report/${mutation}`, equipmentStatus);
+      this.$store.commit('report/setEdited', true);
     },
     setOtherFaults() {
-      this.$store.dispatch('report/SET_OTHER_FAULTS', this.otherFaults);
-    },
-    setEquipment(action: string, equipmentStatus: number) {
-      this.$store.dispatch(`report/${action}`, equipmentStatus);
+      this.$store.commit('report/setOtherFaults', this.otherFaults);
+      this.$store.commit('report/setEdited', true);
     }
   }
 });

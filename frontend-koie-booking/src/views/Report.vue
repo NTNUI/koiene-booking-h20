@@ -109,21 +109,21 @@ export default Vue.extend({
   },
   mounted() {
     this.step = 1;
-    this.$store.dispatch('report/SET_STEP', 1);
-    this.$store.dispatch('report/SET_VALID_FORM', true);
-    this.$store.dispatch('report/SET_EDITED', false);
-    this.$store.dispatch('report/SET_BOOKING_ID', Number(this.$route.params.booking_id));
+    this.$store.commit('report/setStep', 1);
+    this.$store.commit('report/setValidForm', true);
+    this.$store.commit('report/setEdited', false);
+    this.$store.commit('report/setBookingID', Number(this.$route.params.booking_id));
   },
   methods: {
     nextStep(n: number) {
       this.step = ++n % (this.steps + 1);
-      this.$store.dispatch('report/SET_STEP', Number(this.$store.state.report.step) + 1);
+      this.$store.commit('report/setStep', Number(this.$store.state.report.step) + 1);
     },
     prevStep(n: number) {
       this.step = --n % (this.steps + 1);
-      this.$store.dispatch('report/SET_STEP', Number(this.$store.state.report.step) - 1);
+      this.$store.commit('report/setStep', Number(this.$store.state.report.step) - 1);
       if (this.step === 1) {
-        this.$store.dispatch('report/SET_VALID_FORM', true);
+        this.$store.commit('report/setValidForm', true);
       }
     },
     done() {

@@ -12,10 +12,9 @@
 </template>
 
 <script lang="ts">
+import Vue from 'vue';
 import ErrorCard from '@/components/ErrorCard.vue';
 import LoadingSpinner from '@/components/LoadingSpinner.vue';
-import Vue from 'vue';
-import { component } from 'vue/types/umd';
 
 export default Vue.extend({
   name: 'ReportFirstStep',
@@ -25,10 +24,10 @@ export default Vue.extend({
   },
   computed: {
     apiError(): boolean {
-      return this.$store.state.koie.error;
+      return this.$store.state.report.error;
     },
     isLoading(): boolean {
-      return this.$store.state.koie.isLoading;
+      return this.$store.state.report.isLoading;
     }
   }
 });

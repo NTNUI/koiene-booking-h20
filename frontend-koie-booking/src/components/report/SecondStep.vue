@@ -1,7 +1,5 @@
 <template>
-  <ErrorCard v-if="apiError" />
-  <LoadingSpinner v-else-if="isLoading" />
-  <v-layout v-else :class="$style.container" :dark="true">
+  <v-layout :class="$style.container" :dark="true">
     <h1 :class="$style.heading">{{ $t('report.step2') }}</h1>
     <v-form v-model="validForm" :class="$style.form">
       <v-layout :class="$style.separator">
@@ -54,16 +52,11 @@
 </template>
 
 <script lang="ts">
-import ErrorCard from '@/components/ErrorCard.vue';
-import LoadingSpinner from '@/components/LoadingSpinner.vue';
-import { ReportSecondStepData } from '@/types/report';
 import Vue from 'vue';
+import { ReportSecondStepData } from '../../types/report';
+
 export default Vue.extend({
   name: 'ReportSecondStep',
-  components: {
-    ErrorCard,
-    LoadingSpinner
-  },
   data(): ReportSecondStepData {
     return {
       edited: false,
@@ -90,35 +83,29 @@ export default Vue.extend({
   computed: {
     step(): number {
       return this.$store.state.report.step;
-    },
-    apiError(): boolean {
-      return this.$store.state.report.error;
-    },
-    isLoading(): boolean {
-      return this.$store.state.report.isLoading;
     }
   },
   watch: {
     validForm: function() {
-      this.$store.dispatch('report/SET_VALID_FORM', this.validForm);
+      this.$store.commit('report/setValidForm', this.validForm);
     }
   },
   mounted() {
     this.edited = this.$store.state.report.edited;
-    this.$store.dispatch('booking/SET_VALID_FORM', this.validForm);
+    this.$store.commit('booking/setValidForm', this.validForm);
   },
   methods: {
     setGasIsFull() {
-      this.$store.dispatch('report/SET_GAS_IS_FULL', !this.gasIsFull);
-      this.$store.dispatch('report/SET_EDITED', true);
+      this.$store.commit('report/setGasIsFull', !this.gasIsFull);
+      this.$store.commit('report/setEdited', true);
     },
     setFirewoodSupply() {
-      this.$store.dispatch('report/SET_FIREWOOD_SUPPLY', this.firewoodSupply);
-      this.$store.dispatch('report/SET_EDITED', true);
+      this.$store.commit('report/setFirewoodSupply', this.firewoodSupply);
+      this.$store.commit('report/setEdited', true);
     },
     setChoppedUpWoodSupply() {
-      this.$store.dispatch('report/SET_CHOPPED_UP_WOOD_SUPPLY', this.choppedUpWoodSupply);
-      this.$store.dispatch('report/SET_EDITED', true);
+      this.$store.commit('report/setChoppedUpWoodSupply', this.choppedUpWoodSupply);
+      this.$store.commit('report/setEdited', true);
     }
   }
 });
