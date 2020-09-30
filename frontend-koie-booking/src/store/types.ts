@@ -127,4 +127,5 @@ export interface Guest {
 
 export interface AdminBookingsState {
   cabinsWithBookings: AdminBookingDictionary;
+  startDate: string;
 }

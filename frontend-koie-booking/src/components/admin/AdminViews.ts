@@ -1,5 +1,5 @@
 import { AdminView } from '@/types/admin/AdminView';
-import AllCabinsTable from '@/components/admin/allCabinsTable/AllCabinsTable.vue';
+import AllCabinsView from '@/components/admin/allCabinsView/AllCabinsView.vue';
 import Reports from '@/components/admin/reports/Reports.vue';
 
 const adminViews: Array<AdminView> = [
@@ -7,7 +7,7 @@ const adminViews: Array<AdminView> = [
     id: 'allCabins',
     title: 'Alle koier',
     icon: 'calendar-month',
-    component: AllCabinsTable
+    component: AllCabinsView
   },
   {
     id: 'reports',
