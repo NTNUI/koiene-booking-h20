@@ -21,7 +21,7 @@ export default Vue.extend({
   },
   computed: {
     style() {
-      const progress = Math.floor((this.availableBeds / this.numberOfBeds) * 100);
+      const progress = this.numberOfBeds === 0 ? -1 : Math.floor((this.availableBeds / this.numberOfBeds) * 100);
       return {
         color: 'black',
         width: '90%',
