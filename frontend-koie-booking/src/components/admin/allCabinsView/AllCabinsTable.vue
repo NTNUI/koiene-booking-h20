@@ -84,7 +84,7 @@ export default Vue.extend({
     customSort(items: Array<AdminBooking>, index: Array<string>, isDesc: Array<boolean>) {
       return items.sort((a, b) => {
         if (index[0] === 'name') {
-          if (!isDesc[0]) {
+          if (isDesc[0]) {
             return a.slug.localeCompare(b.slug);
           } else {
             return b.slug.localeCompare(a.slug);
@@ -92,7 +92,7 @@ export default Vue.extend({
         } else if (index[0] && index[0].length) {
           const bedsAvailableInA = a.bedsAvailableInDateRange[index[0]];
           const bedsAvailableInB = b.bedsAvailableInDateRange[index[0]];
-          if (!isDesc[0]) {
+          if (isDesc[0]) {
             return bedsAvailableInA > bedsAvailableInB ? 1 : bedsAvailableInA < bedsAvailableInB ? -1 : 0;
           } else {
             return bedsAvailableInA > bedsAvailableInB ? -1 : bedsAvailableInA < bedsAvailableInB ? 1 : 0;
