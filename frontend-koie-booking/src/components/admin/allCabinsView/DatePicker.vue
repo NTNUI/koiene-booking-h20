@@ -15,7 +15,7 @@
       <template v-slot:activator="{ on, attrs }">
         <v-text-field :label="startDate" prepend-icon="event" readonly v-bind="attrs" v-on="on"></v-text-field>
       </template>
-      <v-date-picker @input="selectDate"></v-date-picker>
+      <v-date-picker :first-day-of-week="1" @input="selectDate" />
     </v-menu>
   </v-col>
 </template>
