@@ -79,10 +79,10 @@ export interface ReportState {
   isLoading: boolean;
   error: boolean;
   step: number;
-  reportData: ReportInfo;
+  reportData: ReportData;
 }
 
-export interface ReportInfo {
+export interface ReportData {
   id: number;
   booking_id: number;
   firewood: number;

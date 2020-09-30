@@ -1,4 +1,4 @@
-import { ReportInfo } from '@/store/types';
+import { ReportData } from '@/store/types';
 import axios from 'axios';
 import { head } from 'lodash';
 import Vue from 'vue';
@@ -89,7 +89,7 @@ export const actions = {
   SET_FEEDBACK: (ctx: any, feedback: string): any => {
     ctx.commit('setFeedback', feedback);
   },
-  CREATE_REPORT: (ctx: any, reportData: ReportInfo): any => {
+  CREATE_REPORT: (ctx: any, reportData: ReportData): any => {
     const headers = { 'content-type': 'application/json', Authorization: '' };
     const authToken = store.getters['auth/getToken'];
     if (authToken) {
@@ -104,6 +104,7 @@ export const actions = {
       .catch((error) => {
         ctx.commit('setError', true);
         ctx.commit('setLoadingStatus', false);
+        console.log(error);
         throw new Error(`API ${error}`);
       });
   }

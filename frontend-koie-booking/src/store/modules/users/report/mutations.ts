@@ -1,5 +1,5 @@
 import { MutationTree } from 'vuex';
-import { ReportState, ReportInfo } from '../../../types';
+import { ReportState, ReportData } from '../../../types';
 
 export const mutations: MutationTree<ReportState> = {
   setStep(state, step: number) {
