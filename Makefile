@@ -23,6 +23,9 @@ load-data:
 	docker-compose run backend python manage.py loaddata ./ntnui/fixture/location.json
 	docker-compose run backend python manage.py loaddata ./ntnui/fixture/koier.json
 	docker-compose run backend python manage.py loaddata ./ntnui/fixture/fixture.json
+	docker-compose run backend python manage.py loaddata ./ntnui/fixture/booking.json
+	docker-compose run backend python manage.py loaddata ./ntnui/fixture/koie_report.json
+	
 	
 dump-data:  ##@TestEnv Create a JSON Dump of $APP (use APP="appname" from console)
 	docker-compose run backend python manage.py dumpdata --format=json> ./ntnui/fixture/fixture.json
