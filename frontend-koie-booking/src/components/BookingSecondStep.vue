@@ -84,7 +84,7 @@ export default Vue.extend({
     return {
       bedsChosen: 1,
       bookingStep: 1,
-      guests: [{ name: '', number: '', email: '', isMember: true }],
+      guests: [{ name: '', number: '', email: '', isMember: true, isMainBooker: true }],
       numberRules: [
         (e: any) => !!e || 'Number is required',
         (e: any) => e.length >= 8 || 'Number must be 8 characters'
@@ -151,7 +151,7 @@ export default Vue.extend({
     },
     addGuests() {
       for (let i = 0; i < this.bedsChosen - 1; i++) {
-        this.guests.push({ name: '', number: '', isMember: true, isMainBooker: i === 0 });
+        this.guests.push({ name: '', number: '', isMember: true, isMainBooker: false });
       }
     },
     addGuestField() {

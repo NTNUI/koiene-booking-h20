@@ -54,9 +54,9 @@ describe('Component BookingSecondStep.vue', () => {
       data() {
         return {
           guests: [
-            { name: '', number: '', email: '', isMember: true },
-            { name: '', number: '', isMember: false },
-            { name: '', number: '', isMember: false }
+            { name: '', number: '', email: '', isMember: true, isMainBooker: true },
+            { name: '', number: '', isMember: false, isMainBooker: false },
+            { name: '', number: '', isMember: false, isMainBooker: false }
           ]
         };
       },

@@ -184,9 +184,9 @@ export default Vue.extend({
       }
     },
     async resetBookingInfo() {
-      const guests = [{ name: '', number: '', email: '', isMember: true }];
+      const guests = [{ name: '', number: '', email: '', isMember: true, isMainBooker: true }];
       for (let i = 0; i < Number(this.$store.state.booking.beds) - 1; i++) {
-        guests.push({ name: '', number: '', email: '', isMember: true });
+        guests.push({ name: '', number: '', email: '', isMember: true, isMainBooker: true });
         this.$store.dispatch('booking/SET_GUESTS', guests);
       }
 
@@ -194,7 +194,8 @@ export default Vue.extend({
         await this.$store.dispatch('koie/FETCH_DATA', this.koieTitle);
       }
       this.fetchWarningData();
-      this.$store.dispatch('booking/SET_GUESTS', [{ name: '', number: '', email: '', isMember: true }]);
+      const guestlist = [{ name: '', number: '', email: '', isMember: true, isMainBooker: true }];
+      this.$store.dispatch('booking/SET_GUESTS', guestlist);
     },
     async nextStep() {
       if (this.step === 2) {

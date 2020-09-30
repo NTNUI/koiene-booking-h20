@@ -5,13 +5,14 @@ from django.template.loader import render_to_string
 
 
 def send_confirmation_mail(booking):
-    """ Sends confirmation email to users and guests who signs up for events and sub-events. """
+    """ Sends confirmation email to the person responsible for the trip. """
 
     # Mail header.
     sender = "TestKoieneNTNUI@gmail.com"
     receiver = []
+    
     for guest in booking.guests:
-        if guest["email"]:
+        if guest["email"] and guest["isMainBooker"]:
             receiver.append(guest["email"])
 
     subject = "Confirmation email"
@@ -28,13 +29,14 @@ def send_confirmation_mail(booking):
 
 
 def send_koie_information_mail(booking):
-    """ Sends koie information to person who made booking. """
+    """ Sends koie information to everyone who is going. """
 
     # Mail header.
     sender = "TestKoieneNTNUI@gmail.com"
     receiver = []
+
     for guest in booking.guests:
-        if guest["email"] and guest["isMainBooker"]:
+        if guest["email"]:
             receiver.append(guest["email"])
 
     subject = "Koie information"
