@@ -2,7 +2,8 @@
   <v-col cols="4">
     <h5 style="text-align: center">Velg dato</h5>
     <v-menu
-      :close-on-content-click="true"
+      v-model="showDatePicker"
+      :close-on-content-click="false"
       :nudge-right="20"
       :nudge-top="20"
       :first-day-of-week="1"
@@ -10,7 +11,6 @@
       offset-y
       min-width="290px"
       no-title
-      close-on-change
     >
       <template v-slot:activator="{ on, attrs }">
         <v-text-field :label="startDate" prepend-icon="event" readonly v-bind="attrs" v-on="on"></v-text-field>
@@ -27,6 +27,11 @@ import { addToDate } from '@/utils/dates';
 
 export default Vue.extend({
   name: 'DatePicker',
+  data() {
+    return {
+      showDatePicker: false
+    };
+  },
   computed: {
     startDate() {
       return store.getters['adminBookings/getStartDate'];
@@ -34,6 +39,7 @@ export default Vue.extend({
   },
   methods: {
     selectDate(startDate: string) {
+      this.showDatePicker = false;
       store.commit('adminBookings/setStartDate', startDate);
       const endDate = addToDate(startDate, 7, 'day');
       store.dispatch('adminBookings/MOUNT_CABINS_WITH_BOOKINGS', { startDate: startDate, endDate: endDate });
