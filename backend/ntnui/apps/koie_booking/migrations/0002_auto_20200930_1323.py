@@ -11,18 +11,6 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.CreateModel(
-            name='GuestModel',
-            fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('email', models.CharField(max_length=40, null=True)),
-                ('phone_number', models.IntegerField(null=True)),
-            ],
-            options={
-                'verbose_name': 'Guest',
-                'verbose_name_plural': 'Guests',
-            },
-        ),
         migrations.AddField(
             model_name='bookingmodel',
             name='guests',

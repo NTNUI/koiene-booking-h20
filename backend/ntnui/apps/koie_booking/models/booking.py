@@ -4,7 +4,7 @@ from enumchoicefield import EnumChoiceField
 
 from accounts.models.user import UserModel
 from koie_booking.models.booking_payment import BookingPayment
-from koie_booking.models.guest import GuestModel,get_default_guest
+from koie_booking.models.guest import get_default_guest
 from koie_booking.models.koie import KoieModel
 from koie_booking.utils import mail_utils
 from ntnui.enums import KeyStatus
