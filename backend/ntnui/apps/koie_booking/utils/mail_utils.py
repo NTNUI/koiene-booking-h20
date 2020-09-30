@@ -8,7 +8,7 @@ def send_confirmation_mail(booking):
     """ Sends confirmation email to users and guests who signs up for events and sub-events. """
 
     # Mail header.
-    sender = "sondrehalt@hotmail.com"
+    sender = "TestKoieneNTNUI@gmail.com"
     receiver = []
     for guest in booking.guests:
         if guest["email"]:
@@ -31,8 +31,12 @@ def send_koie_information_mail(booking):
     """ Sends koie information to person who made booking. """
 
     # Mail header.
-    sender = "sondrehalt@hotmail.com"
-    receiver = ["sondrehalt@gmail.com"]
+    sender = "TestKoieneNTNUI@gmail.com"
+    receiver = []
+    for guest in booking.guests:
+        if guest["email"] and guest["isMainBooker"]:
+            receiver.append(guest["email"])
+
     subject = "Koie information"
 
     context = {"koie": booking.koie, "id" : booking.id}
@@ -43,4 +47,4 @@ def send_koie_information_mail(booking):
     html_content = render_to_string("koie_information.html", context)
     msg = EmailMultiAlternatives(subject, text_content, sender, receiver)
     msg.attach_alternative(html_content, "text/html")
-    #msg.send(fail_silently=False)
+    msg.send(fail_silently=False)

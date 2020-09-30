@@ -14,5 +14,6 @@ def get_default_guest():
         'name': ' ',
         'number': ' ',
         "email": "to1@example.com",
-        'isMember': True
+        'isMember': True,
+        'isMainBooker': False,
         }

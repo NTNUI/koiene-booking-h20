@@ -151,12 +151,12 @@ export default Vue.extend({
     },
     addGuests() {
       for (let i = 0; i < this.bedsChosen - 1; i++) {
-        this.guests.push({ name: '', number: '', isMember: true });
+        this.guests.push({ name: '', number: '', isMember: true, isMainBooker: i === 0 });
       }
     },
     addGuestField() {
       if (this.bedsChosen < this.$store.state.booking.availableBeds) {
-        this.guests.push({ name: '', number: '', isMember: true });
+        this.guests.push({ name: '', number: '', isMember: true, isMainBooker: false });
         this.bedsChosen += 1;
         this.$store.dispatch('booking/SET_BEDS', this.bedsChosen);
       }

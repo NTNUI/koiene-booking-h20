@@ -15,8 +15,8 @@ CORS_ORIGIN_ALLOW_ALL = True
 """ EMAIL """
 EMAIL_HOST = "mail.smtp2go.com"
 EMAIL_PORT =  2525
-EMAIL_HOST_USER = "sondrehalt@hotmail.com"
-EMAIL_HOST_PASSWORD = "inb2KqXtPKyI"
+EMAIL_HOST_USER = "TestKoieneNTNUI@gmail.com"
+EMAIL_HOST_PASSWORD = "ZGlydzRjczJlNm8w"
 EMAIL_USE_TLS = True
 
 

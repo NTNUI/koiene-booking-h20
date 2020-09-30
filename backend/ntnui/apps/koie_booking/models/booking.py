@@ -58,7 +58,8 @@ class BookingModel(models.Model):
         return self.guests
 
     def set_payment_status(self):
-        if True or self.booking_payment.is_paid() and (not self.paid):
+        # v IMPORTANT: REMOVE TRUE LATER, THIS BYPASSES STRIPE CHECKS
+        if True or self.booking_payment.is_paid() and (not self.paid): 
             self.paid = True
             mail_utils.send_confirmation_mail(self)
             mail_utils.send_koie_information_mail(self)
