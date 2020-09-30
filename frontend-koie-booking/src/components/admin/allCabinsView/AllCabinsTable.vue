@@ -14,7 +14,7 @@
         <td>
           {{ row.item.name }}
         </td>
-        <td v-for="(header, index) in dateHeaders" :key="index + row.item.slug">
+        <td v-for="(header, index) in dateHeaders" :key="index + row.item.slug" style="width: 12vw">
           <div style="width: 60px; height: 60px; margin: auto">
             <CabinCapacity
               :available-beds="Object.values(row.item.bedsAvailableInDateRange)[index]"
