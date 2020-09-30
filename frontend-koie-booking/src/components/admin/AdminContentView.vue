@@ -19,11 +19,14 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
+@import 'src/styles/variables';
+
 #adminContentView {
   position: absolute;
   top: 0;
   left: 0;
   padding: 20px;
   width: 100%;
+  background-color: $global-color-background;
 }
 </style>
