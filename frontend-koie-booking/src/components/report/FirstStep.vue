@@ -1,7 +1,5 @@
 <template>
-  <ErrorCard v-if="apiError" />
-  <LoadingSpinner v-else-if="isLoading" />
-  <v-layout v-else :class="$style.container" :dark="true">
+  <v-layout :class="$style.container" :dark="true">
     <h1 :class="$style.heading">{{ $t('report.reportTitle') }}</h1>
     <v-layout :class="$style.separator">
       <v-layout class="px-4">
@@ -13,23 +11,9 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import ErrorCard from '@/components/ErrorCard.vue';
-import LoadingSpinner from '@/components/LoadingSpinner.vue';
 
 export default Vue.extend({
-  name: 'ReportFirstStep',
-  components: {
-    ErrorCard,
-    LoadingSpinner
-  },
-  computed: {
-    apiError(): boolean {
-      return this.$store.state.report.error;
-    },
-    isLoading(): boolean {
-      return this.$store.state.report.isLoading;
-    }
-  }
+  name: 'ReportFirstStep'
 });
 </script>
 

@@ -59,7 +59,6 @@ export default Vue.extend({
   name: 'ReportSecondStep',
   data(): ReportSecondStepData {
     return {
-      edited: false,
       validForm: true,
       gasIsFull: 0,
       firewoodSupply: 2,
@@ -79,20 +78,6 @@ export default Vue.extend({
         `${this.$t('report.chopped_up_wood_supply_full')}`
       ]
     };
-  },
-  computed: {
-    step(): number {
-      return this.$store.state.report.step;
-    }
-  },
-  watch: {
-    validForm: function() {
-      this.$store.commit('report/setValidForm', this.validForm);
-    }
-  },
-  mounted() {
-    this.edited = this.$store.state.report.edited;
-    this.$store.commit('booking/setValidForm', this.validForm);
   },
   methods: {
     setGasIsFull() {

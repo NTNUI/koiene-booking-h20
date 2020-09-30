@@ -88,11 +88,11 @@ import ErrorCard from '@/components/ErrorCard.vue';
 import LoadingSpinner from '@/components/LoadingSpinner.vue';
 import { ReportThirdStepData } from '../../types/report';
 import { TranslateResult } from 'vue-i18n';
+
 export default Vue.extend({
   name: 'ReportThirdStep',
   data(): ReportThirdStepData {
     return {
-      edited: false,
       validForm: true,
       smokeDetectorIsWorking: 0,
       equipment: [
@@ -134,20 +134,6 @@ export default Vue.extend({
       ],
       otherFaults: ''
     };
-  },
-  computed: {
-    step(): number {
-      return this.$store.state.report.step;
-    }
-  },
-  watch: {
-    validForm: function() {
-      this.$store.commit('report/setValidForm', this.validForm);
-    }
-  },
-  mounted() {
-    this.edited = this.$store.state.report.edited;
-    this.$store.commit('report/setValidForm', this.validForm);
   },
   methods: {
     setSmokeDetectorIsWorking() {

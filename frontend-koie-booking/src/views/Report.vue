@@ -5,30 +5,31 @@
         <v-stepper v-model="step" alt-labels :class="$style.stepper">
           <v-stepper-header :class="$style.stepperHeader">
             <v-stepper-step :complete="step > 1" :step="1">
-              {{ labels[0] }}
+              {{ $t('report.step1') }}
             </v-stepper-step>
             <v-divider></v-divider>
             <v-stepper-step :complete="step > 2" :step="2">
-              {{ labels[1] }}
+              {{ $t('report.step2') }}
             </v-stepper-step>
             <v-divider></v-divider
             ><v-stepper-step :complete="step > 3" :step="3">
-              {{ labels[2] }}
+              {{ $t('report.step3') }}
             </v-stepper-step>
             <v-divider></v-divider
             ><v-stepper-step :step="4">
-              {{ labels[3] }}
+              {{ $t('report.step4') }}
             </v-stepper-step>
           </v-stepper-header>
           <v-layout>
-            <LoadingSpinner v-if="isLoading" />
+            <ErrorCard v-if="apiError" />
+            <LoadingSpinner v-else-if="isLoading" />
             <FirstStep v-else-if="step === 1" />
             <SecondStep v-else-if="step === 2" />
             <ThirdStep v-else-if="step === 3" />
             <FourthStep v-else-if="step === 4" />
           </v-layout>
         </v-stepper>
-        <div v-show="true" :class="$style.btnWrapper">
+        <div v-show="!isLoading" :class="$style.btnWrapper">
           <v-btn
             v-if="step > 1"
             :color="this.$scssVars.globalColorPrimary"
@@ -66,36 +67,34 @@
 </template>
 
 <script lang="ts">
+import ErrorCard from '@/components/ErrorCard.vue';
+import LoadingSpinner from '@/components/LoadingSpinner.vue';
 import FirstStep from '@/components/report/FirstStep.vue';
 import SecondStep from '@/components/report/SecondStep.vue';
 import ThirdStep from '@/components/report/ThirdStep.vue';
 import FourthStep from '@/components/report/FourthStep.vue';
-import LoadingSpinner from '@/components/LoadingSpinner.vue';
 import { ReportData } from '../types/report';
 import Vue from 'vue';
+
 export default Vue.extend({
   name: 'Report',
 
   components: {
+    ErrorCard,
+    LoadingSpinner,
     FirstStep,
     SecondStep,
     ThirdStep,
-    FourthStep,
-    LoadingSpinner
+    FourthStep
   },
 
   data(): ReportData {
     return {
       step: 1,
-      steps: 4,
-      labels: [
-        this.$i18n.t('report.step1'),
-        this.$i18n.t('report.step2'),
-        this.$i18n.t('report.step3'),
-        this.$i18n.t('report.step4')
-      ]
+      steps: 4
     };
   },
+
   computed: {
     isValid(): string {
       return this.$store.state.report.validForm;
@@ -103,10 +102,11 @@ export default Vue.extend({
     isLoading(): boolean {
       return this.$store.state.report.isLoading;
     },
-    error(): boolean {
+    apiError(): boolean {
       return this.$store.state.report.error;
     }
   },
+
   mounted() {
     this.step = 1;
     this.$store.commit('report/setStep', 1);
@@ -114,6 +114,7 @@ export default Vue.extend({
     this.$store.commit('report/setEdited', false);
     this.$store.commit('report/setBookingID', Number(this.$route.params.booking_id));
   },
+
   methods: {
     nextStep(n: number) {
       this.step = ++n % (this.steps + 1);
