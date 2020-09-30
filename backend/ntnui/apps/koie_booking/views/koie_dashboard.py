@@ -9,7 +9,6 @@ from koie_booking.serializers.all_koier_detailed import (
     KoierDetailedRangeSerializer,
 )
 
-from django.utils.translation import gettext as _
 from django.utils.timezone import now, timedelta
 
 
