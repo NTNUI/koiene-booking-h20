@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component ReportFirstStep.vue Matches snapshot 1`] = `
+<div class="layout dark container">
+  <h1 class="heading">Digital Cabin Report</h1>
+  <div class="layout separator">
+    <div class="layout px-4">
+      <p>The cabin group is run purely on volunteer work and we rely on your feedback to be able to run the cabins.</p>
+    </div>
+  </div>
+</div>
+`;
