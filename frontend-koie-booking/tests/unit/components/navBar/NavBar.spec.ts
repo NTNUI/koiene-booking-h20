@@ -95,6 +95,7 @@ describe('Component NavBar.vue', () => {
   it("User can't see admin button if not admin but logged in", () => {
     // Arrange
     store.commit('auth/setToken', { access: 'testToken' });
+    store.commit('auth/setAdmin', false);
 
     // Act
     wrapper = mount(NavBar, {
