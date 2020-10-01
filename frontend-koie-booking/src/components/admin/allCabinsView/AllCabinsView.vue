@@ -25,13 +25,16 @@ import DatePicker from '@/components/admin/allCabinsView/DatePicker';
 import DateSkippers from '@/components/admin/allCabinsView/DateSkippers';
 import dayjs from 'dayjs';
 import store from '@/store/index';
+import { addToDate } from '@/utils/dates';
 
 export default Vue.extend({
   name: 'AllCabinsView',
   components: { AllCabinsTable, DatePicker, DateSkippers },
   mounted() {
+    const startDate = dayjs().format('YYYY-MM-DD');
+    const endDate = addToDate(startDate, 7, 'day');
     store.commit('adminBookings/setStartDate', dayjs().format('YYYY-MM-DD'));
-    store.dispatch('adminBookings/MOUNT_CABINS_WITH_BOOKINGS');
+    store.dispatch('adminBookings/MOUNT_CABINS_WITH_BOOKINGS', { startDate: startDate, endDate: endDate });
   }
 });
 </script>
