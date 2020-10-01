@@ -1,6 +1,6 @@
 import { ActionTree } from 'vuex';
 import axios from 'axios';
-import APIAdminBooking from '@/types/admin/AdminBooking';
+import { APIAdminBooking } from '@/types/admin/AdminBooking';
 
 import { AdminBookingsState, RootState } from '@/store/types';
 import Vue from 'vue';
