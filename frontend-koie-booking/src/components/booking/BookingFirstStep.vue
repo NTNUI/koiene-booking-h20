@@ -49,11 +49,11 @@
 </template>
 
 <script lang="ts">
-import Calendar from '../components/Calendar.vue';
-import ErrorCard from '../components/ErrorCard.vue';
-import LoadingSpinner from '../components/LoadingSpinner.vue';
+import Calendar from '@/components/Calendar.vue';
+import ErrorCard from '@/components/ErrorCard.vue';
+import LoadingSpinner from '@/components/LoadingSpinner.vue';
 import Vue from 'vue';
-import { BookingFirstStepData } from '../types/booking';
+import { BookingFirstStepData } from '@/types/booking';
 import BookingSecondStepVue from './BookingSecondStep.vue';
 
 export default Vue.extend({

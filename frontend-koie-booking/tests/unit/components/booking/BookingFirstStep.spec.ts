@@ -1,11 +1,14 @@
 import Vue from 'vue';
 import Vuetify from 'vuetify';
+import VueRouter from 'vue-router';
 import Vuex from 'vuex';
-import store from '@/store';
+import { storeConfig } from '@/store';
+import { cloneDeep } from 'lodash';
 import i18n from '@/i18n';
 import scssVars from '@/styles/variables.scss';
 import flushPromises from 'flush-promises';
 import mockAxios from 'jest-mock-axios';
+import { routes } from '@/router';
 
 Vue.use(Vuetify);
 
@@ -13,19 +16,22 @@ Vue.use(Vuetify);
 import { mount, createLocalVue } from '@vue/test-utils';
 
 // Components or views
-import BookingThirdStep from '../../../src/components/BookingThirdStep.vue';
+import BookingFirstStep from '@/components/booking/BookingFirstStep.vue';
 
-describe('Component BookingThirdStep.vue', () => {
+describe('Component BookingFirstStep.vue', () => {
   // Router not needed for this test-suite
   let wrapper: any;
   let localVue: any;
   let vuetify: any;
+  let store: any;
 
   beforeEach(() => {
     localVue = createLocalVue();
     vuetify = new Vuetify();
     localVue.use(Vuetify);
     localVue.use(Vuex);
+    // Hard resets the store between tests
+    store = new Vuex.Store(cloneDeep(storeConfig));
     localVue.prototype.$scssVars = scssVars;
   });
 
@@ -34,18 +40,21 @@ describe('Component BookingThirdStep.vue', () => {
   });
 
   it('Matches snapshot', async () => {
-    wrapper = mount(BookingThirdStep, {
+    wrapper = mount(BookingFirstStep, {
       localVue,
       vuetify,
       i18n,
       store,
-      computed: {
-        price() {
-          return 120;
+      mocks: {
+        $route: {
+          params: { id: 'flåkoia' }
         }
-      },
-      stubs: ['Card']
+      }
     });
+
+    const responseObj = { data: { koie: { name: 'flåkoia' } } };
+    mockAxios.mockResponse(responseObj);
+    await flushPromises();
 
     expect(wrapper).toMatchSnapshot();
   });
