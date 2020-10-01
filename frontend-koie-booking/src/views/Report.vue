@@ -23,10 +23,10 @@
           <v-layout>
             <ErrorCard v-if="apiError" />
             <LoadingSpinner v-else-if="isLoading" />
-            <FirstStep v-else-if="step === 1" />
-            <SecondStep v-else-if="step === 2" />
-            <ThirdStep v-else-if="step === 3" />
-            <FourthStep v-else-if="step === 4" />
+            <ReportFirstStep v-else-if="step === 1" />
+            <ReportSecondStep v-else-if="step === 2" />
+            <ReportThirdStep v-else-if="step === 3" />
+            <ReportFourthStep v-else-if="step === 4" />
           </v-layout>
         </v-stepper>
         <div v-show="!isLoading" :class="$style.btnWrapper">
@@ -69,10 +69,10 @@
 <script lang="ts">
 import ErrorCard from '@/components/ErrorCard.vue';
 import LoadingSpinner from '@/components/LoadingSpinner.vue';
-import FirstStep from '@/components/report/FirstStep.vue';
-import SecondStep from '@/components/report/SecondStep.vue';
-import ThirdStep from '@/components/report/ThirdStep.vue';
-import FourthStep from '@/components/report/FourthStep.vue';
+import ReportFirstStep from '@/components/report/ReportFirstStep.vue';
+import ReportSecondStep from '@/components/report/ReportSecondStep.vue';
+import ReportThirdStep from '@/components/report/ReportThirdStep.vue';
+import ReportFourthStep from '@/components/report/ReportFourthStep.vue';
 import { ReportData } from '../types/report';
 import Vue from 'vue';
 
@@ -82,10 +82,10 @@ export default Vue.extend({
   components: {
     ErrorCard,
     LoadingSpinner,
-    FirstStep,
-    SecondStep,
-    ThirdStep,
-    FourthStep,
+    ReportFirstStep,
+    ReportSecondStep,
+    ReportThirdStep,
+    ReportFourthStep,
   },
 
   data(): ReportData {
