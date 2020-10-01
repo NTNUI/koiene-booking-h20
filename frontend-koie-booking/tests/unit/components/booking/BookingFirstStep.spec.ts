@@ -47,9 +47,9 @@ describe('Component BookingFirstStep.vue', () => {
       store,
       mocks: {
         $route: {
-          params: { id: 'flåkoia' }
-        }
-      }
+          params: { id: 'flåkoia' },
+        },
+      },
     });
 
     const responseObj = { data: { koie: { name: 'flåkoia' } } };

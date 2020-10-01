@@ -12,12 +12,12 @@ export default Vue.extend({
   props: {
     availableBeds: {
       type: Number,
-      default: 0
+      default: 0,
     },
     numberOfBeds: {
       type: Number,
-      default: 0
-    }
+      default: 0,
+    },
   },
   computed: {
     style() {
@@ -33,10 +33,10 @@ export default Vue.extend({
             ? 'red'
             : progress >= 99
             ? 'green'
-            : 'linear-gradient(-90deg, green, green ' + progress + '%, yellow ' + progress + '%)'
+            : 'linear-gradient(-90deg, green, green ' + progress + '%, yellow ' + progress + '%)',
       };
-    }
-  }
+    },
+  },
 });
 </script>
 

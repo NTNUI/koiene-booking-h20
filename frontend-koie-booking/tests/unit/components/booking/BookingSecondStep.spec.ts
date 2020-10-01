@@ -39,7 +39,7 @@ describe('Component BookingSecondStep.vue', () => {
       vuetify,
       i18n,
       store,
-      sync: false
+      sync: false,
     });
 
     expect(wrapper).toMatchSnapshot();
@@ -56,11 +56,11 @@ describe('Component BookingSecondStep.vue', () => {
           guests: [
             { name: '', number: '', email: '', isMember: true },
             { name: '', number: '', isMember: false },
-            { name: '', number: '', isMember: false }
-          ]
+            { name: '', number: '', isMember: false },
+          ],
         };
       },
-      sync: false
+      sync: false,
     });
 
     expect(wrapper.vm.price).toBe(200);

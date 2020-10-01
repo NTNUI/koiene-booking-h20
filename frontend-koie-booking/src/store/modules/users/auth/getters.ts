@@ -15,5 +15,5 @@ export const getters: GetterTree<AuthState, RootState> = {
       return tokens.access;
     }
     return '';
-  }
+  },
 };

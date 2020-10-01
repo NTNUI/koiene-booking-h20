@@ -67,7 +67,7 @@ export default Vue.extend({
         '',
         '',
         '',
-        `${this.$t('report.firewood_supply_full')}`
+        `${this.$t('report.firewood_supply_full')}`,
       ],
       choppedUpWoodSupply: 2,
       choppedUpSupplyLabels: [
@@ -75,8 +75,8 @@ export default Vue.extend({
         '',
         '',
         '',
-        `${this.$t('report.chopped_up_wood_supply_full')}`
-      ]
+        `${this.$t('report.chopped_up_wood_supply_full')}`,
+      ],
     };
   },
   methods: {
@@ -91,8 +91,8 @@ export default Vue.extend({
     setChoppedUpWoodSupply() {
       this.$store.commit('report/setChoppedUpWoodSupply', this.choppedUpWoodSupply);
       this.$store.commit('report/setEdited', true);
-    }
-  }
+    },
+  },
 });
 </script>
 

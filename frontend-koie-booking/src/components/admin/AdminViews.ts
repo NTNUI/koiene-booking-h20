@@ -7,14 +7,14 @@ const adminViews: Array<AdminView> = [
     id: 'allCabins',
     title: 'Alle koier',
     icon: 'calendar-month',
-    component: AllCabinsView
+    component: AllCabinsView,
   },
   {
     id: 'reports',
     title: 'Rapporter',
     icon: 'file-document-outline',
-    component: Reports
-  }
+    component: Reports,
+  },
 ];
 
 export default adminViews;

@@ -10,5 +10,5 @@ export const actions: ActionTree<AuthState, RootState> = {
   },
   deleteTokens({ commit }) {
     commit('removeToken');
-  }
+  },
 };

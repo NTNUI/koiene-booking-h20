@@ -36,7 +36,7 @@ export const actions: ActionTree<KoieState, RootState> = {
           throw new Error(`API ${error}`);
         });
     }
-  }
+  },
 };
 
 export default actions;

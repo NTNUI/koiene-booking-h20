@@ -48,7 +48,7 @@ describe('Component NavBar.vue', () => {
       router,
       vuetify,
       i18n,
-      store
+      store,
     });
 
     expect(wrapper).toMatchSnapshot();
@@ -63,7 +63,7 @@ describe('Component NavBar.vue', () => {
       router,
       vuetify,
       i18n,
-      store
+      store,
     });
     const spy = jest.spyOn(wrapper.vm.$router, 'push');
 
@@ -85,7 +85,7 @@ describe('Component NavBar.vue', () => {
       router,
       vuetify,
       i18n,
-      store
+      store,
     });
 
     //Assert
@@ -103,7 +103,7 @@ describe('Component NavBar.vue', () => {
       router,
       vuetify,
       i18n,
-      store
+      store,
     });
 
     // Assert
@@ -120,7 +120,7 @@ describe('Component NavBar.vue', () => {
       router,
       vuetify,
       i18n,
-      store
+      store,
     });
 
     // Assert

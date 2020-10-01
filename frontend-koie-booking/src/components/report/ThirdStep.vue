@@ -99,7 +99,7 @@ export default Vue.extend({
         {
           displayName: this.$t('report.equipment.gas_burner_primus'),
           value: 1,
-          mutation: 'setGasBurnerPrimus'
+          mutation: 'setGasBurnerPrimus',
         },
         { displayName: this.$t('report.equipment.axe'), value: 1, mutation: 'setAxe' },
         { displayName: this.$t('report.equipment.hammer'), value: 1, mutation: 'setHammer' },
@@ -110,7 +110,7 @@ export default Vue.extend({
         {
           displayName: this.$t('report.equipment.kerosene_lamp'),
           value: 1,
-          mutation: 'setKeroseneLamp'
+          mutation: 'setKeroseneLamp',
         },
         { displayName: this.$t('report.equipment.detergent'), value: 1, mutation: 'setDetergent' },
         { displayName: this.$t('report.equipment.dishware'), value: 1, mutation: 'setDishware' },
@@ -119,20 +119,20 @@ export default Vue.extend({
         {
           displayName: this.$t('report.equipment.candle_holders'),
           value: 1,
-          mutation: 'setCandleHolders'
+          mutation: 'setCandleHolders',
         },
         {
           displayName: this.$t('report.equipment.fire_blanket'),
           value: 1,
-          mutation: 'setFireBlanket'
+          mutation: 'setFireBlanket',
         },
         {
           displayName: this.$t('report.equipment.fire_extinguisher'),
           value: 1,
-          mutation: 'setFireExtinguisher'
-        }
+          mutation: 'setFireExtinguisher',
+        },
       ],
-      otherFaults: ''
+      otherFaults: '',
     };
   },
   methods: {
@@ -147,8 +147,8 @@ export default Vue.extend({
     setOtherFaults() {
       this.$store.commit('report/setOtherFaults', this.otherFaults);
       this.$store.commit('report/setEdited', true);
-    }
-  }
+    },
+  },
 });
 </script>
 

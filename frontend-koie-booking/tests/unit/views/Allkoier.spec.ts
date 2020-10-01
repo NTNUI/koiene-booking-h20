@@ -49,11 +49,11 @@ describe('View AllKoier.vue', () => {
       vuetify,
       router,
       i18n,
-      store
+      store,
     });
 
     const responseObj = {
-      data: { koier: [{ name: 'flåkoia', number_of_beds: 10 }] }
+      data: { koier: [{ name: 'flåkoia', number_of_beds: 10 }] },
     };
     mockAxios.mockResponse(responseObj);
     await flushPromises();
@@ -68,7 +68,7 @@ describe('View AllKoier.vue', () => {
       vuetify,
       router,
       i18n,
-      store
+      store,
     });
 
     const responseObj = { data: { koier: [{ name: 'flåkoia', number_of_beds: 10 }] } };
@@ -86,7 +86,7 @@ describe('View AllKoier.vue', () => {
       vuetify,
       router,
       i18n,
-      store
+      store,
     });
     const spy = jest.spyOn(wrapper.vm.$router, 'push');
     const responseObj = { data: { koier: [{ name: 'flåkoia', number_of_beds: 10 }] } };

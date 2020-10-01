@@ -85,13 +85,13 @@ export default Vue.extend({
     FirstStep,
     SecondStep,
     ThirdStep,
-    FourthStep
+    FourthStep,
   },
 
   data(): ReportData {
     return {
       step: 1,
-      steps: 4
+      steps: 4,
     };
   },
 
@@ -104,7 +104,7 @@ export default Vue.extend({
     },
     apiError(): boolean {
       return this.$store.state.report.error;
-    }
+    },
   },
 
   mounted() {
@@ -131,8 +131,8 @@ export default Vue.extend({
       this.$store.dispatch('report/CREATE_REPORT', this.$store.state.report.reportData);
       this.$router.push(`/`);
     },
-    resetReportInfo() {}
-  }
+    resetReportInfo() {},
+  },
 });
 </script>
 

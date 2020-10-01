@@ -42,9 +42,9 @@ describe('Component BookingThirdStep.vue', () => {
       computed: {
         price() {
           return 120;
-        }
+        },
       },
-      stubs: ['Card']
+      stubs: ['Card'],
     });
 
     expect(wrapper).toMatchSnapshot();

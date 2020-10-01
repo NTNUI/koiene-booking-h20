@@ -19,8 +19,8 @@ const store: StoreOptions<RootState> = {
     booking,
     avalanche,
     report,
-    auth
-  }
+    auth,
+  },
 };
 
 export default new Vuex.Store<RootState>(store);
