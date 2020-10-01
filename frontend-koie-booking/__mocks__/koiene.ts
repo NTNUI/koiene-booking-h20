@@ -19,8 +19,8 @@ const koieData: AdminBookingDictionary = {
       ['2020-09-21']: 11,
       ['2020-09-22']: 11,
       ['2020-09-23']: 11,
-      ['2020-09-24']: 11
-    }
+      ['2020-09-24']: 11,
+    },
   },
   ['mevasskoia']: {
     name: 'Mevasskoia',
@@ -36,8 +36,8 @@ const koieData: AdminBookingDictionary = {
       ['2020-09-21']: 5,
       ['2020-09-22']: 2,
       ['2020-09-23']: 5,
-      ['2020-09-24']: 5
-    }
+      ['2020-09-24']: 5,
+    },
   },
   ['øvensenget']: {
     name: 'Øvensenget',
@@ -53,8 +53,8 @@ const koieData: AdminBookingDictionary = {
       ['2020-09-21']: 8,
       ['2020-09-22']: 8,
       ['2020-09-23']: 8,
-      ['2020-09-24']: 8
-    }
+      ['2020-09-24']: 8,
+    },
   },
   ['kåsen']: {
     name: 'Kåsen',
@@ -70,8 +70,8 @@ const koieData: AdminBookingDictionary = {
       ['2020-09-21']: 8,
       ['2020-09-22']: 8,
       ['2020-09-23']: 8,
-      ['2020-09-24']: 8
-    }
+      ['2020-09-24']: 8,
+    },
   },
   ['stakkslettbua']: {
     name: 'Stakkslettbua',
@@ -87,8 +87,8 @@ const koieData: AdminBookingDictionary = {
       ['2020-09-21']: 11,
       ['2020-09-22']: 11,
       ['2020-09-23']: 11,
-      ['2020-09-24']: 11
-    }
+      ['2020-09-24']: 11,
+    },
   },
   ['holmsåkoia']: {
     name: 'Holmsåkoia',
@@ -104,8 +104,8 @@ const koieData: AdminBookingDictionary = {
       ['2020-09-21']: 20,
       ['2020-09-22']: 20,
       ['2020-09-23']: 20,
-      ['2020-09-24']: 20
-    }
+      ['2020-09-24']: 20,
+    },
   },
   ['sonvasskoia']: {
     name: 'Sonvasskoia',
@@ -121,8 +121,8 @@ const koieData: AdminBookingDictionary = {
       ['2020-09-21']: 8,
       ['2020-09-22']: 8,
       ['2020-09-23']: 8,
-      ['2020-09-24']: 8
-    }
+      ['2020-09-24']: 8,
+    },
   },
   ['nicokoia']: {
     name: 'Nicokoia',
@@ -138,8 +138,8 @@ const koieData: AdminBookingDictionary = {
       ['2020-09-21']: 8,
       ['2020-09-22']: 8,
       ['2020-09-23']: 8,
-      ['2020-09-24']: 8
-    }
+      ['2020-09-24']: 8,
+    },
   },
   ['telin']: {
     name: 'Telin',
@@ -155,8 +155,8 @@ const koieData: AdminBookingDictionary = {
       ['2020-09-21']: 9,
       ['2020-09-22']: 9,
       ['2020-09-23']: 9,
-      ['2020-09-24']: 9
-    }
+      ['2020-09-24']: 9,
+    },
   },
   ['lyngli']: {
     name: 'Lyngli',
@@ -172,8 +172,8 @@ const koieData: AdminBookingDictionary = {
       ['2020-09-21']: 13,
       ['2020-09-22']: 13,
       ['2020-09-23']: 13,
-      ['2020-09-24']: 13
-    }
+      ['2020-09-24']: 13,
+    },
   },
   ['kråklikåten']: {
     name: 'Kråklikåten',
@@ -189,8 +189,8 @@ const koieData: AdminBookingDictionary = {
       ['2020-09-21']: 4,
       ['2020-09-22']: 4,
       ['2020-09-23']: 4,
-      ['2020-09-24']: 4
-    }
+      ['2020-09-24']: 4,
+    },
   },
   ['heinfjordstua']: {
     name: 'Heinfjordstua',
@@ -206,8 +206,8 @@ const koieData: AdminBookingDictionary = {
       ['2020-09-21']: 25,
       ['2020-09-22']: 25,
       ['2020-09-23']: 25,
-      ['2020-09-24']: 25
-    }
+      ['2020-09-24']: 25,
+    },
   },
   ['høgnabu']: {
     name: 'Høgnabu',
@@ -223,8 +223,8 @@ const koieData: AdminBookingDictionary = {
       ['2020-09-21']: 6,
       ['2020-09-22']: 6,
       ['2020-09-23']: 6,
-      ['2020-09-24']: 6
-    }
+      ['2020-09-24']: 6,
+    },
   },
   ['stabburet']: {
     name: 'Stabburet',
@@ -240,8 +240,8 @@ const koieData: AdminBookingDictionary = {
       ['2020-09-21']: 2,
       ['2020-09-22']: 2,
       ['2020-09-23']: 2,
-      ['2020-09-24']: 2
-    }
+      ['2020-09-24']: 2,
+    },
   },
   ['vekvessætra']: {
     name: 'Vekvessætra',
@@ -257,8 +257,8 @@ const koieData: AdminBookingDictionary = {
       ['2020-09-21']: 20,
       ['2020-09-22']: 20,
       ['2020-09-23']: 20,
-      ['2020-09-24']: 20
-    }
+      ['2020-09-24']: 20,
+    },
   },
   ['fosenkoia']: {
     name: 'Fosenkoia',
@@ -274,8 +274,8 @@ const koieData: AdminBookingDictionary = {
       ['2020-09-21']: 10,
       ['2020-09-22']: 10,
       ['2020-09-23']: 10,
-      ['2020-09-24']: 10
-    }
+      ['2020-09-24']: 10,
+    },
   },
   ['tågåbu']: {
     name: 'Tågåbu',
@@ -291,8 +291,8 @@ const koieData: AdminBookingDictionary = {
       ['2020-09-21']: 6,
       ['2020-09-22']: 6,
       ['2020-09-23']: 6,
-      ['2020-09-24']: 6
-    }
+      ['2020-09-24']: 6,
+    },
   },
   ['lynhøgen']: {
     name: 'Lynhøgen',
@@ -308,8 +308,8 @@ const koieData: AdminBookingDictionary = {
       ['2020-09-21']: 4,
       ['2020-09-22']: 4,
       ['2020-09-23']: 4,
-      ['2020-09-24']: 4
-    }
+      ['2020-09-24']: 4,
+    },
   },
   ['selbukåten']: {
     name: 'Selbukåten',
@@ -325,8 +325,8 @@ const koieData: AdminBookingDictionary = {
       ['2020-09-21']: 2,
       ['2020-09-22']: 2,
       ['2020-09-23']: 2,
-      ['2020-09-24']: 2
-    }
+      ['2020-09-24']: 2,
+    },
   },
   ['holvassgamma']: {
     name: 'Holvassgamma',
@@ -342,8 +342,8 @@ const koieData: AdminBookingDictionary = {
       ['2020-09-21']: 8,
       ['2020-09-22']: 8,
       ['2020-09-23']: 8,
-      ['2020-09-24']: 8
-    }
+      ['2020-09-24']: 8,
+    },
   },
   ['kamtjønnkoia']: {
     name: 'Kamtjønnkoia',
@@ -359,8 +359,8 @@ const koieData: AdminBookingDictionary = {
       ['2020-09-21']: 6,
       ['2020-09-22']: 6,
       ['2020-09-23']: 6,
-      ['2020-09-24']: 6
-    }
+      ['2020-09-24']: 6,
+    },
   },
   ['rindalsløa']: {
     name: 'Rindalsløa',
@@ -376,8 +376,8 @@ const koieData: AdminBookingDictionary = {
       ['2020-09-21']: 4,
       ['2020-09-22']: 4,
       ['2020-09-23']: 4,
-      ['2020-09-24']: 4
-    }
+      ['2020-09-24']: 4,
+    },
   },
   ['iglbu']: {
     name: 'Iglbu',
@@ -393,8 +393,8 @@ const koieData: AdminBookingDictionary = {
       ['2020-09-21']: 10,
       ['2020-09-22']: 10,
       ['2020-09-23']: 10,
-      ['2020-09-24']: 10
-    }
+      ['2020-09-24']: 10,
+    },
   },
   ['mortenskåten']: {
     name: 'Mortenskåten',
@@ -410,7 +410,7 @@ const koieData: AdminBookingDictionary = {
       ['2020-09-21']: 2,
       ['2020-09-22']: 2,
       ['2020-09-23']: 2,
-      ['2020-09-24']: 2
-    }
-  }
+      ['2020-09-24']: 2,
+    },
+  },
 };
