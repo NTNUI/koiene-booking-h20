@@ -56,7 +56,7 @@
             :class="$style.nextStepButton"
             raised="true"
             :dark="true"
-            data-test="btnNext"
+            data-test="btnDone"
             @click="done"
             >{{ $t('report.done_button') }}</v-btn
           >

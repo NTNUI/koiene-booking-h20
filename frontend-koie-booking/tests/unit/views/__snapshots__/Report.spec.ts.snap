@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`View Booking.vue Matches snapshot 1`] = `
+<div class="container global-max-width">
+  <div class="row">
+    <div class="mx-auto col-sm-8 col-12 mainColumn">
+      <div class="v-stepper v-stepper--alt-labels theme--light stepper">
+        <div class="v-stepper__header stepperHeader">
+          <div class="v-stepper__step v-stepper__step--active"><span class="v-stepper__step__step primary">1</span>
+            <div class="v-stepper__label">
+              Info
+            </div>
+          </div>
+          <hr role="separator" aria-orientation="horizontal" class="v-divider theme--light">
+          <div class="v-stepper__step v-stepper__step--inactive"><span class="v-stepper__step__step">2</span>
+            <div class="v-stepper__label">
+              Supplies
+            </div>
+          </div>
+          <hr role="separator" aria-orientation="horizontal" class="v-divider theme--light">
+          <div class="v-stepper__step v-stepper__step--inactive"><span class="v-stepper__step__step">3</span>
+            <div class="v-stepper__label">
+              Equipment
+            </div>
+          </div>
+          <hr role="separator" aria-orientation="horizontal" class="v-divider theme--light">
+          <div class="v-stepper__step v-stepper__step--inactive"><span class="v-stepper__step__step">4</span>
+            <div class="v-stepper__label">
+              Boat and canoe
+            </div>
+          </div>
+        </div>
+        <div class="layout">
+          <div class="layout dark container">
+            <h1 class="heading">Digital Cabin Report</h1>
+            <div class="layout separator">
+              <div class="layout px-4">
+                <p>The cabin group is run purely on volunteer work and we rely on your feedback to be able to run the cabins.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="btnWrapper">
+        <!----> <button type="button" class="v-btn v-btn--contained theme--dark v-size--default nextStepButton" raised="true" data-test="btnNext"><span class="v-btn__content">next</span></button>
+        <!---->
+      </div>
+    </div>
+  </div>
+</div>
+`;

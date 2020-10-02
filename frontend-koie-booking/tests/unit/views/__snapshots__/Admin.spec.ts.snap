@@ -53,7 +53,7 @@ exports[`View Admin.vue Matches snapshot 1`] = `
             </div>
             <div class="v-input__control">
               <div class="v-input__slot">
-                <div class="v-text-field__slot"><label for="input-25" class="v-label theme--light" style="left: 0px; position: absolute;">2020-10-01</label><input role="button" aria-haspopup="true" aria-expanded="false" id="input-25" readonly="readonly" type="text"></div>
+                <div class="v-text-field__slot"><label for="input-25" class="v-label theme--light" style="left: 0px; position: absolute;">2020-10-02</label><input role="button" aria-haspopup="true" aria-expanded="false" id="input-25" readonly="readonly" type="text"></div>
               </div>
               <div class="v-text-field__details">
                 <div class="v-messages theme--light"><span name="message-transition" tag="div" class="v-messages__wrapper"></span></div>
@@ -87,9 +87,6 @@ exports[`View Admin.vue Matches snapshot 1`] = `
               <thead class="v-data-table-header">
                 <tr>
                   <th role="columnheader" scope="col" aria-label="Navn: Not sorted. Activate to sort ascending." aria-sort="none" class="text-start sortable"><span>Navn</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size: 18px;"></i></th>
-                  <th role="columnheader" scope="col" aria-label="2020-10-01
- (torsdag): Not sorted. Activate to sort ascending." aria-sort="none" class="text-center sortable"><span>2020-10-01
- (torsdag)</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size: 18px;"></i></th>
                   <th role="columnheader" scope="col" aria-label="2020-10-02
  (fredag): Not sorted. Activate to sort ascending." aria-sort="none" class="text-center sortable"><span>2020-10-02
  (fredag)</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size: 18px;"></i></th>
@@ -108,6 +105,9 @@ exports[`View Admin.vue Matches snapshot 1`] = `
                   <th role="columnheader" scope="col" aria-label="2020-10-07
  (onsdag): Not sorted. Activate to sort ascending." aria-sort="none" class="text-center sortable"><span>2020-10-07
  (onsdag)</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size: 18px;"></i></th>
+                  <th role="columnheader" scope="col" aria-label="2020-10-08
+ (torsdag): Not sorted. Activate to sort ascending." aria-sort="none" class="text-center sortable"><span>2020-10-08
+ (torsdag)</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size: 18px;"></i></th>
                 </tr>
               </thead>
               <tbody>
