@@ -47,7 +47,7 @@ describe('App.vue', () => {
       router,
       vuetify,
       i18n,
-      store
+      store,
     });
 
     expect(wrapper).toMatchSnapshot();

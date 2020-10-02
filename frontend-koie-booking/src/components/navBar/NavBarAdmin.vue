@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'NavBarAdmin'
+  name: 'NavBarAdmin',
 };
 </script>
 

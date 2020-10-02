@@ -9,5 +9,5 @@ export const mutations: MutationTree<AdminBookingsState> = {
   },
   setStartDate(state, payload: string) {
     state.startDate = payload;
-  }
+  },
 };

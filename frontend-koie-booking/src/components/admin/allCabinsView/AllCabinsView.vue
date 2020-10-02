@@ -32,7 +32,7 @@ export default Vue.extend({
   mounted() {
     store.commit('adminBookings/setStartDate', dayjs().format('YYYY-MM-DD'));
     store.dispatch('adminBookings/MOUNT_CABINS_WITH_BOOKINGS');
-  }
+  },
 });
 </script>
 

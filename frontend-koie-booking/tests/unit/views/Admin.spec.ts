@@ -39,8 +39,8 @@ describe('View Admin.vue', () => {
       computed: {
         isAdmin() {
           return true;
-        }
-      }
+        },
+      },
     });
   });
 

@@ -29,9 +29,9 @@ export default Vue.extend({
     return {
       currentView: (this as any).getCurrentView as () => number,
       views: adminViews,
-      updateViewFn: (this as any).setCurrentView as (index: number) => void
+      updateViewFn: (this as any).setCurrentView as (index: number) => void,
     };
-  }
+  },
 });
 </script>
 

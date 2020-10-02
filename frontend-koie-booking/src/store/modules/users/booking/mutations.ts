@@ -49,5 +49,5 @@ export const mutations: MutationTree<BookingState> = {
   },
   setPaymentConfirmed(state, payment: boolean) {
     state.paymentConfirmed = payment;
-  }
+  },
 };

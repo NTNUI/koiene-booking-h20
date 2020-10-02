@@ -10,5 +10,5 @@ export const mutations: MutationTree<AvalancheState> = {
   },
   setWarningData(state, data: []) {
     state.warningData = data;
-  }
+  },
 };

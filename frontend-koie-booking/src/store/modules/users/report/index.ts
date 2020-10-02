@@ -39,8 +39,8 @@ export const state: ReportState = {
     boat_status: 0,
     canoe_status: 0,
     life_jackets_status: 0,
-    feedback: ''
-  }
+    feedback: '',
+  },
 };
 const namespaced: boolean = true;
 
@@ -49,5 +49,5 @@ export const report: Module<ReportState, RootState> = {
   state,
   actions,
   mutations,
-  getters
+  getters,
 };

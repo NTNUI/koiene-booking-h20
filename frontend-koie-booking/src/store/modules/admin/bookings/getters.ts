@@ -11,5 +11,5 @@ export const getters: GetterTree<AdminBookingsState, RootState> = {
   },
   getStartDate(state): string {
     return state.startDate;
-  }
+  },
 };

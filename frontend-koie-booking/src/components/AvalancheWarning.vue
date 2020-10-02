@@ -40,12 +40,12 @@ export default Vue.extend({
   props: {
     latitude: {
       type: String,
-      default: ''
+      default: '',
     },
     longitude: {
       type: String,
-      default: ''
-    }
+      default: '',
+    },
   },
 
   data(): AvalancheData {
@@ -66,7 +66,7 @@ export default Vue.extend({
         this.$i18n.t('avalanche.warningTypes.considerable'),
         this.$i18n.t('avalanche.warningTypes.high'),
         this.$i18n.t('avalanche.warningTypes.very_high'),
-        this.$i18n.t('avalanche.warningTypes.avalanche_expected')
+        this.$i18n.t('avalanche.warningTypes.avalanche_expected'),
       ],
       colors: [
         this.$scssVars.globalColorWarningLow,
@@ -74,8 +74,8 @@ export default Vue.extend({
         this.$scssVars.globalColorWarningConsiderable,
         this.$scssVars.globalColorWarningHigh,
         this.$scssVars.globalColorWarningVeryHigh,
-        this.$scssVars.globalColorBlack
-      ]
+        this.$scssVars.globalColorBlack,
+      ],
     };
   },
   computed: {
@@ -106,7 +106,7 @@ export default Vue.extend({
         ? new Date(this.$store.state.booking.dateFrom).getTime()
         : new Date().getTime();
       return new Date(fromDateTime + 2 * 24 * 60 * 60 * 1000).toISOString().substr(0, 10);
-    }
+    },
   },
   watch: {
     dateFrom: function() {
@@ -114,7 +114,7 @@ export default Vue.extend({
     },
     dateTo: function() {
       this.setAvalancheWarning();
-    }
+    },
   },
 
   mounted() {
@@ -139,7 +139,7 @@ export default Vue.extend({
         longitude: this.$store.state.koie.koieData.location.longitude,
         language: language,
         dateFrom: this.dateFrom,
-        dateTo: this.dateTo
+        dateTo: this.dateTo,
       };
       //returns avalance warning from varsom.no
       try {
@@ -185,7 +185,7 @@ export default Vue.extend({
         this.$i18n.t('avalanche.weekdays.wednesday'),
         this.$i18n.t('avalanche.weekdays.thursday'),
         this.$i18n.t('avalanche.weekdays.friday'),
-        this.$i18n.t('avalanche.weekdays.saturday')
+        this.$i18n.t('avalanche.weekdays.saturday'),
       ];
       this.firstDay = getDateString(res[0].validTo);
       const todayDayInWeek = new Date(this.firstDay).getDay();
@@ -219,8 +219,8 @@ export default Vue.extend({
         .split('-')
         .reverse()
         .toString();
-    }
-  }
+    },
+  },
 });
 </script>
 

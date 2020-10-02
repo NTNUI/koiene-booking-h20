@@ -7,7 +7,7 @@ import dayjs from 'dayjs';
 
 export const state: AdminBookingsState = {
   cabinsWithBookings: {},
-  startDate: dayjs().format('YYYY-MM-DD')
+  startDate: dayjs().format('YYYY-MM-DD'),
 };
 
 const namespaced = true;
@@ -17,5 +17,5 @@ export const adminBookings: Module<AdminBookingsState, RootState> = {
   state,
   getters,
   actions,
-  mutations
+  mutations,
 };

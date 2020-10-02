@@ -42,8 +42,8 @@ describe('Component SideBarBottom.vue', () => {
       store,
       provide: {
         getCurrentView: () => null,
-        setCurrentView: (index: number) => null
-      }
+        setCurrentView: (index: number) => null,
+      },
     });
 
     // Assert

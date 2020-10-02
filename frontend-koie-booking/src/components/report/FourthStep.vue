@@ -83,7 +83,7 @@ export default Vue.extend({
       boat_status: 0,
       canoe_status: 0,
       life_jackets_status: 0,
-      feedback: ''
+      feedback: '',
     };
   },
   methods: {
@@ -102,8 +102,8 @@ export default Vue.extend({
     setFeedback() {
       this.$store.commit('report/setFeedback', this.feedback);
       this.$store.commit('report/setEdited', true);
-    }
-  }
+    },
+  },
 });
 </script>
 

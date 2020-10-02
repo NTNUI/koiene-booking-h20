@@ -8,7 +8,7 @@ export async function fetchToken(tokenPayload: TokenPayload) {
     const data = await request({
       method: 'POST',
       url: `/token/`,
-      data: tokenPayload
+      data: tokenPayload,
     });
     await store.dispatch('auth/obtainToken', data);
     return data;
@@ -25,7 +25,7 @@ export async function verifyToken() {
     await request({
       method: 'POST',
       url: `/token/verify/`,
-      data: { token }
+      data: { token },
     });
   } catch (error) {
     axios.defaults.headers.common['Authorization'] = null;
@@ -40,7 +40,7 @@ export async function refreshToken() {
     const data = await request({
       method: 'POST',
       url: `/token/refresh/`,
-      data: { refresh: refreshToken }
+      data: { refresh: refreshToken },
     });
     await store.dispatch('auth/refreshToken', data);
     return data;

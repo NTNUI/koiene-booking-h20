@@ -49,8 +49,8 @@ describe('Component Calendar.vue', () => {
       store,
       propsData: {
         allKoier: false,
-        row: false
-      }
+        row: false,
+      },
     });
 
     expect(wrapper).toMatchSnapshot();
@@ -65,8 +65,8 @@ describe('Component Calendar.vue', () => {
       store,
       propsData: {
         allKoier: false,
-        row: false
-      }
+        row: false,
+      },
     });
 
     // Set dateFrom to one day ahead of the initial dateTo-date
@@ -82,8 +82,8 @@ describe('Component Calendar.vue', () => {
     bedsPerDate[date1] = 0;
     store.commit('koie/setKoieData', {
       koie: {
-        beds_available_in_booking_window: bedsPerDate
-      }
+        beds_available_in_booking_window: bedsPerDate,
+      },
     });
 
     wrapper = mount(Calendar, {
@@ -91,7 +91,7 @@ describe('Component Calendar.vue', () => {
       vuetify,
       router,
       i18n,
-      store
+      store,
     });
 
     expect(wrapper.vm.dateFrom).toBe(getDateString());
@@ -107,8 +107,8 @@ describe('Component Calendar.vue', () => {
     bedsPerDate[date2] = 0;
     store.commit('koie/setKoieData', {
       koie: {
-        beds_available_in_booking_window: bedsPerDate
-      }
+        beds_available_in_booking_window: bedsPerDate,
+      },
     });
 
     wrapper = mount(Calendar, {
@@ -116,7 +116,7 @@ describe('Component Calendar.vue', () => {
       vuetify,
       router,
       i18n,
-      store
+      store,
     });
 
     expect(wrapper.vm.allowedDatesFrom(wrapper.vm.disabledDates[0])).toBe('');
@@ -132,14 +132,14 @@ describe('Component Calendar.vue', () => {
       store,
       data() {
         return {
-          disabledDates: []
+          disabledDates: [],
         };
       },
       computed: {
         daysInAdvanceBooking() {
           return 14;
-        }
-      }
+        },
+      },
     });
 
     const days = wrapper.vm.daysInAdvanceBooking;
@@ -158,7 +158,7 @@ describe('Component Calendar.vue', () => {
     bedsPerDate[today] = 0;
     bedsPerDate[tomorrow] = 0;
     store.commit('koie/setKoieData', {
-      koie: { beds_available_in_booking_window: bedsPerDate }
+      koie: { beds_available_in_booking_window: bedsPerDate },
     });
 
     wrapper = mount(Calendar, {
@@ -170,8 +170,8 @@ describe('Component Calendar.vue', () => {
       computed: {
         daysInAdvanceBooking() {
           return 2;
-        }
-      }
+        },
+      },
     });
 
     expect(wrapper.vm.noDatesAvailable).toBe(true);
@@ -186,7 +186,7 @@ describe('Component Calendar.vue', () => {
     bedsPerDate[today] = 11;
     bedsPerDate[tomorrow] = 5;
     store.commit('koie/setKoieData', {
-      koie: { beds_available_in_booking_window: bedsPerDate }
+      koie: { beds_available_in_booking_window: bedsPerDate },
     });
 
     wrapper = mount(Calendar, {
@@ -194,7 +194,7 @@ describe('Component Calendar.vue', () => {
       vuetify,
       router,
       i18n,
-      store
+      store,
     });
 
     wrapper.vm.beds = 11;

@@ -22,7 +22,7 @@ export const actions = {
         console.log(error);
         throw new Error(`API ${error}`);
       });
-  }
+  },
 };
 
 export default actions;

@@ -31,9 +31,9 @@ export const state: BookingState = {
     from_date: '',
     to_date: '',
     guests_member: 0,
-    guests_not_member: 0
+    guests_not_member: 0,
   },
-  paymentConfirmed: false
+  paymentConfirmed: false,
 };
 const namespaced: boolean = true;
 
@@ -42,5 +42,5 @@ export const booking: Module<BookingState, RootState> = {
   state,
   actions,
   mutations,
-  getters
+  getters,
 };
