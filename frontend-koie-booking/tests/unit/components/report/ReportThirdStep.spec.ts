@@ -13,9 +13,9 @@ Vue.use(Vuetify);
 import { mount, createLocalVue } from '@vue/test-utils';
 
 // Components or views
-import ReportSecondStep from '@/components/report/ReportSecondStep.vue';
+import ReportThirdStep from '@/components/report/ReportThirdStep.vue';
 
-describe('Component ReportSecondStep.vue', () => {
+describe('Component ReportThirdStep.vue', () => {
   let wrapper: any;
   let localVue: any;
   let vuetify: any;
@@ -31,7 +31,7 @@ describe('Component ReportSecondStep.vue', () => {
   });
 
   it('Matches snapshot', async () => {
-    wrapper = mount(ReportSecondStep, {
+    wrapper = mount(ReportThirdStep, {
       localVue,
       vuetify,
       i18n,
