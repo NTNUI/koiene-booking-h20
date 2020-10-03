@@ -1,4 +1,4 @@
-import AdminBooking, { AdminBookingDictionary, APIAdminBooking } from '@/types/admin/AdminBooking';
+import { APIAdminBooking } from '@/types/admin/AdminBooking';
 import { addToDate } from '@/utils/dates';
 
 export const startDate = '2020-10-03';
@@ -26,8 +26,8 @@ export default function getKoieData(): Array<APIAdminBooking> {
         [dates[6]]: 11,
         [dates[7]]: 11,
         [dates[8]]: 11,
-        [dates[9]]: 11
-      }
+        [dates[9]]: 11,
+      },
     },
     {
       name: 'Mevasskoia',
@@ -44,8 +44,8 @@ export default function getKoieData(): Array<APIAdminBooking> {
         [dates[6]]: 5,
         [dates[7]]: 2,
         [dates[8]]: 5,
-        [dates[9]]: 5
-      }
+        [dates[9]]: 5,
+      },
     },
     {
       name: 'Øvensenget',
@@ -62,8 +62,8 @@ export default function getKoieData(): Array<APIAdminBooking> {
         [dates[6]]: 8,
         [dates[7]]: 8,
         [dates[8]]: 8,
-        [dates[9]]: 8
-      }
+        [dates[9]]: 8,
+      },
     },
     {
       name: 'Kåsen',
@@ -80,8 +80,8 @@ export default function getKoieData(): Array<APIAdminBooking> {
         [dates[6]]: 8,
         [dates[7]]: 8,
         [dates[8]]: 8,
-        [dates[9]]: 8
-      }
+        [dates[9]]: 8,
+      },
     },
     {
       name: 'Stakkslettbua',
@@ -98,8 +98,8 @@ export default function getKoieData(): Array<APIAdminBooking> {
         [dates[6]]: 11,
         [dates[7]]: 11,
         [dates[8]]: 11,
-        [dates[9]]: 11
-      }
+        [dates[9]]: 11,
+      },
     },
     {
       name: 'Holmsåkoia',
@@ -116,8 +116,8 @@ export default function getKoieData(): Array<APIAdminBooking> {
         [dates[6]]: 20,
         [dates[7]]: 20,
         [dates[8]]: 20,
-        [dates[9]]: 20
-      }
+        [dates[9]]: 20,
+      },
     },
     {
       name: 'Sonvasskoia',
@@ -134,8 +134,8 @@ export default function getKoieData(): Array<APIAdminBooking> {
         [dates[6]]: 8,
         [dates[7]]: 8,
         [dates[8]]: 8,
-        [dates[9]]: 8
-      }
+        [dates[9]]: 8,
+      },
     },
     {
       name: 'Nicokoia',
@@ -152,8 +152,8 @@ export default function getKoieData(): Array<APIAdminBooking> {
         [dates[6]]: 8,
         [dates[7]]: 8,
         [dates[8]]: 8,
-        [dates[9]]: 8
-      }
+        [dates[9]]: 8,
+      },
     },
     {
       name: 'Telin',
@@ -170,8 +170,8 @@ export default function getKoieData(): Array<APIAdminBooking> {
         [dates[6]]: 9,
         [dates[7]]: 9,
         [dates[8]]: 9,
-        [dates[9]]: 9
-      }
+        [dates[9]]: 9,
+      },
     },
     {
       name: 'Lyngli',
@@ -188,8 +188,8 @@ export default function getKoieData(): Array<APIAdminBooking> {
         [dates[6]]: 13,
         [dates[7]]: 13,
         [dates[8]]: 13,
-        [dates[9]]: 13
-      }
+        [dates[9]]: 13,
+      },
     },
     {
       name: 'Kråklikåten',
@@ -206,8 +206,8 @@ export default function getKoieData(): Array<APIAdminBooking> {
         [dates[6]]: 4,
         [dates[7]]: 4,
         [dates[8]]: 4,
-        [dates[9]]: 4
-      }
+        [dates[9]]: 4,
+      },
     },
     {
       name: 'Heinfjordstua',
@@ -224,8 +224,8 @@ export default function getKoieData(): Array<APIAdminBooking> {
         [dates[6]]: 25,
         [dates[7]]: 25,
         [dates[8]]: 25,
-        [dates[9]]: 25
-      }
+        [dates[9]]: 25,
+      },
     },
     {
       name: 'Høgnabu',
@@ -242,8 +242,8 @@ export default function getKoieData(): Array<APIAdminBooking> {
         [dates[6]]: 6,
         [dates[7]]: 6,
         [dates[8]]: 6,
-        [dates[9]]: 6
-      }
+        [dates[9]]: 6,
+      },
     },
     {
       name: 'Stabburet',
@@ -260,8 +260,8 @@ export default function getKoieData(): Array<APIAdminBooking> {
         [dates[6]]: 2,
         [dates[7]]: 2,
         [dates[8]]: 2,
-        [dates[9]]: 2
-      }
+        [dates[9]]: 2,
+      },
     },
     {
       name: 'Vekvessætra',
@@ -278,8 +278,8 @@ export default function getKoieData(): Array<APIAdminBooking> {
         [dates[6]]: 20,
         [dates[7]]: 20,
         [dates[8]]: 20,
-        [dates[9]]: 20
-      }
+        [dates[9]]: 20,
+      },
     },
     {
       name: 'Fosenkoia',
@@ -296,8 +296,8 @@ export default function getKoieData(): Array<APIAdminBooking> {
         [dates[6]]: 10,
         [dates[7]]: 10,
         [dates[8]]: 10,
-        [dates[9]]: 10
-      }
+        [dates[9]]: 10,
+      },
     },
     {
       name: 'Tågåbu',
@@ -314,8 +314,8 @@ export default function getKoieData(): Array<APIAdminBooking> {
         [dates[6]]: 6,
         [dates[7]]: 6,
         [dates[8]]: 6,
-        [dates[9]]: 6
-      }
+        [dates[9]]: 6,
+      },
     },
     {
       name: 'Lynhøgen',
@@ -332,8 +332,8 @@ export default function getKoieData(): Array<APIAdminBooking> {
         [dates[6]]: 4,
         [dates[7]]: 4,
         [dates[8]]: 4,
-        [dates[9]]: 4
-      }
+        [dates[9]]: 4,
+      },
     },
     {
       name: 'Selbukåten',
@@ -350,8 +350,8 @@ export default function getKoieData(): Array<APIAdminBooking> {
         [dates[6]]: 2,
         [dates[7]]: 2,
         [dates[8]]: 2,
-        [dates[9]]: 2
-      }
+        [dates[9]]: 2,
+      },
     },
     {
       name: 'Holvassgamma',
@@ -368,8 +368,8 @@ export default function getKoieData(): Array<APIAdminBooking> {
         [dates[6]]: 8,
         [dates[7]]: 8,
         [dates[8]]: 8,
-        [dates[9]]: 8
-      }
+        [dates[9]]: 8,
+      },
     },
     {
       name: 'Kamtjønnkoia',
@@ -386,8 +386,8 @@ export default function getKoieData(): Array<APIAdminBooking> {
         [dates[6]]: 6,
         [dates[7]]: 6,
         [dates[8]]: 6,
-        [dates[9]]: 6
-      }
+        [dates[9]]: 6,
+      },
     },
     {
       name: 'Rindalsløa',
@@ -404,8 +404,8 @@ export default function getKoieData(): Array<APIAdminBooking> {
         [dates[6]]: 4,
         [dates[7]]: 4,
         [dates[8]]: 4,
-        [dates[9]]: 4
-      }
+        [dates[9]]: 4,
+      },
     },
     {
       name: 'Iglbu',
@@ -422,8 +422,8 @@ export default function getKoieData(): Array<APIAdminBooking> {
         [dates[6]]: 10,
         [dates[7]]: 10,
         [dates[8]]: 10,
-        [dates[9]]: 10
-      }
+        [dates[9]]: 10,
+      },
     },
     {
       name: 'Mortenskåten',
@@ -440,8 +440,8 @@ export default function getKoieData(): Array<APIAdminBooking> {
         [dates[6]]: 2,
         [dates[7]]: 2,
         [dates[8]]: 2,
-        [dates[9]]: 2
-      }
-    }
+        [dates[9]]: 2,
+      },
+    },
   ];
 }
