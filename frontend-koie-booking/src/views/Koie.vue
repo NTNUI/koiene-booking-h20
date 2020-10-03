@@ -120,12 +120,12 @@
 </template>
 
 <script lang="ts">
-import Calendar from '../components/Calendar.vue';
-import ErrorCard from '../components/ErrorCard.vue';
-import LoadingSpinner from '../components/LoadingSpinner.vue';
-import AvalancheWarning from '../components/AvalancheWarning.vue';
+import Calendar from '@/components/Calendar.vue';
+import ErrorCard from '@/components/ErrorCard.vue';
+import LoadingSpinner from '@/components/LoadingSpinner.vue';
+import AvalancheWarning from '@/components/AvalancheWarning.vue';
 import Vue from 'vue';
-import { KoieData, KeyInfoItems } from '../types/koie';
+import { KoieData, KeyInfoItems } from '@/types/koie';
 
 export default Vue.extend({
   name: 'Koie',
@@ -133,12 +133,12 @@ export default Vue.extend({
     Calendar,
     ErrorCard,
     LoadingSpinner,
-    AvalancheWarning
+    AvalancheWarning,
   },
   data(): KoieData {
     return {
       koieDescription: '',
-      expandDescriptionCard: false
+      expandDescriptionCard: false,
     };
   },
   computed: {
@@ -178,50 +178,50 @@ export default Vue.extend({
           title: this.$t('koie.keyInfo.beds'),
           text: this.$store.state.koie.koieData.number_of_beds,
           isLink: false,
-          icon: 'mdi-bed'
+          icon: 'mdi-bed',
         },
         {
           title: this.$t('koie.keyInfo.terrain'),
           text: this.$store.getters['koie/koieTerrain'],
           isLink: false,
-          icon: 'mdi-terrain'
+          icon: 'mdi-terrain',
         },
         {
           title: this.$t('koie.keyInfo.altitude'),
           text: this.$store.state.koie.koieData.location.altitude + 'm',
           isLink: false,
-          icon: 'mdi-pine-tree'
+          icon: 'mdi-pine-tree',
         },
         {
           title: this.$t('koie.keyInfo.position'),
           text: 'Google Maps',
           url: this.$store.getters['koie/position'],
           isLink: true,
-          icon: 'mdi-crosshairs-gps'
+          icon: 'mdi-crosshairs-gps',
         },
         {
           title: this.$t('koie.keyInfo.pdfMap'),
           text: 'See pdf',
           url: this.$store.state.koie.koieData.location.map_pdf,
           isLink: true,
-          icon: 'mdi-map'
+          icon: 'mdi-map',
         },
         {
           title: this.$t('koie.keyInfo.physicalMap'),
           text: this.$store.state.koie.koieData.location.kartblad,
           url: 'http://org.ntnu.no/koiene/tips.php?p=3#1',
           isLink: true,
-          icon: 'mdi-map'
+          icon: 'mdi-map',
         },
         {
           title: this.$t('koie.keyInfo.weather'),
           text: 'yr.no',
           url: this.$store.getters['koie/koieWeatherLink'],
           isLink: true,
-          icon: 'mdi-weather-partly-cloudy'
-        }
+          icon: 'mdi-weather-partly-cloudy',
+        },
       ];
-    }
+    },
   },
   created() {
     this.getKoieData(this.$route.params.id);
@@ -263,8 +263,8 @@ export default Vue.extend({
         return x + '</b>';
       });
       this.koieDescription = str;
-    }
-  }
+    },
+  },
 });
 </script>
 

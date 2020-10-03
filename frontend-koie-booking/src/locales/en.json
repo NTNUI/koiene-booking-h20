@@ -53,7 +53,69 @@
     "error_msg": "Something went wrong.",
     "payment_completed": "Payment Completed",
     "receipt_text": "Your payment is completed and further information about your stay has been sent to your e-mail."
-
+  },
+  "report": {
+    "step1": "Info",
+    "step2": "Supplies",
+    "step3": "Equipment",
+    "step4": "Boat and canoe",
+    "reportTitle": "Digital Cabin Report",
+    "reportDescription": "The cabin group is run purely on volunteer work and we rely on your feedback to be able to run the cabins.",
+    "next_button": "next",
+    "back_button": "back",
+    "done_button": "done",
+    "gass_is_full": "Was the gas full?",
+    "gass_full": "Yes, the was full",
+    "gass_empty": "No, it was empty",
+    "firewood_supply": "How much firewood was there at the cabin?",
+    "firewood_supply_empty": "No logs",
+    "firewood_supply_full": "A lot of logs",
+    "chopped_up_wood_supply": "Did you find a lot of chopped up wood at the cabin?",
+    "chopped_up_wood_supply_empty": "No chopped up wood",
+    "chopped_up_wood_supply_full": "A lot of chopped up wood",
+    "smoke_detector_is_working": "Did the smoke detector work?",
+    "smoke_detector_working": "Yes, it worked",
+    "smoke_detector_not_working": "No, it did not work",
+    "equipment_status": "Please determine the status of the following equipment",
+    "equipment_name": "Equipment",
+    "equipment_ok": "Ok",
+    "equipment_unsure": "Not sure",
+    "equipment_broken_or_missing": "Broken/missing",
+    "equipment": {
+      "gas_burner_primus": "Gas Burner/Primus",
+      "axe": "Axe",
+      "hammer": "Hammer",
+      "saw": "Saw",
+      "saw_blade": "Saw blade",
+      "saw_bench": "Saw bench",
+      "spade": "Spade",
+      "kerosene_lamp": "Kerosene lamp",
+      "detergent": "Detergent",
+      "dishware": "Plates, cups and cutlery",
+      "cookware": "Pots and frying pan",
+      "cabin_book": "Cabin book",
+      "candle_holders": "Candle holders",
+      "fire_blanket": "Fire blanket",
+      "fire_extinguisher": "Fire extinguisher"
+    },
+    "other_faults": "Did you see any other defects or missing items?",
+    "other_faults_label": "Other defects/missing items",
+    "other_faults_placeholder": "One of the ...",
+    "water_equipment": {
+      "boat": "What was the status for the boat?",
+      "canoe": "What was the status for the canoe?",
+      "life_jackets": "What was the status for the life jackets?",
+      "no_faults": "No faults",
+      "broken": "Broken / useless",
+      "missing_paddles": "Missing paddles",
+      "missing_boat": "Missing boat",
+      "missing_canoe": "Missing canoe",
+      "missing_life_jackets": "Missing / too few life jackets",
+      "unsure": "Didn't use / don't know"
+    },
+    "general_feedback": "Finally, is there anything else you wish to add which hasn't been covered by the report already?",
+    "general_feedback_label": "Additional comments",
+    "general_feedback_placeholder": "There was one window that ..."
   },
   "ntnui": {
     "home": "Home",
@@ -89,7 +151,7 @@
       "introText": "Choose email or phone and enter what you have registered with SIT. If you choose phone number, we will print the email registered to this number."
     }
   },
-  "avalanche":{
+  "avalanche": {
     "error_msg": "Booking is disabled due to avalanche danger.",
     "warningTypes": {
       "low": "Low",

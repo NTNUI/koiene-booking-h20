@@ -10,5 +10,5 @@ export const actions: ActionTree<AdminBookingsState, RootState> = {
     for (const cabin of Object.values(cabins)) {
       commit('setCabinWithBooking', cabin);
     }
-  }
+  },
 };

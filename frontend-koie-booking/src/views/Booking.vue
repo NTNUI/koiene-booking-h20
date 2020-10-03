@@ -76,12 +76,12 @@
 </template>
 
 <script lang="ts">
-import BookingFirstStep from '../components/BookingFirstStep.vue';
-import BookingSecondStep from '../components/BookingSecondStep.vue';
-import BookingThirdStep from '../components/BookingThirdStep.vue';
-import BookingFourthStep from '../components/BookingFourthStep.vue';
-import LoadingSpinner from '../components/LoadingSpinner.vue';
-import { BookingData } from '../types/booking';
+import BookingFirstStep from '@/components/booking/BookingFirstStep.vue';
+import BookingSecondStep from '@/components/booking/BookingSecondStep.vue';
+import BookingThirdStep from '@/components/booking/BookingThirdStep.vue';
+import BookingFourthStep from '@/components/booking/BookingFourthStep.vue';
+import LoadingSpinner from '@/components/LoadingSpinner.vue';
+import { BookingData } from '@/types/booking';
 import Vue from 'vue';
 export default Vue.extend({
   name: 'Booking',
@@ -90,7 +90,7 @@ export default Vue.extend({
     BookingSecondStep,
     BookingThirdStep,
     BookingFourthStep,
-    LoadingSpinner
+    LoadingSpinner,
   },
 
   data(): BookingData {
@@ -100,8 +100,8 @@ export default Vue.extend({
         this.$i18n.t('booking.step1'),
         this.$i18n.t('booking.step2'),
         this.$i18n.t('booking.step3'),
-        this.$i18n.t('booking.step4')
-      ]
+        this.$i18n.t('booking.step4'),
+      ],
     };
   },
   computed: {
@@ -134,7 +134,7 @@ export default Vue.extend({
     },
     bookingStep(): boolean {
       return this.$store.state.booking.step;
-    }
+    },
   },
   watch: {
     dateFrom: function() {
@@ -151,7 +151,7 @@ export default Vue.extend({
       if (this.$store.state.booking.step === 1) {
         this.resetBookingInfo();
       }
-    }
+    },
   },
   mounted() {
     //resetting everything when component mounts
@@ -169,7 +169,7 @@ export default Vue.extend({
           longitude: this.$store.state.koie.koieData.longitude,
           language: 2,
           dateFrom: this.$store.state.booking.dateFrom,
-          dateTo: this.$store.state.booking.dateTo
+          dateTo: this.$store.state.booking.dateTo,
         };
         await this.$store.dispatch('avalanche/FETCH_AVALANCHE_LEVELS', values);
         const warningData = await this.$store.state.avalanche.warningData;
@@ -205,7 +205,7 @@ export default Vue.extend({
           departure_date: await this.$store.state.booking.dateTo,
           guests: await this.$store.state.booking.guests,
           guests_member: await this.$store.state.booking.numberOfMembers,
-          guests_not_member: await this.$store.state.booking.numberOfNonMembers
+          guests_not_member: await this.$store.state.booking.numberOfNonMembers,
         };
         this.$store.dispatch('booking/CREATE_BOOKING', values);
       }
@@ -230,8 +230,8 @@ export default Vue.extend({
     },
     done() {
       this.$router.push(`/`);
-    }
-  }
+    },
+  },
 });
 </script>
 

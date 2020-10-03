@@ -37,7 +37,7 @@ export default Vue.extend({
     return {
       complete: false,
       stripeOptions: {},
-      totalPrice: 0
+      totalPrice: 0,
     };
   },
   computed: {
@@ -52,7 +52,7 @@ export default Vue.extend({
         group: 'memberships_system',
         type: 'error',
         duration: 3000,
-        text: `${this.$t('booking.error_msg')}`
+        text: `${this.$t('booking.error_msg')}`,
       });
     }
   },
@@ -63,8 +63,8 @@ export default Vue.extend({
         const values = { token: data.token.id, id: transaction_id };
         this.$store.dispatch('booking/INITIATE_PAYMENT', values);
       });
-    }
-  }
+    },
+  },
 });
 </script>
 

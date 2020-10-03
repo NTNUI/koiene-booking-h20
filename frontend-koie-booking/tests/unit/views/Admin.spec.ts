@@ -32,14 +32,15 @@ describe('View Admin.vue', () => {
     localVue.prototype.$scssVars = scssVars;
 
     wrapper = mount(Admin, {
+      sync: false,
       localVue,
       vuetify,
       store,
       computed: {
         isAdmin() {
           return true;
-        }
-      }
+        },
+      },
     });
   });
 
@@ -67,10 +68,11 @@ describe('View Admin.vue', () => {
     expect(wrapper.contains(adminViews[1].component)).toBe(false);
   });
 
-  it('Admin view updates rendered component view', () => {
-    for (let i = 0; i < adminViews.length; i++) {
+  it('Admin view updates rendered component view', async () => {
+    for (let i = adminViews.length - 1; i > -1; i--) {
       // Act
-      wrapper.find('#sideBar' + adminViews[i].id).trigger('click');
+      await wrapper.find('#sideBar' + adminViews[i].id).trigger('click');
+
       // Assert
       expect(wrapper.contains(adminViews[i].component)).toBe(true);
     }

@@ -48,7 +48,7 @@ describe('Component NavBar.vue', () => {
       router,
       vuetify,
       i18n,
-      store
+      store,
     });
 
     expect(wrapper).toMatchSnapshot();
@@ -63,7 +63,7 @@ describe('Component NavBar.vue', () => {
       router,
       vuetify,
       i18n,
-      store
+      store,
     });
     const spy = jest.spyOn(wrapper.vm.$router, 'push');
 
@@ -85,7 +85,7 @@ describe('Component NavBar.vue', () => {
       router,
       vuetify,
       i18n,
-      store
+      store,
     });
 
     //Assert
@@ -95,6 +95,7 @@ describe('Component NavBar.vue', () => {
   it("User can't see admin button if not admin but logged in", () => {
     // Arrange
     store.commit('auth/setToken', { access: 'testToken' });
+    store.commit('auth/setAdmin', false);
 
     // Act
     wrapper = mount(NavBar, {
@@ -102,7 +103,7 @@ describe('Component NavBar.vue', () => {
       router,
       vuetify,
       i18n,
-      store
+      store,
     });
 
     // Assert
@@ -119,7 +120,7 @@ describe('Component NavBar.vue', () => {
       router,
       vuetify,
       i18n,
-      store
+      store,
     });
 
     // Assert

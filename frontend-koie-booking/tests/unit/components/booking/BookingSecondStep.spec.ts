@@ -13,9 +13,9 @@ Vue.use(Vuetify);
 import { mount, createLocalVue } from '@vue/test-utils';
 
 // Components or views
-import BookingThirdStep from '../../../src/components/BookingThirdStep.vue';
+import BookingSecondStep from '@/components/booking/BookingSecondStep.vue';
 
-describe('Component BookingThirdStep.vue', () => {
+describe('Component BookingSecondStep.vue', () => {
   // Router not needed for this test-suite
   let wrapper: any;
   let localVue: any;
@@ -34,19 +34,35 @@ describe('Component BookingThirdStep.vue', () => {
   });
 
   it('Matches snapshot', async () => {
-    wrapper = mount(BookingThirdStep, {
+    wrapper = mount(BookingSecondStep, {
       localVue,
       vuetify,
       i18n,
       store,
-      computed: {
-        price() {
-          return 120;
-        }
-      },
-      stubs: ['Card']
+      sync: false,
     });
 
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it('Calculate total price of 1x member, 2x non-member', async () => {
+    wrapper = mount(BookingSecondStep, {
+      localVue,
+      vuetify,
+      i18n,
+      store,
+      data() {
+        return {
+          guests: [
+            { name: '', number: '', email: '', isMember: true, isMainBooker: true },
+            { name: '', number: '', isMember: false, isMainBooker: false },
+            { name: '', number: '', isMember: false, isMainBooker: false }
+          ]
+        };
+      },
+      sync: false,
+    });
+
+    expect(wrapper.vm.price).toBe(200);
   });
 });

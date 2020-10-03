@@ -78,7 +78,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import { Guest, BookingSecondStepData } from '../types/booking';
+import { Guest, BookingSecondStepData } from '@/types/booking';
 export default Vue.extend({
   data(): BookingSecondStepData {
     return {
@@ -87,7 +87,7 @@ export default Vue.extend({
       guests: [{ name: '', number: '', email: '', isMember: true, isMainBooker: true }],
       numberRules: [
         (e: any) => !!e || 'Number is required',
-        (e: any) => e.length >= 8 || 'Number must be 8 characters'
+        (e: any) => e.length >= 8 || 'Number must be 8 characters',
       ],
       nameRules: [(e: any) => !!e || 'Name is required'],
       emailStrictRules: [
@@ -99,7 +99,7 @@ export default Vue.extend({
       edited: false,
       validForm: true,
       memberPrice: 0,
-      nonMemberPrice: 0
+      nonMemberPrice: 0,
     };
   },
   computed: {
@@ -123,12 +123,12 @@ export default Vue.extend({
         }
       });
       return this.memberPrice * member + this.nonMemberPrice * nonMember;
-    }
+    },
   },
   watch: {
     validForm: function() {
       this.$store.dispatch('booking/SET_VALID_FORM', this.validForm);
-    }
+    },
   },
 
   mounted() {
@@ -168,8 +168,8 @@ export default Vue.extend({
         this.$store.dispatch('booking/SET_GUESTS', this.guests);
         this.$store.dispatch('booking/SET_BEDS', this.bedsChosen);
       }
-    }
-  }
+    },
+  },
 });
 </script>
 

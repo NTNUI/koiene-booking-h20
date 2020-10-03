@@ -14,9 +14,9 @@ Vue.use(Vuetify);
 import { mount, createLocalVue } from '@vue/test-utils';
 
 // Components or views
-import Booking from '../../../src/views/Booking.vue';
-import BookingFirstStep from '../../../src/components/BookingFirstStep.vue';
-import BookingSecondStep from '../../../src/components/BookingSecondStep.vue';
+import Booking from '@/views/Booking.vue';
+import BookingFirstStep from '@/components/booking/BookingFirstStep.vue';
+import BookingSecondStep from '@/components/booking/BookingSecondStep.vue';
 
 describe('View Booking.vue', () => {
   // Router not needed for this test-suite
@@ -47,13 +47,13 @@ describe('View Booking.vue', () => {
       store,
       propsData: {
         allKoier: false,
-        row: false
+        row: false,
       },
       mocks: {
         $route: {
-          params: { id: 'flåkoia' }
-        }
-      }
+          params: { id: 'flåkoia' },
+        },
+      },
     });
 
     const responseObj = { data: { koie: { name: 'flåkoia' } } };
@@ -71,13 +71,13 @@ describe('View Booking.vue', () => {
       store,
       propsData: {
         allKoier: false,
-        row: false
+        row: false,
       },
       mocks: {
         $route: {
-          params: { id: 'flåkoia' }
-        }
-      }
+          params: { id: 'flåkoia' },
+        },
+      },
     });
 
     const responseObj = { data: { koie: { name: 'flåkoia' } } };
@@ -98,13 +98,13 @@ describe('View Booking.vue', () => {
       store,
       propsData: {
         allKoier: false,
-        row: false
+        row: false,
       },
       mocks: {
         $route: {
-          params: { id: 'flåkoia' }
-        }
-      }
+          params: { id: 'flåkoia' },
+        },
+      },
     });
 
     const responseObj = { data: { koie: { name: 'flåkoia' } } };

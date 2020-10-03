@@ -24,11 +24,11 @@ export default Vue.extend({
   name: 'AllKoier',
   components: {
     ErrorCard,
-    LoadingSpinner
+    LoadingSpinner,
   },
   data(): AllKoierData {
     return {
-      koieTitle: ''
+      koieTitle: '',
     };
   },
   computed: {
@@ -40,7 +40,7 @@ export default Vue.extend({
     },
     koieData(): Array<any> {
       return this.$store.state.koie.allKoier;
-    }
+    },
   },
   created: function() {
     this.$store.dispatch('koie/FETCH_ALL_KOIER');
@@ -61,8 +61,8 @@ export default Vue.extend({
     },
     getKoieData(koieName: string) {
       this.$store.dispatch('koie/FETCH_DATA', koieName);
-    }
-  }
+    },
+  },
 });
 </script>
 

@@ -29,5 +29,5 @@ export const mutations: MutationTree<AuthState> = {
     localStorage.removeItem('user_id');
     state.tokens.access = null;
     state.tokens.refresh = null;
-  }
+  },
 };

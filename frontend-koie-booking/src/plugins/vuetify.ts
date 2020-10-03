@@ -9,8 +9,8 @@ Vue.use(Vuetify);
 const options = {
   breakpoint: {
     thresholds: {
-      sm: 600
-    }
+      sm: 600,
+    },
   },
   theme: {
     dark: true,
@@ -21,13 +21,13 @@ const options = {
         accent: scssVars.globalColorAccent,
         background: scssVars.globalColorBackground,
         backgroundLight: scssVars.globalColorBackgroundLight,
-        anchor: scssVars.globalColorAnchor
+        anchor: scssVars.globalColorAnchor,
       },
       light: {
-        accent: scssVars.globalColorBlack
-      }
-    }
-  }
+        accent: scssVars.globalColorBlack,
+      },
+    },
+  },
 };
 
 declare module 'vue/types/vue' {

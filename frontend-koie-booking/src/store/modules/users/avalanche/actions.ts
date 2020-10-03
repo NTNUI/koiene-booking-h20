@@ -40,5 +40,5 @@ export const actions = {
       });
 
     ctx.commit('setWarningLevels');
-  }
+  },
 };

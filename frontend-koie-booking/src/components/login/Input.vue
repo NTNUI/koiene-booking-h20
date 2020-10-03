@@ -33,34 +33,34 @@ export default Vue.extend({
   props: {
     input: {
       type: String,
-      default: ''
+      default: '',
     },
     inputType: {
       type: String,
-      default: 'text'
+      default: 'text',
     },
     validate: {
       type: Function,
-      default: () => {}
+      default: () => {},
     },
     valid: {
       type: Boolean,
-      default: false
+      default: false,
     },
     shape: {
       type: String,
-      default: 'default'
+      default: 'default',
     },
     autocomplete: {
       type: String,
-      default: ''
-    }
+      default: '',
+    },
   },
   data(): inputData {
     return {
-      value: ''
+      value: '',
     };
-  }
+  },
 });
 </script>
 

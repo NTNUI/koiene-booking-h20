@@ -11,7 +11,7 @@ function buildUrl(url: string) {
 
 export default async function request(options: any): Promise<any> {
   const headers = {
-    ...options.headers
+    ...options.headers,
   };
 
   if (options.method === 'POST' || options.method === 'PUT') {
@@ -28,7 +28,7 @@ export default async function request(options: any): Promise<any> {
       method: options.method || 'GET',
       headers,
       params: options.params,
-      data: options.data
+      data: options.data,
     });
 
     return response.data;
