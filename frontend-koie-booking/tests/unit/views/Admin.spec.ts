@@ -1,7 +1,7 @@
 import Vue, { VueConstructor } from 'vue';
 import Vuetify, { Vuetify as VuetifyType } from 'vuetify';
 import Vuex, { Store } from 'vuex';
-import { storeConfig } from '@/store';
+import store, { storeConfig } from '@/store';
 import { cloneDeep } from 'lodash';
 import scssVars from '@/styles/variables.scss';
 import mockAxios from 'jest-mock-axios';
@@ -16,6 +16,8 @@ import Admin from '@/views/Admin.vue';
 import { RootState } from '@/store/types';
 import SideBar from '@/components/admin/sideBar/SideBar.vue';
 import adminViews from '@/components/admin/AdminViews';
+import { addToDate } from '@/utils/dates';
+import getKoieData, { startDate } from '../__mocks__/koiene';
 
 describe('View Admin.vue', () => {
   let wrapper: Wrapper<any>;
@@ -31,6 +33,8 @@ describe('View Admin.vue', () => {
     store = new Vuex.Store(cloneDeep(storeConfig));
     localVue.prototype.$scssVars = scssVars;
 
+    store.commit('adminBookings/setStartDate', startDate);
+
     wrapper = mount(Admin, {
       sync: false,
       localVue,
@@ -40,8 +44,15 @@ describe('View Admin.vue', () => {
         isAdmin() {
           return true;
         }
+      },
+      mounted() {
+        const endDate = addToDate(startDate, 7, 'day');
+        store.commit('adminBookings/setStartDate', startDate);
+        store.dispatch('adminBookings/MOUNT_CABINS_WITH_BOOKINGS', { startDate: startDate, endDate: endDate });
       }
     });
+
+    mockAxios.mockResponse({ data: { koier: getKoieData() } });
   });
 
   afterEach(() => {
