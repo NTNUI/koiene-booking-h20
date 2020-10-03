@@ -29,4 +29,4 @@ jobs:
         run: npm run lint
       - name: Unit tests
         working-directory: ./frontend-koie-booking
-        run: npm run test:unit -- -u
+        run: npm run test:unit
