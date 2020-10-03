@@ -29,13 +29,13 @@ export default Vue.extend({
   name: 'DatePicker',
   data() {
     return {
-      showDatePicker: false
+      showDatePicker: false,
     };
   },
   computed: {
     startDate() {
       return store.getters['adminBookings/getStartDate'];
-    }
+    },
   },
   methods: {
     selectDate(startDate: string) {
@@ -43,8 +43,8 @@ export default Vue.extend({
       store.commit('adminBookings/setStartDate', startDate);
       const endDate = addToDate(startDate, 7, 'day');
       store.dispatch('adminBookings/MOUNT_CABINS_WITH_BOOKINGS', { startDate: startDate, endDate: endDate });
-    }
-  }
+    },
+  },
 });
 </script>
 

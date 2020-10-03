@@ -18,8 +18,8 @@ export default Vue.extend({
   props: {
     isLoggedIn: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   methods: {
     routeLogin() {
@@ -30,8 +30,8 @@ export default Vue.extend({
       if (this.$route.meta.requiresAuth) {
         this.$router.push('/');
       }
-    }
-  }
+    },
+  },
 });
 </script>
 

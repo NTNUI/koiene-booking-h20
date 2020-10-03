@@ -58,14 +58,14 @@ export default Vue.extend({
           text: 'Navn',
           sortable: true,
           value: 'name',
-          align: 'start'
+          align: 'start',
         },
         {
           text: startDate + '\n (' + formatDate(startDate, 'dddd') + ')',
           sortable: true,
           value: startDate,
-          align: 'center'
-        }
+          align: 'center',
+        },
       ];
       for (let i = 1; i < 7; i++) {
         const date = addToDate(startDate, i, 'day');
@@ -73,12 +73,12 @@ export default Vue.extend({
           text: date + '\n (' + formatDate(date, 'dddd') + ')',
           sortable: true,
           value: date,
-          align: 'center'
+          align: 'center',
         };
         res.push(header);
       }
       return res;
-    }
+    },
   },
   methods: {
     customSort(items: Array<AdminBooking>, index: Array<string>, isDesc: Array<boolean>) {
@@ -100,8 +100,8 @@ export default Vue.extend({
         }
         return 0;
       });
-    }
-  }
+    },
+  },
 });
 </script>
 

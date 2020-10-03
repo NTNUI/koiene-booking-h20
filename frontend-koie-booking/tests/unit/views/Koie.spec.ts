@@ -52,11 +52,11 @@ describe('View Koie.vue', () => {
       router,
       vuetify,
       i18n,
-      store
+      store,
     });
 
     const responseObj = {
-      data: { koie: { name: 'flåkoia', description: { description_eng: '' }, location: { terrain_eng: '' } } }
+      data: { koie: { name: 'flåkoia', description: { description_eng: '' }, location: { terrain_eng: '' } } },
     };
     mockAxios.mockResponse(responseObj);
     await flushPromises();
@@ -73,12 +73,12 @@ describe('View Koie.vue', () => {
       vuetify,
       router,
       i18n,
-      store
+      store,
     });
 
     const spy = jest.spyOn(wrapper.vm.$router, 'push');
     const responseObj = {
-      data: { koie: { name: 'flåkoia', description: { description_eng: '' }, location: { terrain_eng: '' } } }
+      data: { koie: { name: 'flåkoia', description: { description_eng: '' }, location: { terrain_eng: '' } } },
     };
     mockAxios.mockResponse(responseObj);
     await flushPromises();
@@ -101,12 +101,12 @@ describe('View Koie.vue', () => {
       computed: {
         disableBooking() {
           return true;
-        }
-      }
+        },
+      },
     });
 
     const responseObj = {
-      data: { koie: { name: 'flåkoia', description: { description_eng: '' }, location: { terrain_eng: '' } } }
+      data: { koie: { name: 'flåkoia', description: { description_eng: '' }, location: { terrain_eng: '' } } },
     };
     mockAxios.mockResponse(responseObj);
     await flushPromises();

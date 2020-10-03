@@ -20,33 +20,33 @@ export default Vue.extend({
       getCurrentView: () => this.currentView,
       setCurrentView: (index: number) => {
         this.updateView(index);
-      }
+      },
     };
   },
   data() {
     return {
       adminViews: adminViews,
-      currentView: 0
+      currentView: 0,
     };
   },
   computed: {
     isAdmin(): boolean {
       return this.$store.getters['auth/isAdmin'];
-    }
+    },
   },
   watch: {
     isAdmin: {
       handler: function(newVal: boolean) {
         if (!newVal) this.$router.push('/');
       },
-      immediate: true
-    }
+      immediate: true,
+    },
   },
   methods: {
     updateView(index: number): void {
       this.currentView = index;
-    }
-  }
+    },
+  },
 });
 </script>
 

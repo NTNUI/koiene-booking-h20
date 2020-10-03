@@ -13,7 +13,7 @@ Vue.use(Vuetify);
 import { mount, createLocalVue } from '@vue/test-utils';
 
 // Components or views
-import BookingThirdStep from '../../../src/components/BookingThirdStep.vue';
+import BookingThirdStep from '@/components/booking/BookingThirdStep.vue';
 
 describe('Component BookingThirdStep.vue', () => {
   // Router not needed for this test-suite
@@ -42,9 +42,9 @@ describe('Component BookingThirdStep.vue', () => {
       computed: {
         price() {
           return 120;
-        }
+        },
       },
-      stubs: ['Card']
+      stubs: ['Card'],
     });
 
     expect(wrapper).toMatchSnapshot();

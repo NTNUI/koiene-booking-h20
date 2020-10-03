@@ -12,9 +12,9 @@ export default Vue.extend({
   props: {
     adminComponent: {
       type: Function,
-      default: Vue.component('defaultView', { template: '<h1>An error occurred while loading the admin page</h1>' })
-    }
-  }
+      default: Vue.component('defaultView', { template: '<h1>An error occurred while loading the admin page</h1>' }),
+    },
+  },
 });
 </script>
 
