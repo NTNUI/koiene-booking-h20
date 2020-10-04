@@ -5,6 +5,6 @@ export function convertAPIBookingToAdminBooking(APIBooking: APIAdminBooking): Ad
     name: APIBooking.name,
     bedsAvailableInDateRange: APIBooking.beds_available_in_date_range,
     numberOfBeds: APIBooking.number_of_beds,
-    slug: APIBooking.slug
+    slug: APIBooking.slug,
   };
 }

@@ -35,7 +35,7 @@ export default Vue.extend({
     const endDate = addToDate(startDate, 7, 'day');
     store.commit('adminBookings/setStartDate', startDate);
     store.dispatch('adminBookings/MOUNT_CABINS_WITH_BOOKINGS', { startDate: startDate, endDate: endDate });
-  }
+  },
 });
 </script>
 
