@@ -9,21 +9,20 @@ import mockAxios from 'jest-mock-axios';
 Vue.use(Vuetify);
 
 // Utilities
-import { mount, createLocalVue, Wrapper } from '@vue/test-utils';
+import { mount, createLocalVue, Wrapper, shallowMount, ThisTypedShallowMountOptions } from '@vue/test-utils';
 
 // Components or views
 import Admin from '@/views/Admin.vue';
 import { RootState } from '@/store/types';
 import SideBar from '@/components/admin/sideBar/SideBar.vue';
 import adminViews from '@/components/admin/AdminViews';
-import { addToDate } from '@/utils/dates';
-import getKoieData, { startDate } from '../__mocks__/koiene';
 
 describe('View Admin.vue', () => {
   let wrapper: Wrapper<any>;
   let localVue: VueConstructor<Vue>;
   let vuetify: VuetifyType;
   let store: Store<RootState>;
+  let wrapperOptions: ThisTypedShallowMountOptions<any>;
 
   beforeEach(() => {
     localVue = createLocalVue();
@@ -33,9 +32,7 @@ describe('View Admin.vue', () => {
     store = new Vuex.Store(cloneDeep(storeConfig));
     localVue.prototype.$scssVars = scssVars;
 
-    store.commit('adminBookings/setStartDate', startDate);
-
-    wrapper = mount(Admin, {
+    wrapperOptions = {
       sync: false,
       localVue,
       vuetify,
@@ -43,16 +40,11 @@ describe('View Admin.vue', () => {
       computed: {
         isAdmin() {
           return true;
-        }
+        },
       },
-      mounted() {
-        const endDate = addToDate(startDate, 7, 'day');
-        store.commit('adminBookings/setStartDate', startDate);
-        store.dispatch('adminBookings/MOUNT_CABINS_WITH_BOOKINGS', { startDate: startDate, endDate: endDate });
-      }
-    });
+    };
 
-    mockAxios.mockResponse({ data: { koier: getKoieData() } });
+    wrapper = mount(Admin, wrapperOptions);
   });
 
   afterEach(() => {
@@ -60,6 +52,7 @@ describe('View Admin.vue', () => {
   });
 
   it('Matches snapshot', () => {
+    const wrapper = shallowMount(Admin, wrapperOptions);
     // Assert
     expect(wrapper).toMatchSnapshot();
   });

@@ -31,10 +31,15 @@ export default Vue.extend({
   name: 'AllCabinsView',
   components: { AllCabinsTable, DatePicker, DateSkippers },
   mounted() {
-    const startDate = dayjs().format('YYYY-MM-DD');
-    const endDate = addToDate(startDate, 7, 'day');
-    store.commit('adminBookings/setStartDate', startDate);
-    store.dispatch('adminBookings/MOUNT_CABINS_WITH_BOOKINGS', { startDate: startDate, endDate: endDate });
+    this.mountCabinsWithBookings();
+  },
+  methods: {
+    mountCabinsWithBookings() {
+      const startDate = dayjs().format('YYYY-MM-DD');
+      const endDate = addToDate(startDate, 7, 'day');
+      store.commit('adminBookings/setStartDate', startDate);
+      store.dispatch('adminBookings/MOUNT_CABINS_WITH_BOOKINGS', { startDate: startDate, endDate: endDate });
+    },
   },
 });
 </script>

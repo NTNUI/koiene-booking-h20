@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component AllCabinsView.vue Matches snapshot 1`] = `
+<div>
+  <h2 style="text-align: center;">Oversikt over bookinger</h2>
+  <div class="row justify-center">
+    <div class="col col-4">
+      <h5 style="text-align: center;">Velg dato</h5>
+      <div class="v-menu" first-day-of-week="1" no-title="">
+        <!---->
+      </div>
+      <div class="v-input v-input--is-readonly theme--light v-text-field">
+        <div class="v-input__prepend-outer">
+          <div class="v-input__icon v-input__icon--prepend"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">event</i></div>
+        </div>
+        <div class="v-input__control">
+          <div class="v-input__slot">
+            <div class="v-text-field__slot"><label for="input-9" class="v-label theme--light" style="left: 0px; position: absolute;">2020-10-04</label><input role="button" aria-haspopup="true" aria-expanded="false" id="input-9" readonly="readonly" type="text"></div>
+          </div>
+          <div class="v-text-field__details">
+            <div class="v-messages theme--light"><span name="message-transition" tag="div" class="v-messages__wrapper"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-space-between">
+    <div class="col">
+      <div class="row justify-start"><button type="button" class="navBtn v-btn v-btn--contained theme--light v-size--default" style="height: 50px; width: 50px;"><span class="v-btn__content">-1 å</span></button><button type="button" class="navBtn v-btn v-btn--contained theme--light v-size--default" style="height: 50px; width: 50px;"><span class="v-btn__content">-1 m</span></button><button type="button" class="navBtn v-btn v-btn--contained theme--light v-size--default" style="height: 50px; width: 50px;"><span class="v-btn__content">-1 u</span></button><button type="button" class="navBtn v-btn v-btn--contained theme--light v-size--default" style="height: 50px; width: 50px;"><span class="v-btn__content">-1 d</span></button></div>
+    </div>
+    <div class="col">
+      <div class="row justify-end"><button type="button" class="navBtn v-btn v-btn--contained theme--light v-size--default" style="height: 50px; width: 50px;"><span class="v-btn__content">+1 d</span></button><button type="button" class="navBtn v-btn v-btn--contained theme--light v-size--default" style="height: 50px; width: 50px;"><span class="v-btn__content">+1 u</span></button><button type="button" class="navBtn v-btn v-btn--contained theme--light v-size--default" style="height: 50px; width: 50px;"><span class="v-btn__content">+1 m</span></button><button type="button" class="navBtn v-btn v-btn--contained theme--light v-size--default" style="height: 50px; width: 50px;"><span class="v-btn__content">+1 å</span></button></div>
+    </div>
+  </div>
+  <div class="row justify-center">
+    <div class="v-data-table theme--light" style="width: 100%;">
+      <div class="v-data-table__wrapper">
+        <table>
+          <colgroup>
+            <col class="">
+            <col class="">
+            <col class="">
+            <col class="">
+            <col class="">
+            <col class="">
+            <col class="">
+            <col class="">
+          </colgroup>
+          <thead class="v-data-table-header">
+            <tr>
+              <th role="columnheader" scope="col" aria-label="Navn: Not sorted. Activate to sort ascending." aria-sort="none" class="text-start sortable"><span>Navn</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size: 18px;"></i></th>
+              <th role="columnheader" scope="col" aria-label="2020-10-04
+ (søndag): Not sorted. Activate to sort ascending." aria-sort="none" class="text-center sortable"><span>2020-10-04
+ (søndag)</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size: 18px;"></i></th>
+              <th role="columnheader" scope="col" aria-label="2020-10-05
+ (mandag): Not sorted. Activate to sort ascending." aria-sort="none" class="text-center sortable"><span>2020-10-05
+ (mandag)</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size: 18px;"></i></th>
+              <th role="columnheader" scope="col" aria-label="2020-10-06
+ (tirsdag): Not sorted. Activate to sort ascending." aria-sort="none" class="text-center sortable"><span>2020-10-06
+ (tirsdag)</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size: 18px;"></i></th>
+              <th role="columnheader" scope="col" aria-label="2020-10-07
+ (onsdag): Not sorted. Activate to sort ascending." aria-sort="none" class="text-center sortable"><span>2020-10-07
+ (onsdag)</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size: 18px;"></i></th>
+              <th role="columnheader" scope="col" aria-label="2020-10-08
+ (torsdag): Not sorted. Activate to sort ascending." aria-sort="none" class="text-center sortable"><span>2020-10-08
+ (torsdag)</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size: 18px;"></i></th>
+              <th role="columnheader" scope="col" aria-label="2020-10-09
+ (fredag): Not sorted. Activate to sort ascending." aria-sort="none" class="text-center sortable"><span>2020-10-09
+ (fredag)</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size: 18px;"></i></th>
+              <th role="columnheader" scope="col" aria-label="2020-10-10
+ (lørdag): Not sorted. Activate to sort ascending." aria-sort="none" class="text-center sortable"><span>2020-10-10
+ (lørdag)</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size: 18px;"></i></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="v-data-table__empty-wrapper">
+              <td colspan="8">Det skjedde noe feil da vi prøvde å hente bookinger</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+`;
