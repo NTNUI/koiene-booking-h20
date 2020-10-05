@@ -5,6 +5,16 @@
       <v-layout class="px-4">
         <p>{{ $t('report.reportDescription') }}</p>
       </v-layout>
+      <v-layout class="px-4">
+        <p>
+          {{ $t('report.reportBookingInfo1') }}
+          <span :class="$style.capitalize">{{ this.$store.state.report.bookingInfo.koie }}</span>
+          {{ $t('report.reportBookingInfo2') }}
+          {{ this.$store.state.report.bookingInfo.from_date }}
+          {{ $t('report.reportBookingInfo3') }}
+          {{ this.$store.state.report.bookingInfo.to_date }}.
+        </p>
+      </v-layout>
     </v-layout>
   </v-layout>
 </template>
@@ -35,5 +45,8 @@ export default Vue.extend({
 }
 .separator > h3 {
   padding: 16px;
+}
+.capitalize {
+  text-transform: capitalize;
 }
 </style>
