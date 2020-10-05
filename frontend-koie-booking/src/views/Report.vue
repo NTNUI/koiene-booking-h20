@@ -112,7 +112,9 @@ export default Vue.extend({
     this.$store.commit('report/setStep', 1);
     this.$store.commit('report/setValidForm', true);
     this.$store.commit('report/setEdited', false);
-    this.$store.commit('report/setBookingID', Number(this.$route.params.booking_id));
+    const booking = Number(this.$route.params.booking_id);
+    this.$store.commit('report/setBookingID', booking);
+    this.$store.dispatch('report/FETCH_BOOKING', booking);
   },
 
   methods: {

@@ -1,5 +1,5 @@
 import { MutationTree } from 'vuex';
-import { ReportState, ReportData } from '../../../types';
+import { ReportState, BookingInfo } from '../../../types';
 
 export const mutations: MutationTree<ReportState> = {
   setStep(state, step: number) {
@@ -19,6 +19,7 @@ export const mutations: MutationTree<ReportState> = {
   },
   setBookingID(state, id: number) {
     state.reportData.booking_id = id;
+    state.bookingInfo.id = id;
   },
   setGasIsFull(state, gasIsFull: boolean) {
     state.reportData.gas_is_full = gasIsFull;
@@ -91,5 +92,8 @@ export const mutations: MutationTree<ReportState> = {
   },
   setFeedback(state, feedback: string) {
     state.reportData.feedback = feedback;
+  },
+  setBooking(state, booking: BookingInfo) {
+    state.bookingInfo = booking;
   },
 };

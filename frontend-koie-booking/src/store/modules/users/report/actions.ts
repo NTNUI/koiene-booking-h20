@@ -2,6 +2,7 @@ import Vue from 'vue';
 import store from '@/store';
 import axios from 'axios';
 import { ReportData } from '@/store/types';
+import { renameKey } from '@/utils/objects';
 
 export const actions = {
   CREATE_REPORT: (ctx: any, reportData: ReportData): any => {
@@ -19,7 +20,25 @@ export const actions = {
       .catch((error) => {
         ctx.commit('setError', true);
         ctx.commit('setLoadingStatus', false);
-        console.log(error);
+        throw new Error(`API ${error}`);
+      });
+  },
+  FETCH_BOOKING: (ctx: any, bookingID: number): any => {
+    const headers = { 'content-type': 'application/json', Authorization: '' };
+    const authToken = store.getters['auth/getToken'];
+    if (authToken) {
+      headers.Authorization = `Bearer ${authToken}`;
+    }
+    axios
+      .get(Vue.prototype.$apiUrl + `/koie/booking/${bookingID}`, { headers })
+      .then((res) => {
+        let booking = renameKey(res.data.booking, 'arrival_date', 'from_date');
+        booking = renameKey(booking, 'departure_date', 'to_date');
+        ctx.commit('setBooking', booking);
+      })
+      .catch((error) => {
+        ctx.commit('setError', true);
+        ctx.commit('setLoadingStatus', false);
         throw new Error(`API ${error}`);
       });
   },
