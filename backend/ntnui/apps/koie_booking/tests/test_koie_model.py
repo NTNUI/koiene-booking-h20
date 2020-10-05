@@ -41,6 +41,18 @@ def bookings(koie):
 
 
 @pytest.mark.django_db
+def test_get_beds_available_in_date_range(koie, bookings):
+    date_availability = {}
+    expected = [11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 5, 8, 8, 11]
+    for day in date_utils.get_daterange(now(), (now() + timedelta(koie.booking_window))):
+        date_availability[day.strftime("%Y-%m-%d")] = expected.pop()
+    actual = koie.get_beds_available_in_date_range(now(), (now() + timedelta(koie.booking_window)))
+
+    assert actual == date_availability
+    assert len(actual) == koie.booking_window
+
+
+@pytest.mark.django_db
 def test_get_available_beds_by_night(koie, bookings):
     assert koie.number_of_beds == 11
     date_availability = {}
