@@ -27,7 +27,7 @@
             <SecondStep v-else-if="step === 2" />
             <ThirdStep v-else-if="step === 3" />
             <FourthStep v-else-if="step === 4" />
-            <ThankYouCard v-else-if="step === 5" />
+            <ThankYouStep v-else-if="step === 5" />
           </v-layout>
         </v-stepper>
         <div v-show="!isLoading && step < 5" :class="$style.btnWrapper">
@@ -74,7 +74,7 @@ import FirstStep from '@/components/report/FirstStep.vue';
 import SecondStep from '@/components/report/SecondStep.vue';
 import ThirdStep from '@/components/report/ThirdStep.vue';
 import FourthStep from '@/components/report/FourthStep.vue';
-import ThankYouCard from '@/components/report/ThankYouCard.vue';
+import ThankYouStep from '@/components/report/ThankYouStep.vue';
 import { ReportData } from '../types/report';
 import Vue from 'vue';
 
@@ -88,7 +88,7 @@ export default Vue.extend({
     SecondStep,
     ThirdStep,
     FourthStep,
-    ThankYouCard,
+    ThankYouStep,
   },
 
   data(): ReportData {
