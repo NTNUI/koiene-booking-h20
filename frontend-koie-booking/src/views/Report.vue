@@ -29,7 +29,7 @@
             <ReportFourthStep v-else-if="step === 4" />
           </v-layout>
         </v-stepper>
-        <div v-show="!isLoading" :class="$style.btnWrapper">
+        <div v-show="!isLoading & !apiError" :class="$style.btnWrapper">
           <v-btn
             v-if="step > 1"
             :color="this.$scssVars.globalColorPrimary"

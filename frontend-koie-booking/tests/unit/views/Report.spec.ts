@@ -66,6 +66,20 @@ describe('View Booking.vue', () => {
     expect(wrapper.vm.$el.querySelector('.btnWrapper').style.display).toBe('none');
   });
 
+  it('Buttons should be hidden if there is an api error', () => {
+    expect(wrapper.vm.$el.querySelector('.btnWrapper').style.display).toBe('');
+    wrapperOptions = {
+      ...wrapperOptions,
+      computed: {
+        apiError() {
+          return true;
+        },
+      },
+    };
+    wrapper = mount(Report, wrapperOptions);
+    expect(wrapper.vm.$el.querySelector('.btnWrapper').style.display).toBe('none');
+  });
+
   it('Button_next renders next report step', () => {
     wrapper.find('[data-test="btnNext"]').trigger('click');
 
