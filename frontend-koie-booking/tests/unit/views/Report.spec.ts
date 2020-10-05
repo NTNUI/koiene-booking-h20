@@ -9,7 +9,7 @@ import scssVars from '@/styles/variables.scss';
 Vue.use(Vuetify);
 
 // Utilities
-import { mount, createLocalVue } from '@vue/test-utils';
+import { mount, createLocalVue, ThisTypedShallowMountOptions } from '@vue/test-utils';
 
 // Components or views
 import Report from '@/views/Report.vue';
@@ -22,6 +22,7 @@ describe('View Booking.vue', () => {
   let localVue: any;
   let vuetify: any;
   let store: any;
+  let wrapperOptions: ThisTypedShallowMountOptions<any>;
 
   beforeEach(() => {
     localVue = createLocalVue();
@@ -32,7 +33,7 @@ describe('View Booking.vue', () => {
     store = new Vuex.Store(cloneDeep(storeConfig));
     localVue.prototype.$scssVars = scssVars;
 
-    wrapper = mount(Report, {
+    wrapperOptions = {
       localVue,
       vuetify,
       i18n,
@@ -42,11 +43,27 @@ describe('View Booking.vue', () => {
           params: { id: 1 },
         },
       },
-    });
+    };
+
+    wrapper = mount(Report, wrapperOptions);
   });
 
   it('Matches snapshot', () => {
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it('Buttons should be hidden if report is loading', () => {
+    expect(wrapper.vm.$el.querySelector('.btnWrapper').style.display).toBe('');
+    wrapperOptions = {
+      ...wrapperOptions,
+      computed: {
+        isLoading() {
+          return true;
+        },
+      },
+    };
+    wrapper = mount(Report, wrapperOptions);
+    expect(wrapper.vm.$el.querySelector('.btnWrapper').style.display).toBe('none');
   });
 
   it('Button_next renders next report step', () => {
