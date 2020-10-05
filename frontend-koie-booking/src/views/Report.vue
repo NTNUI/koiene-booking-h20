@@ -16,7 +16,7 @@
               {{ $t('report.step3') }}
             </v-stepper-step>
             <v-divider></v-divider
-            ><v-stepper-step :step="4">
+            ><v-stepper-step :complete="step > 4" :step="4">
               {{ $t('report.step4') }}
             </v-stepper-step>
           </v-stepper-header>
@@ -27,9 +27,10 @@
             <SecondStep v-else-if="step === 2" />
             <ThirdStep v-else-if="step === 3" />
             <FourthStep v-else-if="step === 4" />
+            <ThankYouCard v-else-if="step === 5" />
           </v-layout>
         </v-stepper>
-        <div v-show="!isLoading" :class="$style.btnWrapper">
+        <div v-show="!isLoading && step < 5" :class="$style.btnWrapper">
           <v-btn
             v-if="step > 1"
             :color="this.$scssVars.globalColorPrimary"
@@ -73,6 +74,7 @@ import FirstStep from '@/components/report/FirstStep.vue';
 import SecondStep from '@/components/report/SecondStep.vue';
 import ThirdStep from '@/components/report/ThirdStep.vue';
 import FourthStep from '@/components/report/FourthStep.vue';
+import ThankYouCard from '@/components/report/ThankYouCard.vue';
 import { ReportData } from '../types/report';
 import Vue from 'vue';
 
@@ -86,12 +88,13 @@ export default Vue.extend({
     SecondStep,
     ThirdStep,
     FourthStep,
+    ThankYouCard,
   },
 
   data(): ReportData {
     return {
       step: 1,
-      steps: 4,
+      steps: 5,
     };
   },
 
@@ -129,7 +132,6 @@ export default Vue.extend({
     },
     done() {
       this.$store.dispatch('report/CREATE_REPORT', this.$store.state.report.reportData);
-      this.$router.push(`/`);
     },
     resetReportInfo() {},
   },
