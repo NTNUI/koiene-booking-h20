@@ -70,10 +70,14 @@ clean: ##@TestEnv Delete the project files in docker, and all not in use contain
 	docker system prune
 
 pytest: ##@Test (test) Run all docker-tests with pytest, and output a report in the terminal
-	docker-compose run backend pytest --cov=. $(ARGS)
+	make setup-tests
+	docker-compose -f docker-compose.test.yml run backend pytest --cov=. $(ARGS)
+
+setup-tests:
+	docker-compose -f docker-compose.test.yml run backend python manage.py migrate
 
 pytest-clean: ##@Test (test) Run all docker-tests with pytest without coverage report
-	docker-compose run backend pytest $(ARGS)
+	docker-compose -f docker-compose.test.yml run backend pytest $(ARGS)
 
 coverage: ##@Test (test) Run all tests and output a HTML report in coverage_report/
 	make pytest ARGS="--cov-report=html"
