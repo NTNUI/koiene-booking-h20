@@ -1,3 +1,4 @@
+import Vue from 'vue';
 import { MutationTree } from 'vuex';
 import { ReportState, BookingInfo } from '../../../types';
 
@@ -18,8 +19,7 @@ export const mutations: MutationTree<ReportState> = {
     state.error = error;
   },
   setBookingID(state, id: number) {
-    state.reportData.booking_id = id;
-    state.bookingInfo.id = id;
+    Vue.set(state.reportData, 'booking_id', id);
   },
   setGasIsFull(state, gasIsFull: boolean) {
     state.reportData.gas_is_full = gasIsFull;

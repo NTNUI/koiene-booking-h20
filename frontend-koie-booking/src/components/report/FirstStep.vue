@@ -7,12 +7,12 @@
       </v-layout>
       <v-layout class="px-4">
         <p>
-          {{ $t('report.reportBookingInfo1') }}
-          <span :class="$style.capitalize">{{ this.$store.state.report.bookingInfo.koie }}</span>
-          {{ $t('report.reportBookingInfo2') }}
-          {{ this.$store.state.report.bookingInfo.from_date }}
-          {{ $t('report.reportBookingInfo3') }}
-          {{ this.$store.state.report.bookingInfo.to_date }}.
+          {{ $t('report.reportYourTripTo') }}
+          <span :class="$style.capitalize">{{ koie }}</span>
+          {{ $t('report.reportFrom') }}
+          {{ fromDate }}
+          {{ $t('report.reportTo') }}
+          {{ toDate }}.
         </p>
       </v-layout>
     </v-layout>
@@ -21,9 +21,21 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import store from '@/store/index';
 
 export default Vue.extend({
   name: 'ReportFirstStep',
+  computed: {
+    koie() {
+      return store.getters['report/getBookingInfoKoie'];
+    },
+    fromDate() {
+      return store.getters['report/getBookingInfoFromDate'];
+    },
+    toDate() {
+      return store.getters['report/getBookingInfoToDate'];
+    },
+  },
 });
 </script>
 
