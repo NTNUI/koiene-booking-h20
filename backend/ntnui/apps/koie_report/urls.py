@@ -1,4 +1,4 @@
-from django.urls import include, path
+from django.urls import path
 
 from koie_report.views import ReportViewSet
 
