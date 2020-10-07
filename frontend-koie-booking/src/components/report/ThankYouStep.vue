@@ -1,9 +1,9 @@
 <template>
   <v-layout :class="$style.container" :dark="true">
-    <h1 :class="$style.heading">{{ $t('report.thank_you_title') }}</h1>
+    <h1 :class="$style.heading">{{ $t('report.stepThankYouTitle') }}</h1>
     <v-layout :class="$style.separator">
       <v-layout class="px-4">
-        <p>{{ $t('report.thank_you_description') }}</p>
+        <p>{{ $t('report.stepThankYouDescription') }}</p>
       </v-layout>
     </v-layout>
   </v-layout>
