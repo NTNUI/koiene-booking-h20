@@ -40,14 +40,14 @@ import { loginFormData } from '@/types/login';
 export default Vue.extend({
   name: 'LoginForm',
   components: {
-    'form-input': Input
+    'form-input': Input,
   },
   data(): loginFormData {
     return {
       email: '',
       password: '',
       error: '',
-      loading: false
+      loading: false,
     };
   },
   computed: {
@@ -56,7 +56,7 @@ export default Vue.extend({
     },
     isValidPassword(): boolean {
       return this.password.length >= 8;
-    }
+    },
   },
   methods: {
     async login() {
@@ -68,7 +68,7 @@ export default Vue.extend({
       } else if (!this.loading) {
         const payload: TokenPayload = {
           email: this.email,
-          password: this.password
+          password: this.password,
         };
         try {
           this.loading = true;
@@ -79,14 +79,14 @@ export default Vue.extend({
             group: 'memberships_system',
             type: 'error',
             duration: 3000,
-            text: `${this.$t('ntnui.login.error.noUser')}`
+            text: `${this.$t('ntnui.login.error.noUser')}`,
           });
         } finally {
           this.loading = false;
         }
       }
-    }
-  }
+    },
+  },
 });
 </script>
 

@@ -14,7 +14,7 @@ export const mutations: MutationTree<KoieState> = {
   },
   setAllKoier(state, payload) {
     state.allKoier = payload;
-  }
+  },
 };
 
 export default mutations;

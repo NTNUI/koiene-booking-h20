@@ -16,8 +16,8 @@ import NavBar from './components/navBar/NavBar.vue';
 export default Vue.extend({
   name: 'App',
   components: {
-    NavBar
-  }
+    NavBar,
+  },
 });
 </script>
 

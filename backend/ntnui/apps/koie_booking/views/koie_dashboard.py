@@ -5,8 +5,8 @@ from rest_framework.response import Response
 import koie_booking.constants as constants
 from koie_booking.models.koie import KoieModel
 from koie_booking.serializers.all_koier_detailed import (
-    KoierDetailedSerializer,
     KoierDetailedRangeSerializer,
+    KoierDetailedSerializer,
 )
 
 from django.utils.timezone import now, timedelta

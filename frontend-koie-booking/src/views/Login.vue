@@ -21,8 +21,8 @@ import LoginForm from '@/components/login/LoginForm.vue';
 export default Vue.extend({
   name: 'Login',
   components: {
-    LoginForm
-  }
+    LoginForm,
+  },
 });
 </script>
 

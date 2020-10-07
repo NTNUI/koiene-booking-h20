@@ -6,6 +6,7 @@ import { RootState } from './types';
 import { koie } from './modules/users/koie/index';
 import { booking } from './modules/users/booking/index';
 import { avalanche } from './modules/users/avalanche/index';
+import { report } from './modules/users/report/index';
 import { auth } from './modules/users/auth/index';
 import { adminBookings } from '@/store/modules/admin/bookings';
 
@@ -17,8 +18,9 @@ const store: StoreOptions<RootState> = {
     koie,
     booking,
     avalanche,
-    auth
-  }
+    report,
+    auth,
+  },
 };
 
 export default new Vuex.Store<RootState>(store);

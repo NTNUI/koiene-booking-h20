@@ -1,0 +1,36 @@
+version: '3.4'
+
+services:
+  db:
+    image: postgres
+    container_name: ntnui_db
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+  backend:
+    container_name: ntnui_backend
+    build:
+      context: .
+      dockerfile: config/django/Dockerfile
+    logging:
+      driver: "json-file"
+    environment:
+      PRODUCTION: 'false'
+      NTNUI_SECRET_KEY: ${NTNUI_SECRET_KEY}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_HOST: db
+      POSTGRES_PORT: 5432
+      DJANGO_SETTINGS_MODULE: 'ntnui.settings.local'
+
+    depends_on:
+      - db
+    command: bash -c "
+        black --check ntnui/ --config pyproject.toml &&
+        isort --check-only &&
+        flake8 &&
+        python manage.py makemigrations --check &&
+        pytest
+        "

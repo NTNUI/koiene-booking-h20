@@ -17,7 +17,7 @@ export default Vue.extend({
   name: 'BookingFourthStep',
   mounted() {
     this.$store.dispatch('booking/SET_EDITED', false);
-  }
+  },
 });
 </script>
 
