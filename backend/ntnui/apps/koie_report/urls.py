@@ -1,5 +1,4 @@
 from django.urls import include, path
-from rest_framework import routers
 
 from koie_report.views import ReportViewSet
 

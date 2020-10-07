@@ -10,8 +10,6 @@ from koie_booking.serializers.all_koier_detailed import (
 )
 
 from django.utils.timezone import now, timedelta
-from django.utils.translation import gettext as _
-
 
 class KoieDashboardViewSet(
     mixins.ListModelMixin, viewsets.GenericViewSet,

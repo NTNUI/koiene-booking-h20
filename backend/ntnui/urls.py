@@ -7,10 +7,8 @@ from rest_framework import permissions
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView, TokenVerifyView
 
 from django.contrib import admin
-from django.contrib.auth.models import Group
 
 """ Configure Admin """
-# admin.site.unregister(Group)
 
 schema_view = get_schema_view(
     openapi.Info(
