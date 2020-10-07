@@ -32,7 +32,6 @@ import Vue from 'vue';
 import AdminBooking from '@/types/admin/AdminBooking';
 import { addToDate, formatDate } from '@/utils/dates';
 import CabinCapacity from '@/components/admin/allCabinsView/CabinCapacity.vue';
-import getKoieData from '../../../../tests/unit/__mocks__/koiene';
 
 interface Header {
   text: string;
