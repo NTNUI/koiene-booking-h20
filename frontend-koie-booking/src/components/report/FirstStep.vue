@@ -21,19 +21,18 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import store from '@/store/index';
 
 export default Vue.extend({
   name: 'ReportFirstStep',
   computed: {
     koie() {
-      return store.getters['report/getBookingInfoKoie'];
+      return this.$store.state.report.bookingInfo.koie;
     },
     fromDate() {
-      return store.getters['report/getBookingInfoFromDate'];
+      return this.$store.state.report.bookingInfo.from_date;
     },
     toDate() {
-      return store.getters['report/getBookingInfoToDate'];
+      return this.$store.state.report.bookingInfo.to_date;
     },
   },
 });
