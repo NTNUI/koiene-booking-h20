@@ -35,7 +35,7 @@ describe('Component AllCabinsTable.vue', () => {
     MOCK_MOUNT_CABINS_WITH_BOOKINGS(store);
 
     wrapperOptions = {
-      sync: true,
+      sync: false,
       localVue,
       vuetify,
       store,
