@@ -1,5 +1,3 @@
-import json
-from django.core.mail import send_mail
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
 
@@ -29,7 +27,7 @@ def send_koie_information_mail(booking):
 
     # Mail header.
     sender = "TestKoieneNTNUI@gmail.com"
-    receiver = [booking.contact_mail]
+    receiver = [booking.contact_email]
 
     subject = "Koie information"
 

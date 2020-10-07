@@ -34,5 +34,6 @@ export interface BookingThirdStepData {
 export interface Guest {
   name: string;
   number: string;
+  isMember: boolean;
   email?: string;
 }

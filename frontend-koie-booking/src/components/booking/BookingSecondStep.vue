@@ -44,13 +44,6 @@
                 :rules="emailStrictRules"
                 required
               />
-              <v-text-field
-                v-if="i !== 1"
-                v-model="guests[i - 1].email"
-                :label="$vuetify.breakpoint.xs ? $t('booking.emailGeneric') : $t('booking.emailOptional')"
-                placeholder="ola.n@hotmail.com"
-                :rules="emailLooseRules"
-              />
             </div>
             <v-checkbox
               v-model="guests[i - 1].isMember"
