@@ -9,8 +9,6 @@ from koie_report.factories.report_factory import ReportFactory
 from koie_report.report_serializer import ReportSerializer
 from koie_report.views import ReportAPIView, ReportViewSet
 
-from django.utils.timezone import now
-
 
 @pytest.fixture(autouse=True)
 def koie_group():
