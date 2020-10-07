@@ -97,13 +97,6 @@ def report_batch(booking):
 
 
 @pytest.mark.django_db
-def test_create_report(request_factory, booking, report_data):
-    request = request_factory.post(f"/koie/reports/{booking.id}", report_data)
-    response = get_response(request=request, booking_id=booking.id)
-    assert response.status_code == 201
-
-
-@pytest.mark.django_db
 def test_list_report(request_factory, report_batch):
 
     request = request_factory.get("/koie/reports/")
