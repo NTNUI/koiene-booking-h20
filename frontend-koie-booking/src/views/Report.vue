@@ -16,7 +16,7 @@
               {{ $t('report.step3') }}
             </v-stepper-step>
             <v-divider></v-divider
-            ><v-stepper-step :step="4">
+            ><v-stepper-step :complete="step > 4" :step="4">
               {{ $t('report.step4') }}
             </v-stepper-step>
           </v-stepper-header>
@@ -27,9 +27,10 @@
             <ReportSecondStep v-else-if="step === 2" />
             <ReportThirdStep v-else-if="step === 3" />
             <ReportFourthStep v-else-if="step === 4" />
+            <ThankYouStep v-else-if="step === 5" />
           </v-layout>
         </v-stepper>
-        <div v-show="!isLoading & !apiError" :class="$style.btnWrapper">
+        <div v-show="step < steps && !isLoading && !apiError" :class="$style.btnWrapper">
           <v-btn
             v-if="step > 1"
             :color="this.$scssVars.globalColorPrimary"
@@ -73,6 +74,7 @@ import ReportFirstStep from '@/components/report/ReportFirstStep.vue';
 import ReportSecondStep from '@/components/report/ReportSecondStep.vue';
 import ReportThirdStep from '@/components/report/ReportThirdStep.vue';
 import ReportFourthStep from '@/components/report/ReportFourthStep.vue';
+import ThankYouStep from '@/components/report/ThankYouStep.vue';
 import { ReportData } from '../types/report';
 import Vue from 'vue';
 
@@ -86,12 +88,13 @@ export default Vue.extend({
     ReportSecondStep,
     ReportThirdStep,
     ReportFourthStep,
+    ThankYouStep,
   },
 
   data(): ReportData {
     return {
       step: 1,
-      steps: 4,
+      steps: 5,
     };
   },
 
@@ -112,7 +115,9 @@ export default Vue.extend({
     this.$store.commit('report/setStep', 1);
     this.$store.commit('report/setValidForm', true);
     this.$store.commit('report/setEdited', false);
-    this.$store.commit('report/setBookingID', Number(this.$route.params.booking_id));
+    const booking = Number(this.$route.params.booking_id);
+    this.$store.commit('report/setBookingID', booking);
+    this.$store.dispatch('report/FETCH_BOOKING', booking);
   },
 
   methods: {
@@ -129,7 +134,6 @@ export default Vue.extend({
     },
     done() {
       this.$store.dispatch('report/CREATE_REPORT', this.$store.state.report.reportData);
-      this.$router.push(`/`);
     },
     resetReportInfo() {},
   },
