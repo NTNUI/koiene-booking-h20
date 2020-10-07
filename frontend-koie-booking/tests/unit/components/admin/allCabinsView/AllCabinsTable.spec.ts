@@ -9,19 +9,20 @@ import mockAxios from 'jest-mock-axios';
 Vue.use(Vuetify);
 
 // Utilities
-import { createLocalVue, Wrapper, ThisTypedShallowMountOptions, shallowMount } from '@vue/test-utils';
+import { createLocalVue, Wrapper, shallowMount, ThisTypedMountOptions, mount } from '@vue/test-utils';
 
 // Components or views
-import AllCabinsView from '@/components/admin/allCabinsView/AllCabinsView.vue';
+import AllCabinsTable from '@/components/admin/allCabinsView/AllCabinsTable.vue';
 import { RootState } from '@/store/types';
+import getKoieData, { MOCK_MOUNT_CABINS_WITH_BOOKINGS, startDate } from '../../../__mocks__/koiene';
+import { addToDate } from '@/utils/dates';
 
-describe('Component AllCabinsView.vue', () => {
+describe('Component AllCabinsTable.vue', () => {
   let wrapper: Wrapper<any>;
   let localVue: VueConstructor<Vue>;
   let vuetify: VuetifyType;
   let store: Store<RootState>;
-  let wrapperOptions: ThisTypedShallowMountOptions<any>;
-  const mountCabinsWithBookings = jest.fn();
+  let wrapperOptions: ThisTypedMountOptions<any>;
 
   beforeEach(() => {
     localVue = createLocalVue();
@@ -31,27 +32,22 @@ describe('Component AllCabinsView.vue', () => {
     store = new Vuex.Store(cloneDeep(storeConfig));
     localVue.prototype.$scssVars = scssVars;
 
+    MOCK_MOUNT_CABINS_WITH_BOOKINGS(store);
+
     wrapperOptions = {
       localVue,
       vuetify,
       store,
-      methods: {
-        mountCabinsWithBookings,
-      },
     };
 
-    wrapper = shallowMount(AllCabinsView, wrapperOptions);
+    wrapper = mount(AllCabinsTable, wrapperOptions);
   });
 
   afterEach(() => {
     mockAxios.reset();
   });
 
-  it('Matches snapshot', () => {
-    // Assert
+  it('Matches snapshot', async () => {
     expect(wrapper).toMatchSnapshot();
-  });
-  it('mountCabins has been dispatched', () => {
-    expect(mountCabinsWithBookings).toHaveBeenCalled();
   });
 });

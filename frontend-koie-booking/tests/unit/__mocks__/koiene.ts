@@ -1,7 +1,19 @@
 import { APIAdminBooking } from '@/types/admin/AdminBooking';
 import { addToDate } from '@/utils/dates';
+import { RootState } from '@/store/types';
+import { Store } from 'vuex';
+import { convertAPIBookingToAdminBooking } from '@/store/modules/admin/bookings/helpers';
 
 export const startDate = '2020-10-03';
+
+export function MOCK_MOUNT_CABINS_WITH_BOOKINGS(store: Store<RootState>) {
+  store.commit('adminBookings/setStartDate', startDate);
+  const cabins = getKoieData();
+  for (const APICabin of cabins) {
+    const cabin = convertAPIBookingToAdminBooking(APICabin);
+    store.commit('adminBookings/setCabinWithBooking', cabin);
+  }
+}
 
 export default function getKoieData(): Array<APIAdminBooking> {
   const dates = [startDate];
