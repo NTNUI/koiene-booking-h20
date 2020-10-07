@@ -8,7 +8,6 @@ class ReportFactory(factory.DjangoModelFactory):
     class Meta:
         model = KoieReportModel
         django_get_or_create = ('booking', 'date_created_at', 'feedback',
-                                'firewoord',
                                 'firewood', 'chopped_up_wood',
                                 'smoke_detector_is_working',
                                 'gas_is_full',

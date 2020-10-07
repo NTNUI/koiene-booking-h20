@@ -1,0 +1,95 @@
+import factory
+import pytest
+from django.utils.timezone import now
+from rest_framework.test import APIRequestFactory
+from koie_report.report_serializer import ReportSerializer
+from koie_booking.factories.booking_factory import BookingFactory
+from koie_report.factories.report_factory import ReportFactory
+from accounts.factories.user_factory import UserFactory
+from groups.factories.group_factory import GroupFactory
+from koie_booking.factories.koie_factory import KoieFactory
+from koie_report.views import ReportViewSet
+
+
+@pytest.fixture
+def user():
+    return UserFactory()
+
+
+@pytest.fixture(autouse=True)
+def koie_group():
+    return GroupFactory(name="Koiene")
+
+
+@pytest.fixture
+def koie():
+    return KoieFactory()
+
+
+@pytest.fixture
+def booking():
+    return BookingFactory()
+
+
+@pytest.fixture()
+def koie_report():
+    return ReportFactory()
+
+
+@pytest.fixture
+def serializer(koie_report):
+    return ReportSerializer(instance=koie_report)
+
+
+@pytest.fixture
+def report_data():
+    data = {
+        "date_created_at": now(),
+        "feedback": "No feedback needed..",
+        "firewood": 1,
+        "chopped_up_wood": 2,
+        "smoke_detector_is_working": True,
+        "gas_is_full": False,
+        "gas_burner_primus": 4,
+        "axe": 2,
+        "hammer": 1,
+        "saw": 3,
+        "saw_blade": 0,
+        "saw_bench": 0,
+        "spade": 0,
+        "kerosene_lamp": 0,
+        "detergent": 0,
+        "dishware": 0,
+        "cookware": 0,
+        "cabin_book": 2,
+        "candle_holders": 0,
+        "fire_blanket": 0,
+        "fire_extinguisher": 0,
+        "other_faults": " ",
+        "boat_status": 2,
+        "canoe_status": 0,
+        "life_jackets_status": 0,
+    }
+
+    return data
+
+
+@pytest.fixture()
+def request_factory():
+    return APIRequestFactory()
+
+
+def get_response(request, booking_id=None):
+    if booking_id:
+        view = ReportViewSet.as_view({"post": "create"})
+        return view(request, booking_id)
+    else:
+        view = ReportViewSet.as_view({"get": "list"})
+        return view(request)
+
+
+@pytest.mark.django_db
+def test_create_report(request_factory, booking, report_data):
+    request = request_factory.post(f"/koie/reports/{booking.id}", report_data)
+    response = get_response(request=request, booking_id=booking.id)
+    assert response.status_code == 201
