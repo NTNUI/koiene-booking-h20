@@ -5,6 +5,16 @@
       <v-layout class="px-4">
         <p>{{ $t('report.reportDescription') }}</p>
       </v-layout>
+      <v-layout class="px-4">
+        <p>
+          {{ $t('report.reportYourTripTo') }}
+          <span :class="$style.capitalize">{{ koie }}</span>
+          {{ $t('report.reportFrom') }}
+          {{ fromDate }}
+          {{ $t('report.reportTo') }}
+          {{ toDate }}.
+        </p>
+      </v-layout>
     </v-layout>
   </v-layout>
 </template>
@@ -14,6 +24,17 @@ import Vue from 'vue';
 
 export default Vue.extend({
   name: 'ReportFirstStep',
+  computed: {
+    koie() {
+      return this.$store.state.report.bookingInfo.koie;
+    },
+    fromDate() {
+      return this.$store.state.report.bookingInfo.from_date;
+    },
+    toDate() {
+      return this.$store.state.report.bookingInfo.to_date;
+    },
+  },
 });
 </script>
 
@@ -35,5 +56,8 @@ export default Vue.extend({
 }
 .separator > h3 {
   padding: 16px;
+}
+.capitalize {
+  text-transform: capitalize;
 }
 </style>

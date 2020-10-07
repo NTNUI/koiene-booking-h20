@@ -15,4 +15,3 @@ class GroupFactory(factory.DjangoModelFactory):
 
     access = "O"
     payment_key = "some-random-payment_key"
-

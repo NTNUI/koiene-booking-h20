@@ -1,9 +1,6 @@
 from rest_framework import serializers
 
 from groups.models import GroupModel
-from groups.models.responsibility import ResponsibilityModel
-from groups.serializers.membership import MembershipPersonalSerializer
-from ntnui.enums import ACCESS_CHOICES
 
 
 class GroupSerializerBasic(serializers.ModelSerializer):
