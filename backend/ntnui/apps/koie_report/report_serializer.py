@@ -36,4 +36,4 @@ class ReportSerializer(serializers.ModelSerializer):
             "chopped_up_wood",
         ]
 
-        read_only_fields = ["booking", "id"]
+        read_only_fields = ["booking", "id", "date_created_at"]
