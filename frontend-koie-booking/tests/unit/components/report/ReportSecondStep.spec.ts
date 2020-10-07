@@ -19,25 +19,31 @@ describe('Component ReportSecondStep.vue', () => {
   let wrapper: any;
   let localVue: any;
   let vuetify: any;
-  let store: any;
+  let mockStore: any;
 
   beforeEach(() => {
     localVue = createLocalVue();
     vuetify = new Vuetify();
     localVue.use(Vuetify);
     localVue.use(Vuex);
-    store = new Vuex.Store(cloneDeep(storeConfig));
+    mockStore = { commit: jest.fn() };
     localVue.prototype.$scssVars = scssVars;
-  });
 
-  it('Matches snapshot', async () => {
     wrapper = mount(ReportSecondStep, {
       localVue,
       vuetify,
       i18n,
-      store,
+      mocks: {
+        $store: mockStore,
+      },
     });
+  });
 
-    expect(wrapper).toMatchSnapshot();
+  it('Matches snapshot', () => {
+    expect(wrapper.html()).toMatchSnapshot();
+  });
+  it('Changing gas to empty commits to store correctly', () => {
+    wrapper.find('[data-test="btnGasEmpty"]').trigger('click');
+    expect(mockStore.commit).toHaveBeenCalledWith('report/setGasIsFull', false);
   });
 });

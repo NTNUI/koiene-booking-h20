@@ -10,10 +10,10 @@
             mandatory
             required
             :color="$scssVars.globalColorBackgroundLight"
-            @change="setGasIsFull"
+            @change="handleGas"
           >
-            <v-radio :label="$t('report.gass_full')"></v-radio>
-            <v-radio :label="$t('report.gass_empty')"></v-radio>
+            <v-radio data-test="btnGasFull" :label="$t('report.gass_full')"></v-radio>
+            <v-radio data-test="btnGasEmpty" :label="$t('report.gass_empty')"></v-radio>
           </v-radio-group>
         </v-layout>
       </v-layout>
@@ -28,7 +28,7 @@
             step="1"
             ticks="always"
             tick-size="5"
-            @change="setFirewoodSupply"
+            @change="handleFirewood"
           ></v-slider>
         </v-layout>
       </v-layout>
@@ -43,7 +43,7 @@
             step="1"
             ticks="always"
             tick-size="5"
-            @change="setChoppedUpWoodSupply"
+            @change="handleChoppedUpWood"
           ></v-slider>
         </v-layout>
       </v-layout>
@@ -80,15 +80,16 @@ export default Vue.extend({
     };
   },
   methods: {
-    setGasIsFull() {
+    handleGas() {
       this.$store.commit('report/setGasIsFull', !this.gasIsFull);
       this.$store.commit('report/setEdited', true);
     },
-    setFirewoodSupply() {
+    handleFirewood() {
+      console.log('firewood changed');
       this.$store.commit('report/setFirewoodSupply', this.firewoodSupply);
       this.$store.commit('report/setEdited', true);
     },
-    setChoppedUpWoodSupply() {
+    handleChoppedUpWood() {
       this.$store.commit('report/setChoppedUpWoodSupply', this.choppedUpWoodSupply);
       this.$store.commit('report/setEdited', true);
     },
