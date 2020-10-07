@@ -9,11 +9,7 @@ def send_confirmation_mail(booking):
 
     # Mail header.
     sender = "TestKoieneNTNUI@gmail.com"
-    receiver = []
-    
-    for guest in booking.guests:
-        if guest["email"] and guest["isMainBooker"]:
-            receiver.append(guest["email"])
+    receiver = [booking.contact_email]
 
     subject = "Confirmation email"
 
@@ -29,19 +25,15 @@ def send_confirmation_mail(booking):
 
 
 def send_koie_information_mail(booking):
-    """ Sends koie information to everyone who is going. """
+    """ Sends koie information to person responsible for the trip. """
 
     # Mail header.
     sender = "TestKoieneNTNUI@gmail.com"
-    receiver = []
-
-    for guest in booking.guests:
-        if guest["email"]:
-            receiver.append(guest["email"])
+    receiver = [booking.contact_mail]
 
     subject = "Koie information"
 
-    context = {"koie": booking.koie, "id" : booking.id}
+    context = {"koie": booking.koie, "id": booking.id}
 
     # Mail body.
 

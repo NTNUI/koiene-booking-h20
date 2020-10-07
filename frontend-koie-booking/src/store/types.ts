@@ -163,7 +163,6 @@ export interface Guest {
   number: string;
   email: string;
   isMember: boolean;
-  isMainBooker: boolean;
 }
 
 export interface AdminBookingsState {

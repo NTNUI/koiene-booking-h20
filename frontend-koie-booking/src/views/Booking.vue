@@ -135,6 +135,9 @@ export default Vue.extend({
     bookingStep(): boolean {
       return this.$store.state.booking.step;
     },
+    contact_email(): string {
+      return this.$store.state.booking.guests[0].email;
+    },
   },
   watch: {
     dateFrom: function() {
@@ -184,9 +187,9 @@ export default Vue.extend({
       }
     },
     async resetBookingInfo() {
-      const guests = [{ name: '', number: '', email: '', isMember: true, isMainBooker: true }];
+      const guests = [{ name: '', number: '', email: '', isMember: true }];
       for (let i = 0; i < Number(this.$store.state.booking.beds) - 1; i++) {
-        guests.push({ name: '', number: '', email: '', isMember: true, isMainBooker: true });
+        guests.push({ name: '', number: '', email: '', isMember: true });
         this.$store.dispatch('booking/SET_GUESTS', guests);
       }
 
@@ -194,7 +197,7 @@ export default Vue.extend({
         await this.$store.dispatch('koie/FETCH_DATA', this.koieTitle);
       }
       this.fetchWarningData();
-      const guestlist = [{ name: '', number: '', email: '', isMember: true, isMainBooker: true }];
+      const guestlist = [{ name: '', number: '', email: '', isMember: true }];
       this.$store.dispatch('booking/SET_GUESTS', guestlist);
     },
     async nextStep() {
@@ -206,6 +209,7 @@ export default Vue.extend({
           guests: await this.$store.state.booking.guests,
           guests_member: await this.$store.state.booking.numberOfMembers,
           guests_not_member: await this.$store.state.booking.numberOfNonMembers,
+          contact_email: await this.contact_email,
         };
         this.$store.dispatch('booking/CREATE_BOOKING', values);
       }

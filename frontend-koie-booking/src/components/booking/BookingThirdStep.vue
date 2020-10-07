@@ -43,7 +43,7 @@ export default Vue.extend({
   computed: {
     price(): number {
       return this.$store.state.booking.bookingData.price || 0;
-    }
+    },
   },
   mounted() {
     if (this.$store.state.booking.error) {

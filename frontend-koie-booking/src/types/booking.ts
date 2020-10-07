@@ -35,6 +35,4 @@ export interface Guest {
   name: string;
   number: string;
   email?: string;
-  isMember: boolean;
-  isMainBooker: boolean;
 }

@@ -84,7 +84,7 @@ export default Vue.extend({
     return {
       bedsChosen: 1,
       bookingStep: 1,
-      guests: [{ name: '', number: '', email: '', isMember: true, isMainBooker: true }],
+      guests: [{ name: '', number: '', email: '', isMember: true }],
       numberRules: [
         (e: any) => !!e || 'Number is required',
         (e: any) => e.length >= 8 || 'Number must be 8 characters',
@@ -92,7 +92,7 @@ export default Vue.extend({
       nameRules: [(e: any) => !!e || 'Name is required'],
       emailStrictRules: [
         (v: any) => !!v || 'E-mail is required',
-        (v: any) => /.+@.+/.test(v) || 'E-mail must be valid'
+        (v: any) => /.+@.+/.test(v) || 'E-mail must be valid',
       ],
       emailLooseRules: [(v: any) => v === '' || /.+@.+/.test(v) || 'E-mail must be valid'],
 
@@ -124,6 +124,9 @@ export default Vue.extend({
       });
       return this.memberPrice * member + this.nonMemberPrice * nonMember;
     },
+    contact_email(): string {
+      return this.guests[0].email;
+    },
   },
   watch: {
     validForm: function() {
@@ -151,12 +154,12 @@ export default Vue.extend({
     },
     addGuests() {
       for (let i = 0; i < this.bedsChosen - 1; i++) {
-        this.guests.push({ name: '', number: '', isMember: true, isMainBooker: false });
+        this.guests.push({ name: '', number: '', isMember: true });
       }
     },
     addGuestField() {
       if (this.bedsChosen < this.$store.state.booking.availableBeds) {
-        this.guests.push({ name: '', number: '', isMember: true, isMainBooker: false });
+        this.guests.push({ name: '', number: '', isMember: true });
         this.bedsChosen += 1;
         this.$store.dispatch('booking/SET_BEDS', this.bedsChosen);
       }

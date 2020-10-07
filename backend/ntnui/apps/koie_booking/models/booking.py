@@ -4,7 +4,6 @@ from enumchoicefield import EnumChoiceField
 
 from accounts.models.user import UserModel
 from koie_booking.models.booking_payment import BookingPayment
-from koie_booking.models.guest import get_default_guest
 from koie_booking.models.koie import KoieModel
 from koie_booking.utils import mail_utils
 from ntnui.enums import KeyStatus
@@ -13,7 +12,7 @@ from ntnui.enums import KeyStatus
 class BookingModel(models.Model):
     user = models.ForeignKey(UserModel, on_delete=models.CASCADE)
     koie = models.ForeignKey(KoieModel, null=True, on_delete=models.CASCADE)
-    guests = JSONField("Guests",default=get_default_guest)
+    contact_email = models.CharField(max_length=40, default='')
 
     arrival_date = models.DateField()
     departure_date = models.DateField()
@@ -42,8 +41,8 @@ class BookingModel(models.Model):
 
     def get_total_price(self):
         price_per_night = (
-            self.guests_member * self.koie.price_member
-            + self.guests_not_member * self.koie.price_not_member
+            self.guests_member * self.koie.price_member +
+            self.guests_not_member * self.koie.price_not_member
         )
 
         return price_per_night * self.get_number_of_nights()
@@ -53,13 +52,18 @@ class BookingModel(models.Model):
 
     def get_transaction_id(self):
         return self.booking_payment.transaction.pk
-    
-    def get_guests(self):
-        return self.guests
+
+    def get_contact_email(self):
+        return self.contact_email
+
+    def bypass_payment_status(self):
+        self.paid = True
+        mail_utils.send_confirmation_mail(self)
+        mail_utils.send_koie_information_mail(self)
+        self.save()
 
     def set_payment_status(self):
-        # v IMPORTANT: REMOVE TRUE LATER, THIS BYPASSES STRIPE CHECKS
-        if True or self.booking_payment.is_paid() and (not self.paid): 
+        if self.booking_payment.is_paid() and (not self.paid):
             self.paid = True
             mail_utils.send_confirmation_mail(self)
             mail_utils.send_koie_information_mail(self)

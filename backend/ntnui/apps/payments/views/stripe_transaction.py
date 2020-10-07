@@ -41,7 +41,8 @@ class StripeTransactionViewSet(mixins.UpdateModelMixin, viewsets.GenericViewSet)
         token_id = request.data["token_id"]
 
         try:
-            transaction.try_to_create_charge_on_stripe(token_id)
+            # TODO: Return to transaction.try_to_create_charge_on_stripe(token_id) once Stripe is sorted out.
+            transaction.try_to_bypass_charge_on_stripe(token_id)
         except StripeError:
             logger.error("Could not communicate with Stripe")
             return Response({"detail": _("Could not communicate with payment server")}, status=400)

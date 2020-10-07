@@ -100,22 +100,29 @@ class StripeTransaction(models.Model):
 
         self.create_charge_on_stripe(payment_key, token_id, amount, description)
 
+    def try_to_bypass_charge_on_stripe(self, token_id):
+        """ Error-handling for bypass_charge_on_stripe """
+        if not token_id:
+            raise ValidationError("A token must be included to create a Stripe charge")
+        if self.token_id:
+            raise ValidationError("A token from Stripe is already connected to this object")
+        if self.charge_id:
+            raise ValidationError("A charge from Stripe is already connected to this object")
+        self.bypass_charge_on_stripe(token_id)
+
     def create_charge_on_stripe(self, payment_key, token_id, amount, description):
         """
         Sends a request to Stripe to create a charge. If successful both token_id and charge_id
         will be saved.
         """
-        print("a")
-
-        #charge = stripe.Charge.create(
-        #    api_key=payment_key,
-        #    amount=amount,
-        #    currency="nok",
-        #    description=description,
-        #    source=token_id,
-        #)
-        charge  = {'id': token_id}
-        print("b")
+        charge = stripe.Charge.create(
+            api_key=payment_key,
+            amount=amount,
+            currency="nok",
+            description=description,
+            source=token_id,
+        )
+        charge = {'id': token_id}
         logger.info(f"Created charge on Stripe: {charge}")
 
         self.token_id = token_id
@@ -123,10 +130,26 @@ class StripeTransaction(models.Model):
         self.save()
         self.send_paid_status()
 
+    def bypass_charge_on_stripe(self, token_id):
+        """
+            Bypasses the Stripe request required to accept a booking and updates booking to be considered successful.
+        """
+        logger.info(f"Bypassed charge on Stripe with token_id: {token_id}")
+
+        self.token_id = token_id
+        self.charge_id = token_id
+        self.save()
+        self.bypass_paid_status()
+
     def send_paid_status(self):
         try:
-            print("c")
             self.get_payment().send_paid_status()
+        except AttributeError:
+            pass
+
+    def bypass_paid_status(self):
+        try:
+            self.get_payment().bypass_paid_status()
         except AttributeError:
             pass
 
