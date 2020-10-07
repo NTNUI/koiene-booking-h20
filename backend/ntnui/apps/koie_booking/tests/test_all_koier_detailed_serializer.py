@@ -1,12 +1,12 @@
 import pytest
+from django.utils.timezone import now, timedelta
 
 from koie_booking.serializers.all_koier_detailed import (
     KoierDetailedSerializer,
     KoierDetailedRangeSerializer,
 )
-
 from koie_booking.factories.koie_factory import KoieFactory
-from django.utils.timezone import now, timedelta
+
 
 
 @pytest.fixture()
