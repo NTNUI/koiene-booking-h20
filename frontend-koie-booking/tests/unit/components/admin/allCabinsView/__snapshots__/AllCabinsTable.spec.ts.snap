@@ -1,0 +1,1008 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component AllCabinsTable.vue Matches snapshot 1`] = `
+<div class="v-data-table theme--light" style="width: 100%;">
+  <div class="v-data-table__wrapper">
+    <table>
+      <colgroup>
+        <col class="">
+        <col class="">
+        <col class="">
+        <col class="">
+        <col class="">
+        <col class="">
+        <col class="">
+        <col class="">
+      </colgroup>
+      <thead class="v-data-table-header">
+        <tr>
+          <th role="columnheader" scope="col" aria-label="Navn: Not sorted. Activate to sort ascending." aria-sort="none" class="text-start sortable"><span>Navn</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size: 18px;"></i></th>
+          <th role="columnheader" scope="col" aria-label="2020-10-03
+ (lørdag): Not sorted. Activate to sort ascending." aria-sort="none" class="text-center sortable"><span>2020-10-03
+ (lørdag)</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size: 18px;"></i></th>
+          <th role="columnheader" scope="col" aria-label="2020-10-04
+ (søndag): Not sorted. Activate to sort ascending." aria-sort="none" class="text-center sortable"><span>2020-10-04
+ (søndag)</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size: 18px;"></i></th>
+          <th role="columnheader" scope="col" aria-label="2020-10-05
+ (mandag): Not sorted. Activate to sort ascending." aria-sort="none" class="text-center sortable"><span>2020-10-05
+ (mandag)</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size: 18px;"></i></th>
+          <th role="columnheader" scope="col" aria-label="2020-10-06
+ (tirsdag): Not sorted. Activate to sort ascending." aria-sort="none" class="text-center sortable"><span>2020-10-06
+ (tirsdag)</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size: 18px;"></i></th>
+          <th role="columnheader" scope="col" aria-label="2020-10-07
+ (onsdag): Not sorted. Activate to sort ascending." aria-sort="none" class="text-center sortable"><span>2020-10-07
+ (onsdag)</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size: 18px;"></i></th>
+          <th role="columnheader" scope="col" aria-label="2020-10-08
+ (torsdag): Not sorted. Activate to sort ascending." aria-sort="none" class="text-center sortable"><span>2020-10-08
+ (torsdag)</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size: 18px;"></i></th>
+          <th role="columnheader" scope="col" aria-label="2020-10-09
+ (fredag): Not sorted. Activate to sort ascending." aria-sort="none" class="text-center sortable"><span>2020-10-09
+ (fredag)</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size: 18px;"></i></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            Flåkoia
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: red;"><span style="position: relative; top: 30%; left: 10%;">0 / 11</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: red;"><span style="position: relative; top: 30%; left: 10%;">0 / 11</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: red;"><span style="position: relative; top: 30%; left: 10%;">0 / 11</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">11 / 11</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%;"><span style="position: relative; top: 30%; left: 10%;">9 / 11</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: red;"><span style="position: relative; top: 30%; left: 10%;">0 / 11</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">11 / 11</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Mevasskoia
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">5 / 5</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">5 / 5</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">5 / 5</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%;"><span style="position: relative; top: 30%; left: 10%;">1 / 5</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: red;"><span style="position: relative; top: 30%; left: 10%;">0 / 5</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%;"><span style="position: relative; top: 30%; left: 10%;">3 / 5</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">5 / 5</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Øvensenget
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">8 / 8</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">8 / 8</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">8 / 8</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">8 / 8</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">8 / 8</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">8 / 8</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">8 / 8</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Kåsen
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">8 / 8</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">8 / 8</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">8 / 8</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">8 / 8</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">8 / 8</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">8 / 8</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">8 / 8</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Stakkslettbua
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">11 / 11</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">11 / 11</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">11 / 11</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">11 / 11</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">11 / 11</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">11 / 11</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">11 / 11</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Holmsåkoia
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">20 / 20</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">20 / 20</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">20 / 20</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">20 / 20</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">20 / 20</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">20 / 20</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">20 / 20</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Sonvasskoia
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">8 / 8</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">8 / 8</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">8 / 8</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">8 / 8</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">8 / 8</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">8 / 8</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">8 / 8</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Nicokoia
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">8 / 8</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">8 / 8</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">8 / 8</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">8 / 8</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">8 / 8</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">8 / 8</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">8 / 8</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Telin
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">9 / 9</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">9 / 9</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">9 / 9</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">9 / 9</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">9 / 9</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">9 / 9</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">9 / 9</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Lyngli
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">13 / 13</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">13 / 13</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">13 / 13</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">13 / 13</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">13 / 13</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">13 / 13</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">13 / 13</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Kråklikåten
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">4 / 4</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">4 / 4</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">4 / 4</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">4 / 4</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">4 / 4</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">4 / 4</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">4 / 4</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Heinfjordstua
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">25 / 25</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">25 / 25</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">25 / 25</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">25 / 25</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">25 / 25</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">25 / 25</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">25 / 25</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Høgnabu
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">6 / 6</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">6 / 6</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">6 / 6</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">6 / 6</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">6 / 6</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">6 / 6</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">6 / 6</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Stabburet
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">2 / 2</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">2 / 2</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">2 / 2</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">2 / 2</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">2 / 2</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">2 / 2</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">2 / 2</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Vekvessætra
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">20 / 20</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">20 / 20</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">20 / 20</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">20 / 20</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">20 / 20</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">20 / 20</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">20 / 20</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Fosenkoia
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">10 / 10</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">10 / 10</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">10 / 10</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">10 / 10</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">10 / 10</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">10 / 10</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">10 / 10</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Tågåbu
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">6 / 6</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">6 / 6</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">6 / 6</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">6 / 6</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">6 / 6</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">6 / 6</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">6 / 6</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Lynhøgen
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">4 / 4</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">4 / 4</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">4 / 4</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">4 / 4</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">4 / 4</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">4 / 4</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">4 / 4</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Selbukåten
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">2 / 2</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">2 / 2</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">2 / 2</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">2 / 2</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">2 / 2</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">2 / 2</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">2 / 2</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Holvassgamma
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">8 / 8</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">8 / 8</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">8 / 8</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">8 / 8</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">8 / 8</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">8 / 8</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">8 / 8</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Kamtjønnkoia
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">6 / 6</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">6 / 6</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">6 / 6</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">6 / 6</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">6 / 6</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">6 / 6</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">6 / 6</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Rindalsløa
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">4 / 4</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">4 / 4</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">4 / 4</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">4 / 4</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">4 / 4</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">4 / 4</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">4 / 4</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Iglbu
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">10 / 10</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">10 / 10</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">10 / 10</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">10 / 10</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">10 / 10</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">10 / 10</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">10 / 10</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Mortenskåten
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">2 / 2</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">2 / 2</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">2 / 2</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">2 / 2</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">2 / 2</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">2 / 2</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">2 / 2</span></div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
