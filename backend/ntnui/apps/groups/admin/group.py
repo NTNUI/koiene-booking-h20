@@ -1,4 +1,3 @@
-import nested_admin
 from django.forms.models import BaseInlineFormSet, ModelForm
 
 from groups.models.group import GroupModel

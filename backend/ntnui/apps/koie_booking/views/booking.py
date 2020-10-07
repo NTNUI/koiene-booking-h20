@@ -1,5 +1,3 @@
-from unittest.mock import Mock
-
 from django.core.exceptions import ValidationError
 from rest_framework import mixins, viewsets
 from rest_framework.response import Response
@@ -30,7 +28,9 @@ class BookingViewSet(
         if serializer.is_valid():
             try:
                 booking = BookingModel.objects.create(
-                    user=request.user, booking_payment=BookingPayment.objects.create(price=1), **serializer.validated_data
+                    user=request.user,
+                    booking_payment=BookingPayment.objects.create(price=1),
+                    **serializer.validated_data
                 )
                 booking.booking_payment.price = booking.get_total_price()
                 booking.save()

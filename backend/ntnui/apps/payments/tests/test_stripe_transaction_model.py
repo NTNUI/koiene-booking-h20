@@ -37,6 +37,7 @@ def stripe_transaction(request):
 
     return payment_object.transaction
 
+
 @pytest.mark.django_db()
 def test_stripe_transaction_has_default_stripe_status(stripe_transaction):
 
