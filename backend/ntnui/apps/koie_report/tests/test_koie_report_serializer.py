@@ -40,6 +40,7 @@ def serializer(koie_report):
 @pytest.mark.django_db
 def test_contains_expected_fields(serializer):
     expected_fields = {
+        "id", "booking",
         "date_created_at",
         "feedback",
         "firewood",

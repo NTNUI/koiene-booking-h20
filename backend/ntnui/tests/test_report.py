@@ -1,7 +1,6 @@
-import factory
 import pytest
 from django.utils.timezone import now
-from rest_framework.test import APIRequestFactory
+from rest_framework.test import APIRequestFactory, force_authenticate
 from koie_report.report_serializer import ReportSerializer
 from koie_booking.factories.booking_factory import BookingFactory
 from koie_report.factories.report_factory import ReportFactory
@@ -28,6 +27,7 @@ def koie():
 
 @pytest.fixture
 def booking():
+
     return BookingFactory()
 
 
@@ -79,7 +79,8 @@ def request_factory():
     return APIRequestFactory()
 
 
-def get_response(request, booking_id=None):
+def get_response(request, user=None, booking_id=None):
+    force_authenticate(request, user=user)
     if booking_id:
         view = ReportViewSet.as_view({"post": "create"})
         return view(request, booking_id)
@@ -88,8 +89,22 @@ def get_response(request, booking_id=None):
         return view(request)
 
 
+@pytest.fixture()
+def report_batch(booking):
+    return ReportFactory.create_batch(4, booking=booking)
+
+
 @pytest.mark.django_db
 def test_create_report(request_factory, booking, report_data):
     request = request_factory.post(f"/koie/reports/{booking.id}", report_data)
     response = get_response(request=request, booking_id=booking.id)
     assert response.status_code == 201
+
+
+@pytest.mark.django_db
+def test_list_report(request_factory, report_batch):
+
+    request = request_factory.get("/koie/reports/")
+    response = get_response(request=request)
+    assert response.status_code == 200
+    assert len(response.data) == len(report_batch)
