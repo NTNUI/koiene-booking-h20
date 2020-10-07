@@ -4,17 +4,36 @@ from rest_framework.response import Response
 from koie_booking.models.booking import BookingModel
 from koie_report.models import KoieReportModel
 from koie_report.report_serializer import ReportSerializer
+from rest_framework.permissions import BasePermission, AllowAny, IsAdminUser
+from rest_framework.views import APIView
 
 
-class ReportViewSet(viewsets.GenericViewSet, mixins.ListModelMixin):
+class ReportViewSet(viewsets.GenericViewSet, mixins.ListModelMixin,
+                    mixins.RetrieveModelMixin):
     queryset = KoieReportModel.objects.all()
     serializer_class = ReportSerializer
+    permission_classes = [IsAdminUser]
 
-    def create(self, request, pk):
+    # def create(self, request, pk):
+    #     serializer = ReportSerializer(data=request.data)
+    #     booking = BookingModel.objects.get(pk=pk)
+    #     if serializer.is_valid():
+    #         report = KoieReportModel.objects.create(
+    #             booking=booking, **serializer.validated_data)
+    #         report.save()
+    #         return Response(serializer.data, status=201)
+    #     return Response(serializer.errors, status=400)
+
+
+class ReportAPIView(APIView):
+    permission_classes = [AllowAny]
+
+    def post(self, request, pk):
         serializer = ReportSerializer(data=request.data)
         booking = BookingModel.objects.get(pk=pk)
         if serializer.is_valid():
-            report = KoieReportModel.objects.create(booking=booking, **serializer.validated_data)
+            report = KoieReportModel.objects.create(
+                booking=booking, **serializer.validated_data)
             report.save()
             return Response(serializer.data, status=201)
         return Response(serializer.errors, status=400)
