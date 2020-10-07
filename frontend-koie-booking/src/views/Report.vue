@@ -41,7 +41,7 @@
             >{{ $t('report.back_button') }}</v-btn
           >
           <v-btn
-            v-if="step < steps"
+            v-if="step < steps - 1"
             :disabled="!isValid"
             :color="this.$scssVars.globalColorPrimary"
             :class="$style.nextStepButton"
@@ -52,7 +52,7 @@
             >{{ $t('report.next_button') }}</v-btn
           >
           <v-btn
-            v-if="step === steps"
+            v-if="step === steps - 1"
             :color="this.$scssVars.globalColorPrimary"
             :class="$style.nextStepButton"
             raised="true"
@@ -111,29 +111,30 @@ export default Vue.extend({
   },
 
   mounted() {
+    const bookingID = Number(this.$route.params.booking_id);
     this.step = 1;
     this.$store.commit('report/setStep', 1);
     this.$store.commit('report/setValidForm', true);
     this.$store.commit('report/setEdited', false);
-    const booking = Number(this.$route.params.booking_id);
-    this.$store.commit('report/setBookingID', booking);
-    this.$store.dispatch('report/FETCH_BOOKING', booking);
+    this.$store.commit('report/setBookingID', bookingID);
+    this.$store.dispatch('report/FETCH_BOOKING', bookingID);
   },
 
   methods: {
     nextStep(n: number) {
-      this.step = ++n % (this.steps + 1);
-      this.$store.commit('report/setStep', Number(this.$store.state.report.step) + 1);
+      this.step = ++n;
+      this.$store.commit('report/setStep', this.step);
     },
     prevStep(n: number) {
-      this.step = --n % (this.steps + 1);
-      this.$store.commit('report/setStep', Number(this.$store.state.report.step) - 1);
+      this.step = --n;
+      this.$store.commit('report/setStep', this.step);
       if (this.step === 1) {
         this.$store.commit('report/setValidForm', true);
       }
     },
     done() {
       this.$store.dispatch('report/CREATE_REPORT', this.$store.state.report.reportData);
+      console.log('Done!');
     },
     resetReportInfo() {},
   },

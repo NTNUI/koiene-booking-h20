@@ -7,10 +7,7 @@ export interface ReportData {
 
 export interface ReportSecondStepData {
   validForm: boolean;
-  gasIsFull: number;
-  firewoodSupply: number;
   firewoodSupplyLabels: Array<string>;
-  choppedUpWoodSupply: number;
   choppedUpSupplyLabels: Array<string>;
 }
 
