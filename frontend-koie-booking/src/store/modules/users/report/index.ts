@@ -3,7 +3,7 @@ import Vuex, { Module } from 'vuex';
 import { mutations } from './mutations';
 import { actions } from './actions';
 import { getters } from './getters';
-import { ReportState, RootState, ReportInfo } from '@/store/types';
+import { ReportState, RootState } from '@/store/types';
 
 Vue.use(Vuex);
 
@@ -15,32 +15,43 @@ export const state: ReportState = {
   step: 1,
   reportData: {
     id: 0,
-    booking_id: 1,
-    feedback: '',
+    booking_id: 0,
     firewood: 2,
     chopped_up_wood: 2,
     smoke_detector_is_working: true,
     gas_is_full: true,
-    gas_burner_primus: 0,
-    axe: 0,
-    hammer: 0,
-    saw: 0,
-    saw_blade: 0,
-    saw_bench: 0,
-    spade: 0,
-    kerosene_lamp: 0,
-    detergent: 0,
-    dishware: 0,
-    cookware: 0,
-    cabin_book: 0,
-    candle_holders: 0,
-    fire_blanket: 0,
-    fire_extinguisher: 0,
+    gas_burner_primus: 1,
+    axe: 1,
+    hammer: 1,
+    saw: 1,
+    saw_blade: 1,
+    saw_bench: 1,
+    spade: 1,
+    kerosene_lamp: 1,
+    detergent: 1,
+    dishware: 1,
+    cookware: 1,
+    cabin_book: 1,
+    candle_holders: 1,
+    fire_blanket: 1,
+    fire_extinguisher: 1,
     other_faults: '',
     boat_status: 0,
     canoe_status: 0,
-    life_jackets_status: 0
-  }
+    life_jackets_status: 0,
+    feedback: '',
+  },
+  bookingInfo: {
+    id: 0,
+    user: 0,
+    koie: '',
+    price: 0,
+    booking_transaction_id: '',
+    from_date: '',
+    to_date: '',
+    guests_member: 0,
+    guests_not_member: 0,
+  },
 };
 const namespaced: boolean = true;
 
@@ -49,5 +60,5 @@ export const report: Module<ReportState, RootState> = {
   state,
   actions,
   mutations,
-  getters
+  getters,
 };

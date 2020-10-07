@@ -38,7 +38,7 @@ describe('Component BookingFourthStep.vue', () => {
       localVue,
       vuetify,
       i18n,
-      store
+      store,
     });
 
     expect(wrapper).toMatchSnapshot();

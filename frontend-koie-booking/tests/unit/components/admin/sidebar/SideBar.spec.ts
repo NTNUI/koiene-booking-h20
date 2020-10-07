@@ -43,8 +43,8 @@ describe('Component SideBar.vue', () => {
       store,
       provide: {
         getCurrentView: () => null,
-        setCurrentView: (index: number) => null
-      }
+        setCurrentView: (index: number) => null,
+      },
     });
 
     // Assert
@@ -60,8 +60,8 @@ describe('Component SideBar.vue', () => {
       store,
       provide: {
         getCurrentView: () => null,
-        setCurrentView: (index: number) => null
-      }
+        setCurrentView: (index: number) => null,
+      },
     });
 
     expect(wrapper.contains(SideBarTop)).toBe(true);
@@ -75,8 +75,8 @@ describe('Component SideBar.vue', () => {
       store,
       provide: {
         getCurrentView: () => null,
-        setCurrentView: (index: number) => null
-      }
+        setCurrentView: (index: number) => null,
+      },
     });
 
     expect(wrapper.contains(SideBarBottom)).toBe(true);

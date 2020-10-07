@@ -23,7 +23,7 @@ export const getters: GetterTree<KoieState, RootState> = {
   },
   position: (state, getters) => {
     return `https://www.google.com/maps/place/${state.koieData.location.latitude},${state.koieData.location.longitude}`;
-  }
+  },
 };
 
 export default getters;

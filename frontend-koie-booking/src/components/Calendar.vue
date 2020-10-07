@@ -28,6 +28,7 @@
         :max="maximumDate"
         :color="this.$scssVars.globalColorPrimary"
         :allowed-dates="allowedDatesFrom"
+        :first-day-of-week="1"
         no-title
         @input="menu1 = false"
         @change="updateDisabledDatesInMenu"
@@ -117,7 +118,7 @@ export default Vue.extend({
   props: {
     row: { type: Boolean, default: true },
     vbeds: { type: Boolean, default: true },
-    allkoier: { type: Boolean, default: false }
+    allkoier: { type: Boolean, default: false },
   },
   data(): CalendarData {
     return {
@@ -132,7 +133,7 @@ export default Vue.extend({
       updatedDateFrom: false,
       temporaryDateTo: this.$store.state.booking.dateTo || getDateString(undefined, 1),
       temporaryDateFrom: this.$store.state.booking.dateFrom || getDateString(),
-      setDatesFinished: false
+      setDatesFinished: false,
     };
   },
   computed: {
@@ -187,7 +188,7 @@ export default Vue.extend({
           this.getAvailableBeds();
           this.setBeds(this.beds.toString());
         }
-      }
+      },
     },
 
     dateTo: {
@@ -203,8 +204,8 @@ export default Vue.extend({
           //setting beds here makes sure that if you choose a date where only 9 beds is available and you have already chosen 10 beds, then beds is reset to 1
           this.setBeds(this.beds.toString());
         }
-      }
-    }
+      },
+    },
   },
   mounted() {
     this.maximumDate = getDateString(undefined, this.daysInAdvanceBooking - 1);
@@ -403,8 +404,8 @@ export default Vue.extend({
         return true;
       }
       return false;
-    }
-  }
+    },
+  },
 });
 </script>
 

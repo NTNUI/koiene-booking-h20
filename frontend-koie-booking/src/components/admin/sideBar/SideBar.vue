@@ -22,23 +22,23 @@ export default Vue.extend({
   props: {
     currentView: {
       type: Number,
-      default: 0
+      default: 0,
     },
     testing: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   data() {
     return {
       allPictures: ['fosenkoia1.jpg', 'kamtjønnkoia1.jpg', 'lyngli1.jpg', 'stabburet1.jpg'],
-      chosenPicture: 'navbar_pictures/fosenkoia1.jpg'
+      chosenPicture: 'navbar_pictures/fosenkoia1.jpg',
     };
   },
   mounted() {
     if (!this.testing)
       this.chosenPicture = 'navbar_pictures/' + this.allPictures[Math.floor(Math.random() * this.allPictures.length)];
-  }
+  },
 });
 </script>
 

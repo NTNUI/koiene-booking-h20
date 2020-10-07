@@ -10,7 +10,7 @@ export const state: AvalancheState = {
   warningLevels: [],
   disableBooking: false,
   warningData: [{ dangerLevel: 0, validTo: '' }],
-  koierToCheck: ['Kamtjønnkoia']
+  koierToCheck: ['Kamtjønnkoia'],
 };
 
 const namespaced: boolean = true;
@@ -19,5 +19,5 @@ export const avalanche: Module<AvalancheState, RootState> = {
   namespaced,
   state,
   actions,
-  mutations
+  mutations,
 };

@@ -45,7 +45,7 @@ describe('Component NavBarLogin.vue', () => {
       router,
       vuetify,
       i18n,
-      store
+      store,
     });
 
     expect(wrapper).toMatchSnapshot();

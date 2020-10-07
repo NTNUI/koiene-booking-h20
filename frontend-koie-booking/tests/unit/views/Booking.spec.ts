@@ -47,13 +47,13 @@ describe('View Booking.vue', () => {
       store,
       propsData: {
         allKoier: false,
-        row: false
+        row: false,
       },
       mocks: {
         $route: {
-          params: { id: 'flåkoia' }
-        }
-      }
+          params: { id: 'flåkoia' },
+        },
+      },
     });
 
     const responseObj = { data: { koie: { name: 'flåkoia' } } };
@@ -71,13 +71,13 @@ describe('View Booking.vue', () => {
       store,
       propsData: {
         allKoier: false,
-        row: false
+        row: false,
       },
       mocks: {
         $route: {
-          params: { id: 'flåkoia' }
-        }
-      }
+          params: { id: 'flåkoia' },
+        },
+      },
     });
 
     const responseObj = { data: { koie: { name: 'flåkoia' } } };
@@ -98,13 +98,13 @@ describe('View Booking.vue', () => {
       store,
       propsData: {
         allKoier: false,
-        row: false
+        row: false,
       },
       mocks: {
         $route: {
-          params: { id: 'flåkoia' }
-        }
-      }
+          params: { id: 'flåkoia' },
+        },
+      },
     });
 
     const responseObj = { data: { koie: { name: 'flåkoia' } } };

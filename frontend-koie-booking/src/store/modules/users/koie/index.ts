@@ -21,7 +21,7 @@ export const state: KoieState = {
       terrain_eng: '',
       terrain_nor: '',
       map_pdf: '',
-      kartblad: ''
+      kartblad: '',
     },
     description: {
       yr_link_eng: '',
@@ -31,17 +31,17 @@ export const state: KoieState = {
       directions_eng: '',
       directions_nor: '',
       parking_eng: '',
-      parking_nor: ''
+      parking_nor: '',
     },
     beds_available_in_booking_window: [],
     name: '',
     number_of_beds: 0,
     booking_window: 14,
     price_member: 40,
-    price_not_member: 80
+    price_not_member: 80,
   },
   error: false,
-  allKoier: []
+  allKoier: [],
 };
 
 const namespaced: boolean = true;
@@ -51,7 +51,7 @@ export const koie: Module<KoieState, RootState> = {
   state,
   getters,
   actions,
-  mutations
+  mutations,
 };
 
 export default KoieState;

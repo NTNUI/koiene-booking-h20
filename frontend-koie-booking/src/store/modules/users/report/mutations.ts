@@ -1,5 +1,6 @@
+import Vue from 'vue';
 import { MutationTree } from 'vuex';
-import { ReportState, ReportInfo } from '../../../types';
+import { ReportState, BookingInfo } from '../../../types';
 
 export const mutations: MutationTree<ReportState> = {
   setStep(state, step: number) {
@@ -18,10 +19,10 @@ export const mutations: MutationTree<ReportState> = {
     state.error = error;
   },
   setBookingID(state, id: number) {
-    state.reportData.booking_id = id;
+    Vue.set(state.reportData, 'booking_id', id);
   },
-  setGasIsFull(state, isFull: boolean) {
-    state.reportData.gas_is_full = isFull;
+  setGasIsFull(state, gasIsFull: boolean) {
+    state.reportData.gas_is_full = gasIsFull;
   },
   setFirewoodSupply(state, supply: number) {
     state.reportData.firewood = supply;
@@ -29,8 +30,8 @@ export const mutations: MutationTree<ReportState> = {
   setChoppedUpWoodSupply(state, supply: number) {
     state.reportData.chopped_up_wood = supply;
   },
-  setSmokeDetectorIsWorking(state, smoke_detector_status: boolean) {
-    state.reportData.smoke_detector_is_working = smoke_detector_status;
+  setSmokeDetectorIsWorking(state, smokeDetectorIsWorking: boolean) {
+    state.reportData.smoke_detector_is_working = smokeDetectorIsWorking;
   },
   setGasBurnerPrimus(state, status: number) {
     state.reportData.gas_burner_primus = status;
@@ -80,9 +81,6 @@ export const mutations: MutationTree<ReportState> = {
   setOtherFaults(state, comment: string) {
     state.reportData.other_faults = comment;
   },
-  setFeedback(state, feedback: string) {
-    state.reportData.feedback = feedback;
-  },
   setBoatStatus(state, status: number) {
     state.reportData.boat_status = status;
   },
@@ -92,7 +90,10 @@ export const mutations: MutationTree<ReportState> = {
   setLifeJacketsStatus(state, status: number) {
     state.reportData.life_jackets_status = status;
   },
-  setReport(state, report: ReportInfo) {
-    state.reportData = report;
-  }
+  setFeedback(state, feedback: string) {
+    state.reportData.feedback = feedback;
+  },
+  setBooking(state, booking: BookingInfo) {
+    state.bookingInfo = booking;
+  },
 };

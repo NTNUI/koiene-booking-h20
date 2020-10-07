@@ -1,7 +1,5 @@
 <template>
-  <ErrorCard v-if="apiError" />
-  <LoadingSpinner v-else-if="isLoading" />
-  <v-layout v-else :class="$style.container" :dark="true">
+  <v-layout :class="$style.container" :dark="true">
     <h1 :class="$style.heading">{{ $t('report.step2') }}</h1>
     <v-form v-model="validForm" :class="$style.form">
       <v-layout :class="$style.separator">
@@ -54,19 +52,13 @@
 </template>
 
 <script lang="ts">
-import ErrorCard from '@/components/ErrorCard.vue';
-import LoadingSpinner from '@/components/LoadingSpinner.vue';
-import { ReportSecondStepData } from '@/types/report';
 import Vue from 'vue';
+import { ReportSecondStepData } from '../../types/report';
+
 export default Vue.extend({
   name: 'ReportSecondStep',
-  components: {
-    ErrorCard,
-    LoadingSpinner
-  },
   data(): ReportSecondStepData {
     return {
-      edited: false,
       validForm: true,
       gasIsFull: 0,
       firewoodSupply: 2,
@@ -75,7 +67,7 @@ export default Vue.extend({
         '',
         '',
         '',
-        `${this.$t('report.firewood_supply_full')}`
+        `${this.$t('report.firewood_supply_full')}`,
       ],
       choppedUpWoodSupply: 2,
       choppedUpSupplyLabels: [
@@ -83,45 +75,24 @@ export default Vue.extend({
         '',
         '',
         '',
-        `${this.$t('report.chopped_up_wood_supply_full')}`
-      ]
+        `${this.$t('report.chopped_up_wood_supply_full')}`,
+      ],
     };
-  },
-  computed: {
-    step(): number {
-      return this.$store.state.report.step;
-    },
-    apiError(): boolean {
-      return this.$store.state.koie.error;
-    },
-    isLoading(): boolean {
-      return this.$store.state.koie.isLoading;
-    }
-  },
-  watch: {
-    validForm: function() {
-      this.$store.dispatch('report/SET_VALID_FORM', this.validForm);
-    }
-  },
-  mounted() {
-    this.edited = this.$store.state.report.edited;
-    this.$store.dispatch('booking/SET_VALID_FORM', this.validForm);
   },
   methods: {
     setGasIsFull() {
-      console.log(!this.gasIsFull);
-      this.$store.dispatch('report/SET_GAS_IS_FULL', !this.gasIsFull);
-      this.$store.dispatch('report/SET_EDITED', true);
+      this.$store.commit('report/setGasIsFull', !this.gasIsFull);
+      this.$store.commit('report/setEdited', true);
     },
     setFirewoodSupply() {
-      this.$store.dispatch('report/SET_FIREWOOD_SUPPLY', this.firewoodSupply);
-      this.$store.dispatch('report/SET_EDITED', true);
+      this.$store.commit('report/setFirewoodSupply', this.firewoodSupply);
+      this.$store.commit('report/setEdited', true);
     },
     setChoppedUpWoodSupply() {
-      this.$store.dispatch('report/SET_CHOPPED_UP_WOOD_SUPPLY', this.choppedUpWoodSupply);
-      this.$store.dispatch('report/SET_EDITED', true);
-    }
-  }
+      this.$store.commit('report/setChoppedUpWoodSupply', this.choppedUpWoodSupply);
+      this.$store.commit('report/setEdited', true);
+    },
+  },
 });
 </script>
 

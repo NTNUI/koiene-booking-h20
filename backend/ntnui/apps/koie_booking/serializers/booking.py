@@ -1,7 +1,6 @@
 from rest_framework import serializers
 
 from koie_booking.models.booking import BookingModel
-from koie_booking.models.booking_payment import BookingPayment
 from koie_booking.models.koie import KoieModel
 from koie_booking.utils import date_utils
 

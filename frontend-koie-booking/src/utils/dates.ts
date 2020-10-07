@@ -1,3 +1,7 @@
+import dayjs from 'dayjs';
+require('dayjs/locale/nb');
+dayjs.locale('nb');
+
 export function getDateString(baseDate?: string, addDays?: number): string {
   let resultString: string;
   if (baseDate && addDays) {
@@ -24,4 +28,14 @@ export function getDate(baseDate?: string, addDays?: number): Date {
     resultDate = new Date();
   }
   return resultDate;
+}
+
+export function addToDate(startDate: string, howMany: number, what: dayjs.OpUnitType): string {
+  const date = dayjs(startDate + 'T00:00:00.000Z');
+  return date.add(howMany, what).format('YYYY-MM-DD');
+}
+
+export function formatDate(dateISO: string, formatString: string): string {
+  const date = dayjs(dateISO + 'T00:00:00.000Z');
+  return date.format(formatString);
 }

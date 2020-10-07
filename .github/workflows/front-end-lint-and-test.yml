@@ -5,30 +5,28 @@ name: Front-end lint and test CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
-
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js 12
-      uses: actions/setup-node@v1
-      with:
-        node-version: '12.x'
-    - name: Install and build
-      working-directory: ./frontend-koie-booking
-      run: |
-        npm install
-        npm run build --if-present
-    - name: Lint
-      working-directory: ./frontend-koie-booking
-      run: npm run lint
-    - name: Unit tests
-      working-directory: ./frontend-koie-booking
-      run: npm run test:unit
+      - uses: actions/checkout@v2
+      - name: Use Node.js 12
+        uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+      - name: Install and build
+        working-directory: ./frontend-koie-booking
+        run: |
+          npm install
+          npm run build --if-present
+      - name: Lint
+        working-directory: ./frontend-koie-booking
+        run: npm run lint
+      - name: Unit tests
+        working-directory: ./frontend-koie-booking
+        run: npm run test:unit

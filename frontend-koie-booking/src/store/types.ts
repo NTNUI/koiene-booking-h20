@@ -79,13 +79,13 @@ export interface ReportState {
   isLoading: boolean;
   error: boolean;
   step: number;
-  reportData: ReportInfo;
+  reportData: ReportData;
+  bookingInfo: BookingInfo;
 }
 
-export interface ReportInfo {
+export interface ReportData {
   id: number;
   booking_id: number;
-  feedback: string;
   firewood: number;
   chopped_up_wood: number;
   smoke_detector_is_working: boolean;
@@ -109,36 +109,8 @@ export interface ReportInfo {
   boat_status: number;
   canoe_status: number;
   life_jackets_status: number;
+  feedback: string;
 }
-
-// export interface CreateReportInfo {
-//   id: number;
-//   booking: number;
-//   feedback: string;
-//   firewood: number;
-//   chopped_up_wood: number;
-//   smoke_detector_is_working: boolean;
-//   gas_is_full: boolean;
-//   gas_burner_primus: number;
-//   axe: number;
-//   hammer: number;
-//   saw: number;
-//   saw_blade: number;
-//   saw_bench: number;
-//   spade: number;
-//   kerosene_lamp: number;
-//   detergent: number;
-//   dishware: number;
-//   cookware: number;
-//   cabin_book: number;
-//   candle_holders: number;
-//   fire_blanket: number;
-//   fire_extinguisher: number;
-//   other_faults: string;
-//   boat_status: number;
-//   canoe_status: number;
-//   life_jackets_status: number;
-// }
 
 export interface AvalancheState {
   warningLevels: Array<Warning>;
@@ -194,4 +166,5 @@ export interface Guest {
 
 export interface AdminBookingsState {
   cabinsWithBookings: AdminBookingDictionary;
+  startDate: string;
 }

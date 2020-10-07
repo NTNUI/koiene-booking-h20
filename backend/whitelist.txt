@@ -78,12 +78,9 @@ test_token
 TLS
 todo
 
-<<<<<<< HEAD
 ui
 upsert
-=======
 utm
->>>>>>> all files
 
 viewset
 viewsets
@@ -91,3 +88,6 @@ viewsets
 writerow
 
 yasg
+
+primus
+fromisoformat
