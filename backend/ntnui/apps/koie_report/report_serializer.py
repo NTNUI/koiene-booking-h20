@@ -33,7 +33,7 @@ class ReportSerializer(serializers.ModelSerializer):
             "canoe_status",
             "life_jackets_status",
             "other_faults",
-            "chopped_up_wood"
+            "chopped_up_wood",
         ]
 
         read_only_fields = ["booking", "id"]

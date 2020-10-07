@@ -1,24 +1,41 @@
-from django.utils.timezone import now
-from koie_report.models import KoieReportModel
-from koie_booking.factories.booking_factory import BookingFactory
 import factory.django
+
+from koie_booking.factories.booking_factory import BookingFactory
+from koie_report.models import KoieReportModel
+
+from django.utils.timezone import now
 
 
 class ReportFactory(factory.DjangoModelFactory):
     class Meta:
         model = KoieReportModel
-        django_get_or_create = ('booking', 'date_created_at', 'feedback',
-                                'firewood', 'chopped_up_wood',
-                                'smoke_detector_is_working',
-                                'gas_is_full',
-                                'gas_burner_primus', 'axe', 'hammer', 'saw',
-                                'saw_blade', 'saw_bench', 'spade',
-                                'kerosene_lamp',
-                                'detergent', 'dishware', 'cookware',
-                                'cabin_book', 'candle_holders',
-                                'fire_blanket', 'fire_extinguisher',
-                                'boat_status', 'canoe_status',
-                                'life_jackets_status')
+        django_get_or_create = (
+            "booking",
+            "date_created_at",
+            "feedback",
+            "firewood",
+            "chopped_up_wood",
+            "smoke_detector_is_working",
+            "gas_is_full",
+            "gas_burner_primus",
+            "axe",
+            "hammer",
+            "saw",
+            "saw_blade",
+            "saw_bench",
+            "spade",
+            "kerosene_lamp",
+            "detergent",
+            "dishware",
+            "cookware",
+            "cabin_book",
+            "candle_holders",
+            "fire_blanket",
+            "fire_extinguisher",
+            "boat_status",
+            "canoe_status",
+            "life_jackets_status",
+        )
 
     booking = factory.SubFactory(BookingFactory)
     date_created_at = now()

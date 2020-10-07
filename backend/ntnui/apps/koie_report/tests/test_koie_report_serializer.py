@@ -1,10 +1,11 @@
 import pytest
-from koie_report.report_serializer import ReportSerializer
-from koie_booking.factories.booking_factory import BookingFactory
-from koie_report.factories.report_factory import ReportFactory
+
 from accounts.factories.user_factory import UserFactory
 from groups.factories.group_factory import GroupFactory
+from koie_booking.factories.booking_factory import BookingFactory
 from koie_booking.factories.koie_factory import KoieFactory
+from koie_report.factories.report_factory import ReportFactory
+from koie_report.report_serializer import ReportSerializer
 
 
 @pytest.fixture
@@ -40,7 +41,8 @@ def serializer(koie_report):
 @pytest.mark.django_db
 def test_contains_expected_fields(serializer):
     expected_fields = {
-        "id", "booking",
+        "id",
+        "booking",
         "date_created_at",
         "feedback",
         "firewood",
@@ -65,7 +67,7 @@ def test_contains_expected_fields(serializer):
         "other_faults",
         "boat_status",
         "canoe_status",
-        "life_jackets_status"
+        "life_jackets_status",
     }
     data = serializer.data
     assert data.keys() == expected_fields
