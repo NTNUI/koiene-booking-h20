@@ -80,6 +80,7 @@ export interface ReportState {
   error: boolean;
   step: number;
   reportData: ReportData;
+  bookingInfo: BookingInfo;
 }
 
 export interface ReportData {

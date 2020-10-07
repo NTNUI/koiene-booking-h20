@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component AllCabinsView.vue Matches snapshot 1`] = `
+<div>
+  <h2 style="text-align: center;">Oversikt over bookinger</h2>
+  <v-row-stub tag="div" justify="center">
+    <datepicker-stub></datepicker-stub>
+  </v-row-stub>
+  <v-row-stub tag="div" justify="space-between">
+    <v-col-stub tag="div">
+      <dateskippers-stub menuversion="NEGATIVE"></dateskippers-stub>
+    </v-col-stub>
+    <v-col-stub tag="div">
+      <dateskippers-stub menuversion="POSITIVE"></dateskippers-stub>
+    </v-col-stub>
+  </v-row-stub>
+  <v-row-stub tag="div" justify="center">
+    <allcabinstable-stub></allcabinstable-stub>
+  </v-row-stub>
+</div>
+`;

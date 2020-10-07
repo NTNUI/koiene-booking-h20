@@ -41,6 +41,17 @@ export const state: ReportState = {
     life_jackets_status: 0,
     feedback: '',
   },
+  bookingInfo: {
+    id: 0,
+    user: 0,
+    koie: '',
+    price: 0,
+    booking_transaction_id: '',
+    from_date: '',
+    to_date: '',
+    guests_member: 0,
+    guests_not_member: 0,
+  },
 };
 const namespaced: boolean = true;
 

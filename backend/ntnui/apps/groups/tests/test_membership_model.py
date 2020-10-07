@@ -1,5 +1,4 @@
 from django.test import TestCase
-from rest_framework.exceptions import ValidationError
 
 from accounts.models.user import UserModel
 from groups.models import GroupModel

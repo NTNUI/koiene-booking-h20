@@ -11,5 +11,6 @@ router.register("koie", KoieViewSet, basename="koie")
 router.register("booking", BookingViewSet, basename="booking")
 
 router.register("availability", KoieDashboardViewSet)
+router.register("booking", BookingViewSet)
 """ Include URL Patterns """
 urlpatterns = [path("", include(router.urls))]
