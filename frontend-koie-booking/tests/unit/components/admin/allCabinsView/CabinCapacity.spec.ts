@@ -31,7 +31,18 @@ describe('Component CabinCapacity.vue', () => {
     expect(wrapper.isVueInstance).toBeTruthy();
   });
 
-  it('Displays red when all beds available', () => {
+  it('Displays red when no beds available', () => {
+    const wrapper: any = mount(CabinCapacity, {
+      propsData: {
+        availableBeds: 0,
+        numberOfBeds: 2,
+      },
+    });
+
+    expect(wrapper.vm.style.background).toBe('red');
+  });
+
+  it('Displays green when all beds available', () => {
     const wrapper: any = mount(CabinCapacity, {
       propsData: {
         availableBeds: 2,
@@ -42,7 +53,8 @@ describe('Component CabinCapacity.vue', () => {
     expect(wrapper.vm.style.background).toBe('green');
   });
 
-  it('Displays red when no beds available', () => {});
-
-  it('Handles no input props', () => {});
+  it('Handles no input props', () => {
+    const wrapper: any = mount(CabinCapacity, {});
+    expect(wrapper.contains('-1')).toBe(true);
+  });
 });
