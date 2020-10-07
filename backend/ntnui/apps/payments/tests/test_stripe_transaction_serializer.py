@@ -1,8 +1,8 @@
 import pytest
 from rest_framework.exceptions import ValidationError
 
-from payments.serializers.stripe_transaction import StripeTransactionSerializer
 from payments.factories.stripe_transaction_factory import StripeTransactionFactory
+from payments.serializers.stripe_transaction import StripeTransactionSerializer
 
 
 @pytest.fixture()

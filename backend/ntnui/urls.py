@@ -10,7 +10,7 @@ from django.contrib import admin
 from django.contrib.auth.models import Group
 
 """ Configure Admin """
-#admin.site.unregister(Group)
+# admin.site.unregister(Group)
 
 schema_view = get_schema_view(
     openapi.Info(
@@ -35,5 +35,5 @@ urlpatterns = [
     path("token/refresh/", TokenRefreshView.as_view(), name="token-refresh"),
     path("token/verify/", TokenVerifyView.as_view(), name="token-verify"),
     path("koie/", include("koie_booking.urls")),
-    path("koie/", include("koie_report.urls"))
+    path("koie/", include("koie_report.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

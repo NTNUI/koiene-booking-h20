@@ -1,8 +1,9 @@
+from datetime import date
+
 from rest_framework import serializers
 
 from koie_booking.models.koie import KoieModel
 
-from datetime import date
 from django.utils.timezone import now, timedelta
 
 

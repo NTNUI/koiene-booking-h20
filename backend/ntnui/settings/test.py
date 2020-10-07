@@ -1,6 +1,5 @@
 import os
 
-
 """ DATABASE CONFIGURATION """
 DATABASES = {
     "default": {
