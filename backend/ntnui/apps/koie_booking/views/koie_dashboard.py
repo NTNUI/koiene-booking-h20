@@ -11,6 +11,7 @@ from koie_booking.serializers.all_koier_detailed import (
 
 from django.utils.timezone import now, timedelta
 
+
 class KoieDashboardViewSet(
     mixins.ListModelMixin, viewsets.GenericViewSet,
 ):
