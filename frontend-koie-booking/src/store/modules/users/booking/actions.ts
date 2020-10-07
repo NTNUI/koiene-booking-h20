@@ -89,7 +89,7 @@ export const actions = {
         ctx.commit('setPaymentConfirmed', false);
         throw new Error(`API ${error}`);
       });
-  }
+  },
 };
 
 export default actions;

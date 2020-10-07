@@ -49,11 +49,11 @@
 </template>
 
 <script lang="ts">
-import Calendar from '../components/Calendar.vue';
-import ErrorCard from '../components/ErrorCard.vue';
-import LoadingSpinner from '../components/LoadingSpinner.vue';
+import Calendar from '@/components/Calendar.vue';
+import ErrorCard from '@/components/ErrorCard.vue';
+import LoadingSpinner from '@/components/LoadingSpinner.vue';
 import Vue from 'vue';
-import { BookingFirstStepData } from '../types/booking';
+import { BookingFirstStepData } from '@/types/booking';
 import BookingSecondStepVue from './BookingSecondStep.vue';
 
 export default Vue.extend({
@@ -61,13 +61,13 @@ export default Vue.extend({
   components: {
     Calendar,
     ErrorCard,
-    LoadingSpinner
+    LoadingSpinner,
   },
   data(): BookingFirstStepData {
     return {
       bedsTotal: 8,
       bedsChosen: 1,
-      error: false
+      error: false,
     };
   },
   computed: {
@@ -82,7 +82,7 @@ export default Vue.extend({
     },
     bedsAvailable(): number {
       return this.$store.state.booking.availableBeds;
-    }
+    },
   },
   created() {
     this.getTotalBeds();
@@ -111,8 +111,8 @@ export default Vue.extend({
         await this.$store.dispatch('koie/FETCH_DATA', this.koieTitle.toLowerCase());
       }
       this.bedsTotal = await this.$store.state.koie.koieData.number_of_beds;
-    }
-  }
+    },
+  },
 });
 </script>
 

@@ -20,7 +20,7 @@ export default Vue.extend({
   name: 'NavBar',
   components: {
     NavBarAdmin,
-    NavBarLogin
+    NavBarLogin,
   },
   computed: {
     isAdmin(): boolean {
@@ -28,15 +28,15 @@ export default Vue.extend({
     },
     isLoggedIn(): boolean {
       return this.$store.getters['auth/isLoggedIn'] || false;
-    }
+    },
   },
   methods: {
     goToAllKoier() {
       if (this.$router.currentRoute.path !== '/') {
         this.$router.push(`/`);
       }
-    }
-  }
+    },
+  },
 });
 </script>
 

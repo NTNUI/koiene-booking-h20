@@ -41,8 +41,8 @@ describe('Component SideBarTop.vue', () => {
       vuetify,
       store,
       provide: {
-        updateView: (index: number) => null
-      }
+        updateView: (index: number) => null,
+      },
     });
 
     // Assert

@@ -16,7 +16,7 @@ Vue.use(Vuetify);
 import { mount, createLocalVue } from '@vue/test-utils';
 
 // Components or views
-import BookingFirstStep from '../../../src/components/BookingFirstStep.vue';
+import BookingFirstStep from '@/components/booking/BookingFirstStep.vue';
 
 describe('Component BookingFirstStep.vue', () => {
   // Router not needed for this test-suite
@@ -47,9 +47,9 @@ describe('Component BookingFirstStep.vue', () => {
       store,
       mocks: {
         $route: {
-          params: { id: 'flåkoia' }
-        }
-      }
+          params: { id: 'flåkoia' },
+        },
+      },
     });
 
     const responseObj = { data: { koie: { name: 'flåkoia' } } };

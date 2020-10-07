@@ -47,7 +47,7 @@ describe('Component AvalancheWarning.vue', () => {
       router,
       vuetify,
       i18n,
-      store
+      store,
     });
 
     expect(wrapper).toMatchSnapshot();
@@ -63,7 +63,7 @@ describe('Component AvalancheWarning.vue', () => {
       router,
       vuetify,
       i18n,
-      store
+      store,
     });
 
     const spy = jest.spyOn(wrapper.vm.$store, 'dispatch');
@@ -72,8 +72,8 @@ describe('Component AvalancheWarning.vue', () => {
       data: [
         { DangerLevel: '3', ValidTo: dates[0] },
         { DangerLevel: '3', ValidTo: dates[1] },
-        { DangerLevel: '3', ValidTo: dates[2] }
-      ]
+        { DangerLevel: '3', ValidTo: dates[2] },
+      ],
     };
     mockAxios.mockResponse(responseObj);
     await flushPromises();
