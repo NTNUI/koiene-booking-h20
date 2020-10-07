@@ -30,7 +30,6 @@
 <script lang="ts">
 import Vue from 'vue';
 import AdminBooking from '@/types/admin/AdminBooking';
-import store from '@/store/index';
 import { addToDate, formatDate } from '@/utils/dates';
 import CabinCapacity from '@/components/admin/allCabinsView/CabinCapacity.vue';
 
@@ -46,13 +45,13 @@ export default Vue.extend({
   components: { CabinCapacity },
   computed: {
     allCabinsWithBookings(): Array<AdminBooking> {
-      return store.getters['adminBookings/getCabinsWithBookingsArray'];
+      return this.$store.getters['adminBookings/getCabinsWithBookingsArray'];
     },
     dateHeaders(): Array<Header> {
       return this.headers.slice(1);
     },
     headers(): Array<Header> {
-      const startDate = store.getters['adminBookings/getStartDate'];
+      const startDate = this.$store.getters['adminBookings/getStartDate'];
       const res: Array<Header> = [
         {
           text: 'Navn',

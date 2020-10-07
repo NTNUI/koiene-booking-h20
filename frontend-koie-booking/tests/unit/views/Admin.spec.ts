@@ -1,7 +1,7 @@
 import Vue, { VueConstructor } from 'vue';
 import Vuetify, { Vuetify as VuetifyType } from 'vuetify';
 import Vuex, { Store } from 'vuex';
-import { storeConfig } from '@/store';
+import store, { storeConfig } from '@/store';
 import { cloneDeep } from 'lodash';
 import scssVars from '@/styles/variables.scss';
 import mockAxios from 'jest-mock-axios';
@@ -9,7 +9,7 @@ import mockAxios from 'jest-mock-axios';
 Vue.use(Vuetify);
 
 // Utilities
-import { mount, createLocalVue, Wrapper } from '@vue/test-utils';
+import { mount, createLocalVue, Wrapper, shallowMount, ThisTypedShallowMountOptions } from '@vue/test-utils';
 
 // Components or views
 import Admin from '@/views/Admin.vue';
@@ -22,6 +22,7 @@ describe('View Admin.vue', () => {
   let localVue: VueConstructor<Vue>;
   let vuetify: VuetifyType;
   let store: Store<RootState>;
+  let wrapperOptions: ThisTypedShallowMountOptions<any>;
 
   beforeEach(() => {
     localVue = createLocalVue();
@@ -31,7 +32,7 @@ describe('View Admin.vue', () => {
     store = new Vuex.Store(cloneDeep(storeConfig));
     localVue.prototype.$scssVars = scssVars;
 
-    wrapper = mount(Admin, {
+    wrapperOptions = {
       sync: false,
       localVue,
       vuetify,
@@ -41,7 +42,9 @@ describe('View Admin.vue', () => {
           return true;
         },
       },
-    });
+    };
+
+    wrapper = mount(Admin, wrapperOptions);
   });
 
   afterEach(() => {
@@ -49,6 +52,7 @@ describe('View Admin.vue', () => {
   });
 
   it('Matches snapshot', () => {
+    const wrapper = shallowMount(Admin, wrapperOptions);
     // Assert
     expect(wrapper).toMatchSnapshot();
   });
