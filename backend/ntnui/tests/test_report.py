@@ -7,7 +7,8 @@ from koie_booking.factories.booking_factory import BookingFactory
 from koie_booking.factories.koie_factory import KoieFactory
 from koie_report.factories.report_factory import ReportFactory
 from koie_report.report_serializer import ReportSerializer
-from koie_report.views import ReportViewSet, ReportAPIView
+from koie_report.views import ReportAPIView, ReportViewSet
+
 from django.utils.timezone import now
 
 
@@ -96,7 +97,6 @@ def valid_report_data():
         "boat_status": 1,
         "canoe_status": 0,
         "life_jackets_status": 0,
-
     }
 
     return data
@@ -128,27 +128,23 @@ def report_batch(booking):
 
 
 @pytest.mark.django_db
-def test_create_report_with_invalid_data(request_factory, booking,
-                                         invalid_report_data):
+def test_create_report_with_invalid_data(request_factory, booking, invalid_report_data):
     """
     Anonymous users should be able to make this post request.
     Tests that the response returns bad request (status code 400) when invalid data passed in
     """
-    request = request_factory.post(f"/koie/reports/{booking.id}",
-                                   invalid_report_data)
+    request = request_factory.post(f"/koie/reports/{booking.id}", invalid_report_data)
     response = get_response(request=request, booking_id=booking.id)
     assert response.status_code == 400
 
 
 @pytest.mark.django_db
-def test_create_report_with_valid_data(request_factory, booking,
-                                       valid_report_data):
+def test_create_report_with_valid_data(request_factory, booking, valid_report_data):
     """
     Anonymous users should be able to make this post request.
     Tests that the response returns bad request (status code 400) when invalid data passed in
     """
-    request = request_factory.post(f"/koie/reports/{booking.id}",
-                                   valid_report_data)
+    request = request_factory.post(f"/koie/reports/{booking.id}", valid_report_data)
     response = get_response(request=request, booking_id=booking.id)
     assert response.status_code == 201
 
