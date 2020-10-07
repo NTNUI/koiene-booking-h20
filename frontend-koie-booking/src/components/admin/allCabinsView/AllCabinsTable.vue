@@ -30,7 +30,6 @@
 <script lang="ts">
 import Vue from 'vue';
 import AdminBooking from '@/types/admin/AdminBooking';
-import store from '@/store/index';
 import { addToDate, formatDate } from '@/utils/dates';
 import CabinCapacity from '@/components/admin/allCabinsView/CabinCapacity.vue';
 import getKoieData from '../../../../tests/unit/__mocks__/koiene';
