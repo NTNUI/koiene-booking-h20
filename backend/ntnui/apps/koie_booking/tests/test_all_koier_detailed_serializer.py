@@ -8,7 +8,6 @@ from koie_booking.serializers.all_koier_detailed import (
 from koie_booking.factories.koie_factory import KoieFactory
 
 
-
 @pytest.fixture()
 def koie():
     return KoieFactory()
