@@ -32,7 +32,7 @@ exports[`Component BookingSecondStep.vue Matches snapshot 1`] = `
             <div class="v-input theme--light v-text-field v-text-field--placeholder">
               <div class="v-input__control">
                 <div class="v-input__slot">
-                  <div class="v-text-field__slot"><label for="input-13" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">E-mail (only contact person)</label><input required="required" id="input-13" placeholder="ola.n@hotmail.com" type="text"></div>
+                  <div class="v-text-field__slot"><label for="input-13" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">E-mail (main contact person)</label><input required="required" id="input-13" placeholder="ola.n@hotmail.com" type="text"></div>
                 </div>
                 <div class="v-text-field__details">
                   <div class="v-messages theme--light"><span name="message-transition" tag="div" class="v-messages__wrapper"></span></div>
