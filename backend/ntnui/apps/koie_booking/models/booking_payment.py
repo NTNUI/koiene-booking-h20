@@ -31,9 +31,6 @@ class BookingPayment(AbstractPayment):
     def get_booking(self):
         return getattr(self, "booking", None)
 
-    def bypass_paid_status(self):
-        self.get_booking().bypass_payment_status()
-
     def send_paid_status(self):
         self.get_booking().set_payment_status()
 

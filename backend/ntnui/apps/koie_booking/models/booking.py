@@ -56,12 +56,6 @@ class BookingModel(models.Model):
     def get_contact_email(self):
         return self.contact_email
 
-    def bypass_payment_status(self):
-        self.paid = True
-        mail_utils.send_confirmation_mail(self)
-        mail_utils.send_koie_information_mail(self)
-        self.save()
-
     def set_payment_status(self):
         if self.booking_payment.is_paid() and (not self.paid):
             self.paid = True
