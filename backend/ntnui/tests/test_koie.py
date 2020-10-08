@@ -4,7 +4,6 @@ from rest_framework.test import APIRequestFactory, force_authenticate
 from koie_booking.factories.koie_factory import DescriptionFactory, KoieFactory, LocationFactory
 from koie_booking.models.koie import KoieModel
 from koie_booking.views.koie import KoieViewSet
-from koie_booking.views.koie_dashboard import KoieDashboardViewSet
 
 
 @pytest.fixture()
@@ -27,16 +26,12 @@ def location():
     return LocationFactory()
 
 
-def get_response(request, user=None, koie=None, admin_view=False):
+def get_response(request, user=None, koie=None):
     force_authenticate(request, user=user)
 
     if koie:
         view = KoieViewSet.as_view({"get": "retrieve"})
         return view(request, slug=koie.slug)
-
-    elif admin_view:
-        view = KoieDashboardViewSet.as_view({"get": "list"})
-        return view(request)
     else:
         view = KoieViewSet.as_view({"get": "list"})
         return view(request)
@@ -72,13 +67,3 @@ def test_retrieve_non_existing_koie(request_factory):
     response = view(request, slug="dummyslug")
 
     assert response.status_code == 404
-
-
-@pytest.mark.django_db
-def test_list_koie_availability(request_factory):
-    """ An admin should be able to list koie availability """
-
-    request = request_factory.get(f"/koie/availability/?days=7")
-    response = get_response(request=request, admin_view=True)
-    assert len(response.data["koier"]) == KoieModel.objects.count()
-    assert response.status_code == 200
