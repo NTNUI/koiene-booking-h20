@@ -76,13 +76,19 @@ def test_get_available_beds_in_booking_window(koie, bookings, expected_availabil
 
 @pytest.mark.django_db
 def test_get_reserved_bookings_returns_correct_amount_of_guests(koie, bookings):
-    """ Helper function get_reserved_bookings in koie_model should return correct amount of beds reserved """
+    """
+    Helper function get_reserved_bookings in koie_model
+    should return correct amount of beds reserved
+    """
 
     assert koie.get_number_of_reserved_beds(date.today() + timedelta(3)) == 3
 
 
 @pytest.mark.django_db
 def test_get_paid_bookings_returns_correct_amount_of_bookings(koie, bookings):
-    """ Helper function get_paid_bookings in koie_model should return correct amount of beds that have been paid for """
+    """
+    Helper function get_paid_bookings in koie_model should
+    return correct amount of beds that have been paid for
+    """
 
     assert koie.get_number_of_sold_beds(date.today() + timedelta(3)) == 3
