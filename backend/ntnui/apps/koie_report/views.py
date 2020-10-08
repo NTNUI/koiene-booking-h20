@@ -26,11 +26,11 @@ class ReportAPIView(APIView):
         booking = BookingModel.objects.get(pk=pk)
         if serializer.is_valid():
             report = KoieReportModel.objects.create(
-                booking=booking, date_created_at=now(),
-                **serializer.validated_data
+                booking=booking, date_created_at=now(), **serializer.validated_data
             )
             report.save()
-            return Response({"detail": _("Report were successfully created.")},
-                            status=201)
-        return Response({"detail": _("You have passed in invalid data. Make sure to pass in valid data.")},
-                        status=400)
+            return Response({"detail": _("Report were successfully created.")}, status=201)
+        return Response(
+            {"detail": _("You have passed in invalid data. Make sure to pass in valid data.")},
+            status=400,
+        )

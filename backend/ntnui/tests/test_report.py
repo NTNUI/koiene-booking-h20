@@ -125,26 +125,22 @@ def report_batch(booking):
 
 
 @pytest.mark.django_db
-def test_create_report_with_invalid_data(request_factory, booking,
-                                         invalid_report_data):
+def test_create_report_with_invalid_data(request_factory, booking, invalid_report_data):
     """
     Tests that the response returns bad request (status code 400) when invalid
     data is passed in
     """
-    request = request_factory.post(f"/koie/reports/{booking.id}",
-                                   invalid_report_data)
+    request = request_factory.post(f"/koie/reports/{booking.id}", invalid_report_data)
     response = get_response(request=request, booking_id=booking.id)
     assert response.status_code == 400
 
 
 @pytest.mark.django_db
-def test_create_report_with_valid_data(request_factory, booking,
-                                       valid_report_data):
+def test_create_report_with_valid_data(request_factory, booking, valid_report_data):
     """
     Test successfull post request when valid data are passed in.
     """
-    request = request_factory.post(f"/koie/reports/{booking.id}",
-                                   valid_report_data)
+    request = request_factory.post(f"/koie/reports/{booking.id}", valid_report_data)
     response = get_response(request=request, booking_id=booking.id)
     assert response.status_code == 201
 
