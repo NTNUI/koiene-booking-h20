@@ -22,7 +22,6 @@ def koie():
 
 @pytest.fixture
 def booking():
-
     return BookingFactory()
 
 
@@ -126,23 +125,26 @@ def report_batch(booking):
 
 
 @pytest.mark.django_db
-def test_create_report_with_invalid_data(request_factory, booking, invalid_report_data):
+def test_create_report_with_invalid_data(request_factory, booking,
+                                         invalid_report_data):
     """
-    Anonymous users should be able to make this post request.
-    Tests that the response returns bad request (status code 400) when invalid data passed in
+    Tests that the response returns bad request (status code 400) when invalid
+    data is passed in
     """
-    request = request_factory.post(f"/koie/reports/{booking.id}", invalid_report_data)
+    request = request_factory.post(f"/koie/reports/{booking.id}",
+                                   invalid_report_data)
     response = get_response(request=request, booking_id=booking.id)
     assert response.status_code == 400
 
 
 @pytest.mark.django_db
-def test_create_report_with_valid_data(request_factory, booking, valid_report_data):
+def test_create_report_with_valid_data(request_factory, booking,
+                                       valid_report_data):
     """
-    Anonymous users should be able to make this post request.
-    Tests that the response returns bad request (status code 400) when invalid data passed in
+    Test successfull post request when valid data are passed in.
     """
-    request = request_factory.post(f"/koie/reports/{booking.id}", valid_report_data)
+    request = request_factory.post(f"/koie/reports/{booking.id}",
+                                   valid_report_data)
     response = get_response(request=request, booking_id=booking.id)
     assert response.status_code == 201
 
@@ -150,10 +152,9 @@ def test_create_report_with_valid_data(request_factory, booking, valid_report_da
 @pytest.mark.django_db
 def test_list_reports_not_logged_in(request_factory, report_batch):
     """
-    An anonymous user should not be able to
-    access any GET requests.
+    Tests forbidden response is given when unauthenticated user tries to access
+    the information of reports.
     """
     request = request_factory.get("/koie/reports/")
     response = get_response(request=request)
     assert response.status_code == 403
-    assert response.data["detail"] == "Authentication credentials were not provided."
