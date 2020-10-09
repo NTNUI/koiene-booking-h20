@@ -32,7 +32,6 @@ def get_response(request, user=None, koie=None):
     if koie:
         view = KoieViewSet.as_view({"get": "retrieve"})
         return view(request, slug=koie.slug)
-
     else:
         view = KoieViewSet.as_view({"get": "list"})
         return view(request)
