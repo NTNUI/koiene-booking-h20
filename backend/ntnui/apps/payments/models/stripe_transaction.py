@@ -112,7 +112,7 @@ class StripeTransaction(models.Model):
             description=description,
             source=token_id,
         )
-        charge = {'id': token_id}
+
         logger.info(f"Created charge on Stripe: {charge}")
 
         self.token_id = token_id
