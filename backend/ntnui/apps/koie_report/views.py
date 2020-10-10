@@ -1,10 +1,9 @@
 from rest_framework import mixins, viewsets
-from rest_framework.permissions import AllowAny, IsAdminUser
 from rest_framework.response import Response
-from rest_framework.views import APIView
 
 from koie_booking.models.booking import BookingModel
 from koie_report.models import KoieReportModel
+from koie_report.permissions import IsKoieMemberOrWriteOnly
 from koie_report.report_serializer import ReportSerializer
 
 from django.utils.timezone import now
@@ -12,16 +11,15 @@ from django.utils.translation import gettext as _
 
 
 class ReportViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
+    """
+    ViewSet for getting all reports and post a koie report. 
+    """
+
     queryset = KoieReportModel.objects.all()
     serializer_class = ReportSerializer
-    permission_classes = [IsAdminUser]
-    # TODO: Change to customized permission class in next user story
+    permission_classes = [IsKoieMemberOrWriteOnly]
 
-
-class ReportAPIView(APIView):
-    permission_classes = [AllowAny]
-
-    def post(self, request, pk):
+    def create(self, request, pk):
         serializer = ReportSerializer(data=request.data)
         booking = BookingModel.objects.get(pk=pk)
         if serializer.is_valid():
