@@ -150,7 +150,8 @@ def test_create_report_with_valid_data(request_factory, booking, valid_report_da
 @pytest.mark.django_db
 def test_list_report_succeeds_as_koie_admin(request_factory, user, board_membership):
     """
-    Ønsker å teste for innloggede brukere
+    Tests that a koie admin (board member and member of koie group) has
+    access to report information
     """
 
     request = request_factory.get("/koie/reports/")
