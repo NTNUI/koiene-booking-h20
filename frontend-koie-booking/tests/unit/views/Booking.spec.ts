@@ -1,50 +1,19 @@
 import Vue from 'vue';
 import Vuetify from 'vuetify';
-import Vuex from 'vuex';
-import { storeConfig } from '@/store';
-import { cloneDeep } from 'lodash';
-import i18n from '@/i18n';
-import scssVars from '@/styles/variables.scss';
 import flushPromises from 'flush-promises';
 import mockAxios from 'jest-mock-axios';
 
 Vue.use(Vuetify);
 
-// Utilities
-import { mount, createLocalVue } from '@vue/test-utils';
-
 // Components or views
 import Booking from '@/views/Booking.vue';
 import BookingFirstStep from '@/components/booking/BookingFirstStep.vue';
 import BookingSecondStep from '@/components/booking/BookingSecondStep.vue';
+import { createWrapper } from '../utils';
 
 describe('View Booking.vue', () => {
-  // Router not needed for this test-suite
-  let wrapper: any;
-  let localVue: any;
-  let vuetify: any;
-  let store: any;
-
-  beforeEach(() => {
-    localVue = createLocalVue();
-    vuetify = new Vuetify();
-    localVue.use(Vuetify);
-    localVue.use(Vuex);
-    // Hard resets the store between tests
-    store = new Vuex.Store(cloneDeep(storeConfig));
-    localVue.prototype.$scssVars = scssVars;
-  });
-
-  afterEach(() => {
-    mockAxios.reset();
-  });
-
   it('Matches snapshot', async () => {
-    wrapper = mount(Booking, {
-      localVue,
-      vuetify,
-      i18n,
-      store,
+    const wrapper = createWrapper(Booking, {
       propsData: {
         allKoier: false,
         row: false,
@@ -64,11 +33,7 @@ describe('View Booking.vue', () => {
   });
 
   it('Button_next renders next bookingStep', async () => {
-    wrapper = mount(Booking, {
-      localVue,
-      vuetify,
-      i18n,
-      store,
+    const wrapper = createWrapper(Booking, {
       propsData: {
         allKoier: false,
         row: false,
@@ -91,11 +56,7 @@ describe('View Booking.vue', () => {
   });
 
   it('Button_prev renders prev bookingStep', async () => {
-    wrapper = mount(Booking, {
-      localVue,
-      vuetify,
-      i18n,
-      store,
+    const wrapper = createWrapper(Booking, {
       propsData: {
         allKoier: false,
         row: false,

@@ -1,52 +1,25 @@
 import Vue from 'vue';
 import Vuetify from 'vuetify';
-import VueRouter from 'vue-router';
-import Vuex from 'vuex';
+import Vuex, { Store } from 'vuex';
 import { storeConfig } from '@/store';
 import { cloneDeep } from 'lodash';
-import i18n from '@/i18n';
-import scssVars from '@/styles/variables.scss';
-import mockAxios from 'jest-mock-axios';
-import { routes } from '@/router';
 import { getDateString } from '@/utils/dates';
 
 Vue.use(Vuetify);
 
-// Utilities
-import { mount, createLocalVue } from '@vue/test-utils';
-
 // Components or views
 import Calendar from '../../../src/components/Calendar.vue';
+import { createWrapper } from '../utils';
+import { RootState } from '@/store/types';
 
 describe('Component Calendar.vue', () => {
-  const router = new VueRouter({ routes, mode: 'abstract' });
-  let wrapper: any;
-  let localVue: any;
-  let vuetify: any;
-  let store: any;
-
+  let store: Store<RootState>;
   beforeEach(() => {
-    localVue = createLocalVue();
-    vuetify = new Vuetify();
-    localVue.use(VueRouter);
-    localVue.use(Vuetify);
-    localVue.use(Vuex);
-    // Hard resets the store between tests
     store = new Vuex.Store(cloneDeep(storeConfig));
-    localVue.prototype.$scssVars = scssVars;
-  });
-
-  afterEach(() => {
-    mockAxios.reset();
   });
 
   it('Matches snapshot', async () => {
-    wrapper = mount(Calendar, {
-      localVue,
-      router,
-      vuetify,
-      i18n,
-      store,
+    const wrapper = createWrapper(Calendar, {
       propsData: {
         allKoier: false,
         row: false,
@@ -57,12 +30,7 @@ describe('Component Calendar.vue', () => {
   });
 
   it('Departure date later than arrival date', async () => {
-    wrapper = mount(Calendar, {
-      localVue,
-      router,
-      vuetify,
-      i18n,
-      store,
+    const wrapper: any = createWrapper(Calendar, {
       propsData: {
         allKoier: false,
         row: false,
@@ -86,11 +54,7 @@ describe('Component Calendar.vue', () => {
       },
     });
 
-    wrapper = mount(Calendar, {
-      localVue,
-      vuetify,
-      router,
-      i18n,
+    const wrapper: any = createWrapper(Calendar, {
       store,
     });
 
@@ -111,11 +75,7 @@ describe('Component Calendar.vue', () => {
       },
     });
 
-    wrapper = mount(Calendar, {
-      localVue,
-      vuetify,
-      router,
-      i18n,
+    const wrapper: any = createWrapper(Calendar, {
       store,
     });
 
@@ -124,12 +84,7 @@ describe('Component Calendar.vue', () => {
   });
 
   it('Koie can be booked maximum x days in advance', async () => {
-    wrapper = mount(Calendar, {
-      localVue,
-      vuetify,
-      router,
-      i18n,
-      store,
+    const wrapper: any = createWrapper(Calendar, {
       data() {
         return {
           disabledDates: [],
@@ -161,11 +116,7 @@ describe('Component Calendar.vue', () => {
       koie: { beds_available_in_booking_window: bedsPerDate },
     });
 
-    wrapper = mount(Calendar, {
-      localVue,
-      vuetify,
-      router,
-      i18n,
+    const wrapper: any = createWrapper(Calendar, {
       store,
       computed: {
         daysInAdvanceBooking() {
@@ -189,11 +140,7 @@ describe('Component Calendar.vue', () => {
       koie: { beds_available_in_booking_window: bedsPerDate },
     });
 
-    wrapper = mount(Calendar, {
-      localVue,
-      vuetify,
-      router,
-      i18n,
+    const wrapper: any = createWrapper(Calendar, {
       store,
     });
 
