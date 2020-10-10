@@ -7,6 +7,8 @@ class ReportSerializer(serializers.ModelSerializer):
     class Meta:
         model = KoieReportModel
         fields = [
+            "id",
+            "booking",
             "date_created_at",
             "feedback",
             "firewood",
@@ -33,3 +35,5 @@ class ReportSerializer(serializers.ModelSerializer):
             "other_faults",
             "chopped_up_wood",
         ]
+
+        read_only_fields = ["booking", "id", "date_created_at"]
