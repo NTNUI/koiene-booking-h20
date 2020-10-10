@@ -10,31 +10,24 @@ from koie_booking.utils.mail_utils import send_confirmation_mail, send_koie_info
 def booking():
     return BookingFactory.build()
 
-
-@pytest.fixture
-def outbox():
-    """Resetting outbox"""
-    mail.outbox = []
-    return mail.outbox
-
-
-def test_send_confirmation_mail(booking, outbox):
+def test_send_confirmation_mail(booking, mailoutbox):
     """ Test to verify email content and delivery upon the creation of a new booking """
     send_confirmation_mail(booking)
 
     context = {
         "booking": booking,
+        "id": booking.id,
     }
     mail_body_plain = render_to_string("booking_confirmation.txt", context)
 
-    assert len(outbox) == 1
-    assert outbox[0].subject == "Confirmation email"
-    assert outbox[0].body == mail_body_plain
-    assert outbox[0].from_email == "noreply@mg.ntnui.no"
-    assert outbox[0].to == [booking.user.email]
+    assert len(mailoutbox) == 1
+    assert mailoutbox[0].subject == "Confirmation email"
+    assert mailoutbox[0].body == mail_body_plain
+    assert mailoutbox[0].from_email == "TestKoieneNTNUI@gmail.com"
+    assert mailoutbox[0].to == [booking.contact_email]
 
 
-def test_koie_information_mail(booking, outbox):
+def test_koie_information_mail(booking, mailoutbox):
     """
         Test the mailing function sending out info on koie
     """
@@ -42,12 +35,13 @@ def test_koie_information_mail(booking, outbox):
 
     context = {
         "koie": booking.koie,
+        "id": booking.id,
     }
 
     mail_body_plain = render_to_string("koie_information.txt", context)
 
-    assert len(outbox) == 1
-    assert outbox[0].subject == "Koie information"
-    assert outbox[0].body == mail_body_plain
-    assert outbox[0].from_email == "noreply@mg.ntnui.no"
-    assert outbox[0].to == [booking.user.email]
+    assert len(mailoutbox) == 1
+    assert mailoutbox[0].subject == "Koie information"
+    assert mailoutbox[0].body == mail_body_plain
+    assert mailoutbox[0].from_email == "TestKoieneNTNUI@gmail.com"
+    assert mailoutbox[0].to == [booking.contact_email]
