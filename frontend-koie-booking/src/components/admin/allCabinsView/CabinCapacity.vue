@@ -1,6 +1,6 @@
 <template>
   <div :style="style">
-    <span>{{ availableBeds }} / {{ numberOfBeds }}</span>
+    <span>{{ numberOfBeds - availableBeds }} / {{ numberOfBeds }}</span>
   </div>
 </template>
 
