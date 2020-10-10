@@ -10,6 +10,7 @@ from koie_booking.utils.mail_utils import send_confirmation_mail, send_koie_info
 def booking():
     return BookingFactory.build()
 
+
 def test_send_confirmation_mail(booking, mailoutbox):
     """ Test to verify email content and delivery upon the creation of a new booking """
     send_confirmation_mail(booking)

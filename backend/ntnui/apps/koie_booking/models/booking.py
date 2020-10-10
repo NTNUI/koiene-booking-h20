@@ -1,5 +1,4 @@
 from django.db import models
-from django.contrib.postgres.fields import JSONField
 from enumchoicefield import EnumChoiceField
 
 from accounts.models.user import UserModel
@@ -8,11 +7,13 @@ from koie_booking.models.koie import KoieModel
 from koie_booking.utils import mail_utils
 from ntnui.enums import KeyStatus
 
+from django.contrib.postgres.fields import JSONField
+
 
 class BookingModel(models.Model):
     user = models.ForeignKey(UserModel, on_delete=models.CASCADE)
     koie = models.ForeignKey(KoieModel, null=True, on_delete=models.CASCADE)
-    contact_email = models.CharField(max_length=40, default='')
+    contact_email = models.CharField(max_length=40, default="")
 
     arrival_date = models.DateField()
     departure_date = models.DateField()
@@ -41,8 +42,8 @@ class BookingModel(models.Model):
 
     def get_total_price(self):
         price_per_night = (
-            self.guests_member * self.koie.price_member +
-            self.guests_not_member * self.koie.price_not_member
+            self.guests_member * self.koie.price_member
+            + self.guests_not_member * self.koie.price_not_member
         )
 
         return price_per_night * self.get_number_of_nights()
