@@ -21,7 +21,7 @@
               @click="setChosenCabin(cabin.name)"
               >{{ cabin.name }}</v-chip
             >
-            <v-chip v-else :key="cabin.name" color="blue" class="ma-1" @click="setChosenCabin('')">{{
+            <v-chip v-else :key="cabin.name" color="primary" class="ma-1" @click="setChosenCabin('')">{{
               cabin.name
             }}</v-chip>
           </template>
@@ -35,7 +35,7 @@
 import Vue from 'vue';
 
 export default Vue.extend({
-  name: 'ReportFilter',
+  name: 'ReportsFilter',
   computed: {
     cabins() {
       return this.$store.state.koie.allKoier;
