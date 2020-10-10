@@ -6,9 +6,9 @@ require('dayjs/locale/nb');
 dayjs.locale('nb');
 
 describe('util Function addToDate', () => {
-  function run(startDate: string, howMany: number, what: dayjs.OpUnitType, expected: string): void {
-    it('adds ' + howMany + ' ' + what + ' to date ' + startDate, () => {
-      const resultDate = addToDate(startDate, howMany, what);
+  function run(startDate: string, howMany: number, timeUnit: dayjs.OpUnitType, expected: string): void {
+    it('adds ' + howMany + ' ' + timeUnit + ' to date ' + startDate, () => {
+      const resultDate = addToDate(startDate, howMany, timeUnit);
 
       expect(resultDate).toEqual(expected);
     });
