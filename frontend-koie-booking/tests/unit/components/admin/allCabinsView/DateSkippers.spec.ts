@@ -17,7 +17,6 @@ import { RootState } from '@/store/types';
 describe('Component DateSkippers.vue', () => {
   let localVue: VueConstructor<Vue>;
   let vuetify: VuetifyType;
-  let store: Store<RootState>;
 
   beforeEach(() => {
     localVue = createLocalVue();
@@ -50,7 +49,7 @@ describe('Component DateSkippers.vue', () => {
   });
 
   it('Renders only positive menu', () => {
-    const wrapper = mount(DateSkippers, { propsData: { menuVersion: 'NEGATIVE' } });
+    const wrapper = mount(DateSkippers, { propsData: { menuVersion: 'POSITIVE' } });
     const labels = ['+1 å', '+1 m', '+1 u', '+1 d'];
     for (const label of labels) {
       const button = wrapper.find({ ref: label });
