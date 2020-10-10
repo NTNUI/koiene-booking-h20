@@ -1,6 +1,6 @@
 <template>
   <div :style="style">
-    <span style="position: relative; top: 30%; left: 10%">{{ availableBeds }} / {{ numberOfBeds }}</span>
+    <span>{{ availableBeds }} / {{ numberOfBeds }}</span>
   </div>
 </template>
 
@@ -23,17 +23,30 @@ export default Vue.extend({
     style() {
       const progress = this.numberOfBeds === 0 ? -1 : Math.floor((this.availableBeds / this.numberOfBeds) * 100);
       return {
-        color: 'black',
+        color: 'white',
         width: '90%',
         height: '90%',
         margin: 'auto',
         borderRadius: '50%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
         background:
           progress === 0
-            ? 'red'
+            ? this.$scssVars.globalColorRedStrong
             : progress >= 99
-            ? 'green'
-            : 'linear-gradient(-90deg, green, green ' + progress + '%, yellow ' + progress + '%)',
+            ? this.$scssVars.globalColorGreenStrong
+            : 'linear-gradient(-90deg, ' +
+              this.$scssVars.globalColorGreenStrong +
+              ', ' +
+              this.$scssVars.globalColorGreenStrong +
+              ' ' +
+              progress +
+              '%, ' +
+              this.$scssVars.globalColorYellow +
+              ' ' +
+              progress +
+              '%)',
       };
     },
   },
