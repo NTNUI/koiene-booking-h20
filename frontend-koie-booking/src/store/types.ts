@@ -168,3 +168,8 @@ export interface AdminBookingsState {
   cabinsWithBookings: AdminBookingDictionary;
   startDate: string;
 }
+
+export interface AdminReportsState {
+  chosenCabin: string;
+  expanded: boolean;
+}
