@@ -1,5 +1,4 @@
 import pytest
-from django.core import mail
 from django.template.loader import render_to_string
 
 from koie_booking.factories.booking_factory import BookingFactory
