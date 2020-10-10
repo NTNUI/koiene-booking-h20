@@ -117,7 +117,7 @@ export default Vue.extend({
       });
       return this.memberPrice * member + this.nonMemberPrice * nonMember;
     },
-    contact_email(): string {
+    contact_email(): string | undefined {
       return this.guests[0].email;
     },
   },

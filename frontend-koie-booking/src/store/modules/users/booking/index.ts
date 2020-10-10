@@ -30,7 +30,6 @@ export const state: BookingState = {
     booking_transaction_id: '',
     from_date: '',
     to_date: '',
-    guests: [],
     guests_member: 0,
     guests_not_member: 0,
   },
