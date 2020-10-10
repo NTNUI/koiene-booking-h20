@@ -7,6 +7,7 @@ from koie_booking.models.koie import KoieModel
 from koie_booking.utils import mail_utils
 from ntnui.enums import KeyStatus
 
+
 class BookingModel(models.Model):
     user = models.ForeignKey(UserModel, on_delete=models.CASCADE)
     koie = models.ForeignKey(KoieModel, null=True, on_delete=models.CASCADE)
