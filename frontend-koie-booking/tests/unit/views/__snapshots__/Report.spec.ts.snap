@@ -1,37 +1,61 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`View Booking.vue Matches snapshot 1`] = `
-<v-container-stub tag="div" class="global-max-width">
-  <v-row-stub tag="div">
-    <v-col-stub cols="12" sm="8" tag="div" class="mx-auto mainColumn">
-      <v-stepper-stub value="1" altlabels="true" class="stepper">
-        <v-stepper-header-stub class="stepperHeader">
-          <v-stepper-step-stub color="primary" completeicon="$complete" editicon="$edit" erroricon="$error" rules="" step="1">
-            Info
-          </v-stepper-step-stub>
-          <v-divider-stub></v-divider-stub>
-          <v-stepper-step-stub color="primary" completeicon="$complete" editicon="$edit" erroricon="$error" rules="" step="2">
-            Supplies
-          </v-stepper-step-stub>
-          <v-divider-stub></v-divider-stub>
-          <v-stepper-step-stub color="primary" completeicon="$complete" editicon="$edit" erroricon="$error" rules="" step="3">
-            Equipment
-          </v-stepper-step-stub>
-          <v-divider-stub></v-divider-stub>
-          <v-stepper-step-stub color="primary" completeicon="$complete" editicon="$edit" erroricon="$error" rules="" step="4">
-            Boat and canoe
-          </v-stepper-step-stub>
-        </v-stepper-header-stub>
-        <v-layout-stub tag="div">
-          <reportfirststep-stub></reportfirststep-stub>
-        </v-layout-stub>
-      </v-stepper-stub>
+<div class="container global-max-width">
+  <div class="row">
+    <div class="mx-auto col-sm-8 col-12 mainColumn">
+      <div class="v-stepper v-stepper--alt-labels theme--light stepper">
+        <div class="v-stepper__header stepperHeader">
+          <div class="v-stepper__step v-stepper__step--active"><span class="v-stepper__step__step primary">1</span>
+            <div class="v-stepper__label">
+              Info
+            </div>
+          </div>
+          <hr role="separator" aria-orientation="horizontal" class="v-divider theme--light">
+          <div class="v-stepper__step v-stepper__step--inactive"><span class="v-stepper__step__step">2</span>
+            <div class="v-stepper__label">
+              Supplies
+            </div>
+          </div>
+          <hr role="separator" aria-orientation="horizontal" class="v-divider theme--light">
+          <div class="v-stepper__step v-stepper__step--inactive"><span class="v-stepper__step__step">3</span>
+            <div class="v-stepper__label">
+              Equipment
+            </div>
+          </div>
+          <hr role="separator" aria-orientation="horizontal" class="v-divider theme--light">
+          <div class="v-stepper__step v-stepper__step--inactive"><span class="v-stepper__step__step">4</span>
+            <div class="v-stepper__label">
+              Boat and canoe
+            </div>
+          </div>
+        </div>
+        <div class="layout">
+          <div class="layout dark container">
+            <h1 class="heading">Digital Cabin Report</h1>
+            <div class="layout separator">
+              <div class="layout px-4">
+                <p>The cabin group is run purely on volunteer work and we rely on your feedback to be able to run the cabins.</p>
+              </div>
+              <div class="layout px-4">
+                <p>
+                  This report concerns your trip to
+                  <span class="capitalize"></span>
+                  from
+
+                  to
+                  .
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="btnWrapper" style="">
-        <!---->
-        <v-btn-stub dark="true" tag="button" activeclass="" type="button" raised="true" data-test="btnNext" class="nextStepButton">next</v-btn-stub>
+        <!----> <button type="button" class="v-btn v-btn--contained theme--dark v-size--default nextStepButton" raised="true" data-test="btnNext"><span class="v-btn__content">next</span></button>
         <!---->
       </div>
-    </v-col-stub>
-  </v-row-stub>
-</v-container-stub>
+    </div>
+  </div>
+</div>
 `;

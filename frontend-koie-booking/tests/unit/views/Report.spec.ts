@@ -1,18 +1,20 @@
-import { Wrapper } from '@vue/test-utils';
+import Vue from 'vue';
+import Vuetify from 'vuetify';
 import flushPromises from 'flush-promises';
 import mockAxios from 'jest-mock-axios';
 
+Vue.use(Vuetify);
+
 // Utilities
-import { mount, ThisTypedShallowMountOptions } from '@vue/test-utils';
+import { Wrapper, ThisTypedShallowMountOptions } from '@vue/test-utils';
+import { createWrapper } from '../utils';
 
 // Components or views
 import Report from '@/views/Report.vue';
 import ReportFirstStep from '@/components/report/ReportFirstStep.vue';
 import ReportSecondStep from '@/components/report/ReportSecondStep.vue';
-import { createShallowWrapper } from '../utils';
 
 describe('View Booking.vue', () => {
-  // Router not needed for this test-suite
   let wrapper: Wrapper<any>;
   let wrapperOptions: ThisTypedShallowMountOptions<any>;
 
@@ -25,7 +27,7 @@ describe('View Booking.vue', () => {
       },
     };
 
-    wrapper = createShallowWrapper(Report, wrapperOptions);
+    wrapper = createWrapper(Report, wrapperOptions);
 
     const response = { data: { booking: {} } };
     mockAxios.mockResponse(response);
@@ -54,7 +56,7 @@ describe('View Booking.vue', () => {
         },
       },
     };
-    wrapper = createShallowWrapper(Report, wrapperOptions);
+    wrapper = createWrapper(Report, wrapperOptions);
     expect(wrapper.vm.$el.querySelector('.btnWrapper').style.display).toBe('none');
   });
 
@@ -72,7 +74,7 @@ describe('View Booking.vue', () => {
         },
       },
     };
-    wrapper = createShallowWrapper(Report, wrapperOptions);
+    wrapper = createWrapper(Report, wrapperOptions);
     expect(wrapper.vm.$el.querySelector('.btnWrapper').style.display).toBe('none');
   });
 

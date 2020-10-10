@@ -1,35 +1,32 @@
 import Vue from 'vue';
 import Vuetify from 'vuetify';
-import Vuex from 'vuex';
-import i18n from '@/i18n';
 
 Vue.use(Vuetify);
 
 // Utilities
-import { mount, createLocalVue } from '@vue/test-utils';
+import { Wrapper, ThisTypedShallowMountOptions } from '@vue/test-utils';
+import { createShallowWrapper } from '../../utils';
 
 // Components or views
 import ReportFirstStep from '@/components/report/ReportFirstStep.vue';
 
 describe('Component ReportFirstStep.vue', () => {
-  let wrapper: any;
-  let localVue: any;
-  let vuetify: any;
+  let wrapper: Wrapper<any>;
+  let wrapperOptions: ThisTypedShallowMountOptions<any>;
 
   beforeEach(() => {
-    localVue = createLocalVue();
-    vuetify = new Vuetify();
-    localVue.use(Vuetify);
-    localVue.use(Vuex);
+    wrapperOptions = {
+      mocks: {
+        $route: {
+          params: { id: 1 },
+        },
+      },
+    };
+
+    wrapper = createShallowWrapper(ReportFirstStep, wrapperOptions);
   });
 
-  it('Matches snapshot', async () => {
-    wrapper = mount(ReportFirstStep, {
-      localVue,
-      vuetify,
-      i18n,
-    });
-
+  it('Matches snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
 });

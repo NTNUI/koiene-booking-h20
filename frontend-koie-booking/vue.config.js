@@ -2,7 +2,6 @@ module.exports = {
   css: {
     loaderOptions: {
       sass: {
-        // prependData isn't applied for some reason.. []make vue.config issue
         prependData: `@import "@/styles/variables.scss";`,
       },
     },
