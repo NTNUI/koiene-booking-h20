@@ -3,6 +3,7 @@
     <v-btn
       v-for="button in menuButtons"
       :key="button.label"
+      :ref="button.label"
       class="navBtn"
       height="50px"
       width="50px"
