@@ -81,7 +81,7 @@ describe('Component DateSkippers.vue', () => {
 
   it('Renders only negative menu', () => {
     const wrapper = mount(DateSkippers, { propsData: { menuVersion: 'NEGATIVE' } });
-    for (const argument of expectedArguments.slice(0, 3)) {
+    for (const argument of expectedArguments.slice(0, 4)) {
       const button = wrapper.find({ ref: argument.label });
       expect(button.exists()).toBeTruthy();
     }
@@ -93,7 +93,7 @@ describe('Component DateSkippers.vue', () => {
 
   it('Renders only positive menu', () => {
     const wrapper = mount(DateSkippers, { propsData: { menuVersion: 'POSITIVE' } });
-    for (const argument of expectedArguments.slice(0, 3)) {
+    for (const argument of expectedArguments.slice(0, 4)) {
       const button = wrapper.find({ ref: argument.label });
       expect(button.exists()).toBeFalsy();
     }
