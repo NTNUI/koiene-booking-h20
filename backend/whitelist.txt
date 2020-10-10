@@ -36,16 +36,10 @@ isalnum
 JSONRenderer
 JWT
 
-<<<<<<< HEAD
-koie
-=======
 kaate
 kartblad
-Koie
 koie
-Koier
 koier
->>>>>>> all files
 
 mixins
 modelfields

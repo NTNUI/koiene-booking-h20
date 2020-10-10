@@ -8,7 +8,7 @@ from django.utils.timezone import now, timedelta
 
 
 class KoierDetailedSerializer(serializers.ModelSerializer):
-    beds_available_in_next_days = serializers.SerializerMethodField()
+    beds_available_in_date_range = serializers.SerializerMethodField()
 
     class Meta:
         model = KoieModel
@@ -18,10 +18,10 @@ class KoierDetailedSerializer(serializers.ModelSerializer):
             "slug",
             "number_of_beds",
             "booking_window",
-            "beds_available_in_next_days",
+            "beds_available_in_date_range",
         )
 
-    def get_beds_available_in_next_days(self, obj):
+    def get_beds_available_in_date_range(self, obj):
         days = int(self.context["days"])
         current_date = now().date()
         return obj.get_beds_available_in_date_range(
