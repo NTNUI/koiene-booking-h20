@@ -22,8 +22,4 @@ export interface ReportThirdStepData {
 
 export interface ReportFourthStepData {
   validForm: boolean;
-  boat_status: number;
-  canoe_status: number;
-  life_jackets_status: number;
-  feedback: string;
 }
