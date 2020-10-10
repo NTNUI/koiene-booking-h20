@@ -1,13 +1,10 @@
-Hi {{ booking.user.first_name }},
+Hi!
+We hope your trip to {{ booking.koie.name }} has been fun. Today is the final day of your stay so here is some important information:
 
-This is a confirmation of your order for {{ booking.koie.name }} from {{ booking.arrival_date }} to {{ booking.departure_date }}
+To make sure that all cabins have what they need, we need you to submit a form on what equipment is working and what is not, so that we may fix or replace what is missing before the next trip. The form is found here: http://localhost:8080/report/{{id}}. Please go through the checklist and submit what you see.
+Equipment to check:
+- Does the smoke detector work?
+- How much wood is left?
+- How much gas is left?
 
-Your booking has reference {{ booking.id }}. 
-
-To get the key you have to provide the reference. 
-The kays can be picked up at one of the sit-gyms. 
-The adresses to these gyms can be found here: https://www.sit.no/trening/treningssenter. 
-
-If you have any questions about your booking, please contact us on informasjon@koiene.org.ntnu.no.
-
-
+ We appreciate your help and hope you had a happy stay!
