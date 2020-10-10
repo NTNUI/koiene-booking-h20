@@ -133,6 +133,7 @@ export interface CreateBookingInfo {
   koie: string;
   from_date: string;
   to_date: string;
+  guests: Array<Guest>;
   guests_member: number;
   guests_not_member: number;
 }
