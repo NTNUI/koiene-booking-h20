@@ -3,12 +3,12 @@ from rest_framework.test import APIRequestFactory, force_authenticate
 
 from accounts.factories.user_factory import UserFactory
 from groups.factories.group_factory import GroupFactory
+from groups.factories.membership_factory import BoardMembershipFactory
 from koie_booking.factories.booking_factory import BookingFactory
 from koie_booking.factories.koie_factory import KoieFactory
 from koie_report.factories.report_factory import ReportFactory
 from koie_report.report_serializer import ReportSerializer
 from koie_report.views import ReportViewSet
-from groups.factories.membership_factory import BoardMembershipFactory
 
 
 @pytest.fixture(autouse=True)
@@ -106,7 +106,7 @@ def user(autouse=True):
 
 
 @pytest.fixture
-def membership(user, koie_group):
+def board_membership(user, koie_group):
     return BoardMembershipFactory(member=user, group=koie_group)
 
 
@@ -116,12 +116,13 @@ def request_factory():
 
 
 def get_response(request, user=None, booking_id=None):
-
+    force_authenticate(request_factory, user=user)
     if booking_id:
         view = ReportViewSet.as_view({"post": "create"})
         return view(request, booking_id)
     else:
         view = ReportViewSet.as_view({"get": "list"})
+
         return view(request)
 
 
@@ -147,11 +148,22 @@ def test_create_report_with_valid_data(request_factory, booking, valid_report_da
 
 
 @pytest.mark.django_db
-def test_list_reports(request_factory):
+def test_list_report_succeeds_as_koie_admin(request_factory, user, board_membership):
     """
     Ønsker å teste for innloggede brukere
     """
-    force_authenticate(request_factory, user=user)
+
     request = request_factory.get("/koie/reports/")
+    force_authenticate(request, user=user)
     response = get_response(request=request, user=user)
     assert response.status_code == 200
+
+
+@pytest.mark.django_db
+def test_list_reports_denied_for_not_koie_admin_user(request_factory):
+    """
+    Tests non authorized user who is not a koie admin gets access to report data
+    """
+    request = request_factory.get("/koie/reports/")
+    response = get_response(request=request)
+    assert response.status_code == 403
