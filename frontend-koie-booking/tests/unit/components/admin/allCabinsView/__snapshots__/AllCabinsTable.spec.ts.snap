@@ -43,6 +43,46 @@ exports[`Component AllCabinsTable.vue Matches snapshot 1`] = `
       <tbody>
         <tr>
           <td>
+            Høgnabu
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">6 / 6</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">6 / 6</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">6 / 6</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">6 / 6</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">6 / 6</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">6 / 6</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">6 / 6</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
             Flåkoia
           </td>
           <td style="width: 12vw;">
@@ -78,46 +118,6 @@ exports[`Component AllCabinsTable.vue Matches snapshot 1`] = `
           <td style="width: 12vw;">
             <div style="width: 60px; height: 60px; margin: auto;">
               <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">11 / 11</span></div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Mevasskoia
-          </td>
-          <td style="width: 12vw;">
-            <div style="width: 60px; height: 60px; margin: auto;">
-              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">5 / 5</span></div>
-            </div>
-          </td>
-          <td style="width: 12vw;">
-            <div style="width: 60px; height: 60px; margin: auto;">
-              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">5 / 5</span></div>
-            </div>
-          </td>
-          <td style="width: 12vw;">
-            <div style="width: 60px; height: 60px; margin: auto;">
-              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">5 / 5</span></div>
-            </div>
-          </td>
-          <td style="width: 12vw;">
-            <div style="width: 60px; height: 60px; margin: auto;">
-              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%;"><span style="position: relative; top: 30%; left: 10%;">1 / 5</span></div>
-            </div>
-          </td>
-          <td style="width: 12vw;">
-            <div style="width: 60px; height: 60px; margin: auto;">
-              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: red;"><span style="position: relative; top: 30%; left: 10%;">0 / 5</span></div>
-            </div>
-          </td>
-          <td style="width: 12vw;">
-            <div style="width: 60px; height: 60px; margin: auto;">
-              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%;"><span style="position: relative; top: 30%; left: 10%;">3 / 5</span></div>
-            </div>
-          </td>
-          <td style="width: 12vw;">
-            <div style="width: 60px; height: 60px; margin: auto;">
-              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">5 / 5</span></div>
             </div>
           </td>
         </tr>
@@ -523,41 +523,41 @@ exports[`Component AllCabinsTable.vue Matches snapshot 1`] = `
         </tr>
         <tr>
           <td>
-            Høgnabu
+            Mevasskoia
           </td>
           <td style="width: 12vw;">
             <div style="width: 60px; height: 60px; margin: auto;">
-              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">6 / 6</span></div>
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">5 / 5</span></div>
             </div>
           </td>
           <td style="width: 12vw;">
             <div style="width: 60px; height: 60px; margin: auto;">
-              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">6 / 6</span></div>
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">5 / 5</span></div>
             </div>
           </td>
           <td style="width: 12vw;">
             <div style="width: 60px; height: 60px; margin: auto;">
-              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">6 / 6</span></div>
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">5 / 5</span></div>
             </div>
           </td>
           <td style="width: 12vw;">
             <div style="width: 60px; height: 60px; margin: auto;">
-              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">6 / 6</span></div>
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%;"><span style="position: relative; top: 30%; left: 10%;">1 / 5</span></div>
             </div>
           </td>
           <td style="width: 12vw;">
             <div style="width: 60px; height: 60px; margin: auto;">
-              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">6 / 6</span></div>
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: red;"><span style="position: relative; top: 30%; left: 10%;">0 / 5</span></div>
             </div>
           </td>
           <td style="width: 12vw;">
             <div style="width: 60px; height: 60px; margin: auto;">
-              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">6 / 6</span></div>
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%;"><span style="position: relative; top: 30%; left: 10%;">3 / 5</span></div>
             </div>
           </td>
           <td style="width: 12vw;">
             <div style="width: 60px; height: 60px; margin: auto;">
-              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">6 / 6</span></div>
+              <div style="color: black; width: 90%; height: 90%; margin: auto; border-radius: 50%; background: green;"><span style="position: relative; top: 30%; left: 10%;">5 / 5</span></div>
             </div>
           </td>
         </tr>
