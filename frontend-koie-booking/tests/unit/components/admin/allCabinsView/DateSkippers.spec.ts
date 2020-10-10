@@ -1,16 +1,12 @@
 import Vue, { VueConstructor } from 'vue';
 import Vuetify, { Vuetify as VuetifyType } from 'vuetify';
-import scssVars from '@/styles/variables.scss';
-import mockAxios from 'jest-mock-axios';
 
 Vue.use(Vuetify);
-
-// Utilities
-import { mount, createLocalVue, shallowMount } from '@vue/test-utils';
 
 // Components or views
 import DateSkippers from '@/components/admin/allCabinsView/DateSkippers.vue';
 import dayjs from 'dayjs';
+import { createWrapper } from '../../../utils';
 const expectedArguments: { label: string; howMany: number; what: dayjs.OpUnitType }[] = [
   {
     label: '-1 å',
@@ -55,32 +51,18 @@ const expectedArguments: { label: string; howMany: number; what: dayjs.OpUnitTyp
 ];
 
 describe('Component DateSkippers.vue', () => {
-  let localVue: VueConstructor<Vue>;
-  let vuetify: VuetifyType;
-
-  beforeEach(() => {
-    localVue = createLocalVue();
-    vuetify = new Vuetify();
-    localVue.use(Vuetify);
-    localVue.prototype.$scssVars = scssVars;
-  });
-
-  afterEach(() => {
-    mockAxios.reset();
-  });
-
   it('Mounts the component', () => {
-    const wrapper = mount(DateSkippers);
+    const wrapper = createWrapper(DateSkippers);
     expect(wrapper.isVueInstance).toBeTruthy();
   });
 
   it('Matches snapshot', () => {
-    const wrapper = mount(DateSkippers);
+    const wrapper = createWrapper(DateSkippers);
     expect(wrapper).toMatchSnapshot();
   });
 
   it('Renders only negative menu', () => {
-    const wrapper = mount(DateSkippers, { propsData: { menuVersion: 'NEGATIVE' } });
+    const wrapper = createWrapper(DateSkippers, { propsData: { menuVersion: 'NEGATIVE' } });
     for (const argument of expectedArguments.slice(0, 4)) {
       const button = wrapper.find({ ref: argument.label });
       expect(button.exists()).toBeTruthy();
@@ -92,7 +74,7 @@ describe('Component DateSkippers.vue', () => {
   });
 
   it('Renders only positive menu', () => {
-    const wrapper = mount(DateSkippers, { propsData: { menuVersion: 'POSITIVE' } });
+    const wrapper = createWrapper(DateSkippers, { propsData: { menuVersion: 'POSITIVE' } });
     for (const argument of expectedArguments.slice(0, 4)) {
       const button = wrapper.find({ ref: argument.label });
       expect(button.exists()).toBeFalsy();
@@ -105,9 +87,7 @@ describe('Component DateSkippers.vue', () => {
 
   it('Skip button calls skipDates with correct argument', () => {
     const skipDates = jest.fn();
-    const wrapper = mount(DateSkippers, {
-      localVue,
-      vuetify,
+    const wrapper = createWrapper(DateSkippers, {
       methods: {
         skipDates: skipDates,
       },
