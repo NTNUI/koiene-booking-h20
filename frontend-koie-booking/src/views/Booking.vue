@@ -135,6 +135,9 @@ export default Vue.extend({
     bookingStep(): boolean {
       return this.$store.state.booking.step;
     },
+    contact_email(): string {
+      return this.$store.state.booking.guests[0].email;
+    },
   },
   watch: {
     dateFrom: function() {
@@ -194,7 +197,8 @@ export default Vue.extend({
         await this.$store.dispatch('koie/FETCH_DATA', this.koieTitle);
       }
       this.fetchWarningData();
-      this.$store.dispatch('booking/SET_GUESTS', [{ name: '', number: '', email: '', isMember: true }]);
+      const guestlist = [{ name: '', number: '', email: '', isMember: true }];
+      this.$store.dispatch('booking/SET_GUESTS', guestlist);
     },
     async nextStep() {
       if (this.step === 2) {
@@ -202,8 +206,10 @@ export default Vue.extend({
           koie: await this.$store.state.koie.koieData.name.toLowerCase(),
           arrival_date: await this.$store.state.booking.dateFrom,
           departure_date: await this.$store.state.booking.dateTo,
+          guests: await this.$store.state.booking.guests,
           guests_member: await this.$store.state.booking.numberOfMembers,
           guests_not_member: await this.$store.state.booking.numberOfNonMembers,
+          contact_email: await this.contact_email,
         };
         this.$store.dispatch('booking/CREATE_BOOKING', values);
       }

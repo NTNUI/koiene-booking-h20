@@ -11,6 +11,8 @@ from ntnui.enums import KeyStatus
 class BookingModel(models.Model):
     user = models.ForeignKey(UserModel, on_delete=models.CASCADE)
     koie = models.ForeignKey(KoieModel, null=True, on_delete=models.CASCADE)
+    contact_email = models.CharField(max_length=40, default="")
+
     arrival_date = models.DateField()
     departure_date = models.DateField()
     guests_member = models.PositiveIntegerField(null=False, default=1)
@@ -49,6 +51,9 @@ class BookingModel(models.Model):
 
     def get_transaction_id(self):
         return self.booking_payment.transaction.pk
+
+    def get_contact_email(self):
+        return self.contact_email
 
     def set_payment_status(self):
         if self.booking_payment.is_paid() and (not self.paid):
