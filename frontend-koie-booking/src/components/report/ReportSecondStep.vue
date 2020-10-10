@@ -7,7 +7,7 @@
         <v-layout class="px-4">
           <v-radio-group v-model="gasIsFull" mandatory required :color="$scssVars.globalColorBackgroundLight">
             <v-radio :value="true" :label="$t('report.gass_full')"></v-radio>
-            <v-radio :value="false" data-test="btnGasEmpty" :label="$t('report.gass_empty')"></v-radio>
+            <v-radio :value="false" :label="$t('report.gass_empty')"></v-radio>
           </v-radio-group>
         </v-layout>
       </v-layout>

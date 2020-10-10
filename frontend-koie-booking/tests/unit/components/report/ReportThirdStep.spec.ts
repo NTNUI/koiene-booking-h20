@@ -1,43 +1,25 @@
 import Vue from 'vue';
 import Vuetify from 'vuetify';
-import VueRouter from 'vue-router';
-import Vuex from 'vuex';
-import { storeConfig } from '@/store';
-import { cloneDeep } from 'lodash';
-import i18n from '@/i18n';
-import scssVars from '@/styles/variables.scss';
 
 Vue.use(Vuetify);
 
 // Utilities
-import { mount, createLocalVue } from '@vue/test-utils';
+import { Wrapper, ThisTypedShallowMountOptions } from '@vue/test-utils';
+import { createWrapper } from '../../utils';
 
 // Components or views
 import ReportThirdStep from '@/components/report/ReportThirdStep.vue';
 
 describe('Component ReportThirdStep.vue', () => {
-  let wrapper: any;
-  let localVue: any;
-  let vuetify: any;
-  let store: any;
+  let wrapper: Wrapper<any>;
+  let wrapperOptions: ThisTypedShallowMountOptions<any>;
 
   beforeEach(() => {
-    localVue = createLocalVue();
-    vuetify = new Vuetify();
-    localVue.use(Vuetify);
-    localVue.use(Vuex);
-    store = new Vuex.Store(cloneDeep(storeConfig));
-    localVue.prototype.$scssVars = scssVars;
+    wrapperOptions = {};
+    wrapper = createWrapper(ReportThirdStep, wrapperOptions);
   });
 
-  it('Matches snapshot', async () => {
-    wrapper = mount(ReportThirdStep, {
-      localVue,
-      vuetify,
-      i18n,
-      store,
-    });
-
+  it('Matches snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
 });
