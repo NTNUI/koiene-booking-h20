@@ -17,9 +17,8 @@ class IsKoieMemberOrWriteOnly(permissions.BasePermission):
         if view.action == "create":
             return True
         else:
-            return (
-                request.user.is_authenticated
-                and koie_group
-                and koie_group.get_membership(request.user)
-                and koie_group.get_membership(request.user).is_board_member()
-            )
+            return request.user.is_authenticated
+            # request.user.is_authenticated and
+            # koie_group and
+            # koie_group.get_membership(request.user) and
+            # koie_group.get_membership(request.user).is_board_member())

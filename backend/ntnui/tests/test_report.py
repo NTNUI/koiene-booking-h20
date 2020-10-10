@@ -7,7 +7,8 @@ from koie_booking.factories.booking_factory import BookingFactory
 from koie_booking.factories.koie_factory import KoieFactory
 from koie_report.factories.report_factory import ReportFactory
 from koie_report.report_serializer import ReportSerializer
-from koie_report.views import ReportAPIView, ReportViewSet
+from koie_report.views import ReportViewSet
+from groups.factories.membership_factory import BoardMembershipFactory
 
 
 @pytest.fixture(autouse=True)
@@ -100,8 +101,13 @@ def valid_report_data():
 
 
 @pytest.fixture
-def user():
+def user(autouse=True):
     return UserFactory()
+
+
+@pytest.fixture
+def membership(user, koie_group):
+    return BoardMembershipFactory(member=user, group=koie_group)
 
 
 @pytest.fixture()
@@ -110,18 +116,13 @@ def request_factory():
 
 
 def get_response(request, user=None, booking_id=None):
-    force_authenticate(request, user=user)
+
     if booking_id:
-        view = ReportAPIView.as_view()
+        view = ReportViewSet.as_view({"post": "create"})
         return view(request, booking_id)
     else:
         view = ReportViewSet.as_view({"get": "list"})
         return view(request)
-
-
-@pytest.fixture()
-def report_batch(booking):
-    return ReportFactory.create_batch(4, booking=booking)
 
 
 @pytest.mark.django_db
@@ -146,11 +147,11 @@ def test_create_report_with_valid_data(request_factory, booking, valid_report_da
 
 
 @pytest.mark.django_db
-def test_list_reports_not_logged_in(request_factory, report_batch):
+def test_list_reports(request_factory):
     """
-    Tests forbidden response is given when unauthenticated user tries to access
-    the information of reports.
+    Ønsker å teste for innloggede brukere
     """
+    force_authenticate(request_factory, user=user)
     request = request_factory.get("/koie/reports/")
-    response = get_response(request=request)
-    assert response.status_code == 403
+    response = get_response(request=request, user=user)
+    assert response.status_code == 200
