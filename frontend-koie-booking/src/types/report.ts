@@ -13,13 +13,11 @@ export interface ReportSecondStepData {
 
 export interface ReportThirdStepData {
   validForm: boolean;
-  smokeDetectorIsWorking: number;
   equipment: Array<{
     displayName: TranslateResult;
     value: number;
     mutation: string;
   }>;
-  otherFaults: string;
 }
 
 export interface ReportFourthStepData {

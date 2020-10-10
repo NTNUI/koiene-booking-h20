@@ -73,8 +73,7 @@ export default Vue.extend({
       get() {
         return this.$store.state.report.reportData.gas_is_full;
       },
-      set(value) {
-        console.log(value);
+      set(value: boolean) {
         this.$store.commit('report/setGasIsFull', value);
         this.$store.commit('report/setEdited', true);
       },
@@ -83,7 +82,7 @@ export default Vue.extend({
       get() {
         return this.$store.state.report.reportData.firewood;
       },
-      set(value) {
+      set(value: number) {
         this.$store.commit('report/setFirewoodSupply', value);
         this.$store.commit('report/setEdited', true);
       },
@@ -92,7 +91,7 @@ export default Vue.extend({
       get() {
         return this.$store.state.report.reportData.chopped_up_wood;
       },
-      set(value) {
+      set(value: number) {
         this.$store.commit('report/setChoppedUpWoodSupply', value);
         this.$store.commit('report/setEdited', true);
       },
