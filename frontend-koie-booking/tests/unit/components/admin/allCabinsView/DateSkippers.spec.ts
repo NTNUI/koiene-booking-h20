@@ -11,8 +11,48 @@ import { mount, createLocalVue, shallowMount } from '@vue/test-utils';
 // Components or views
 import DateSkippers from '@/components/admin/allCabinsView/DateSkippers.vue';
 import dayjs from 'dayjs';
-import { Store } from 'vuex';
-import { RootState } from '@/store/types';
+const expectedArguments: { label: string; howMany: number; what: dayjs.OpUnitType }[] = [
+  {
+    label: '-1 å',
+    howMany: -1,
+    what: 'year',
+  },
+  {
+    label: '-1 m',
+    howMany: -1,
+    what: 'month',
+  },
+  {
+    label: '-1 u',
+    howMany: -1,
+    what: 'week',
+  },
+  {
+    label: '-1 d',
+    howMany: -1,
+    what: 'day',
+  },
+  {
+    label: '+1 d',
+    howMany: +1,
+    what: 'day',
+  },
+  {
+    label: '+1 u',
+    howMany: +1,
+    what: 'week',
+  },
+  {
+    label: '+1 m',
+    howMany: +1,
+    what: 'month',
+  },
+  {
+    label: '+1 å',
+    howMany: +1,
+    what: 'year',
+  },
+];
 
 describe('Component DateSkippers.vue', () => {
   let localVue: VueConstructor<Vue>;
@@ -41,18 +81,24 @@ describe('Component DateSkippers.vue', () => {
 
   it('Renders only negative menu', () => {
     const wrapper = mount(DateSkippers, { propsData: { menuVersion: 'NEGATIVE' } });
-    const labels = ['-1 å', '-1 m', '-1 u', '-1 d'];
-    for (const label of labels) {
-      const button = wrapper.find({ ref: label });
+    for (const argument of expectedArguments.slice(0, 3)) {
+      const button = wrapper.find({ ref: argument.label });
       expect(button.exists()).toBeTruthy();
+    }
+    for (const argument of expectedArguments.slice(4)) {
+      const button = wrapper.find({ ref: argument.label });
+      expect(button.exists()).toBeFalsy();
     }
   });
 
   it('Renders only positive menu', () => {
     const wrapper = mount(DateSkippers, { propsData: { menuVersion: 'POSITIVE' } });
-    const labels = ['+1 å', '+1 m', '+1 u', '+1 d'];
-    for (const label of labels) {
-      const button = wrapper.find({ ref: label });
+    for (const argument of expectedArguments.slice(0, 3)) {
+      const button = wrapper.find({ ref: argument.label });
+      expect(button.exists()).toBeFalsy();
+    }
+    for (const argument of expectedArguments.slice(4)) {
+      const button = wrapper.find({ ref: argument.label });
       expect(button.exists()).toBeTruthy();
     }
   });
@@ -67,48 +113,6 @@ describe('Component DateSkippers.vue', () => {
       },
       propsData: { menuVersion: 'ALL' },
     });
-    const expectedArguments: { label: string; howMany: number; what: dayjs.OpUnitType }[] = [
-      {
-        label: '-1 å',
-        howMany: -1,
-        what: 'year',
-      },
-      {
-        label: '-1 m',
-        howMany: -1,
-        what: 'month',
-      },
-      {
-        label: '-1 u',
-        howMany: -1,
-        what: 'week',
-      },
-      {
-        label: '-1 d',
-        howMany: -1,
-        what: 'day',
-      },
-      {
-        label: '+1 d',
-        howMany: +1,
-        what: 'day',
-      },
-      {
-        label: '+1 u',
-        howMany: +1,
-        what: 'week',
-      },
-      {
-        label: '+1 m',
-        howMany: +1,
-        what: 'month',
-      },
-      {
-        label: '+1 å',
-        howMany: +1,
-        what: 'year',
-      },
-    ];
 
     for (const argument of expectedArguments) {
       const button = wrapper.find({ ref: argument.label });
