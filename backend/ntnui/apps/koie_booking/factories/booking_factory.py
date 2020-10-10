@@ -18,5 +18,6 @@ class BookingFactory(factory.DjangoModelFactory):
     departure_date = now().date() + timedelta(days=1)
     guests_member = 1
     guests_not_member = 2
+    contact_email = "example@gmail.com"
     created = now()
     booking_payment = factory.SubFactory(BookingPaymentFactory)
