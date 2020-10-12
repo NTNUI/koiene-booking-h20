@@ -6,6 +6,7 @@ import { mutations } from '@/store/modules/admin/reports/mutations';
 
 export const state: AdminReportsState = {
   chosenCabin: '',
+  cabins: {},
   expanded: false,
 };
 

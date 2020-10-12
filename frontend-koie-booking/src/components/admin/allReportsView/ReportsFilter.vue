@@ -14,14 +14,14 @@
         <v-row v-show="expanded" class="shrink d-flex flex-wrap justify-center">
           <template v-for="cabin in cabins">
             <v-chip
-              v-if="chosenCabin !== cabin.name"
-              :key="cabin.name"
+              v-if="chosenCabin !== cabin.slug"
+              :key="cabin.slug"
               color="blue-grey darken-4"
               class="ma-1"
-              @click="setChosenCabin(cabin.name)"
+              @click="setChosenCabin(cabin.slug)"
               >{{ cabin.name }}</v-chip
             >
-            <v-chip v-else :key="cabin.name" color="primary" class="ma-1" @click="setChosenCabin('')">{{
+            <v-chip v-else :key="cabin.slug" color="primary" class="ma-1" @click="setChosenCabin('')">{{
               cabin.name
             }}</v-chip>
           </template>
@@ -33,12 +33,15 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import { sortObjectByKey } from '../../../utils/objects';
 
 export default Vue.extend({
   name: 'ReportsFilter',
   computed: {
     cabins() {
-      return this.$store.state.koie.allKoier;
+      const unordered = this.$store.state.adminReports.cabins;
+      const ordered = sortObjectByKey(unordered);
+      return ordered;
     },
     chosenCabin() {
       return this.$store.state.adminReports.chosenCabin;
@@ -47,8 +50,8 @@ export default Vue.extend({
       return this.$store.state.adminReports.expanded;
     },
   },
-  created: function() {
-    this.$store.dispatch('koie/FETCH_ALL_KOIER');
+  mounted() {
+    this.mountCabins();
   },
   methods: {
     setChosenCabin(cabin: string) {
@@ -56,6 +59,9 @@ export default Vue.extend({
     },
     setExpanded(expand: boolean) {
       this.$store.commit('adminReports/setExpanded', expand);
+    },
+    mountCabins() {
+      this.$store.dispatch('adminReports/MOUNT_CABINS');
     },
   },
 });
