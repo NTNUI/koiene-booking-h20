@@ -6,6 +6,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import scssVars from '@/styles/variables.scss';
 
 export default Vue.extend({
   name: 'CabinCapacity',
@@ -33,17 +34,17 @@ export default Vue.extend({
         justifyContent: 'center',
         background:
           progress === 0
-            ? this.$scssVars.globalColorRedStrong
+            ? scssVars.globalColorRedStrong
             : progress >= 99
-            ? this.$scssVars.globalColorGreenStrong
+            ? scssVars.globalColorGreenStrong
             : 'linear-gradient(-90deg, ' +
-              this.$scssVars.globalColorGreenStrong +
+              scssVars.globalColorGreenStrong +
               ', ' +
-              this.$scssVars.globalColorGreenStrong +
+              scssVars.globalColorGreenStrong +
               ' ' +
               progress +
               '%, ' +
-              this.$scssVars.globalColorYellow +
+              scssVars.globalColorYellow +
               ' ' +
               progress +
               '%)',

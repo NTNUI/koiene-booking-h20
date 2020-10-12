@@ -13,7 +13,7 @@ exports[`Component BookingFirstStep.vue Matches snapshot 1`] = `
           </div>
           <div class="v-input__control">
             <div class="v-input__slot">
-              <div class="v-text-field__slot"><label for="input-12" class="v-label v-label--active theme--dark" style="left: 0px; position: absolute;">Arrival</label><input id="input-12" type="text"></div>
+              <div class="v-text-field__slot"><label for="input-11" class="v-label v-label--active theme--dark" style="left: 0px; position: absolute;">Arrival</label><input id="input-11" type="text"></div>
             </div>
             <div class="v-text-field__details">
               <div class="v-messages theme--dark"><span name="message-transition" tag="div" class="v-messages__wrapper"></span></div>
@@ -32,7 +32,7 @@ exports[`Component BookingFirstStep.vue Matches snapshot 1`] = `
           </div>
           <div class="v-input__control">
             <div class="v-input__slot">
-              <div class="v-text-field__slot"><label for="input-17" class="v-label v-label--active theme--dark" style="left: 0px; position: absolute;">Departure</label><input id="input-17" type="text"></div>
+              <div class="v-text-field__slot"><label for="input-16" class="v-label v-label--active theme--dark" style="left: 0px; position: absolute;">Departure</label><input id="input-16" type="text"></div>
             </div>
             <div class="v-text-field__details">
               <div class="v-messages theme--dark"><span name="message-transition" tag="div" class="v-messages__wrapper"></span></div>
@@ -63,7 +63,7 @@ exports[`Component BookingFirstStep.vue Matches snapshot 1`] = `
             <fieldset aria-hidden="true">
               <legend><span>​</span></legend>
             </fieldset>
-            <div class="v-text-field__slot"><input min="1" max="Infinity" id="input-22" type="number"></div>
+            <div class="v-text-field__slot"><input min="1" max="Infinity" id="input-21" type="number"></div>
           </div>
         </div>
       </div>

@@ -3,7 +3,7 @@
 exports[`App.vue Matches snapshot 1`] = `
 <div data-app="true" class="v-application v-application--is-ltr theme--light" id="app">
   <div class="v-application--wrap">
-    <header class="v-sheet v-sheet--tile theme--dark v-toolbar v-app-bar v-app-bar--fixed backgroundLight" style="height: 64px; margin-top: 0px; transform: translateY(0px); left: 0px; right: 0px;">
+    <header class="v-sheet theme--dark v-toolbar v-app-bar v-app-bar--fixed backgroundLight" style="height: 64px; margin-top: 0px; transform: translateY(0px); left: 0px; right: 0px;">
       <div class="v-toolbar__content" style="height: 64px;">
         <div><button target="_blank" type="button" class="v-btn v-btn--flat v-btn--text theme--dark v-size--default"><span class="v-btn__content"><h1 class="headline">NTNUI Koiene</h1></span></button></div>
         <div class="spacer"></div>
@@ -12,8 +12,8 @@ exports[`App.vue Matches snapshot 1`] = `
 </span></button>
       </div>
     </header>
-    <main class="v-content" style="padding: 64px 0px 0px 0px;">
-      <div class="v-content__wrap">
+    <main class="v-main v-content" style="padding: 64px 0px 0px 0px;">
+      <div class="v-main__wrap v-content__wrap">
         <!---->
         <div class="vue-notification-group" style="width: 300px; top: 0px;"><span name="vn-fade"></span></div>
       </div>

@@ -4,13 +4,13 @@ exports[`Component SideBar.vue Matches snapshot 1`] = `
 <div class="v-card v-sheet theme--light">
   <nav class="v-navigation-drawer v-navigation-drawer--fixed v-navigation-drawer--open theme--light" style="height: 100vh; top: 0px; max-height: calc(100% - 0px); transform: translateX(0%); width: 256px;" id="sideBarDrawer">
     <div class="v-navigation-drawer__image">
-      <div class="v-responsive v-image" style="height: 100%; width: 100%;">
+      <div class="v-image v-responsive theme--light" style="height: 100%; width: 100%;">
         <div class="v-image__image v-image__image--preload v-image__image--cover" style="background-position: center center;" name="fade-transition" mode="in-out"></div>
         <div class="v-responsive__content"></div>
       </div>
     </div>
     <div class="v-navigation-drawer__content">
-      <div class="v-list v-sheet v-sheet--tile theme--light" style="height: 100vh;">
+      <div class="v-list v-sheet theme--light" style="height: 100vh;">
         <div tabindex="-1" class="v-list-item v-list-item--two-line theme--light">
           <div class="v-avatar v-list-item__avatar" style="height: 40px; min-width: 40px; width: 40px;"><img src="https://ntnui.no/wp-content/uploads/2018/04/ntnui-logo-liten.png"></div>
           <div class="v-list-item__content">

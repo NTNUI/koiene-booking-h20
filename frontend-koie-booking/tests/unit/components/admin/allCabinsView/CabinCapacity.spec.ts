@@ -6,6 +6,7 @@ Vue.use(Vuetify);
 // Components or views
 import CabinCapacity from '@/components/admin/allCabinsView/CabinCapacity.vue';
 import { createWrapper } from '../../../utils';
+import scssVars from '@/styles/variables.scss';
 
 describe('Component CabinCapacity.vue', () => {
   it('Mounts the component', () => {
@@ -21,7 +22,7 @@ describe('Component CabinCapacity.vue', () => {
       },
     });
 
-    expect(wrapper.vm.style.background).toBe('red');
+    expect(wrapper.vm.style.background).toBe(scssVars.globalColorRedStrong);
   });
 
   it('Displays green when all beds available', () => {
@@ -32,7 +33,8 @@ describe('Component CabinCapacity.vue', () => {
       },
     });
 
-    expect(wrapper.vm.style.background).toBe('green');
+    //expect(wrapper.vm.style.background).toBe('green');
+    expect(wrapper.vm.style.background).toBe(scssVars.globalColorGreenStrong);
   });
 
   it('Handles no input props', () => {
@@ -52,7 +54,17 @@ describe('Component CabinCapacity.vue', () => {
     });
     let calculatedProgress = Math.floor((testAvailableBeds / testNumberOfBeds) * 100);
     let expectedGradient =
-      'linear-gradient(-90deg, green, green ' + calculatedProgress + '%, yellow ' + calculatedProgress + '%)';
+      'linear-gradient(-90deg, ' +
+      scssVars.globalColorGreenStrong +
+      ', ' +
+      scssVars.globalColorGreenStrong +
+      ' ' +
+      calculatedProgress +
+      '%, ' +
+      scssVars.globalColorYellow +
+      ' ' +
+      calculatedProgress +
+      '%)';
 
     expect(wrapper.vm.style.background).toBe(expectedGradient);
   });
