@@ -123,7 +123,6 @@ export default Vue.extend({
   methods: {
     nextStep(n: number) {
       this.step = ++n;
-      console.log(this.step);
       this.$store.commit('report/setStep', this.step);
     },
     prevStep(n: number) {

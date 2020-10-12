@@ -15,6 +15,12 @@ describe('Component ReportSecondStep.vue', () => {
   let wrapperOptions: ThisTypedShallowMountOptions<any>;
 
   beforeEach(() => {
+    // We need this in order to solve a v-slider bug causing a
+    // warning https://github.com/vuetifyjs/vuetify/issues/1210#issuecomment-319624495
+    const app = document.createElement('div');
+    app.setAttribute('data-app', 'true');
+    document.body.appendChild(app);
+
     wrapperOptions = {};
     wrapper = createWrapper(ReportSecondStep, wrapperOptions);
   });
