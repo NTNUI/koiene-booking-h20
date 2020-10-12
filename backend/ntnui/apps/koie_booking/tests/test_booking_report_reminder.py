@@ -7,7 +7,7 @@ from groups.factories.group_factory import GroupFactory
 from koie_booking.factories.booking_factory import BookingFactory
 from koie_booking.factories.koie_factory import KoieFactory
 
-from koie_booking.reminder import reminder_job
+from koie_booking.reminder import send_departure_report_reminder
 
 
 @pytest.fixture()
@@ -28,11 +28,11 @@ def booking():
 
 
 @pytest.mark.django_db
-def test_job_sends_to_todays_departures(booking,mailoutbox):
+def test_send_reminder_to_todays_departures(booking,mailoutbox):
     """
         Test the reminder email cron job that checks every day if there is a trip finishing today.
     """  
-    reminder_job()
+    send_departure_report_reminder()
 
 
     assert len(mailoutbox) == 1
