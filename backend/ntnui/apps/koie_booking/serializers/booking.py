@@ -27,6 +27,7 @@ class BookingSerializer(serializers.ModelSerializer):
             "booking_transaction_id",
             "arrival_date",
             "departure_date",
+            "contact_email",
             "guests_member",
             "guests_not_member",
             "paid",

@@ -17,7 +17,15 @@ Map of koie and are:
 You can find the cabin at {{ koie.location.map_pdf }}. 
 If you want to by a map for the area of the cabin, it is the map "{{ koie.location.kartblad }}".
 
-Make sure to deress for the weather, the wether forecast can be found at this web adress: {{ koie.description.yr_link_eng }}
+ Report on cabin resources
+At the end of your stay you will have to fill out a form at: http://localhost:8080/report/{{id}}
+This is so we know how when to check on equipment and refill on wood and gas for future trips. 
+While you are there, please make yourself aware of: 
+- Does the smoke detector work?
+- How much wood is left?
+- How much gas is left?
+
+Make sure to dress for the weather, the weather forecast can be found at this web adress: {{ koie.description.yr_link_eng }}
 
 If you have any other questions about the koie, please contact us on informasjon@koiene.org.ntnu.no.
 

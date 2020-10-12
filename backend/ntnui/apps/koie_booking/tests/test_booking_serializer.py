@@ -56,6 +56,7 @@ def test_contains_expected_fields(serializer):
         "booking_transaction_id",
         "arrival_date",
         "departure_date",
+        "contact_email",
         "guests_member",
         "guests_not_member",
         "paid",
