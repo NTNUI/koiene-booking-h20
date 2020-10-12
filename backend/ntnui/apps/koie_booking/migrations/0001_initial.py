@@ -21,7 +21,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Description',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True,
+                                        primary_key=True, serialize=False, verbose_name='ID')),
                 ('yr_link_nor', models.TextField(null=True)),
                 ('yr_link_eng', models.TextField(null=True)),
                 ('description_nor', models.TextField(null=True)),
@@ -39,7 +40,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Location',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True,
+                                        primary_key=True, serialize=False, verbose_name='ID')),
                 ('latitude', models.CharField(max_length=40, null=True)),
                 ('longitude', models.CharField(max_length=40, null=True)),
                 ('area', models.CharField(max_length=40, null=True)),
@@ -60,18 +62,24 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='KoieModel',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True,
+                                        primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=40, null=True)),
-                ('slug', models.SlugField(default=models.CharField(max_length=40, null=True), editable=False)),
+                ('slug', models.SlugField(default=models.CharField(
+                    max_length=40, null=True), editable=False)),
                 ('price_member', models.IntegerField(default=40)),
                 ('price_not_member', models.IntegerField(default=80)),
                 ('number_of_beds', models.IntegerField(default=1)),
-                ('koie_type', enumchoicefield.fields.EnumChoiceField(default=ntnui.enums.KoieType(2), enum_class=ntnui.enums.KoieType, max_length=5)),
-                ('difficulty', enumchoicefield.fields.EnumChoiceField(default=ntnui.enums.DifficultyType(2), enum_class=ntnui.enums.DifficultyType, max_length=5)),
+                ('koie_type', enumchoicefield.fields.EnumChoiceField(
+                    default=ntnui.enums.KoieType(2), enum_class=ntnui.enums.KoieType, max_length=5)),
+                ('difficulty', enumchoicefield.fields.EnumChoiceField(
+                    default=ntnui.enums.DifficultyType(2), enum_class=ntnui.enums.DifficultyType, max_length=5)),
                 ('album', models.TextField(null=True)),
                 ('booking_window', models.IntegerField(default=14)),
-                ('description', models.ForeignKey(default='', on_delete=django.db.models.deletion.CASCADE, to='koie_booking.Description')),
-                ('location', models.ForeignKey(default='', on_delete=django.db.models.deletion.CASCADE, to='koie_booking.Location')),
+                ('description', models.ForeignKey(default='',
+                                                  on_delete=django.db.models.deletion.CASCADE, to='koie_booking.Description')),
+                ('location', models.ForeignKey(default='',
+                                               on_delete=django.db.models.deletion.CASCADE, to='koie_booking.Location')),
             ],
             options={
                 'verbose_name': 'Koie',
@@ -81,10 +89,12 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='BookingPayment',
             fields=[
-                ('id', models.UUIDField(auto_created=True, default=uuid.uuid4, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.UUIDField(auto_created=True, default=uuid.uuid4,
+                                        primary_key=True, serialize=False, verbose_name='ID')),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('price', models.PositiveIntegerField()),
-                ('transaction', models.OneToOneField(blank=True, on_delete=django.db.models.deletion.CASCADE, related_name='koie_booking_bookingpayment_related', to='payments.StripeTransaction')),
+                ('transaction', models.OneToOneField(blank=True, on_delete=django.db.models.deletion.CASCADE,
+                                                     related_name='koie_booking_bookingpayment_related', to='payments.StripeTransaction')),
             ],
             options={
                 'verbose_name': 'Booking Payment',
@@ -94,17 +104,22 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='BookingModel',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True,
+                                        primary_key=True, serialize=False, verbose_name='ID')),
                 ('arrival_date', models.DateField()),
                 ('departure_date', models.DateField()),
                 ('guests_member', models.PositiveIntegerField(default=1)),
                 ('guests_not_member', models.PositiveIntegerField(default=1)),
-                ('key_status', enumchoicefield.fields.EnumChoiceField(default=ntnui.enums.KeyStatus(1), enum_class=ntnui.enums.KeyStatus, max_length=13)),
+                ('key_status', enumchoicefield.fields.EnumChoiceField(
+                    default=ntnui.enums.KeyStatus(1), enum_class=ntnui.enums.KeyStatus, max_length=13)),
                 ('paid', models.BooleanField(default=False)),
                 ('created', models.DateTimeField(auto_now=True, null=True)),
-                ('booking_payment', models.OneToOneField(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='booking', to='koie_booking.BookingPayment')),
-                ('koie', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='koie_booking.KoieModel')),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                ('booking_payment', models.OneToOneField(blank=True, null=True,
+                                                         on_delete=django.db.models.deletion.CASCADE, related_name='booking', to='koie_booking.BookingPayment')),
+                ('koie', models.ForeignKey(null=True,
+                                           on_delete=django.db.models.deletion.CASCADE, to='koie_booking.KoieModel')),
+                ('user', models.ForeignKey(
+                    on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
             options={
                 'verbose_name': 'Booking',

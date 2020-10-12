@@ -39,9 +39,9 @@
               <v-text-field
                 v-if="i === 1"
                 v-model="guests[i - 1].email"
-                :label="$vuetify.breakpoint.xs ? $t('booking.emailMobile') : $t('booking.email')"
+                :label="$vuetify.breakpoint.xs ? $t('booking.emailGeneric') : $t('booking.emailMain')"
                 placeholder="ola.n@hotmail.com"
-                :rules="emailRules"
+                :rules="emailStrictRules"
                 required
               />
             </div>
@@ -83,7 +83,12 @@ export default Vue.extend({
         (e: any) => e.length >= 8 || 'Number must be 8 characters',
       ],
       nameRules: [(e: any) => !!e || 'Name is required'],
-      emailRules: [(v: any) => !!v || 'E-mail is required', (v: any) => /.+@.+/.test(v) || 'E-mail must be valid'],
+      emailStrictRules: [
+        (v: any) => !!v || 'E-mail is required',
+        (v: any) => /.+@.+/.test(v) || 'E-mail must be valid',
+      ],
+      emailLooseRules: [(v: any) => v === '' || /.+@.+/.test(v) || 'E-mail must be valid'],
+
       edited: false,
       validForm: true,
       memberPrice: 0,
@@ -111,6 +116,9 @@ export default Vue.extend({
         }
       });
       return this.memberPrice * member + this.nonMemberPrice * nonMember;
+    },
+    contact_email(): string | undefined {
+      return this.guests[0].email;
     },
   },
   watch: {

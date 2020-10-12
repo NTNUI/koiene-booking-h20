@@ -17,7 +17,8 @@ export interface BookingSecondStepData {
   guests: Array<Guest>;
   numberRules: object;
   nameRules: object;
-  emailRules: object;
+  emailStrictRules: object;
+  emailLooseRules: object;
   edited: boolean;
   validForm: boolean;
   memberPrice: number;
@@ -33,6 +34,6 @@ export interface BookingThirdStepData {
 export interface Guest {
   name: string;
   number: string;
-  email?: string;
   isMember: boolean;
+  email?: string;
 }
