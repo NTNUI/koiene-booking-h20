@@ -1,7 +1,6 @@
-from datetime import date, datetime, timedelta
+from datetime import date, timedelta
 
 import pytest
-from django.db.utils import IntegrityError
 
 from groups.factories.group_factory import GroupFactory
 from koie_booking.factories.booking_factory import BookingFactory
