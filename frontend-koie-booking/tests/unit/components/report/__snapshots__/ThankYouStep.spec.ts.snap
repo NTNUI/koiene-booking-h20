@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component ThankYouStep.vue Matches snapshot 1`] = `
+<div class="layout dark container">
+  <h1 class="heading">Thank you!</h1>
+  <div class="layout separator">
+    <div class="layout px-4">
+      <p>Your submission has been received.</p>
+    </div>
+  </div>
+</div>
+`;
