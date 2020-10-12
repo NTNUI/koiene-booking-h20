@@ -1,0 +1,16 @@
+[
+  {
+    "model": "koie_booking.bookingmodel",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "koie": 1,
+      "arrival_date": "2020-01-01",
+      "departure_date": "2020-01-10",
+      "guests_member": 1,
+      "guests_not_member": 1,
+      "paid": false,
+      "booking_payment": null
+    }
+  }
+]
