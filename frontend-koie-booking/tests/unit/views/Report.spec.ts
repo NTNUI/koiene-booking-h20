@@ -13,6 +13,9 @@ import { createWrapper } from '../utils';
 import Report from '@/views/Report.vue';
 import ReportFirstStep from '@/components/report/ReportFirstStep.vue';
 import ReportSecondStep from '@/components/report/ReportSecondStep.vue';
+import ReportThirdStep from '@/components/report/ReportThirdStep.vue';
+import ReportFourthStep from '@/components/report/ReportFourthStep.vue';
+import ThankYouStep from '@/components/report/ThankYouStep.vue';
 
 describe('View Booking.vue', () => {
   let wrapper: Wrapper<any>;
@@ -22,7 +25,7 @@ describe('View Booking.vue', () => {
     wrapperOptions = {
       mocks: {
         $route: {
-          params: { id: 1 },
+          params: { booking_id: 1 },
         },
       },
     };
@@ -91,5 +94,20 @@ describe('View Booking.vue', () => {
 
     expect(wrapper.contains(ReportFirstStep)).toBe(true);
     expect(wrapper.contains(ReportSecondStep)).toBe(false);
+  });
+
+  it('Button_done renders thank you step', async () => {
+    const btnNext = wrapper.find('[data-test="btnNext"]');
+    btnNext.trigger('click');
+    btnNext.trigger('click');
+    btnNext.trigger('click');
+    wrapper.find('[data-test="btnDone"]').trigger('click');
+
+    const response = { data: {} };
+    mockAxios.mockResponse(response);
+    await flushPromises();
+
+    expect(wrapper.contains(ThankYouStep)).toBe(true);
+    expect(wrapper.contains(ReportFourthStep)).toBe(false);
   });
 });
