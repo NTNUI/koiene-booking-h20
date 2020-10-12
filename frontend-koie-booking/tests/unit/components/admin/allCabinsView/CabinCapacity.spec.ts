@@ -33,7 +33,6 @@ describe('Component CabinCapacity.vue', () => {
       },
     });
 
-    //expect(wrapper.vm.style.background).toBe('green');
     expect(wrapper.vm.style.background).toBe(scssVars.globalColorGreenStrong);
   });
 
