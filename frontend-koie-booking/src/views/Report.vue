@@ -123,6 +123,7 @@ export default Vue.extend({
   methods: {
     nextStep(n: number) {
       this.step = ++n;
+      console.log(this.step);
       this.$store.commit('report/setStep', this.step);
     },
     prevStep(n: number) {
@@ -133,10 +134,9 @@ export default Vue.extend({
       }
     },
     done() {
+      this.nextStep(this.step);
       this.$store.dispatch('report/CREATE_REPORT', this.$store.state.report.reportData);
-      console.log('Done!');
     },
-    resetReportInfo() {},
   },
 });
 </script>
