@@ -30,9 +30,9 @@ export function getDate(baseDate?: string, addDays?: number): Date {
   return resultDate;
 }
 
-export function addToDate(startDate: string, howMany: number, what: dayjs.OpUnitType): string {
+export function addToDate(startDate: string, howMany: number, timeUnit: dayjs.OpUnitType): string {
   const date = dayjs(startDate + 'T00:00:00.000Z');
-  return date.add(howMany, what).format('YYYY-MM-DD');
+  return date.add(howMany, timeUnit).format('YYYY-MM-DD');
 }
 
 export function formatDate(dateISO: string, formatString: string): string {
