@@ -5,7 +5,7 @@ exports[`Component ErrorCard.vue Matches snapshot 1`] = `
   <div class="container global-max-width">
     <div class="row mx-auto">
       <div align="center" class="mt-5 col-sm-12 col-md-12 col-lg-12 col-12">
-        <div role="alert" class="v-alert v-sheet theme--light elevation-2 rounded-0 v-alert--border v-alert--border-right infoCard">
+        <div role="alert" class="v-alert v-sheet v-sheet--tile theme--light elevation-2 v-alert--border v-alert--border-right infoCard">
           <div class="v-alert__wrapper"><i aria-hidden="true" class="v-icon notranslate v-alert__icon mdi mdi-alert theme--light error--text"></i>
             <div class="v-alert__content">
               <h3>The page information could not be loaded. Try again.</h3>

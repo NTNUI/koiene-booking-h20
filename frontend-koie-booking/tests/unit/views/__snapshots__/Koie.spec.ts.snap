@@ -4,22 +4,22 @@ exports[`View Koie.vue Matches snapshot 1`] = `
 <div class="container global-max-width">
   <div class="row">
     <div height="100%" class="pb-0 mb-0 col-sm-8 col-12">
-      <div class="global-card-outlined v-card v-sheet v-sheet--outlined theme--light rounded-0 imageCard">
-        <div class="v-image v-responsive theme--light" style="height: 100%;">
+      <div class="global-card-outlined v-card v-card--outlined v-sheet v-sheet--tile theme--light imageCard">
+        <div class="v-responsive v-image" style="height: 100%;">
           <div class="v-image__image v-image__image--preload v-image__image--cover" style="background-position: center center;" name="fade-transition" mode="in-out"></div>
           <div class="v-responsive__content"></div>
         </div>
       </div>
     </div>
     <div xs="4" class="pt-0 d-xs-block d-sm-none col col-12">
-      <div class="global-card-outlined-border-bottom v-card v-sheet v-sheet--outlined theme--light rounded-0 titleCard">
+      <div class="global-card-outlined-border-bottom v-card v-card--outlined v-sheet v-sheet--tile theme--light titleCard">
         <div id="koieTitle" class="v-card__title headline">flåkoia</div>
       </div>
     </div>
     <div class="pb-0 col mb-0">
-      <div class="global-card-outlined v-card v-sheet v-sheet--outlined theme--light rounded-0 infoCard">
+      <div class="global-card-outlined v-card v-card--outlined v-sheet v-sheet--tile theme--light infoCard">
         <div class="v-card__title">Key information</div>
-        <div role="list" inactive="" class="v-list global-card-outlined px-4 pt-0 pb-4 v-sheet theme--light v-list--dense v-list--flat">
+        <div role="list" inactive="" class="v-list global-card-outlined px-4 pt-0 pb-4 v-sheet v-sheet--tile theme--light v-list--dense v-list--flat">
           <div role="listbox" class="v-item-group theme--light v-list-item-group primary--text">
             <div tabindex="0" target="_blank" role="listitem" aria-selected="false" class="pa-0 v-list-item v-list-item--link theme--light">
               <div class="v-list-item__icon listItemIcon"><i aria-hidden="true" class="v-icon notranslate mdi mdi-bed theme--light"></i></div>
@@ -83,14 +83,14 @@ exports[`View Koie.vue Matches snapshot 1`] = `
   </div>
   <div class="row d-none d-sm-flex">
     <div class="pt-0 col">
-      <div class="global-card-outlined-border-bottom v-card v-sheet v-sheet--outlined theme--light rounded-0 titleCard">
+      <div class="global-card-outlined-border-bottom v-card v-card--outlined v-sheet v-sheet--tile theme--light titleCard">
         <div id="koieTitle" class="v-card__title display-1">flåkoia</div>
       </div>
     </div>
   </div>
   <div class="row">
     <div class="col-sm-4 order-sm-last col-12">
-      <div class="global-card-outlined mb-6 v-card v-sheet v-sheet--outlined theme--light rounded-0 calendarCard">
+      <div class="global-card-outlined mb-6 v-card v-card--outlined v-sheet v-sheet--tile theme--light calendarCard">
         <div class="v-card__title">Booking</div>
         <div class="container px-4 vbeds column">
           <div class="v-input v-input--is-label-active v-input--is-dirty theme--dark v-text-field v-text-field--is-booted">
@@ -99,7 +99,7 @@ exports[`View Koie.vue Matches snapshot 1`] = `
             </div>
             <div class="v-input__control">
               <div class="v-input__slot">
-                <div class="v-text-field__slot"><label for="input-34" class="v-label v-label--active theme--dark" style="left: 0px; position: absolute;">Arrival</label><input id="input-34" type="text"></div>
+                <div class="v-text-field__slot"><label for="input-35" class="v-label v-label--active theme--dark" style="left: 0px; position: absolute;">Arrival</label><input id="input-35" type="text"></div>
               </div>
               <div class="v-text-field__details">
                 <div class="v-messages theme--dark"><span name="message-transition" tag="div" class="v-messages__wrapper"></span></div>
@@ -118,7 +118,7 @@ exports[`View Koie.vue Matches snapshot 1`] = `
             </div>
             <div class="v-input__control">
               <div class="v-input__slot">
-                <div class="v-text-field__slot"><label for="input-39" class="v-label v-label--active theme--dark" style="left: 0px; position: absolute;">Departure</label><input id="input-39" type="text"></div>
+                <div class="v-text-field__slot"><label for="input-40" class="v-label v-label--active theme--dark" style="left: 0px; position: absolute;">Departure</label><input id="input-40" type="text"></div>
               </div>
               <div class="v-text-field__details">
                 <div class="v-messages theme--dark"><span name="message-transition" tag="div" class="v-messages__wrapper"></span></div>
@@ -136,7 +136,7 @@ exports[`View Koie.vue Matches snapshot 1`] = `
                   <fieldset aria-hidden="true">
                     <legend><span>​</span></legend>
                   </fieldset>
-                  <div class="v-text-field__slot"><input min="1" max="Infinity" vbeds="true" id="input-43" type="number"></div>
+                  <div class="v-text-field__slot"><input min="1" max="Infinity" vbeds="true" id="input-44" type="number"></div>
                 </div>
               </div>
             </div>
@@ -150,7 +150,7 @@ exports[`View Koie.vue Matches snapshot 1`] = `
     <div class="py-0 col-sm-8 order-sm-first col-12">
       <div class="row">
         <div class="col">
-          <div class="global-card-outlined v-card v-sheet v-sheet--outlined theme--light rounded-0">
+          <div class="global-card-outlined v-card v-card--outlined v-sheet v-sheet--tile theme--light">
             <div class="v-card__title">Description</div>
             <div class="v-card__text"></div> <button type="button" class="mx-auto v-btn v-btn--contained theme--light v-size--default expandBtn"><span class="v-btn__content">more</span></button>
           </div>
@@ -158,7 +158,7 @@ exports[`View Koie.vue Matches snapshot 1`] = `
       </div>
       <div class="row">
         <div class="col">
-          <div class="global-card-outlined v-card v-sheet v-sheet--outlined theme--light rounded-0">
+          <div class="global-card-outlined v-card v-card--outlined v-sheet v-sheet--tile theme--light">
             <div class="v-card__title">Parking</div>
             <div class="v-card__text"></div>
           </div>

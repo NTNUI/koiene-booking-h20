@@ -29,6 +29,46 @@ exports[`Component AllCabinsTable.vue Matches snapshot 1`] = `
       <tbody>
         <tr>
           <td>
+            Høgnabu
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: white; width: 90%; height: 90%; margin: auto; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><span>0 / 6</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: white; width: 90%; height: 90%; margin: auto; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><span>0 / 6</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: white; width: 90%; height: 90%; margin: auto; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><span>0 / 6</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: white; width: 90%; height: 90%; margin: auto; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><span>0 / 6</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: white; width: 90%; height: 90%; margin: auto; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><span>0 / 6</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: white; width: 90%; height: 90%; margin: auto; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><span>0 / 6</span></div>
+            </div>
+          </td>
+          <td style="width: 12vw;">
+            <div style="width: 60px; height: 60px; margin: auto;">
+              <div style="color: white; width: 90%; height: 90%; margin: auto; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><span>0 / 6</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
             Flåkoia
           </td>
           <td style="width: 12vw;">
@@ -64,46 +104,6 @@ exports[`Component AllCabinsTable.vue Matches snapshot 1`] = `
           <td style="width: 12vw;">
             <div style="width: 60px; height: 60px; margin: auto;">
               <div style="color: white; width: 90%; height: 90%; margin: auto; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><span>0 / 11</span></div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Mevasskoia
-          </td>
-          <td style="width: 12vw;">
-            <div style="width: 60px; height: 60px; margin: auto;">
-              <div style="color: white; width: 90%; height: 90%; margin: auto; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><span>0 / 5</span></div>
-            </div>
-          </td>
-          <td style="width: 12vw;">
-            <div style="width: 60px; height: 60px; margin: auto;">
-              <div style="color: white; width: 90%; height: 90%; margin: auto; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><span>0 / 5</span></div>
-            </div>
-          </td>
-          <td style="width: 12vw;">
-            <div style="width: 60px; height: 60px; margin: auto;">
-              <div style="color: white; width: 90%; height: 90%; margin: auto; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><span>0 / 5</span></div>
-            </div>
-          </td>
-          <td style="width: 12vw;">
-            <div style="width: 60px; height: 60px; margin: auto;">
-              <div style="color: white; width: 90%; height: 90%; margin: auto; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><span>4 / 5</span></div>
-            </div>
-          </td>
-          <td style="width: 12vw;">
-            <div style="width: 60px; height: 60px; margin: auto;">
-              <div style="color: white; width: 90%; height: 90%; margin: auto; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><span>5 / 5</span></div>
-            </div>
-          </td>
-          <td style="width: 12vw;">
-            <div style="width: 60px; height: 60px; margin: auto;">
-              <div style="color: white; width: 90%; height: 90%; margin: auto; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><span>2 / 5</span></div>
-            </div>
-          </td>
-          <td style="width: 12vw;">
-            <div style="width: 60px; height: 60px; margin: auto;">
-              <div style="color: white; width: 90%; height: 90%; margin: auto; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><span>0 / 5</span></div>
             </div>
           </td>
         </tr>
@@ -509,41 +509,41 @@ exports[`Component AllCabinsTable.vue Matches snapshot 1`] = `
         </tr>
         <tr>
           <td>
-            Høgnabu
+            Mevasskoia
           </td>
           <td style="width: 12vw;">
             <div style="width: 60px; height: 60px; margin: auto;">
-              <div style="color: white; width: 90%; height: 90%; margin: auto; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><span>0 / 6</span></div>
+              <div style="color: white; width: 90%; height: 90%; margin: auto; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><span>0 / 5</span></div>
             </div>
           </td>
           <td style="width: 12vw;">
             <div style="width: 60px; height: 60px; margin: auto;">
-              <div style="color: white; width: 90%; height: 90%; margin: auto; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><span>0 / 6</span></div>
+              <div style="color: white; width: 90%; height: 90%; margin: auto; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><span>0 / 5</span></div>
             </div>
           </td>
           <td style="width: 12vw;">
             <div style="width: 60px; height: 60px; margin: auto;">
-              <div style="color: white; width: 90%; height: 90%; margin: auto; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><span>0 / 6</span></div>
+              <div style="color: white; width: 90%; height: 90%; margin: auto; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><span>0 / 5</span></div>
             </div>
           </td>
           <td style="width: 12vw;">
             <div style="width: 60px; height: 60px; margin: auto;">
-              <div style="color: white; width: 90%; height: 90%; margin: auto; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><span>0 / 6</span></div>
+              <div style="color: white; width: 90%; height: 90%; margin: auto; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><span>4 / 5</span></div>
             </div>
           </td>
           <td style="width: 12vw;">
             <div style="width: 60px; height: 60px; margin: auto;">
-              <div style="color: white; width: 90%; height: 90%; margin: auto; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><span>0 / 6</span></div>
+              <div style="color: white; width: 90%; height: 90%; margin: auto; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><span>5 / 5</span></div>
             </div>
           </td>
           <td style="width: 12vw;">
             <div style="width: 60px; height: 60px; margin: auto;">
-              <div style="color: white; width: 90%; height: 90%; margin: auto; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><span>0 / 6</span></div>
+              <div style="color: white; width: 90%; height: 90%; margin: auto; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><span>2 / 5</span></div>
             </div>
           </td>
           <td style="width: 12vw;">
             <div style="width: 60px; height: 60px; margin: auto;">
-              <div style="color: white; width: 90%; height: 90%; margin: auto; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><span>0 / 6</span></div>
+              <div style="color: white; width: 90%; height: 90%; margin: auto; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><span>0 / 5</span></div>
             </div>
           </td>
         </tr>

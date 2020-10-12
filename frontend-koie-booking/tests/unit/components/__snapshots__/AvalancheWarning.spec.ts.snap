@@ -3,21 +3,21 @@
 exports[`Component AvalancheWarning.vue Matches snapshot 1`] = `
 <div class="layout width value avalanche">
   <div class="warning">
-    <div class="v-avatar rounded-0 avatar" style="height: 48px; min-width: 48px; width: 48px;"><span class="white--text headline"></span></div>
+    <div class="v-avatar v-avatar--tile avatar" style="height: 48px; min-width: 48px; width: 48px;"><span class="white--text headline"></span></div>
     <div v-model=" - 20.0-" class="day">
       <h4> - 20.0-</h4>
       <p class="mb-0"></p>
     </div>
   </div>
   <div class="warning">
-    <div class="v-avatar rounded-0 avatar" style="height: 48px; min-width: 48px; width: 48px;"><span class="white--text headline"></span></div>
+    <div class="v-avatar v-avatar--tile avatar" style="height: 48px; min-width: 48px; width: 48px;"><span class="white--text headline"></span></div>
     <div class="day">
       <h4> - 20.0-</h4>
       <p class="mb-0"></p>
     </div>
   </div>
   <div class="warning">
-    <div class="v-avatar rounded-0 avatar" style="height: 48px; min-width: 48px; width: 48px;"><span class="white--text headline"></span></div>
+    <div class="v-avatar v-avatar--tile avatar" style="height: 48px; min-width: 48px; width: 48px;"><span class="white--text headline"></span></div>
     <div class="day">
       <h4> - 20.0-</h4>
       <p class="mb-0"></p>
