@@ -41,6 +41,7 @@ def send_koie_information_mail(booking):
     msg.attach_alternative(html_content, "text/html")
     msg.send(fail_silently=False)
 
+
 def send_reminder_mail(booking):
     """ Sends a reminder for the customer to send in a cabin state report. """
 
@@ -59,4 +60,3 @@ def send_reminder_mail(booking):
     msg = EmailMultiAlternatives(subject, text_content, sender, receiver)
     msg.attach_alternative(html_content, "text/html")
     msg.send(fail_silently=False)
-

@@ -2,7 +2,11 @@ import pytest
 from django.template.loader import render_to_string
 
 from koie_booking.factories.booking_factory import BookingFactory
-from koie_booking.utils.mail_utils import send_confirmation_mail, send_koie_information_mail, send_reminder_mail
+from koie_booking.utils.mail_utils import (
+    send_confirmation_mail,
+    send_koie_information_mail,
+    send_reminder_mail,
+)
 
 
 @pytest.fixture
