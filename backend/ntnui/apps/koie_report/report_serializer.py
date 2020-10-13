@@ -37,3 +37,31 @@ class ReportSerializer(serializers.ModelSerializer):
         ]
 
         read_only_fields = ["booking", "id", "date_created_at"]
+
+
+class FilteredReportSerializer(serializers.ModelSerializer):
+    koie_name = serializers.CharField(source="booking.koie.name", read_only=True)
+    date_of_stay = serializers.DateField(source="booking.arrival_date", read_only=True)
+    equipment_status = serializers.SerializerMethodField()
+
+    class Meta:
+        model = KoieReportModel
+        fields = [
+            "id",
+            "date_created_at",
+            "koie_name",
+            "date_of_stay",
+            "gas_is_full",
+            "firewood",
+            "chopped_up_wood",
+            "boat_status",
+            "canoe_status",
+            "life_jackets_status",
+            "smoke_detector_is_working",
+            "equipment_status",
+            "other_faults",
+            "feedback",
+        ]
+
+    def get_equipment_status(self, obj):
+        return obj.get_sorted_equipment_status()
