@@ -8,6 +8,12 @@ $global-color-background-light: #2f3a50;
 $global-color-background-lighter: #425270;
 $global-color-white: #f4f4f4;
 $global-color-black: #000000;
+$global-color-red-strong: #F44336;
+$global-color-red-weak: #FF5722;
+$global-color-yellow: #FFB300;
+$global-color-green-weak: #C0CA33;
+$global-color-green-strong: #4CAF50;
+
 // Breakpoints:
 $break-xs: 600px;
 $break-sm: 960px;
@@ -66,4 +72,9 @@ a {
   globalColorWarningConsiderable: $global-color-warning-considerable;
   globalColorWarningHigh: $global-color-warning-high;
   globalColorWarningVeryHigh: $global-color-warning-very_high;
+  globalColorRedStrong: $global-color-red-strong;
+  globalColorRedWeak: $global-color-red-weak;
+  globalColorYellow: $global-color-yellow;
+  globalColorGreenWeak: $global-color-green-weak;
+  globalColorGreenStrong: $global-color-green-strong;
 }
