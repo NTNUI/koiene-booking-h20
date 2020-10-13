@@ -5,11 +5,11 @@ from rest_framework.response import Response
 from koie_booking.models.koie import KoieModel
 from koie_booking.models.booking import BookingModel
 from koie_report.models import KoieReportModel
-from koie_report.report_serializer import ReportSerializer
+from koie_report.report_serializer import ReportSerializer, FilteredReportSerializer
 from koie_report.permissions import IsKoieAdmin
 
-from django.utils.translation import gettext as _
 from django.utils.timezone import now
+from django.utils.translation import gettext as _
 
 
 class ReportViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
@@ -47,18 +47,13 @@ class ReportViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
         )
 
     @action(
-        url_path="", detail=True, methods=["get"], serializer_class=ReportSerializer,
+        url_path="", detail=True, methods=["get"], serializer_class=FilteredReportSerializer,
     )
     def reports_filter_list(self, request, slug):
         try:
-            # koie = KoieModel.objects.get(slug=slug)
-            # koie = get_object_or_404(KoieModel, slug=slug)
-            # bookings = BookingModel.objects.filter(koie=koie)
-            # reports = KoieReportModel.objects.filter(booking__in=bookings)
             reports = KoieReportModel.objects.filter(booking__koie__slug=slug)
-            serializer = ReportSerializer(reports, context={"request": request}, many=True)
+            serializer = FilteredReportSerializer(reports, context={"request": request}, many=True)
 
-            return Response({"reports": serializer.data}, status=200)
         except KoieModel.DoesNotExist:
             return Response(
                 {"detail": _(f"Koie with specified slug: {slug}, not found.")}, status=404
@@ -70,4 +65,10 @@ class ReportViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
         except KoieReportModel.DoesNotExist:
             return Response(
                 {"detail": _(f"Report with specified koie_slug: {slug}, not found.")}, status=404
+            )
+        if IsKoieAdmin.has_object_permission(request.user, request=request, view=self):
+            return Response({"reports": serializer.data}, status=200)
+        else:
+            return Response(
+                {"detail": _("You must be a koie admin to access report information.")}, status=403
             )
