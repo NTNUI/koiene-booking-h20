@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component ReportSecondStep.vue Matches snapshot 1`] = `
+<div class="layout dark container">
+  <h1 class="heading">Supplies</h1>
+  <form novalidate="novalidate" class="v-form form">
+    <div class="layout separator">
+      <h3 class="py-4">Was the gas full?</h3>
+      <div class="layout px-4">
+        <div class="v-input v-input--is-label-active v-input--is-dirty theme--light v-input--selection-controls v-input--radio-group v-input--radio-group--column">
+          <div class="v-input__control">
+            <div class="v-input__slot" style="height: auto;">
+              <div role="radiogroup" aria-labelledby="input-9" class="v-input--radio-group__input">
+                <div class="v-radio theme--light v-item--active">
+                  <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-marked theme--light primary--text"></i><input aria-checked="true" id="input-10" role="radio" type="radio" name="radio-9" value="true">
+                    <div class="v-input--selection-controls__ripple primary--text"></div>
+                  </div><label for="input-10" class="v-label theme--light" style="left: 0px; position: relative;">Yes, it was full</label>
+                </div>
+                <div class="v-radio theme--light">
+                  <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-12" role="radio" type="radio" name="radio-9" value="false">
+                    <div class="v-input--selection-controls__ripple primary--text"></div>
+                  </div><label for="input-12" class="v-label theme--light" style="left: 0px; position: relative;">No, it was empty</label>
+                </div>
+              </div>
+            </div>
+            <div class="v-messages theme--light"><span name="message-transition" tag="div" class="v-messages__wrapper"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="layout separator">
+      <h3 class="py-4 form">How much firewood was there at the cabin?</h3>
+      <div class="layout px-4">
+        <div class="v-input v-input--is-label-active v-input--is-dirty theme--light v-input__slider">
+          <div class="v-input__control">
+            <div class="v-input__slot">
+              <div class="v-slider v-slider--horizontal theme--light"><input value="2" id="input-16" readonly="readonly" tabindex="-1" required="required">
+                <div class="v-slider__track-container">
+                  <div class="v-slider__track-background primary lighten-3" style="right: 0px;"></div>
+                  <div class="v-slider__track-fill primary" style="left: 0px; width: 50%;"></div>
+                </div>
+                <div class="v-slider__ticks-container v-slider__ticks-container--always-show"><span class="v-slider__tick v-slider__tick--filled" style="width: 5px; height: 5px;"><div class="v-slider__tick-label">No logs</div></span><span class="v-slider__tick v-slider__tick--filled" style="width: 5px; height: 5px;"></span><span class="v-slider__tick" style="width: 5px; height: 5px;"></span><span class="v-slider__tick" style="width: 5px; height: 5px;"></span><span class="v-slider__tick" style="width: 5px; height: 5px;"><div class="v-slider__tick-label">A lot of logs</div></span></div>
+                <div role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="4" aria-valuenow="2" aria-readonly="false" aria-orientation="horizontal" required="required" class="v-slider__thumb-container primary--text" style="left: 50%;">
+                  <div class="v-slider__thumb primary"></div>
+                </div>
+              </div>
+            </div>
+            <div class="v-messages theme--light"><span name="message-transition" tag="div" class="v-messages__wrapper"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="layout separator">
+      <h3 class="py-4 form">Did you find a lot of chopped up wood at the cabin?</h3>
+      <div class="layout px-4">
+        <div class="v-input v-input--is-label-active v-input--is-dirty theme--light v-input__slider">
+          <div class="v-input__control">
+            <div class="v-input__slot">
+              <div class="v-slider v-slider--horizontal theme--light"><input value="2" id="input-19" readonly="readonly" tabindex="-1" required="required">
+                <div class="v-slider__track-container">
+                  <div class="v-slider__track-background primary lighten-3" style="right: 0px;"></div>
+                  <div class="v-slider__track-fill primary" style="left: 0px; width: 50%;"></div>
+                </div>
+                <div class="v-slider__ticks-container v-slider__ticks-container--always-show"><span class="v-slider__tick v-slider__tick--filled" style="width: 5px; height: 5px;"><div class="v-slider__tick-label">No chopped up wood</div></span><span class="v-slider__tick v-slider__tick--filled" style="width: 5px; height: 5px;"></span><span class="v-slider__tick" style="width: 5px; height: 5px;"></span><span class="v-slider__tick" style="width: 5px; height: 5px;"></span><span class="v-slider__tick" style="width: 5px; height: 5px;"><div class="v-slider__tick-label">A lot of chopped up wood</div></span></div>
+                <div role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="4" aria-valuenow="2" aria-readonly="false" aria-orientation="horizontal" required="required" class="v-slider__thumb-container primary--text" style="left: 50%;">
+                  <div class="v-slider__thumb primary"></div>
+                </div>
+              </div>
+            </div>
+            <div class="v-messages theme--light"><span name="message-transition" tag="div" class="v-messages__wrapper"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
