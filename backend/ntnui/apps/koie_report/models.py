@@ -80,3 +80,36 @@ class KoieReportModel(models.Model):
 
         verbose_name = "Koie Report"
         verbose_name_plural = "Koie Reports"
+
+    def get_sorted_equipment_status(self):
+        """
+        Returns collected equipment status sorted into
+        dict according to status, for easy display on front-end
+        """
+        equipment_status = {}
+        equipment_fields = [
+            self.gas_burner_primus,
+            self.axe,
+            self.hammer,
+            self.saw,
+            self.saw_blade,
+            self.saw_bench,
+            self.spade,
+            self.kerosene_lamp,
+            self.detergent,
+            self.dishware,
+            self.cookware,
+            self.cabin_book,
+            self.candle_holders,
+            self.fire_blanket,
+            self.fire_extinguisher,
+        ]
+
+        for field in equipment_fields:
+            acc = equipment_status.get(str(field), None)
+            if acc:
+                equipment_status[str(field)] += 1
+            else:
+                equipment_status[str(field)] = 1
+
+        return equipment_status
