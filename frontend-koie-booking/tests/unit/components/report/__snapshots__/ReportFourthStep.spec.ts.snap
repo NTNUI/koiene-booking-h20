@@ -1,0 +1,136 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component ReportFourthStep.vue Matches snapshot 1`] = `
+<div class="layout dark container">
+  <h1 class="heading">Boat and canoe</h1>
+  <form novalidate="novalidate" class="v-form">
+    <div class="layout separator">
+      <h3 class="py-4">What was the status for the boat?</h3>
+      <div class="layout px-4">
+        <div class="v-input theme--light v-input--selection-controls v-input--radio-group v-input--radio-group--column">
+          <div class="v-input__control">
+            <div class="v-input__slot" style="height: auto;">
+              <div role="radiogroup" aria-labelledby="input-9" class="v-input--radio-group__input">
+                <div class="v-radio theme--light">
+                  <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-10" role="radio" type="radio" name="radio-9" value="3">
+                    <div class="v-input--selection-controls__ripple primary--text"></div>
+                  </div><label for="input-10" class="v-label theme--light" style="left: 0px; position: relative;">Missing boat</label>
+                </div>
+                <div class="v-radio theme--light">
+                  <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-12" role="radio" type="radio" name="radio-9" value="1">
+                    <div class="v-input--selection-controls__ripple primary--text"></div>
+                  </div><label for="input-12" class="v-label theme--light" style="left: 0px; position: relative;">Broken / useless</label>
+                </div>
+                <div class="v-radio theme--light">
+                  <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-14" role="radio" type="radio" name="radio-9" value="2">
+                    <div class="v-input--selection-controls__ripple primary--text"></div>
+                  </div><label for="input-14" class="v-label theme--light" style="left: 0px; position: relative;">Missing paddles</label>
+                </div>
+                <div class="v-radio theme--light">
+                  <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-16" role="radio" type="radio" name="radio-9" value="4">
+                    <div class="v-input--selection-controls__ripple primary--text"></div>
+                  </div><label for="input-16" class="v-label theme--light" style="left: 0px; position: relative;">Didn't use / don't know</label>
+                </div>
+                <div class="v-radio theme--light v-item--active">
+                  <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-marked theme--light primary--text"></i><input aria-checked="true" id="input-18" role="radio" type="radio" name="radio-9" value="0">
+                    <div class="v-input--selection-controls__ripple primary--text"></div>
+                  </div><label for="input-18" class="v-label theme--light" style="left: 0px; position: relative;">No faults</label>
+                </div>
+              </div>
+            </div>
+            <div class="v-messages theme--light"><span name="message-transition" tag="div" class="v-messages__wrapper"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="layout separator">
+      <h3 class="py-4">What was the status for the canoe?</h3>
+      <div class="layout px-4">
+        <div class="v-input theme--light v-input--selection-controls v-input--radio-group v-input--radio-group--column">
+          <div class="v-input__control">
+            <div class="v-input__slot" style="height: auto;">
+              <div role="radiogroup" aria-labelledby="input-22" class="v-input--radio-group__input">
+                <div class="v-radio theme--light">
+                  <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-23" role="radio" type="radio" name="radio-22" value="3">
+                    <div class="v-input--selection-controls__ripple primary--text"></div>
+                  </div><label for="input-23" class="v-label theme--light" style="left: 0px; position: relative;">Missing canoe</label>
+                </div>
+                <div class="v-radio theme--light">
+                  <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-25" role="radio" type="radio" name="radio-22" value="1">
+                    <div class="v-input--selection-controls__ripple primary--text"></div>
+                  </div><label for="input-25" class="v-label theme--light" style="left: 0px; position: relative;">Broken / useless</label>
+                </div>
+                <div class="v-radio theme--light">
+                  <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-27" role="radio" type="radio" name="radio-22" value="2">
+                    <div class="v-input--selection-controls__ripple primary--text"></div>
+                  </div><label for="input-27" class="v-label theme--light" style="left: 0px; position: relative;">Missing paddles</label>
+                </div>
+                <div class="v-radio theme--light">
+                  <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-29" role="radio" type="radio" name="radio-22" value="4">
+                    <div class="v-input--selection-controls__ripple primary--text"></div>
+                  </div><label for="input-29" class="v-label theme--light" style="left: 0px; position: relative;">Didn't use / don't know</label>
+                </div>
+                <div class="v-radio theme--light v-item--active">
+                  <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-marked theme--light primary--text"></i><input aria-checked="true" id="input-31" role="radio" type="radio" name="radio-22" value="0">
+                    <div class="v-input--selection-controls__ripple primary--text"></div>
+                  </div><label for="input-31" class="v-label theme--light" style="left: 0px; position: relative;">No faults</label>
+                </div>
+              </div>
+            </div>
+            <div class="v-messages theme--light"><span name="message-transition" tag="div" class="v-messages__wrapper"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="layout separator">
+      <h3 class="py-4">What was the status for the life jackets?</h3>
+      <div class="layout px-4">
+        <div class="v-input theme--light v-input--selection-controls v-input--radio-group v-input--radio-group--column">
+          <div class="v-input__control">
+            <div class="v-input__slot" style="height: auto;">
+              <div role="radiogroup" aria-labelledby="input-35" class="v-input--radio-group__input">
+                <div class="v-radio theme--light">
+                  <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-36" role="radio" type="radio" name="radio-35" value="2">
+                    <div class="v-input--selection-controls__ripple primary--text"></div>
+                  </div><label for="input-36" class="v-label theme--light" style="left: 0px; position: relative;">Missing / too few life jackets</label>
+                </div>
+                <div class="v-radio theme--light">
+                  <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-38" role="radio" type="radio" name="radio-35" value="1">
+                    <div class="v-input--selection-controls__ripple primary--text"></div>
+                  </div><label for="input-38" class="v-label theme--light" style="left: 0px; position: relative;">Broken / useless</label>
+                </div>
+                <div class="v-radio theme--light">
+                  <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-40" role="radio" type="radio" name="radio-35" value="3">
+                    <div class="v-input--selection-controls__ripple primary--text"></div>
+                  </div><label for="input-40" class="v-label theme--light" style="left: 0px; position: relative;">Didn't use / don't know</label>
+                </div>
+                <div class="v-radio theme--light v-item--active">
+                  <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-marked theme--light primary--text"></i><input aria-checked="true" id="input-42" role="radio" type="radio" name="radio-35" value="0">
+                    <div class="v-input--selection-controls__ripple primary--text"></div>
+                  </div><label for="input-42" class="v-label theme--light" style="left: 0px; position: relative;">No faults</label>
+                </div>
+              </div>
+            </div>
+            <div class="v-messages theme--light"><span name="message-transition" tag="div" class="v-messages__wrapper"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="layout separator">
+      <h3 class="py-4">Finally, is there anything else you wish to add which hasn't been covered by the report already?</h3>
+      <div class="layout px-4">
+        <div class="v-input theme--light v-text-field v-text-field--placeholder feedbackField">
+          <div class="v-input__control">
+            <div class="v-input__slot">
+              <div class="v-text-field__slot"><label for="input-46" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Additional comments</label><input id="input-46" placeholder="There was one window that ..." type="text"></div>
+            </div>
+            <div class="v-text-field__details">
+              <div class="v-messages theme--light"><span name="message-transition" tag="div" class="v-messages__wrapper"></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;

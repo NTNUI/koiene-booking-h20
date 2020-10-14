@@ -5,15 +5,9 @@
       <v-layout :class="$style.separator">
         <h3 class="py-4" :class="$style.supplyRegistration">{{ $t('report.gass_is_full') }}</h3>
         <v-layout class="px-4">
-          <v-radio-group
-            v-model="gasIsFull"
-            mandatory
-            required
-            :color="$scssVars.globalColorBackgroundLight"
-            @change="setGasIsFull"
-          >
-            <v-radio :label="$t('report.gass_full')"></v-radio>
-            <v-radio :label="$t('report.gass_empty')"></v-radio>
+          <v-radio-group v-model="gasIsFull" mandatory required :color="$scssVars.globalColorBackgroundLight">
+            <v-radio :value="true" :label="$t('report.gass_full')"></v-radio>
+            <v-radio :value="false" :label="$t('report.gass_empty')"></v-radio>
           </v-radio-group>
         </v-layout>
       </v-layout>
@@ -28,7 +22,6 @@
             step="1"
             ticks="always"
             tick-size="5"
-            @change="setFirewoodSupply"
           ></v-slider>
         </v-layout>
       </v-layout>
@@ -43,7 +36,6 @@
             step="1"
             ticks="always"
             tick-size="5"
-            @change="setChoppedUpWoodSupply"
           ></v-slider>
         </v-layout>
       </v-layout>
@@ -60,8 +52,6 @@ export default Vue.extend({
   data(): ReportSecondStepData {
     return {
       validForm: true,
-      gasIsFull: 0,
-      firewoodSupply: 2,
       firewoodSupplyLabels: [
         `${this.$t('report.firewood_supply_empty')}`,
         '',
@@ -69,7 +59,6 @@ export default Vue.extend({
         '',
         `${this.$t('report.firewood_supply_full')}`,
       ],
-      choppedUpWoodSupply: 2,
       choppedUpSupplyLabels: [
         `${this.$t('report.chopped_up_wood_supply_empty')}`,
         '',
@@ -79,18 +68,33 @@ export default Vue.extend({
       ],
     };
   },
-  methods: {
-    setGasIsFull() {
-      this.$store.commit('report/setGasIsFull', !this.gasIsFull);
-      this.$store.commit('report/setEdited', true);
+  computed: {
+    gasIsFull: {
+      get() {
+        return this.$store.state.report.reportData.gas_is_full;
+      },
+      set(value: boolean) {
+        this.$store.commit('report/setGasIsFull', value);
+        this.$store.commit('report/setEdited', true);
+      },
     },
-    setFirewoodSupply() {
-      this.$store.commit('report/setFirewoodSupply', this.firewoodSupply);
-      this.$store.commit('report/setEdited', true);
+    firewoodSupply: {
+      get() {
+        return this.$store.state.report.reportData.firewood;
+      },
+      set(value: number) {
+        this.$store.commit('report/setFirewoodSupply', value);
+        this.$store.commit('report/setEdited', true);
+      },
     },
-    setChoppedUpWoodSupply() {
-      this.$store.commit('report/setChoppedUpWoodSupply', this.choppedUpWoodSupply);
-      this.$store.commit('report/setEdited', true);
+    choppedUpWoodSupply: {
+      get() {
+        return this.$store.state.report.reportData.chopped_up_wood;
+      },
+      set(value: number) {
+        this.$store.commit('report/setChoppedUpWoodSupply', value);
+        this.$store.commit('report/setEdited', true);
+      },
     },
   },
 });

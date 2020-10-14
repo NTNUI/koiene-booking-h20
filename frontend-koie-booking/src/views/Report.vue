@@ -23,14 +23,14 @@
           <v-layout>
             <ErrorCard v-if="apiError" />
             <LoadingSpinner v-else-if="isLoading" />
-            <FirstStep v-else-if="step === 1" />
-            <SecondStep v-else-if="step === 2" />
-            <ThirdStep v-else-if="step === 3" />
-            <FourthStep v-else-if="step === 4" />
+            <ReportFirstStep v-else-if="step === 1" />
+            <ReportSecondStep v-else-if="step === 2" />
+            <ReportThirdStep v-else-if="step === 3" />
+            <ReportFourthStep v-else-if="step === 4" />
             <ThankYouStep v-else-if="step === 5" />
           </v-layout>
         </v-stepper>
-        <div v-show="!isLoading && step < 5" :class="$style.btnWrapper">
+        <div v-show="step < steps && !isLoading && !apiError" :class="$style.btnWrapper">
           <v-btn
             v-if="step > 1"
             :color="this.$scssVars.globalColorPrimary"
@@ -41,7 +41,7 @@
             >{{ $t('report.back_button') }}</v-btn
           >
           <v-btn
-            v-if="step < steps"
+            v-if="step < steps - 1"
             :disabled="!isValid"
             :color="this.$scssVars.globalColorPrimary"
             :class="$style.nextStepButton"
@@ -52,12 +52,12 @@
             >{{ $t('report.next_button') }}</v-btn
           >
           <v-btn
-            v-if="step === steps"
+            v-if="step === steps - 1"
             :color="this.$scssVars.globalColorPrimary"
             :class="$style.nextStepButton"
             raised="true"
             :dark="true"
-            data-test="btnNext"
+            data-test="btnDone"
             @click="done"
             >{{ $t('report.done_button') }}</v-btn
           >
@@ -70,10 +70,10 @@
 <script lang="ts">
 import ErrorCard from '@/components/ErrorCard.vue';
 import LoadingSpinner from '@/components/LoadingSpinner.vue';
-import FirstStep from '@/components/report/FirstStep.vue';
-import SecondStep from '@/components/report/SecondStep.vue';
-import ThirdStep from '@/components/report/ThirdStep.vue';
-import FourthStep from '@/components/report/FourthStep.vue';
+import ReportFirstStep from '@/components/report/ReportFirstStep.vue';
+import ReportSecondStep from '@/components/report/ReportSecondStep.vue';
+import ReportThirdStep from '@/components/report/ReportThirdStep.vue';
+import ReportFourthStep from '@/components/report/ReportFourthStep.vue';
 import ThankYouStep from '@/components/report/ThankYouStep.vue';
 import { ReportData } from '../types/report';
 import Vue from 'vue';
@@ -84,10 +84,10 @@ export default Vue.extend({
   components: {
     ErrorCard,
     LoadingSpinner,
-    FirstStep,
-    SecondStep,
-    ThirdStep,
-    FourthStep,
+    ReportFirstStep,
+    ReportSecondStep,
+    ReportThirdStep,
+    ReportFourthStep,
     ThankYouStep,
   },
 
@@ -111,31 +111,31 @@ export default Vue.extend({
   },
 
   mounted() {
+    const bookingID = Number(this.$route.params.booking_id);
     this.step = 1;
     this.$store.commit('report/setStep', 1);
     this.$store.commit('report/setValidForm', true);
     this.$store.commit('report/setEdited', false);
-    const booking = Number(this.$route.params.booking_id);
-    this.$store.commit('report/setBookingID', booking);
-    this.$store.dispatch('report/FETCH_BOOKING', booking);
+    this.$store.commit('report/setBookingID', bookingID);
+    this.$store.dispatch('report/FETCH_BOOKING', bookingID);
   },
 
   methods: {
     nextStep(n: number) {
-      this.step = ++n % (this.steps + 1);
-      this.$store.commit('report/setStep', Number(this.$store.state.report.step) + 1);
+      this.step = ++n;
+      this.$store.commit('report/setStep', this.step);
     },
     prevStep(n: number) {
-      this.step = --n % (this.steps + 1);
-      this.$store.commit('report/setStep', Number(this.$store.state.report.step) - 1);
+      this.step = --n;
+      this.$store.commit('report/setStep', this.step);
       if (this.step === 1) {
         this.$store.commit('report/setValidForm', true);
       }
     },
     done() {
+      this.nextStep(this.step);
       this.$store.dispatch('report/CREATE_REPORT', this.$store.state.report.reportData);
     },
-    resetReportInfo() {},
   },
 });
 </script>

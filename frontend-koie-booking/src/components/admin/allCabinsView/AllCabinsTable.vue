@@ -32,13 +32,7 @@ import Vue from 'vue';
 import AdminBooking from '@/types/admin/AdminBooking';
 import { addToDate, formatDate } from '@/utils/dates';
 import CabinCapacity from '@/components/admin/allCabinsView/CabinCapacity.vue';
-
-interface Header {
-  text: string;
-  align: string;
-  sortable: boolean;
-  value: string;
-}
+import TableHeader from '@/types/admin/TableHeader';
 
 export default Vue.extend({
   name: 'AllCabinsTable',
@@ -47,12 +41,12 @@ export default Vue.extend({
     allCabinsWithBookings(): Array<AdminBooking> {
       return this.$store.getters['adminBookings/getCabinsWithBookingsArray'];
     },
-    dateHeaders(): Array<Header> {
+    dateHeaders(): Array<TableHeader> {
       return this.headers.slice(1);
     },
-    headers(): Array<Header> {
+    headers(): Array<TableHeader> {
       const startDate = this.$store.getters['adminBookings/getStartDate'];
-      const res: Array<Header> = [
+      const res: Array<TableHeader> = [
         {
           text: 'Navn',
           sortable: true,
@@ -68,7 +62,7 @@ export default Vue.extend({
       ];
       for (let i = 1; i < 7; i++) {
         const date = addToDate(startDate, i, 'day');
-        const header: Header = {
+        const header: TableHeader = {
           text: formatDate(date, 'dddd D. MMMM YYYY'),
           sortable: true,
           value: date,
