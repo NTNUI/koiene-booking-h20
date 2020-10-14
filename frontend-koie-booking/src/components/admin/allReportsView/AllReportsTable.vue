@@ -13,14 +13,17 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import reportTableHeaders from '@/components/admin/allReportsView/ReportTableHeaders';
+import reportTableColumns from '@/components/admin/allReportsView/ReportTableColumns';
 
 export default Vue.extend({
   name: 'AllReportsTable',
   components: {},
   data() {
     return {
-      headers: reportTableHeaders,
+      headers: Object.values(reportTableColumns).map((column) => {
+        delete column.colorAndText;
+        return column;
+      }),
     };
   },
   computed: {},
