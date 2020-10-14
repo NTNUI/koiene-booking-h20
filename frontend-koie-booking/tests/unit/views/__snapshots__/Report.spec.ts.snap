@@ -42,9 +42,9 @@ exports[`View Booking.vue with water equipment Matches snapshot 1`] = `
                   This report concerns your trip to
                   <span class="capitalize">flåkoia</span>
                   from
-
+                  01.01.1970
                   to
-                  .
+                  10.01.1970.
                 </p>
               </div>
             </div>
@@ -98,9 +98,9 @@ exports[`View Booking.vue without water equipment Matches snapshot 1`] = `
                   This report concerns your trip to
                   <span class="capitalize">lyngli</span>
                   from
-
+                  01.01.1970
                   to
-                  .
+                  10.01.1970.
                 </p>
               </div>
             </div>

@@ -34,7 +34,9 @@ describe('View Booking.vue', () => {
 
   describe('with water equipment', () => {
     beforeEach(async () => {
-      const response = { data: { booking: { koie: 'flåkoia' } } };
+      const response = {
+        data: { booking: { koie: 'flåkoia', arrival_date: '1970-01-01', departure_date: '1970-01-10' } },
+      };
       mockAxios.mockResponse(response);
       await flushPromises();
     });
@@ -116,7 +118,9 @@ describe('View Booking.vue', () => {
 
   describe('without water equipment', () => {
     beforeEach(async () => {
-      const response = { data: { booking: { koie: 'lyngli' } } };
+      const response = {
+        data: { booking: { koie: 'lyngli', arrival_date: '1970-01-01', departure_date: '1970-01-10' } },
+      };
       mockAxios.mockResponse(response);
       await flushPromises();
     });
