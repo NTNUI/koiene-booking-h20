@@ -21,18 +21,19 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import { formatDate } from '@/utils/dates';
 
 export default Vue.extend({
   name: 'ReportFirstStep',
   computed: {
-    koie() {
+    koie(): string {
       return this.$store.state.report.bookingInfo.koie;
     },
-    fromDate() {
-      return this.$store.state.report.bookingInfo.from_date;
+    fromDate(): string {
+      return formatDate(this.$store.state.report.bookingInfo.from_date, 'DD.MM.YYYY');
     },
-    toDate() {
-      return this.$store.state.report.bookingInfo.to_date;
+    toDate(): string {
+      return formatDate(this.$store.state.report.bookingInfo.to_date, 'DD.MM.YYYY');
     },
   },
 });
