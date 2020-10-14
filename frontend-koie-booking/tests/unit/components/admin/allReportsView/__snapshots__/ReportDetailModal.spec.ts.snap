@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component ReportDetailModal Matches snapshot 1`] = `
+<div role="dialog" class="v-dialog__container">
+  <div role="document" tabindex="0" class="v-dialog__content v-dialog__content--active" style="z-index: 202;">
+    <div class="v-dialog v-dialog--active v-dialog--persistent" style="transform-origin: center center; width: 300px;">
+      <div class="v-card v-sheet theme--light">
+        <div class="v-card__title headline">
+          test
+        </div>
+        <div class="v-card__actions">
+          <div class="spacer"></div> <button type="button" class="v-btn v-btn--flat v-btn--text theme--light v-size--default green--text text--darken-1"><span class="v-btn__content">
+        Lukk
+      </span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
