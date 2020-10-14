@@ -184,7 +184,6 @@ def test_reports_filter_list_succeeds_as_koie_admin(
     request = request_factory.get(f"/koie/reports/{slug}")
     force_authenticate(request, user=user)
     response = get_response(request=request, user=user, koie_slug=slug)
-    print(f"status code: {response.status_code}, details: {response.data}")
 
     assert response.status_code == 200
 

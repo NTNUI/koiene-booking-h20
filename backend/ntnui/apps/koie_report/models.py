@@ -106,8 +106,8 @@ class KoieReportModel(models.Model):
         ]
 
         for field in equipment_fields:
-            acc = equipment_status.get(str(field), None)
-            if acc:
+            accumulated = equipment_status.get(str(field), None)
+            if accumulated:
                 equipment_status[str(field)] += 1
             else:
                 equipment_status[str(field)] = 1
