@@ -1,5 +1,6 @@
 // rootState = generic type, defines the root state type
 import AdminBooking, { AdminBookingDictionary } from '@/types/admin/AdminBooking';
+import { AdminReportKoieDictionary } from '@/types/admin/AdminReports';
 
 export interface RootState {
   version: string;
@@ -133,6 +134,7 @@ export interface CreateBookingInfo {
   koie: string;
   from_date: string;
   to_date: string;
+  guests: Array<Guest>;
   guests_member: number;
   guests_not_member: number;
 }
@@ -167,4 +169,10 @@ export interface Guest {
 export interface AdminBookingsState {
   cabinsWithBookings: AdminBookingDictionary;
   startDate: string;
+}
+
+export interface AdminReportsState {
+  chosenCabin: string;
+  expanded: boolean;
+  cabins: AdminReportKoieDictionary;
 }

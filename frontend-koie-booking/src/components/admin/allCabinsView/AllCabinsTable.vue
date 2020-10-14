@@ -60,7 +60,7 @@ export default Vue.extend({
           align: 'start',
         },
         {
-          text: startDate + '\n (' + formatDate(startDate, 'dddd') + ')',
+          text: formatDate(startDate, 'dddd D. MMMM YYYY'),
           sortable: true,
           value: startDate,
           align: 'center',
@@ -69,7 +69,7 @@ export default Vue.extend({
       for (let i = 1; i < 7; i++) {
         const date = addToDate(startDate, i, 'day');
         const header: Header = {
-          text: date + '\n (' + formatDate(date, 'dddd') + ')',
+          text: formatDate(date, 'dddd D. MMMM YYYY'),
           sortable: true,
           value: date,
           align: 'center',

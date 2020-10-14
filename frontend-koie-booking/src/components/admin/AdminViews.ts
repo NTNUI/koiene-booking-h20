@@ -1,6 +1,6 @@
 import { AdminView } from '@/types/admin/AdminView';
 import AllCabinsView from '@/components/admin/allCabinsView/AllCabinsView.vue';
-import Reports from '@/components/admin/reports/Reports.vue';
+import AllReportsView from '@/components/admin/allReportsView/AllReportsView.vue';
 
 const adminViews: Array<AdminView> = [
   {
@@ -13,7 +13,7 @@ const adminViews: Array<AdminView> = [
     id: 'reports',
     title: 'Rapporter',
     icon: 'file-document-outline',
-    component: Reports,
+    component: AllReportsView,
   },
 ];
 

@@ -9,10 +9,9 @@
           mandatory
           required
           :color="$scssVars.globalColorBackgroundLight"
-          @change="setSmokeDetectorIsWorking"
         >
-          <v-radio :label="$t('report.smoke_detector_working')"></v-radio>
-          <v-radio :label="$t('report.smoke_detector_not_working')"></v-radio>
+          <v-radio :value="true" :label="$t('report.smoke_detector_working')"></v-radio>
+          <v-radio :value="false" :label="$t('report.smoke_detector_not_working')"></v-radio>
         </v-radio-group>
       </v-layout>
     </v-layout>
@@ -75,7 +74,6 @@
           :label="$t('report.other_faults_label')"
           :placeholder="$t('report.other_faults_placeholder')"
           :class="$style.otherFaultsField"
-          @change="setOtherFaults"
         />
       </v-layout>
     </v-layout>
@@ -94,7 +92,6 @@ export default Vue.extend({
   data(): ReportThirdStepData {
     return {
       validForm: true,
-      smokeDetectorIsWorking: 0,
       equipment: [
         {
           displayName: this.$t('report.equipment.gas_burner_primus'),
@@ -132,20 +129,31 @@ export default Vue.extend({
           mutation: 'setFireExtinguisher',
         },
       ],
-      otherFaults: '',
     };
   },
-  methods: {
-    setSmokeDetectorIsWorking() {
-      this.$store.commit('report/setSmokeDetectorIsWorking', !this.smokeDetectorIsWorking);
-      this.$store.commit('report/setEdited', true);
+  computed: {
+    smokeDetectorIsWorking: {
+      get() {
+        return this.$store.state.report.reportData.smoke_detector_is_working;
+      },
+      set(value: boolean) {
+        this.$store.commit('report/setSmokeDetectorIsWorking', value);
+        this.$store.commit('report/setEdited', true);
+      },
     },
+    otherFaults: {
+      get() {
+        return this.$store.state.report.reportData.other_faults;
+      },
+      set(value: string) {
+        this.$store.commit('report/setOtherFaults', value);
+        this.$store.commit('report/setEdited', true);
+      },
+    },
+  },
+  methods: {
     setEquipment(mutation: string, equipmentStatus: number) {
       this.$store.commit(`report/${mutation}`, equipmentStatus);
-      this.$store.commit('report/setEdited', true);
-    },
-    setOtherFaults() {
-      this.$store.commit('report/setOtherFaults', this.otherFaults);
       this.$store.commit('report/setEdited', true);
     },
   },

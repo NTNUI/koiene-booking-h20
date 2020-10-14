@@ -1,0 +1,10 @@
+Hi!
+We hope your trip to {{ booking.koie.name }} has been fun. Today is the final day of your stay so here is some important information:
+
+To make sure that all cabins have what they need, we need you to submit a form on what equipment is working and what is not, so that we may fix or replace what is missing before the next trip. The form is found here: http://localhost:8080/report/{{id}}. Please go through the checklist and submit what you see.
+Equipment to check:
+- Does the smoke detector work?
+- How much wood is left?
+- How much gas is left?
+
+ We appreciate your help and hope you had a happy stay!

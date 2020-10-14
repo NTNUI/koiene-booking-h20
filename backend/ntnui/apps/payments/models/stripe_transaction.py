@@ -105,7 +105,6 @@ class StripeTransaction(models.Model):
         Sends a request to Stripe to create a charge. If successful both token_id and charge_id
         will be saved.
         """
-
         charge = stripe.Charge.create(
             api_key=payment_key,
             amount=amount,

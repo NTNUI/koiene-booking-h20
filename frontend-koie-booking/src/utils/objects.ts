@@ -6,3 +6,14 @@ export const renameKey = (object: any, key: string, newKey: string): any => {
   object[newKey] = value;
   return object;
 };
+
+export const sortObjectByKey = (unordered: any) => {
+  let ordered: any;
+  ordered = {};
+  Object.keys(unordered)
+    .sort()
+    .forEach(function(key) {
+      ordered[key] = unordered[key];
+    });
+  return ordered;
+};

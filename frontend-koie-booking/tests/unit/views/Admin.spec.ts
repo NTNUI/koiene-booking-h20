@@ -1,42 +1,26 @@
-import Vue, { VueConstructor } from 'vue';
-import Vuetify, { Vuetify as VuetifyType } from 'vuetify';
-import Vuex, { Store } from 'vuex';
-import store, { storeConfig } from '@/store';
-import { cloneDeep } from 'lodash';
-import scssVars from '@/styles/variables.scss';
+import Vue from 'vue';
+import Vuetify from 'vuetify';
 import mockAxios from 'jest-mock-axios';
 
 Vue.use(Vuetify);
 
 // Utilities
-import { mount, createLocalVue, Wrapper, shallowMount, ThisTypedShallowMountOptions } from '@vue/test-utils';
+import { Wrapper, ThisTypedShallowMountOptions } from '@vue/test-utils';
 
 // Components or views
 import Admin from '@/views/Admin.vue';
 import { RootState } from '@/store/types';
 import SideBar from '@/components/admin/sideBar/SideBar.vue';
 import adminViews from '@/components/admin/AdminViews';
+import { createShallowWrapper, createWrapper } from '../utils';
 
 describe('View Admin.vue', () => {
   let wrapper: Wrapper<any>;
-  let localVue: VueConstructor<Vue>;
-  let vuetify: VuetifyType;
-  let store: Store<RootState>;
   let wrapperOptions: ThisTypedShallowMountOptions<any>;
 
   beforeEach(() => {
-    localVue = createLocalVue();
-    vuetify = new Vuetify();
-    localVue.use(Vuetify);
-    localVue.use(Vuex);
-    store = new Vuex.Store(cloneDeep(storeConfig));
-    localVue.prototype.$scssVars = scssVars;
-
     wrapperOptions = {
       sync: false,
-      localVue,
-      vuetify,
-      store,
       computed: {
         isAdmin() {
           return true;
@@ -44,7 +28,7 @@ describe('View Admin.vue', () => {
       },
     };
 
-    wrapper = mount(Admin, wrapperOptions);
+    wrapper = createWrapper(Admin, wrapperOptions);
   });
 
   afterEach(() => {
@@ -52,7 +36,7 @@ describe('View Admin.vue', () => {
   });
 
   it('Matches snapshot', () => {
-    const wrapper = shallowMount(Admin, wrapperOptions);
+    const wrapper = createShallowWrapper(Admin, wrapperOptions);
     // Assert
     expect(wrapper).toMatchSnapshot();
   });

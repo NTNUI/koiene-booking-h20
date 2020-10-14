@@ -5,13 +5,7 @@
       <v-layout :class="$style.separator">
         <h3 class="py-4" :class="$style.supplyRegistration">{{ $t('report.water_equipment.boat') }}</h3>
         <v-layout class="px-4">
-          <v-radio-group
-            v-model="boat_status"
-            mandatory
-            required
-            :color="$scssVars.globalColorBackgroundLight"
-            @change="setBoatStatus"
-          >
+          <v-radio-group v-model="boatStatus" mandatory required :color="$scssVars.globalColorBackgroundLight">
             <v-radio :value="3" :label="$t('report.water_equipment.missing_boat')"></v-radio>
             <v-radio :value="1" :label="$t('report.water_equipment.broken')"></v-radio>
             <v-radio :value="2" :label="$t('report.water_equipment.missing_paddles')"></v-radio>
@@ -23,13 +17,7 @@
       <v-layout :class="$style.separator">
         <h3 class="py-4" :class="$style.supplyRegistration">{{ $t('report.water_equipment.canoe') }}</h3>
         <v-layout class="px-4">
-          <v-radio-group
-            v-model="canoe_status"
-            mandatory
-            required
-            :color="$scssVars.globalColorBackgroundLight"
-            @change="setCanoeStatus"
-          >
+          <v-radio-group v-model="canoeStatus" mandatory required :color="$scssVars.globalColorBackgroundLight">
             <v-radio :value="3" :label="$t('report.water_equipment.missing_canoe')"></v-radio>
             <v-radio :value="1" :label="$t('report.water_equipment.broken')"></v-radio>
             <v-radio :value="2" :label="$t('report.water_equipment.missing_paddles')"></v-radio>
@@ -41,13 +29,7 @@
       <v-layout :class="$style.separator">
         <h3 class="py-4" :class="$style.supplyRegistration">{{ $t('report.water_equipment.life_jackets') }}</h3>
         <v-layout class="px-4">
-          <v-radio-group
-            v-model="life_jackets_status"
-            mandatory
-            required
-            :color="$scssVars.globalColorBackgroundLight"
-            @change="setLifeJacketsStatus"
-          >
+          <v-radio-group v-model="lifeJacketsStatus" mandatory required :color="$scssVars.globalColorBackgroundLight">
             <v-radio :value="2" :label="$t('report.water_equipment.missing_life_jackets')"></v-radio>
             <v-radio :value="1" :label="$t('report.water_equipment.broken')"></v-radio>
             <v-radio :value="3" :label="$t('report.water_equipment.unsure')"></v-radio>
@@ -63,7 +45,6 @@
             :label="$t('report.general_feedback_label')"
             :placeholder="$t('report.general_feedback_placeholder')"
             :class="$style.feedbackField"
-            @change="setFeedback"
           />
         </v-layout>
       </v-layout>
@@ -80,28 +61,44 @@ export default Vue.extend({
   data(): ReportFourthStepData {
     return {
       validForm: true,
-      boat_status: 0,
-      canoe_status: 0,
-      life_jackets_status: 0,
-      feedback: '',
     };
   },
-  methods: {
-    setBoatStatus() {
-      this.$store.commit('report/setBoatStatus', this.boat_status);
-      this.$store.commit('report/setEdited', true);
+  computed: {
+    boatStatus: {
+      get() {
+        return this.$store.state.report.reportData.boat_status;
+      },
+      set(value: number) {
+        this.$store.commit('report/setBoatStatus', value);
+        this.$store.commit('report/setEdited', true);
+      },
     },
-    setCanoeStatus() {
-      this.$store.commit('report/setCanoeStatus', this.canoe_status);
-      this.$store.commit('report/setEdited', true);
+    canoeStatus: {
+      get() {
+        return this.$store.state.report.reportData.canoe_status;
+      },
+      set(value: number) {
+        this.$store.commit('report/setCanoeStatus', value);
+        this.$store.commit('report/setEdited', true);
+      },
     },
-    setLifeJacketsStatus() {
-      this.$store.commit('report/setLifeJacketsStatus', this.life_jackets_status);
-      this.$store.commit('report/setEdited', true);
+    lifeJacketsStatus: {
+      get() {
+        return this.$store.state.report.reportData.life_jackets_status;
+      },
+      set(value: number) {
+        this.$store.commit('report/setLifeJacketsStatus', value);
+        this.$store.commit('report/setEdited', true);
+      },
     },
-    setFeedback() {
-      this.$store.commit('report/setFeedback', this.feedback);
-      this.$store.commit('report/setEdited', true);
+    feedback: {
+      get() {
+        return this.$store.state.report.reportData.feedback;
+      },
+      set(value: string) {
+        this.$store.commit('report/setFeedback', value);
+        this.$store.commit('report/setEdited', true);
+      },
     },
   },
 });
