@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component AllReportsTable Matches snapshot 1`] = `
+<div class="v-data-table theme--light" style="width: 100%;">
+  <div class="v-data-table__wrapper">
+    <table>
+      <colgroup>
+        <col class="">
+        <col class="">
+        <col class="">
+        <col class="">
+        <col class="">
+        <col class="">
+        <col class="">
+        <col class="">
+        <col class="">
+        <col class="">
+        <col class="">
+        <col class="">
+        <col class="">
+      </colgroup>
+      <thead class="v-data-table-header">
+        <tr>
+          <th role="columnheader" scope="col" aria-label="Tidsmerke: Not sorted. Activate to sort ascending." aria-sort="none" class="text-center sortable"><span>Tidsmerke</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size: 18px;"></i></th>
+          <th role="columnheader" scope="col" aria-label="Koie: Not sorted. Activate to sort ascending." aria-sort="none" class="text-center sortable"><span>Koie</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size: 18px;"></i></th>
+          <th role="columnheader" scope="col" aria-label="Turdato: Not sorted. Activate to sort ascending." aria-sort="none" class="text-center sortable"><span>Turdato</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size: 18px;"></i></th>
+          <th role="columnheader" scope="col" aria-label="Gassbestand: Not sorted. Activate to sort ascending." aria-sort="none" class="text-center sortable"><span>Gassbestand</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size: 18px;"></i></th>
+          <th role="columnheader" scope="col" aria-label="Vedstokker: Not sorted. Activate to sort ascending." aria-sort="none" class="text-center sortable"><span>Vedstokker</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size: 18px;"></i></th>
+          <th role="columnheader" scope="col" aria-label="Opphuggd ved: Not sorted. Activate to sort ascending." aria-sort="none" class="text-center sortable"><span>Opphuggd ved</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size: 18px;"></i></th>
+          <th role="columnheader" scope="col" aria-label="Båt: Not sorted. Activate to sort ascending." aria-sort="none" class="text-center sortable"><span>Båt</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size: 18px;"></i></th>
+          <th role="columnheader" scope="col" aria-label="Kano: Not sorted. Activate to sort ascending." aria-sort="none" class="text-center sortable"><span>Kano</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size: 18px;"></i></th>
+          <th role="columnheader" scope="col" aria-label="Redningsvest: Not sorted. Activate to sort ascending." aria-sort="none" class="text-center sortable"><span>Redningsvest</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size: 18px;"></i></th>
+          <th role="columnheader" scope="col" aria-label="Røykvarsler: Not sorted. Activate to sort ascending." aria-sort="none" class="text-center sortable"><span>Røykvarsler</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size: 18px;"></i></th>
+          <th role="columnheader" scope="col" aria-label="Utstyr" class="text-center"><span>Utstyr</span></th>
+          <th role="columnheader" scope="col" aria-label="Andre utstyrsfeil" class="text-center"><span>Andre utstyrsfeil</span></th>
+          <th role="columnheader" scope="col" aria-label="Tilbakemelding" class="text-center"><span>Tilbakemelding</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="v-data-table__empty-wrapper">
+          <td colspan="13">Det skjedde noe feil da vi prøvde å hente rapporter</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
