@@ -21,7 +21,7 @@ describe('View Booking.vue', () => {
   let wrapper: Wrapper<any>;
   let wrapperOptions: ThisTypedShallowMountOptions<any>;
 
-  beforeEach(async () => {
+  beforeEach(() => {
     wrapperOptions = {
       mocks: {
         $route: {
@@ -29,85 +29,169 @@ describe('View Booking.vue', () => {
         },
       },
     };
-
     wrapper = createWrapper(Report, wrapperOptions);
-
-    const response = { data: { booking: {} } };
-    mockAxios.mockResponse(response);
-    await flushPromises();
   });
 
-  afterEach(() => {
-    mockAxios.reset();
-  });
+  describe('with water equipment', () => {
+    beforeEach(async () => {
+      const response = { data: { booking: { koie: 'flåkoia' } } };
+      mockAxios.mockResponse(response);
+      await flushPromises();
+    });
 
-  it('Matches snapshot', () => {
-    expect(wrapper).toMatchSnapshot();
-  });
+    afterEach(() => {
+      mockAxios.reset();
+    });
 
-  it('Buttons should be hidden if report is loading', () => {
-    expect(wrapper.vm.$el.querySelector('.btnWrapper').style.display).toBe('');
-    wrapperOptions = {
-      mocks: {
-        $route: {
-          params: { id: 1 },
-        },
-        computed: {
-          isLoading() {
-            return true;
+    it('Matches snapshot', () => {
+      expect(wrapper).toMatchSnapshot();
+    });
+
+    it('Buttons should be hidden if report is loading', () => {
+      expect(wrapper.vm.$el.querySelector('.btnWrapper').style.display).toBe('');
+      wrapperOptions = {
+        mocks: {
+          $route: {
+            params: { id: 1 },
+          },
+          computed: {
+            isLoading() {
+              return true;
+            },
           },
         },
-      },
-    };
-    wrapper = createWrapper(Report, wrapperOptions);
-    expect(wrapper.vm.$el.querySelector('.btnWrapper').style.display).toBe('none');
-  });
+      };
+      wrapper = createWrapper(Report, wrapperOptions);
+      expect(wrapper.vm.$el.querySelector('.btnWrapper').style.display).toBe('none');
+    });
 
-  it('Buttons should be hidden if there is an api error', () => {
-    expect(wrapper.vm.$el.querySelector('.btnWrapper').style.display).toBe('');
-    wrapperOptions = {
-      mocks: {
-        $route: {
-          params: { id: 1 },
-        },
-        computed: {
-          apiError() {
-            return true;
+    it('Buttons should be hidden if there is an api error', () => {
+      expect(wrapper.vm.$el.querySelector('.btnWrapper').style.display).toBe('');
+      wrapperOptions = {
+        mocks: {
+          $route: {
+            params: { id: 1 },
+          },
+          computed: {
+            apiError() {
+              return true;
+            },
           },
         },
-      },
-    };
-    wrapper = createWrapper(Report, wrapperOptions);
-    expect(wrapper.vm.$el.querySelector('.btnWrapper').style.display).toBe('none');
+      };
+      wrapper = createWrapper(Report, wrapperOptions);
+      expect(wrapper.vm.$el.querySelector('.btnWrapper').style.display).toBe('none');
+    });
+
+    it('Button_next renders next report step', () => {
+      wrapper.find('[data-test="btnNext"]').trigger('click');
+
+      expect(wrapper.contains(ReportSecondStep)).toBe(true);
+      expect(wrapper.contains(ReportFirstStep)).toBe(false);
+    });
+
+    it('Button_prev renders prev report step', () => {
+      wrapper.find('[data-test="btnNext"]').trigger('click');
+      wrapper.find('[data-test="btnPrev"]').trigger('click');
+
+      expect(wrapper.contains(ReportFirstStep)).toBe(true);
+      expect(wrapper.contains(ReportSecondStep)).toBe(false);
+    });
+
+    it('Button_done renders thank you step', async () => {
+      const btnNext = wrapper.find('[data-test="btnNext"]');
+      btnNext.trigger('click');
+      btnNext.trigger('click');
+      btnNext.trigger('click');
+      wrapper.find('[data-test="btnDone"]').trigger('click');
+
+      const response = { data: {} };
+      mockAxios.mockResponse(response);
+      await flushPromises();
+
+      expect(wrapper.contains(ThankYouStep)).toBe(true);
+      expect(wrapper.contains(ReportFourthStep)).toBe(false);
+    });
   });
 
-  it('Button_next renders next report step', () => {
-    wrapper.find('[data-test="btnNext"]').trigger('click');
+  describe('without water equipment', () => {
+    beforeEach(async () => {
+      const response = { data: { booking: { koie: 'lyngli' } } };
+      mockAxios.mockResponse(response);
+      await flushPromises();
+    });
 
-    expect(wrapper.contains(ReportSecondStep)).toBe(true);
-    expect(wrapper.contains(ReportFirstStep)).toBe(false);
-  });
+    afterEach(() => {
+      mockAxios.reset();
+    });
 
-  it('Button_prev renders prev report step', () => {
-    wrapper.find('[data-test="btnNext"]').trigger('click');
-    wrapper.find('[data-test="btnPrev"]').trigger('click');
+    it('Matches snapshot', () => {
+      expect(wrapper).toMatchSnapshot();
+    });
 
-    expect(wrapper.contains(ReportFirstStep)).toBe(true);
-    expect(wrapper.contains(ReportSecondStep)).toBe(false);
-  });
+    it('Buttons should be hidden if report is loading', () => {
+      expect(wrapper.vm.$el.querySelector('.btnWrapper').style.display).toBe('');
+      wrapperOptions = {
+        mocks: {
+          $route: {
+            params: { id: 1 },
+          },
+          computed: {
+            isLoading() {
+              return true;
+            },
+          },
+        },
+      };
+      wrapper = createWrapper(Report, wrapperOptions);
+      expect(wrapper.vm.$el.querySelector('.btnWrapper').style.display).toBe('none');
+    });
 
-  it('Button_done renders thank you step', async () => {
-    const btnNext = wrapper.find('[data-test="btnNext"]');
-    btnNext.trigger('click');
-    btnNext.trigger('click');
-    btnNext.trigger('click');
-    wrapper.find('[data-test="btnDone"]').trigger('click');
+    it('Buttons should be hidden if there is an api error', () => {
+      expect(wrapper.vm.$el.querySelector('.btnWrapper').style.display).toBe('');
+      wrapperOptions = {
+        mocks: {
+          $route: {
+            params: { id: 1 },
+          },
+          computed: {
+            apiError() {
+              return true;
+            },
+          },
+        },
+      };
+      wrapper = createWrapper(Report, wrapperOptions);
+      expect(wrapper.vm.$el.querySelector('.btnWrapper').style.display).toBe('none');
+    });
 
-    const response = { data: {} };
-    mockAxios.mockResponse(response);
-    await flushPromises();
+    it('Button_next renders next report step', () => {
+      wrapper.find('[data-test="btnNext"]').trigger('click');
 
-    expect(wrapper.contains(ThankYouStep)).toBe(true);
-    expect(wrapper.contains(ReportFourthStep)).toBe(false);
+      expect(wrapper.contains(ReportSecondStep)).toBe(true);
+      expect(wrapper.contains(ReportFirstStep)).toBe(false);
+    });
+
+    it('Button_prev renders prev report step', () => {
+      wrapper.find('[data-test="btnNext"]').trigger('click');
+      wrapper.find('[data-test="btnPrev"]').trigger('click');
+
+      expect(wrapper.contains(ReportFirstStep)).toBe(true);
+      expect(wrapper.contains(ReportSecondStep)).toBe(false);
+    });
+
+    it('Button_done renders thank you step', async () => {
+      const btnNext = wrapper.find('[data-test="btnNext"]');
+      btnNext.trigger('click');
+      btnNext.trigger('click');
+      wrapper.find('[data-test="btnDone"]').trigger('click');
+
+      const response = { data: {} };
+      mockAxios.mockResponse(response);
+      await flushPromises();
+
+      expect(wrapper.contains(ThankYouStep)).toBe(true);
+      expect(wrapper.contains(ReportThirdStep)).toBe(false);
+    });
   });
 });
