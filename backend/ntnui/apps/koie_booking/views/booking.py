@@ -36,7 +36,6 @@ class BookingViewSet(
                 )
                 booking.booking_payment.price = booking.get_total_price()
                 booking.save()
-                print(booking.get_uuid())
                 return Response(
                     {
                         "booking": BookingSerializer(
