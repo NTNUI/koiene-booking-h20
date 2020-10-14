@@ -115,11 +115,11 @@ def request_factory():
     return APIRequestFactory()
 
 
-def get_response(request, user=None, booking_id=None):
+def get_response(request, user=None, booking_uuid=None):
     force_authenticate(request_factory, user=user)
-    if booking_id:
+    if booking_uuid:
         view = ReportViewSet.as_view({"post": "create"})
-        return view(request, booking_id)
+        return view(request, booking_uuid)
     else:
         view = ReportViewSet.as_view({"get": "list"})
 

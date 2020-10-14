@@ -20,7 +20,7 @@ def test_send_confirmation_mail(booking, mailoutbox):
 
     context = {
         "booking": booking,
-        "uuid": booking.uuid,
+        "id": booking.uuid,
     }
     mail_body_plain = render_to_string("booking_confirmation.txt", context)
 
@@ -39,7 +39,7 @@ def test_koie_information_mail(booking, mailoutbox):
 
     context = {
         "koie": booking.koie,
-        "uuid": booking.uuid,
+        "id": booking.uuid,
     }
 
     mail_body_plain = render_to_string("koie_information.txt", context)
@@ -59,7 +59,7 @@ def test_reminder_mail(booking, mailoutbox):
 
     context = {
         "koie": booking.koie,
-        "uuid": booking.uuid,
+        "id": booking.uuid,
     }
 
     mail_body_plain = render_to_string("checklist_reminder.txt", context)
