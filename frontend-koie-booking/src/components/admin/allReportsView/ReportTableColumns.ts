@@ -79,7 +79,7 @@ const reportTableColumns: { [value: string]: ReportColumn } = {
     align: 'center',
     sortable: true,
     value: 'gas',
-    colorAndText: [
+    colorAndTextOptions: [
       {
         color: red,
         text: 'Tomt',
@@ -95,42 +95,42 @@ const reportTableColumns: { [value: string]: ReportColumn } = {
     align: 'center',
     sortable: true,
     value: 'logs',
-    colorAndText: woodOptions,
+    colorAndTextOptions: woodOptions,
   },
   firewood: {
     text: 'Opphuggd ved',
     align: 'center',
     sortable: true,
     value: 'firewood',
-    colorAndText: woodOptions,
+    colorAndTextOptions: woodOptions,
   },
   boat: {
     text: 'Båt',
     align: 'center',
     sortable: true,
     value: 'boat',
-    colorAndText: boatOptions,
+    colorAndTextOptions: boatOptions,
   },
   canoe: {
     text: 'Kano',
     align: 'center',
     sortable: true,
     value: 'canoe',
-    colorAndText: boatOptions,
+    colorAndTextOptions: boatOptions,
   },
   lifeWest: {
     text: 'Redningsvest',
     align: 'center',
     sortable: true,
     value: 'lifeWest',
-    colorAndText: lifeWestOptions,
+    colorAndTextOptions: lifeWestOptions,
   },
   smokeDetector: {
     text: 'Røykvarsler',
     align: 'center',
     sortable: true,
     value: 'smokeDetector',
-    colorAndText: [
+    colorAndTextOptions: [
       {
         color: red,
         text: 'Defekt',
