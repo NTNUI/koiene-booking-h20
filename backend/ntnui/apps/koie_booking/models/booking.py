@@ -1,3 +1,4 @@
+import uuid
 from django.db import models
 from enumchoicefield import EnumChoiceField
 
@@ -12,7 +13,7 @@ class BookingModel(models.Model):
     user = models.ForeignKey(UserModel, on_delete=models.CASCADE)
     koie = models.ForeignKey(KoieModel, null=True, on_delete=models.CASCADE)
     contact_email = models.CharField(max_length=40, default="")
-
+    uuid = models.UUIDField(primary_key=False, default=uuid.uuid4, editable=False)
     arrival_date = models.DateField()
     departure_date = models.DateField()
     guests_member = models.PositiveIntegerField(null=False, default=1)
@@ -35,6 +36,8 @@ class BookingModel(models.Model):
         guests = self.guests_member + self.guests_not_member
         return f"Reservation for {self.koie.name} at {self.arrival_date} for {guests} guests"
 
+    def get_uuid(self):
+        return self.uuid
     def get_number_of_nights(self):
         return (self.departure_date - self.arrival_date).days
 

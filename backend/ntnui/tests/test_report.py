@@ -132,8 +132,8 @@ def test_create_report_with_invalid_data(request_factory, booking, invalid_repor
     Tests that the response returns bad request (status code 400) when invalid
     data is passed in
     """
-    request = request_factory.post(f"/koie/reports/{booking.id}", invalid_report_data)
-    response = get_response(request=request, booking_id=booking.id)
+    request = request_factory.post(f"/koie/reports/{booking.uuid}", invalid_report_data)
+    response = get_response(request=request, booking_uuid=booking.uuid)
     assert response.status_code == 400
 
 
@@ -142,8 +142,8 @@ def test_create_report_with_valid_data(request_factory, booking, valid_report_da
     """
     Test successfull post request when valid data are passed in.
     """
-    request = request_factory.post(f"/koie/reports/{booking.id}", valid_report_data)
-    response = get_response(request=request, booking_id=booking.id)
+    request = request_factory.post(f"/koie/reports/{booking.uuid}", valid_report_data)
+    response = get_response(request=request, booking_uuid=booking.uuid)
     assert response.status_code == 201
 
 

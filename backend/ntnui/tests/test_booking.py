@@ -69,21 +69,21 @@ def test_list_booking(request_factory, booking_batch):
     request = request_factory.get(f"/koie/koie/booking")
     response = get_response(request=request)
 
-    first_id = response.data[0]["id"]
+    first_id = response.data[0]["uuid"]
 
     assert response.status_code == 200
     assert len(response.data) == 3
-    assert first_id == booking_batch[0].id
+    assert first_id == booking_batch[0].uuid
 
 
 @pytest.mark.django_db
 def test_retrieve_booking_from_id(request_factory, booking):
 
-    request = request_factory.get(f"/koie/koie/booking/{booking.id}/")
+    request = request_factory.get(f"/koie/koie/booking/{booking.uuid}/")
     response = get_response(request=request, user=None)
-    id = response.data[0]["id"]
+    id = response.data[0]["iuud"]
 
-    assert id == booking.id
+    assert id == booking.uuid
     assert response.status_code == 200
 
 

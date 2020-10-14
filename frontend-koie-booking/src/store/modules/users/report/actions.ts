@@ -13,7 +13,7 @@ export const actions = {
     }
     ctx.commit('setLoadingStatus', true);
     axios
-      .post(Vue.prototype.$apiUrl + `/koie/reports/${reportData.booking_id}`, reportData, { headers })
+      .post(Vue.prototype.$apiUrl + `/koie/reports/${reportData.booking_uuid}`, reportData, { headers })
       .then((res) => {
         ctx.commit('setLoadingStatus', false);
       })
@@ -23,7 +23,7 @@ export const actions = {
         throw new Error(`API ${error}`);
       });
   },
-  FETCH_BOOKING: async (ctx: any, bookingID: number): Promise<void> => {
+  FETCH_BOOKING: async (ctx: any, bookingID: string): Promise<void> => {
     const headers = { 'content-type': 'application/json', Authorization: '' };
     const authToken = store.getters['auth/getToken'];
     if (authToken) {

@@ -53,6 +53,7 @@ def test_contains_expected_fields(serializer):
         "price",
         "koie",
         "user",
+        "uuid",
         "booking_transaction_id",
         "arrival_date",
         "departure_date",

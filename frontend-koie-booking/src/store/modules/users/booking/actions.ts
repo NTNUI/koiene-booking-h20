@@ -58,6 +58,7 @@ export const actions = {
       .then((res) => {
         ctx.commit('setBooking', res.data);
         ctx.commit('setLoadingStatus', false);
+        console.log(res.data.uuid);
       })
       .catch((error) => {
         ctx.commit('setError', true);

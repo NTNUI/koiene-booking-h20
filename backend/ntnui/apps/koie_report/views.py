@@ -31,7 +31,7 @@ class ReportViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
 
     def create(self, request, pk):
         serializer = ReportSerializer(data=request.data)
-        booking = BookingModel.objects.get(pk=pk)
+        booking = BookingModel.objects.get(uuid=pk)
         if serializer.is_valid():
             report = KoieReportModel.objects.create(
                 booking=booking, date_created_at=now(), **serializer.validated_data

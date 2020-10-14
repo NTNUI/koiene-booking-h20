@@ -1,3 +1,4 @@
+import uuid
 from django.core.exceptions import ValidationError
 from rest_framework import mixins, viewsets
 from rest_framework.response import Response
@@ -34,6 +35,7 @@ class BookingViewSet(
                 )
                 booking.booking_payment.price = booking.get_total_price()
                 booking.save()
+                print(booking.get_uuid())
                 return Response(
                     {
                         "booking": BookingSerializer(
@@ -48,7 +50,7 @@ class BookingViewSet(
 
     def retrieve(self, request, pk):
         try:
-            booking = self.queryset.get(id=pk)
+            booking = self.queryset.get(uuid=uuid.UUID(hex=pk))
             serializer = BookingSerializer(booking, context={"request": request})
             return Response({"booking": serializer.data})
         except BookingModel.DoesNotExist:

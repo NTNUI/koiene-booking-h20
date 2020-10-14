@@ -43,6 +43,8 @@ export const mutations: MutationTree<BookingState> = {
   },
   setBooking(state, booking: BookingInfo) {
     state.bookingData = booking;
+    console.log(booking.booking_transaction_id);
+    console.log(booking.uuid);
   },
   setError(state, error: boolean) {
     state.error = error;

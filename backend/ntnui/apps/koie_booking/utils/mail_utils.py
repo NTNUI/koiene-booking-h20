@@ -31,7 +31,7 @@ def send_koie_information_mail(booking):
 
     subject = "Koie information"
 
-    context = {"koie": booking.koie, "id": booking.id}
+    context = {"koie": booking.koie, "uuid": booking.uuid}
 
     # Mail body.
 
@@ -51,7 +51,7 @@ def send_departure_reminder_mail(booking):
 
     subject = "Important: Cabin Checklist"
 
-    context = {"koie": booking.koie, "id": booking.id}
+    context = {"koie": booking.koie, "uuid": booking.uuid}
 
     # Mail body.
 

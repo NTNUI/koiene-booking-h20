@@ -24,6 +24,7 @@ export const state: BookingState = {
   error: false,
   bookingData: {
     id: 0,
+    uuid: '',
     user: 0,
     koie: '',
     price: 0,

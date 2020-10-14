@@ -111,7 +111,7 @@ export default Vue.extend({
   },
 
   mounted() {
-    const bookingID = Number(this.$route.params.booking_id);
+    const bookingID = String(this.$route.params.booking_uuid);
     this.step = 1;
     this.$store.commit('report/setStep', 1);
     this.$store.commit('report/setValidForm', true);

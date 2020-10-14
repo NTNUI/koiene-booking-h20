@@ -13,6 +13,7 @@ class BookingSerializer(serializers.ModelSerializer):
     koie = serializers.SlugRelatedField(
         many=False, slug_field="slug", queryset=KoieModel.objects.all()
     )
+    uuid = serializers.SerializerMethodField()
     booking_transaction_id = serializers.SerializerMethodField()
     price = serializers.SerializerMethodField()
 
@@ -24,6 +25,7 @@ class BookingSerializer(serializers.ModelSerializer):
             "price",
             "koie",
             "user",
+            "uuid",
             "booking_transaction_id",
             "arrival_date",
             "departure_date",
@@ -33,7 +35,7 @@ class BookingSerializer(serializers.ModelSerializer):
             "paid",
             "created",
         ]
-        read_only_fields = ("price", "booking_transaction_id", "user", "id", "paid", "created")
+        read_only_fields = ("price", "booking_transaction_id", "user", "id","uuid", "paid", "created")
 
     def get_booking_transaction_id(self, obj):
         """Tries to get the transaction ID, if no payment object exists it returns
@@ -45,6 +47,9 @@ class BookingSerializer(serializers.ModelSerializer):
 
     def get_price(self, obj):
         return obj.get_total_price()
+
+    def get_uuid(self,obj):
+        return obj.get_uuid()
 
     def validate_arrival_date(self, arrival_date):
         """Checks that the arrival date is not in the past when the booking is made"""
