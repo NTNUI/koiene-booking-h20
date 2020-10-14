@@ -8,5 +8,5 @@ class Command(BaseCommand):
 
     help = "Send report reminder email to all departing bookings"
 
-    def handle():
+    def handle(self):
         send_departure_report_reminder()
