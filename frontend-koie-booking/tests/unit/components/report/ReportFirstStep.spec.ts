@@ -20,16 +20,16 @@ describe('Component ReportFirstStep.vue', () => {
         $route: {
           params: { id: 1 },
         },
-        computed: {
-          koie() {
-            return 'Flåkoia';
-          },
-          fromDate() {
-            return '01.01.1970';
-          },
-          toDate() {
-            return '10.01.1970';
-          },
+      },
+      computed: {
+        koie() {
+          return 'Flåkoia';
+        },
+        fromDate() {
+          return '01.01.1970';
+        },
+        toDate() {
+          return '10.01.1970';
         },
       },
     };

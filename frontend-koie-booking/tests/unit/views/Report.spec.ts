@@ -62,10 +62,10 @@ describe('View Booking.vue', () => {
           $route: {
             params: { id: 1 },
           },
-          computed: {
-            isLoading() {
-              return true;
-            },
+        },
+        computed: {
+          isLoading() {
+            return true;
           },
         },
       };
@@ -80,10 +80,10 @@ describe('View Booking.vue', () => {
           $route: {
             params: { id: 1 },
           },
-          computed: {
-            apiError() {
-              return true;
-            },
+        },
+        computed: {
+          apiError() {
+            return true;
           },
         },
       };
@@ -146,10 +146,10 @@ describe('View Booking.vue', () => {
           $route: {
             params: { id: 1 },
           },
-          computed: {
-            isLoading() {
-              return true;
-            },
+        },
+        computed: {
+          isLoading() {
+            return true;
           },
         },
       };
@@ -164,10 +164,10 @@ describe('View Booking.vue', () => {
           $route: {
             params: { id: 1 },
           },
-          computed: {
-            apiError() {
-              return true;
-            },
+        },
+        computed: {
+          apiError() {
+            return true;
           },
         },
       };
