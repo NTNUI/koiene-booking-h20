@@ -4,8 +4,8 @@ from django.template.loader import render_to_string
 from koie_booking.factories.booking_factory import BookingFactory
 from koie_booking.utils.mail_utils import (
     send_confirmation_mail,
+    send_departure_reminder_mail,
     send_koie_information_mail,
-    send_reminder_mail,
 )
 
 
@@ -55,7 +55,7 @@ def test_reminder_mail(booking, mailoutbox):
     """
         Test the mailing function sending out info on koie
     """
-    send_reminder_mail(booking)
+    send_departure_reminder_mail(booking)
 
     context = {
         "koie": booking.koie,
