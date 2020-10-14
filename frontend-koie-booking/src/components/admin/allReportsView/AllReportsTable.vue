@@ -13,7 +13,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import reportTableHeaders from '@/components/admin/allReportsView/ReportTableHeaders.ts';
+import reportTableHeaders from '@/components/admin/allReportsView/ReportTableHeaders';
 
 export default Vue.extend({
   name: 'AllReportsTable',
