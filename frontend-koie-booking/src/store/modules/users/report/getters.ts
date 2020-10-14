@@ -3,6 +3,10 @@ import { ReportState, RootState } from '@/store/types';
 
 export const getters: GetterTree<ReportState, RootState> = {
   hasBoatEquipment(state) {
-    return ['lyngli', 'vekvessætra'].indexOf(state.bookingInfo.koie) === -1;
+    return (
+      ['flåkoia', 'heinfjordstua', 'holmsåkoia', 'holvassgamma', 'mevasskoia', 'sonvasskoia', 'stakkslettbua'].indexOf(
+        state.bookingInfo.koie
+      ) !== -1
+    );
   },
 };
