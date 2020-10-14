@@ -11,7 +11,7 @@ def send_confirmation_mail(booking):
 
     subject = "Confirmation email"
 
-    context = {"booking": booking}
+    context = {"booking": booking, "id": booking.uuid}
 
     # Mail body.
 
@@ -31,7 +31,7 @@ def send_koie_information_mail(booking):
 
     subject = "Koie information"
 
-    context = {"koie": booking.koie, "uuid": booking.uuid}
+    context = {"koie": booking.koie, "id": booking.uuid}
 
     # Mail body.
 
@@ -51,7 +51,7 @@ def send_departure_reminder_mail(booking):
 
     subject = "Important: Cabin Checklist"
 
-    context = {"koie": booking.koie, "uuid": booking.uuid}
+    context = {"koie": booking.koie, "id": booking.uuid}
 
     # Mail body.
 

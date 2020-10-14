@@ -1,4 +1,5 @@
 import uuid
+
 from django.db import models
 from enumchoicefield import EnumChoiceField
 
@@ -38,6 +39,7 @@ class BookingModel(models.Model):
 
     def get_uuid(self):
         return self.uuid
+
     def get_number_of_nights(self):
         return (self.departure_date - self.arrival_date).days
 

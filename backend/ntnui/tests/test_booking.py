@@ -81,7 +81,7 @@ def test_retrieve_booking_from_id(request_factory, booking):
 
     request = request_factory.get(f"/koie/koie/booking/{booking.uuid}/")
     response = get_response(request=request, user=None)
-    id = response.data[0]["iuud"]
+    id = response.data[0]["uuid"]
 
     assert id == booking.uuid
     assert response.status_code == 200
