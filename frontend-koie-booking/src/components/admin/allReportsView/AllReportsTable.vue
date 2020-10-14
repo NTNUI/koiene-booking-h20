@@ -7,8 +7,7 @@
     :hide-default-footer="true"
     loading-text="Henter inn rapporter"
     no-data-text="Det skjedde noe feil da vi prøvde å hente rapporter"
-  >
-  </v-data-table>
+  />
 </template>
 
 <script lang="ts">
@@ -17,7 +16,6 @@ import reportTableHeaders from '@/components/admin/allReportsView/ReportTableHea
 
 export default Vue.extend({
   name: 'AllReportsTable',
-  components: {},
   data() {
     return {
       headers: reportTableHeaders,
