@@ -14,42 +14,14 @@ from django.utils.translation import gettext as _
 
 class ReportViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
     """
-    ViewSet for getting all reports and post a koie report.
+    ViewSet for getting reports from koie_slug and post a koie report.
     """
 
     queryset = KoieReportModel.objects.all()
     serializer_class = ReportSerializer
     permission_classes = [IsKoieAdmin]
 
-    def list(self, request):
-        if IsKoieAdmin.has_object_permission(request.user, request=request, view=self):
-            reports = KoieReportModel.objects.all()
-            serializer = ReportSerializer(reports, context={"request": request}, many=True)
-            return Response(serializer.data)
-        else:
-            return Response(
-                {"detail": _("You must be a koie admin to access report information.")}, status=403
-            )
-
-    def create(self, request, pk):
-        serializer = ReportSerializer(data=request.data)
-        booking = BookingModel.objects.get(pk=pk)
-        if serializer.is_valid():
-            report = KoieReportModel.objects.create(
-                booking=booking, date_created_at=now(), **serializer.validated_data
-            )
-            report.save()
-
-            return Response({"detail": _("Report were successfully created.")}, status=201)
-        return Response(
-            {"detail": _("You have passed in invalid data. Make sure to pass valid data.")},
-            status=400,
-        )
-
-    @action(
-        url_path="", detail=True, methods=["get"], serializer_class=FilteredReportSerializer,
-    )
-    def reports_filter_list(self, request, slug):
+    def list(self, request, slug):
         """ Lists all reports for given koie_slug """
         if IsKoieAdmin.has_object_permission(request.user, request=request, view=self):
             try:
@@ -72,3 +44,19 @@ class ReportViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
             return Response(
                 {"detail": _("You must be a koie admin to access report information.")}, status=403
             )
+
+    def create(self, request, pk):
+        """ Create new report, {id} is booking_id for the booking the report is connected to """
+        serializer = ReportSerializer(data=request.data)
+        booking = BookingModel.objects.get(pk=pk)
+        if serializer.is_valid():
+            report = KoieReportModel.objects.create(
+                booking=booking, date_created_at=now(), **serializer.validated_data
+            )
+            report.save()
+
+            return Response({"detail": _("Report were successfully created.")}, status=201)
+        return Response(
+            {"detail": _("You have passed in invalid data. Make sure to pass valid data.")},
+            status=400,
+        )
