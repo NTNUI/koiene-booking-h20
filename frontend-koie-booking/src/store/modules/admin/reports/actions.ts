@@ -28,4 +28,17 @@ export const actions: ActionTree<AdminReportsState, RootState> = {
       commit('setReport', convertAPIReportToAdminReport(report));
     }
   },
+  async MOUNT_REPORTS_FOR_CABIN({ commit, dispatch }, payload: string) {
+    if (!payload) {
+      dispatch('MOUNT_REPORTS');
+      return;
+    }
+    commit('clearAllReports');
+    try {
+      const res = await axios.get(Vue.prototype.$apiUrl + '/koie/reports/' + payload);
+      console.log(res.data);
+    } catch (e) {
+      console.log(e);
+    }
+  },
 };

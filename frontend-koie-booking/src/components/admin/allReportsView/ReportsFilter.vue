@@ -56,6 +56,7 @@ export default Vue.extend({
   methods: {
     setChosenCabin(cabin: string) {
       this.$store.commit('adminReports/setChosenCabin', cabin);
+      this.$store.dispatch('adminReports/MOUNT_REPORTS_FOR_CABIN', cabin);
     },
     setExpanded(expand: boolean) {
       this.$store.commit('adminReports/setExpanded', expand);
