@@ -218,8 +218,6 @@ def test_reports_filter_list_denied_for_other_board_member(
     """
     request = request_factory.get(f"/koie/reports/{koie.slug}")
     force_authenticate(request, user=user)
-    print(user)
-    print(other_board_membership)
     response = get_response(request=request, koie_slug=koie.slug)
 
     assert response.status_code == 403
