@@ -11,12 +11,12 @@
             <v-stepper-step :complete="step > 2" :step="2">
               {{ $t('report.step2') }}
             </v-stepper-step>
-            <v-divider></v-divider
-            ><v-stepper-step :complete="step > 3" :step="3">
+            <v-divider v-if="hasBoatEquipment"></v-divider
+            ><v-stepper-step v-if="hasBoatEquipment" :complete="step > steps - 2" :step="steps - 2">
               {{ $t('report.step3') }}
             </v-stepper-step>
             <v-divider></v-divider
-            ><v-stepper-step :complete="step > 4" :step="4">
+            ><v-stepper-step :complete="step > steps - 1" :step="steps - 1">
               {{ $t('report.step4') }}
             </v-stepper-step>
           </v-stepper-header>
@@ -25,9 +25,9 @@
             <LoadingSpinner v-else-if="isLoading" />
             <ReportFirstStep v-else-if="step === 1" />
             <ReportSecondStep v-else-if="step === 2" />
-            <ReportThirdStep v-else-if="step === 3" />
-            <ReportFourthStep v-else-if="step === 4" />
-            <ThankYouStep v-else-if="step === 5" />
+            <ReportThirdStep v-else-if="hasBoatEquipment && step === steps - 2" />
+            <ReportFourthStep v-else-if="step === steps - 1" />
+            <ThankYouStep v-else-if="step === steps" />
           </v-layout>
         </v-stepper>
         <div v-show="step < steps && !isLoading && !apiError" :class="$style.btnWrapper">
@@ -94,11 +94,16 @@ export default Vue.extend({
   data(): ReportData {
     return {
       step: 1,
-      steps: 5,
     };
   },
 
   computed: {
+    steps(): number {
+      if (this.$store.getters['report/hasBoatEquipment']) {
+        return 5;
+      }
+      return 4;
+    },
     isValid(): string {
       return this.$store.state.report.validForm;
     },
@@ -107,6 +112,9 @@ export default Vue.extend({
     },
     apiError(): boolean {
       return this.$store.state.report.error;
+    },
+    hasBoatEquipment(): boolean {
+      return this.$store.getters['report/hasBoatEquipment'];
     },
   },
 
