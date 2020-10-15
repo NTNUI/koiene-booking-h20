@@ -16,31 +16,26 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import reportTableColumns from '@/components/admin/allReportsView/ReportTableColumns';
+import { reportTableHeaders } from '@/components/admin/allReportsView/ReportTableHeaders';
 import getReportData from '../../../../tests/unit/__mocks__/reports';
 import ReportRow from '@/components/admin/allReportsView/ReportRow.vue';
-import AdminReport from '@/types/admin/AdminReport';
+import AdminReport from '@/types/admin/APIAdminReport';
 
 export default Vue.extend({
   name: 'AllReportsTable',
   components: { ReportRow },
   data() {
     return {
-      headers: Object.values(reportTableColumns).map((column) => {
-        delete column.colorAndTextOptions;
-        return column;
-      }),
+      headers: reportTableHeaders,
     };
   },
   computed: {
-    allReports(): Array<any> {
-      // fill allReports with mock data
-      let reports: Array<any> = [];
-      for (let i = 0; i < 20; i++) {
-        reports.push(getReportData());
-      }
-      return reports;
+    allReports(): Array<AdminReport> {
+      return this.$store.getters['adminReports/getReportArray'];
     },
+  },
+  mounted() {
+    this.$store.dispatch('adminReports/MOUNT_REPORTS');
   },
   methods: {},
 });

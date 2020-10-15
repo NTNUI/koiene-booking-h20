@@ -1,6 +1,14 @@
-import dayjs from 'dayjs';
+import AdminReport from '@/types/admin/APIAdminReport';
 
-export default function getReportData() {
+export default function getReportData(): Array<AdminReport> {
+  const res = new Array<AdminReport>();
+  for (let i = 0; i < 10; i++) {
+    res.push(getReport());
+  }
+  return res;
+}
+
+function getReport(): AdminReport {
   return {
     timestamp: '2020-10-10',
     id: 0,

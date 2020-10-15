@@ -1,5 +1,10 @@
 <template>
-  <div @click="enableModal ? clickHandler : null">{{ text }}</div>
+  <div
+    style="text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 150px"
+    @click="clickHandler"
+  >
+    {{ text }}
+  </div>
 </template>
 
 <script lang="ts">
@@ -12,9 +17,9 @@ export default Vue.extend({
       type: String,
       default: '',
     },
-    enableModal: {
-      type: Boolean,
-      default: false,
+    clickHandler: {
+      type: Function,
+      default: () => null,
     },
   },
 });

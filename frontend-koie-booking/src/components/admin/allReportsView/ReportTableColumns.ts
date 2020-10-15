@@ -56,30 +56,8 @@ const boatOptions: Array<ColorAndText> = [
 
 const lifeJacketOptions = boatOptions.splice(1, 1);
 
-const reportTableColumns: { [value: string]: ReportColumn } = {
-  timestamp: {
-    text: 'Tidsmerke',
-    align: 'center',
-    sortable: true,
-    value: 'timestamp',
-  },
-  slug: {
-    text: 'Koie',
-    align: 'center',
-    sortable: true,
-    value: 'slug',
-  },
-  trip_date: {
-    text: 'Turdato',
-    align: 'center',
-    sortable: true,
-    value: 'trip_date',
-  },
-  gas_is_full: {
-    text: 'Gassbestand',
-    align: 'center',
-    sortable: true,
-    value: 'gas_is_full',
+export const reportTableColumns: { [value: string]: ReportColumn } = {
+  gasIsFull: {
     colorAndTextOptions: [
       {
         color: red,
@@ -92,45 +70,21 @@ const reportTableColumns: { [value: string]: ReportColumn } = {
     ],
   },
   firewood: {
-    text: 'Vedstokker',
-    align: 'center',
-    sortable: true,
-    value: 'firewood',
     colorAndTextOptions: woodOptions,
   },
-  chopped_up_wood: {
-    text: 'Opphuggd ved',
-    align: 'center',
-    sortable: true,
-    value: 'chopped_up_wood',
+  choppedUpWood: {
     colorAndTextOptions: woodOptions,
   },
-  boat_status: {
-    text: 'Båt',
-    align: 'center',
-    sortable: true,
-    value: 'boat_status',
+  boatStatus: {
     colorAndTextOptions: boatOptions,
   },
-  canoe_status: {
-    text: 'Kano',
-    align: 'center',
-    sortable: true,
-    value: 'canoe_status',
+  canoeStatus: {
     colorAndTextOptions: boatOptions,
   },
-  life_jackets_status: {
-    text: 'Redningsvest',
-    align: 'center',
-    sortable: true,
-    value: 'life_jackets_status',
+  lifeJacketsStatus: {
     colorAndTextOptions: lifeJacketOptions,
   },
-  smoke_detector_is_working: {
-    text: 'Røykvarsler',
-    align: 'center',
-    sortable: true,
-    value: 'smoke_detector_is_working',
+  smokeDetectorIsWorking: {
     colorAndTextOptions: [
       {
         color: red,
@@ -142,25 +96,4 @@ const reportTableColumns: { [value: string]: ReportColumn } = {
       },
     ],
   },
-  equipment: {
-    text: 'Utstyr',
-    align: 'center',
-    sortable: false,
-    value: 'equipment',
-  },
-  other_faults: {
-    text: 'Andre utstyrsfeil',
-    align: 'center',
-    sortable: false,
-    value: 'other_faults',
-    colorAndTextOptions: [],
-  },
-  feedback: {
-    text: 'Tilbakemelding',
-    align: 'center',
-    sortable: false,
-    value: 'feedback',
-  },
 };
-
-export default reportTableColumns;

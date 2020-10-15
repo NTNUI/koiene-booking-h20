@@ -4,7 +4,9 @@ import { AdminReportsState, RootState } from '@/store/types';
 import axios from 'axios';
 
 import { APIAdminBooking } from '@/types/admin/AdminBooking';
-import { convertAPIBookingToKoieNameSlug } from './helpers';
+import { convertAPIBookingToKoieNameSlug, convertAPIReportToAdminReport } from './helpers';
+import getReportData from '../../../../../tests/unit/__mocks__/reports';
+import APIAdminReport from '@/types/admin/APIAdminReport';
 
 export const actions: ActionTree<AdminReportsState, RootState> = {
   async MOUNT_CABINS({ commit }) {
@@ -15,6 +17,15 @@ export const actions: ActionTree<AdminReportsState, RootState> = {
       }
     } catch (e) {
       console.log(e);
+    }
+  },
+  async MOUNT_REPORTS({ commit }) {
+    commit('clearAllReports');
+    const res = getReportData();
+    let i = 0;
+    for (const report of res) {
+      report.id = i++;
+      commit('setReport', convertAPIReportToAdminReport(report));
     }
   },
 };

@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <v-chip :color="chipColor" text-color="white" @click="enableModal ? clickHandler : null">{{ chipText }}</v-chip>
-  </div>
+  <v-chip :color="color" text-color="white">{{ text }}</v-chip>
 </template>
 
 <script lang="ts">
@@ -10,15 +8,11 @@ import Vue from 'vue';
 export default Vue.extend({
   name: 'StatusChip',
   props: {
-    enableModal: {
-      type: Boolean,
-      default: false,
-    },
-    chipText: {
+    text: {
       type: String,
       default: '',
     },
-    chipColor: {
+    color: {
       type: String,
       default: 'tomt',
     },
