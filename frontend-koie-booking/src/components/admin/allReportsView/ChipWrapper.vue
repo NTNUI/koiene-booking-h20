@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import StatusChip from '@/components/admin/reports/StatusChip.vue';
+import StatusChip from '@/components/admin/allReportsView/StatusChip.vue';
 import scssVars from '@/styles/variables.scss';
 
 export default Vue.extend({
@@ -19,7 +19,7 @@ export default Vue.extend({
     },
     color: {
       type: String,
-      default: 'grey',
+      default: scssVars.globalColorGrey,
     },
   },
 });

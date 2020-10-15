@@ -1,11 +1,12 @@
 import { ColorAndText, ReportColumn } from '@/types/admin/ReportColumn';
+import scssVars from '@/styles/variables.scss';
 
-const red = '#F44336';
-const orange = '#FF5722';
-const yellow = '#FFB300';
-const lightGreen = '#C0CA33';
-const green = '#4CAF50';
-const grey = '#9e9e9e';
+const red = scssVars.globalColorRedStrong;
+const orange = scssVars.globalColorRedWeak;
+const yellow = scssVars.globalColorYellow;
+const lightGreen = scssVars.globalColorGreenWeak;
+const green = scssVars.globalColorGreenStrong;
+const grey = scssVars.globalColorGrey;
 
 const woodOptions: Array<ColorAndText> = [
   {
@@ -53,7 +54,7 @@ const boatOptions: Array<ColorAndText> = [
   },
 ];
 
-const lifeWestOptions = boatOptions.splice(1, 1);
+const lifeJacketOptions = boatOptions.splice(1, 1);
 
 const reportTableColumns: { [value: string]: ReportColumn } = {
   timestamp: {
@@ -62,23 +63,23 @@ const reportTableColumns: { [value: string]: ReportColumn } = {
     sortable: true,
     value: 'timestamp',
   },
-  koie: {
+  slug: {
     text: 'Koie',
     align: 'center',
     sortable: true,
-    value: 'koie',
+    value: 'slug',
   },
-  tripDate: {
+  trip_date: {
     text: 'Turdato',
     align: 'center',
     sortable: true,
-    value: 'tripDate',
+    value: 'trip_date',
   },
-  gas: {
+  gas_is_full: {
     text: 'Gassbestand',
     align: 'center',
     sortable: true,
-    value: 'gas',
+    value: 'gas_is_full',
     colorAndTextOptions: [
       {
         color: red,
@@ -90,46 +91,46 @@ const reportTableColumns: { [value: string]: ReportColumn } = {
       },
     ],
   },
-  logs: {
-    text: 'Vedstokker',
-    align: 'center',
-    sortable: true,
-    value: 'logs',
-    colorAndTextOptions: woodOptions,
-  },
   firewood: {
-    text: 'Opphuggd ved',
+    text: 'Vedstokker',
     align: 'center',
     sortable: true,
     value: 'firewood',
     colorAndTextOptions: woodOptions,
   },
-  boat: {
+  chopped_up_wood: {
+    text: 'Opphuggd ved',
+    align: 'center',
+    sortable: true,
+    value: 'chopped_up_wood',
+    colorAndTextOptions: woodOptions,
+  },
+  boat_status: {
     text: 'Båt',
     align: 'center',
     sortable: true,
-    value: 'boat',
+    value: 'boat_status',
     colorAndTextOptions: boatOptions,
   },
-  canoe: {
+  canoe_status: {
     text: 'Kano',
     align: 'center',
     sortable: true,
-    value: 'canoe',
+    value: 'canoe_status',
     colorAndTextOptions: boatOptions,
   },
-  lifeWest: {
+  life_jackets_status: {
     text: 'Redningsvest',
     align: 'center',
     sortable: true,
-    value: 'lifeWest',
-    colorAndTextOptions: lifeWestOptions,
+    value: 'life_jackets_status',
+    colorAndTextOptions: lifeJacketOptions,
   },
-  smokeDetector: {
+  smoke_detector_is_working: {
     text: 'Røykvarsler',
     align: 'center',
     sortable: true,
-    value: 'smokeDetector',
+    value: 'smoke_detector_is_working',
     colorAndTextOptions: [
       {
         color: red,
@@ -147,11 +148,12 @@ const reportTableColumns: { [value: string]: ReportColumn } = {
     sortable: false,
     value: 'equipment',
   },
-  equipmentNotes: {
+  other_faults: {
     text: 'Andre utstyrsfeil',
     align: 'center',
     sortable: false,
-    value: 'equipmentNotes',
+    value: 'other_faults',
+    colorAndTextOptions: [],
   },
   feedback: {
     text: 'Tilbakemelding',
