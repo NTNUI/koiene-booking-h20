@@ -1,22 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Component ReportFirstStep.vue Matches snapshot 1`] = `
-<v-layout-stub tag="div" dark="true" class="container">
+<div class="layout dark container">
   <h1 class="heading">Digital Cabin Report</h1>
-  <v-layout-stub tag="div" class="separator">
-    <v-layout-stub tag="div" class="px-4">
+  <div class="layout separator">
+    <div class="layout px-4">
       <p>The cabin group is run purely on volunteer work and we rely on your feedback to be able to run the cabins.</p>
-    </v-layout-stub>
-    <v-layout-stub tag="div" class="px-4">
+    </div>
+    <div class="layout px-4">
       <p>
         This report concerns your trip to
-        <span class="capitalize"></span>
+        <span class="capitalize">Flåkoia</span>
         from
-
+        01.01.1970
         to
-        .
+        10.01.1970.
       </p>
-    </v-layout-stub>
-  </v-layout-stub>
-</v-layout-stub>
+    </div>
+  </div>
+</div>
 `;

@@ -3,134 +3,617 @@
 exports[`Component ReportFourthStep.vue Matches snapshot 1`] = `
 <div class="layout dark container">
   <h1 class="heading">Boat and canoe</h1>
-  <form novalidate="novalidate" class="v-form">
-    <div class="layout separator">
-      <h3 class="py-4">What was the status for the boat?</h3>
-      <div class="layout px-4">
-        <div class="v-input theme--light v-input--selection-controls v-input--radio-group v-input--radio-group--column">
-          <div class="v-input__control">
-            <div class="v-input__slot" style="height: auto;">
-              <div role="radiogroup" aria-labelledby="input-9" class="v-input--radio-group__input">
-                <div class="v-radio theme--light">
-                  <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-10" role="radio" type="radio" name="radio-9" value="3">
-                    <div class="v-input--selection-controls__ripple primary--text"></div>
-                  </div><label for="input-10" class="v-label theme--light" style="left: 0px; position: relative;">Missing boat</label>
-                </div>
-                <div class="v-radio theme--light">
-                  <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-12" role="radio" type="radio" name="radio-9" value="1">
-                    <div class="v-input--selection-controls__ripple primary--text"></div>
-                  </div><label for="input-12" class="v-label theme--light" style="left: 0px; position: relative;">Broken / useless</label>
-                </div>
-                <div class="v-radio theme--light">
-                  <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-14" role="radio" type="radio" name="radio-9" value="2">
-                    <div class="v-input--selection-controls__ripple primary--text"></div>
-                  </div><label for="input-14" class="v-label theme--light" style="left: 0px; position: relative;">Missing paddles</label>
-                </div>
-                <div class="v-radio theme--light">
-                  <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-16" role="radio" type="radio" name="radio-9" value="4">
-                    <div class="v-input--selection-controls__ripple primary--text"></div>
-                  </div><label for="input-16" class="v-label theme--light" style="left: 0px; position: relative;">Didn't use / don't know</label>
-                </div>
-                <div class="v-radio theme--light v-item--active">
-                  <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-marked theme--light primary--text"></i><input aria-checked="true" id="input-18" role="radio" type="radio" name="radio-9" value="0">
-                    <div class="v-input--selection-controls__ripple primary--text"></div>
-                  </div><label for="input-18" class="v-label theme--light" style="left: 0px; position: relative;">No faults</label>
+  <div class="layout separator">
+    <h3 class="py-4 form">Did the smoke detector work?</h3>
+    <div class="layout px-4">
+      <div class="v-input v-input--is-label-active v-input--is-dirty theme--light v-input--selection-controls v-input--radio-group v-input--radio-group--column">
+        <div class="v-input__control">
+          <div class="v-input__slot" style="height: auto;">
+            <div role="radiogroup" aria-labelledby="input-8" class="v-input--radio-group__input">
+              <div class="v-radio theme--light v-item--active">
+                <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-marked theme--light primary--text"></i><input aria-checked="true" id="input-9" role="radio" type="radio" name="radio-8" value="true">
+                  <div class="v-input--selection-controls__ripple primary--text"></div>
+                </div><label for="input-9" class="v-label theme--light" style="left: 0px; position: relative;">Yes, it worked</label>
+              </div>
+              <div class="v-radio theme--light">
+                <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-11" role="radio" type="radio" name="radio-8" value="false">
+                  <div class="v-input--selection-controls__ripple primary--text"></div>
+                </div><label for="input-11" class="v-label theme--light" style="left: 0px; position: relative;">No, it did not work</label>
+              </div>
+            </div>
+          </div>
+          <div class="v-messages theme--light"><span name="message-transition" tag="div" class="v-messages__wrapper"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="layout separator">
+    <form novalidate="novalidate" class="v-form form">
+      <h3 class="py-4 form">Please determine the status of the following equipment</h3>
+      <div role="list" class="v-list overflow-x-auto v-sheet v-sheet--tile theme--light transparent">
+        <div class="row flex-nowrap justify-space-between">
+          <div class="col-sm-4 col align-self-center"><strong>Equipment</strong></div>
+          <div class="col-sm-6 col">
+            <div class="row flex-nowrap">
+              <div class="col"><strong>Ok</strong></div>
+              <div class="col" style="white-space: nowrap;"><strong>Not sure</strong></div>
+              <div class="col"><strong>Broken/missing</strong></div>
+            </div>
+          </div>
+        </div>
+        <hr role="separator" aria-orientation="horizontal" class="v-divider theme--light">
+        <div class="row flex-nowrap row--dense justify-space-between">
+          <div xs="6" class="col-sm-4 col align-self-center" style="white-space: nowrap;">Gas Burner/Primus</div>
+          <div xs="4" class="col-sm-6 col">
+            <div class="v-input v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light v-input--selection-controls v-input--radio-group v-input--radio-group--row">
+              <div class="v-input__control">
+                <div class="v-input__slot" style="height: auto;">
+                  <div role="radiogroup" aria-labelledby="input-18" class="v-input--radio-group__input">
+                    <div class="row flex-nowrap">
+                      <div class="col">
+                        <div class="v-radio theme--light">
+                          <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-19" role="radio" type="radio" name="radio-18" value="">
+                            <div class="v-input--selection-controls__ripple primary--text"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="v-radio theme--light v-item--active">
+                          <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-marked theme--light primary--text"></i><input aria-checked="true" id="input-21" role="radio" type="radio" name="radio-18" value="">
+                            <div class="v-input--selection-controls__ripple primary--text"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="v-radio theme--light">
+                          <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-23" role="radio" type="radio" name="radio-18" value="">
+                            <div class="v-input--selection-controls__ripple primary--text"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        <div class="row flex-nowrap row--dense justify-space-between">
+          <div xs="6" class="col-sm-4 col align-self-center" style="white-space: nowrap;">Axe</div>
+          <div xs="4" class="col-sm-6 col">
+            <div class="v-input v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light v-input--selection-controls v-input--radio-group v-input--radio-group--row">
+              <div class="v-input__control">
+                <div class="v-input__slot" style="height: auto;">
+                  <div role="radiogroup" aria-labelledby="input-25" class="v-input--radio-group__input">
+                    <div class="row flex-nowrap">
+                      <div class="col">
+                        <div class="v-radio theme--light">
+                          <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-26" role="radio" type="radio" name="radio-25" value="">
+                            <div class="v-input--selection-controls__ripple primary--text"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="v-radio theme--light v-item--active">
+                          <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-marked theme--light primary--text"></i><input aria-checked="true" id="input-28" role="radio" type="radio" name="radio-25" value="">
+                            <div class="v-input--selection-controls__ripple primary--text"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="v-radio theme--light">
+                          <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-30" role="radio" type="radio" name="radio-25" value="">
+                            <div class="v-input--selection-controls__ripple primary--text"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row flex-nowrap row--dense justify-space-between">
+          <div xs="6" class="col-sm-4 col align-self-center" style="white-space: nowrap;">Hammer</div>
+          <div xs="4" class="col-sm-6 col">
+            <div class="v-input v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light v-input--selection-controls v-input--radio-group v-input--radio-group--row">
+              <div class="v-input__control">
+                <div class="v-input__slot" style="height: auto;">
+                  <div role="radiogroup" aria-labelledby="input-32" class="v-input--radio-group__input">
+                    <div class="row flex-nowrap">
+                      <div class="col">
+                        <div class="v-radio theme--light">
+                          <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-33" role="radio" type="radio" name="radio-32" value="">
+                            <div class="v-input--selection-controls__ripple primary--text"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="v-radio theme--light v-item--active">
+                          <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-marked theme--light primary--text"></i><input aria-checked="true" id="input-35" role="radio" type="radio" name="radio-32" value="">
+                            <div class="v-input--selection-controls__ripple primary--text"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="v-radio theme--light">
+                          <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-37" role="radio" type="radio" name="radio-32" value="">
+                            <div class="v-input--selection-controls__ripple primary--text"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row flex-nowrap row--dense justify-space-between">
+          <div xs="6" class="col-sm-4 col align-self-center" style="white-space: nowrap;">Saw</div>
+          <div xs="4" class="col-sm-6 col">
+            <div class="v-input v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light v-input--selection-controls v-input--radio-group v-input--radio-group--row">
+              <div class="v-input__control">
+                <div class="v-input__slot" style="height: auto;">
+                  <div role="radiogroup" aria-labelledby="input-39" class="v-input--radio-group__input">
+                    <div class="row flex-nowrap">
+                      <div class="col">
+                        <div class="v-radio theme--light">
+                          <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-40" role="radio" type="radio" name="radio-39" value="">
+                            <div class="v-input--selection-controls__ripple primary--text"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="v-radio theme--light v-item--active">
+                          <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-marked theme--light primary--text"></i><input aria-checked="true" id="input-42" role="radio" type="radio" name="radio-39" value="">
+                            <div class="v-input--selection-controls__ripple primary--text"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="v-radio theme--light">
+                          <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-44" role="radio" type="radio" name="radio-39" value="">
+                            <div class="v-input--selection-controls__ripple primary--text"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row flex-nowrap row--dense justify-space-between">
+          <div xs="6" class="col-sm-4 col align-self-center" style="white-space: nowrap;">Saw blade</div>
+          <div xs="4" class="col-sm-6 col">
+            <div class="v-input v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light v-input--selection-controls v-input--radio-group v-input--radio-group--row">
+              <div class="v-input__control">
+                <div class="v-input__slot" style="height: auto;">
+                  <div role="radiogroup" aria-labelledby="input-46" class="v-input--radio-group__input">
+                    <div class="row flex-nowrap">
+                      <div class="col">
+                        <div class="v-radio theme--light">
+                          <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-47" role="radio" type="radio" name="radio-46" value="">
+                            <div class="v-input--selection-controls__ripple primary--text"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="v-radio theme--light v-item--active">
+                          <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-marked theme--light primary--text"></i><input aria-checked="true" id="input-49" role="radio" type="radio" name="radio-46" value="">
+                            <div class="v-input--selection-controls__ripple primary--text"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="v-radio theme--light">
+                          <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-51" role="radio" type="radio" name="radio-46" value="">
+                            <div class="v-input--selection-controls__ripple primary--text"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row flex-nowrap row--dense justify-space-between">
+          <div xs="6" class="col-sm-4 col align-self-center" style="white-space: nowrap;">Saw bench</div>
+          <div xs="4" class="col-sm-6 col">
+            <div class="v-input v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light v-input--selection-controls v-input--radio-group v-input--radio-group--row">
+              <div class="v-input__control">
+                <div class="v-input__slot" style="height: auto;">
+                  <div role="radiogroup" aria-labelledby="input-53" class="v-input--radio-group__input">
+                    <div class="row flex-nowrap">
+                      <div class="col">
+                        <div class="v-radio theme--light">
+                          <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-54" role="radio" type="radio" name="radio-53" value="">
+                            <div class="v-input--selection-controls__ripple primary--text"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="v-radio theme--light v-item--active">
+                          <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-marked theme--light primary--text"></i><input aria-checked="true" id="input-56" role="radio" type="radio" name="radio-53" value="">
+                            <div class="v-input--selection-controls__ripple primary--text"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="v-radio theme--light">
+                          <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-58" role="radio" type="radio" name="radio-53" value="">
+                            <div class="v-input--selection-controls__ripple primary--text"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row flex-nowrap row--dense justify-space-between">
+          <div xs="6" class="col-sm-4 col align-self-center" style="white-space: nowrap;">Spade</div>
+          <div xs="4" class="col-sm-6 col">
+            <div class="v-input v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light v-input--selection-controls v-input--radio-group v-input--radio-group--row">
+              <div class="v-input__control">
+                <div class="v-input__slot" style="height: auto;">
+                  <div role="radiogroup" aria-labelledby="input-60" class="v-input--radio-group__input">
+                    <div class="row flex-nowrap">
+                      <div class="col">
+                        <div class="v-radio theme--light">
+                          <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-61" role="radio" type="radio" name="radio-60" value="">
+                            <div class="v-input--selection-controls__ripple primary--text"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="v-radio theme--light v-item--active">
+                          <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-marked theme--light primary--text"></i><input aria-checked="true" id="input-63" role="radio" type="radio" name="radio-60" value="">
+                            <div class="v-input--selection-controls__ripple primary--text"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="v-radio theme--light">
+                          <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-65" role="radio" type="radio" name="radio-60" value="">
+                            <div class="v-input--selection-controls__ripple primary--text"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row flex-nowrap row--dense justify-space-between">
+          <div xs="6" class="col-sm-4 col align-self-center" style="white-space: nowrap;">Kerosene lamp</div>
+          <div xs="4" class="col-sm-6 col">
+            <div class="v-input v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light v-input--selection-controls v-input--radio-group v-input--radio-group--row">
+              <div class="v-input__control">
+                <div class="v-input__slot" style="height: auto;">
+                  <div role="radiogroup" aria-labelledby="input-67" class="v-input--radio-group__input">
+                    <div class="row flex-nowrap">
+                      <div class="col">
+                        <div class="v-radio theme--light">
+                          <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-68" role="radio" type="radio" name="radio-67" value="">
+                            <div class="v-input--selection-controls__ripple primary--text"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="v-radio theme--light v-item--active">
+                          <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-marked theme--light primary--text"></i><input aria-checked="true" id="input-70" role="radio" type="radio" name="radio-67" value="">
+                            <div class="v-input--selection-controls__ripple primary--text"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="v-radio theme--light">
+                          <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-72" role="radio" type="radio" name="radio-67" value="">
+                            <div class="v-input--selection-controls__ripple primary--text"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row flex-nowrap row--dense justify-space-between">
+          <div xs="6" class="col-sm-4 col align-self-center" style="white-space: nowrap;">Detergent</div>
+          <div xs="4" class="col-sm-6 col">
+            <div class="v-input v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light v-input--selection-controls v-input--radio-group v-input--radio-group--row">
+              <div class="v-input__control">
+                <div class="v-input__slot" style="height: auto;">
+                  <div role="radiogroup" aria-labelledby="input-74" class="v-input--radio-group__input">
+                    <div class="row flex-nowrap">
+                      <div class="col">
+                        <div class="v-radio theme--light">
+                          <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-75" role="radio" type="radio" name="radio-74" value="">
+                            <div class="v-input--selection-controls__ripple primary--text"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="v-radio theme--light v-item--active">
+                          <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-marked theme--light primary--text"></i><input aria-checked="true" id="input-77" role="radio" type="radio" name="radio-74" value="">
+                            <div class="v-input--selection-controls__ripple primary--text"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="v-radio theme--light">
+                          <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-79" role="radio" type="radio" name="radio-74" value="">
+                            <div class="v-input--selection-controls__ripple primary--text"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row flex-nowrap row--dense justify-space-between">
+          <div xs="6" class="col-sm-4 col align-self-center" style="white-space: nowrap;">Plates, cups and cutlery</div>
+          <div xs="4" class="col-sm-6 col">
+            <div class="v-input v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light v-input--selection-controls v-input--radio-group v-input--radio-group--row">
+              <div class="v-input__control">
+                <div class="v-input__slot" style="height: auto;">
+                  <div role="radiogroup" aria-labelledby="input-81" class="v-input--radio-group__input">
+                    <div class="row flex-nowrap">
+                      <div class="col">
+                        <div class="v-radio theme--light">
+                          <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-82" role="radio" type="radio" name="radio-81" value="">
+                            <div class="v-input--selection-controls__ripple primary--text"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="v-radio theme--light v-item--active">
+                          <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-marked theme--light primary--text"></i><input aria-checked="true" id="input-84" role="radio" type="radio" name="radio-81" value="">
+                            <div class="v-input--selection-controls__ripple primary--text"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="v-radio theme--light">
+                          <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-86" role="radio" type="radio" name="radio-81" value="">
+                            <div class="v-input--selection-controls__ripple primary--text"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row flex-nowrap row--dense justify-space-between">
+          <div xs="6" class="col-sm-4 col align-self-center" style="white-space: nowrap;">Pots and frying pan</div>
+          <div xs="4" class="col-sm-6 col">
+            <div class="v-input v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light v-input--selection-controls v-input--radio-group v-input--radio-group--row">
+              <div class="v-input__control">
+                <div class="v-input__slot" style="height: auto;">
+                  <div role="radiogroup" aria-labelledby="input-88" class="v-input--radio-group__input">
+                    <div class="row flex-nowrap">
+                      <div class="col">
+                        <div class="v-radio theme--light">
+                          <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-89" role="radio" type="radio" name="radio-88" value="">
+                            <div class="v-input--selection-controls__ripple primary--text"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="v-radio theme--light v-item--active">
+                          <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-marked theme--light primary--text"></i><input aria-checked="true" id="input-91" role="radio" type="radio" name="radio-88" value="">
+                            <div class="v-input--selection-controls__ripple primary--text"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="v-radio theme--light">
+                          <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-93" role="radio" type="radio" name="radio-88" value="">
+                            <div class="v-input--selection-controls__ripple primary--text"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row flex-nowrap row--dense justify-space-between">
+          <div xs="6" class="col-sm-4 col align-self-center" style="white-space: nowrap;">Cabin book</div>
+          <div xs="4" class="col-sm-6 col">
+            <div class="v-input v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light v-input--selection-controls v-input--radio-group v-input--radio-group--row">
+              <div class="v-input__control">
+                <div class="v-input__slot" style="height: auto;">
+                  <div role="radiogroup" aria-labelledby="input-95" class="v-input--radio-group__input">
+                    <div class="row flex-nowrap">
+                      <div class="col">
+                        <div class="v-radio theme--light">
+                          <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-96" role="radio" type="radio" name="radio-95" value="">
+                            <div class="v-input--selection-controls__ripple primary--text"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="v-radio theme--light v-item--active">
+                          <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-marked theme--light primary--text"></i><input aria-checked="true" id="input-98" role="radio" type="radio" name="radio-95" value="">
+                            <div class="v-input--selection-controls__ripple primary--text"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="v-radio theme--light">
+                          <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-100" role="radio" type="radio" name="radio-95" value="">
+                            <div class="v-input--selection-controls__ripple primary--text"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row flex-nowrap row--dense justify-space-between">
+          <div xs="6" class="col-sm-4 col align-self-center" style="white-space: nowrap;">Candle holders</div>
+          <div xs="4" class="col-sm-6 col">
+            <div class="v-input v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light v-input--selection-controls v-input--radio-group v-input--radio-group--row">
+              <div class="v-input__control">
+                <div class="v-input__slot" style="height: auto;">
+                  <div role="radiogroup" aria-labelledby="input-102" class="v-input--radio-group__input">
+                    <div class="row flex-nowrap">
+                      <div class="col">
+                        <div class="v-radio theme--light">
+                          <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-103" role="radio" type="radio" name="radio-102" value="">
+                            <div class="v-input--selection-controls__ripple primary--text"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="v-radio theme--light v-item--active">
+                          <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-marked theme--light primary--text"></i><input aria-checked="true" id="input-105" role="radio" type="radio" name="radio-102" value="">
+                            <div class="v-input--selection-controls__ripple primary--text"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="v-radio theme--light">
+                          <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-107" role="radio" type="radio" name="radio-102" value="">
+                            <div class="v-input--selection-controls__ripple primary--text"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row flex-nowrap row--dense justify-space-between">
+          <div xs="6" class="col-sm-4 col align-self-center" style="white-space: nowrap;">Fire blanket</div>
+          <div xs="4" class="col-sm-6 col">
+            <div class="v-input v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light v-input--selection-controls v-input--radio-group v-input--radio-group--row">
+              <div class="v-input__control">
+                <div class="v-input__slot" style="height: auto;">
+                  <div role="radiogroup" aria-labelledby="input-109" class="v-input--radio-group__input">
+                    <div class="row flex-nowrap">
+                      <div class="col">
+                        <div class="v-radio theme--light">
+                          <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-110" role="radio" type="radio" name="radio-109" value="">
+                            <div class="v-input--selection-controls__ripple primary--text"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="v-radio theme--light v-item--active">
+                          <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-marked theme--light primary--text"></i><input aria-checked="true" id="input-112" role="radio" type="radio" name="radio-109" value="">
+                            <div class="v-input--selection-controls__ripple primary--text"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="v-radio theme--light">
+                          <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-114" role="radio" type="radio" name="radio-109" value="">
+                            <div class="v-input--selection-controls__ripple primary--text"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row flex-nowrap row--dense justify-space-between">
+          <div xs="6" class="col-sm-4 col align-self-center" style="white-space: nowrap;">Fire extinguisher</div>
+          <div xs="4" class="col-sm-6 col">
+            <div class="v-input v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light v-input--selection-controls v-input--radio-group v-input--radio-group--row">
+              <div class="v-input__control">
+                <div class="v-input__slot" style="height: auto;">
+                  <div role="radiogroup" aria-labelledby="input-116" class="v-input--radio-group__input">
+                    <div class="row flex-nowrap">
+                      <div class="col">
+                        <div class="v-radio theme--light">
+                          <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-117" role="radio" type="radio" name="radio-116" value="">
+                            <div class="v-input--selection-controls__ripple primary--text"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="v-radio theme--light v-item--active">
+                          <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-marked theme--light primary--text"></i><input aria-checked="true" id="input-119" role="radio" type="radio" name="radio-116" value="">
+                            <div class="v-input--selection-controls__ripple primary--text"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="v-radio theme--light">
+                          <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-121" role="radio" type="radio" name="radio-116" value="">
+                            <div class="v-input--selection-controls__ripple primary--text"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="layout separator">
+    <h3 class="py-4 form">Did you see any other defects or missing items?</h3>
+    <div class="layout px-4">
+      <div class="v-input theme--light v-text-field v-text-field--placeholder otherFaultsField">
+        <div class="v-input__control">
+          <div class="v-input__slot">
+            <div class="v-text-field__slot"><label for="input-123" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Other defects/missing items</label><input id="input-123" placeholder="One of the ..." type="text"></div>
+          </div>
+          <div class="v-text-field__details">
             <div class="v-messages theme--light"><span name="message-transition" tag="div" class="v-messages__wrapper"></span></div>
           </div>
         </div>
       </div>
     </div>
-    <div class="layout separator">
-      <h3 class="py-4">What was the status for the canoe?</h3>
-      <div class="layout px-4">
-        <div class="v-input theme--light v-input--selection-controls v-input--radio-group v-input--radio-group--column">
-          <div class="v-input__control">
-            <div class="v-input__slot" style="height: auto;">
-              <div role="radiogroup" aria-labelledby="input-22" class="v-input--radio-group__input">
-                <div class="v-radio theme--light">
-                  <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-23" role="radio" type="radio" name="radio-22" value="3">
-                    <div class="v-input--selection-controls__ripple primary--text"></div>
-                  </div><label for="input-23" class="v-label theme--light" style="left: 0px; position: relative;">Missing canoe</label>
-                </div>
-                <div class="v-radio theme--light">
-                  <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-25" role="radio" type="radio" name="radio-22" value="1">
-                    <div class="v-input--selection-controls__ripple primary--text"></div>
-                  </div><label for="input-25" class="v-label theme--light" style="left: 0px; position: relative;">Broken / useless</label>
-                </div>
-                <div class="v-radio theme--light">
-                  <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-27" role="radio" type="radio" name="radio-22" value="2">
-                    <div class="v-input--selection-controls__ripple primary--text"></div>
-                  </div><label for="input-27" class="v-label theme--light" style="left: 0px; position: relative;">Missing paddles</label>
-                </div>
-                <div class="v-radio theme--light">
-                  <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-29" role="radio" type="radio" name="radio-22" value="4">
-                    <div class="v-input--selection-controls__ripple primary--text"></div>
-                  </div><label for="input-29" class="v-label theme--light" style="left: 0px; position: relative;">Didn't use / don't know</label>
-                </div>
-                <div class="v-radio theme--light v-item--active">
-                  <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-marked theme--light primary--text"></i><input aria-checked="true" id="input-31" role="radio" type="radio" name="radio-22" value="0">
-                    <div class="v-input--selection-controls__ripple primary--text"></div>
-                  </div><label for="input-31" class="v-label theme--light" style="left: 0px; position: relative;">No faults</label>
-                </div>
-              </div>
-            </div>
+  </div>
+  <div class="layout separator">
+    <h3 class="py-4 form">Finally, is there anything else you wish to add which hasn't been covered by the report already?</h3>
+    <div class="layout px-4">
+      <div class="v-input theme--light v-text-field v-text-field--placeholder">
+        <div class="v-input__control">
+          <div class="v-input__slot">
+            <div class="v-text-field__slot"><label for="input-126" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Additional comments</label><input id="input-126" placeholder="There was one window that ..." type="text"></div>
+          </div>
+          <div class="v-text-field__details">
             <div class="v-messages theme--light"><span name="message-transition" tag="div" class="v-messages__wrapper"></span></div>
           </div>
         </div>
       </div>
     </div>
-    <div class="layout separator">
-      <h3 class="py-4">What was the status for the life jackets?</h3>
-      <div class="layout px-4">
-        <div class="v-input theme--light v-input--selection-controls v-input--radio-group v-input--radio-group--column">
-          <div class="v-input__control">
-            <div class="v-input__slot" style="height: auto;">
-              <div role="radiogroup" aria-labelledby="input-35" class="v-input--radio-group__input">
-                <div class="v-radio theme--light">
-                  <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-36" role="radio" type="radio" name="radio-35" value="2">
-                    <div class="v-input--selection-controls__ripple primary--text"></div>
-                  </div><label for="input-36" class="v-label theme--light" style="left: 0px; position: relative;">Missing / too few life jackets</label>
-                </div>
-                <div class="v-radio theme--light">
-                  <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-38" role="radio" type="radio" name="radio-35" value="1">
-                    <div class="v-input--selection-controls__ripple primary--text"></div>
-                  </div><label for="input-38" class="v-label theme--light" style="left: 0px; position: relative;">Broken / useless</label>
-                </div>
-                <div class="v-radio theme--light">
-                  <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-40" role="radio" type="radio" name="radio-35" value="3">
-                    <div class="v-input--selection-controls__ripple primary--text"></div>
-                  </div><label for="input-40" class="v-label theme--light" style="left: 0px; position: relative;">Didn't use / don't know</label>
-                </div>
-                <div class="v-radio theme--light v-item--active">
-                  <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-marked theme--light primary--text"></i><input aria-checked="true" id="input-42" role="radio" type="radio" name="radio-35" value="0">
-                    <div class="v-input--selection-controls__ripple primary--text"></div>
-                  </div><label for="input-42" class="v-label theme--light" style="left: 0px; position: relative;">No faults</label>
-                </div>
-              </div>
-            </div>
-            <div class="v-messages theme--light"><span name="message-transition" tag="div" class="v-messages__wrapper"></span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="layout separator">
-      <h3 class="py-4">Finally, is there anything else you wish to add which hasn't been covered by the report already?</h3>
-      <div class="layout px-4">
-        <div class="v-input theme--light v-text-field v-text-field--placeholder feedbackField">
-          <div class="v-input__control">
-            <div class="v-input__slot">
-              <div class="v-text-field__slot"><label for="input-46" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Additional comments</label><input id="input-46" placeholder="There was one window that ..." type="text"></div>
-            </div>
-            <div class="v-text-field__details">
-              <div class="v-messages theme--light"><span name="message-transition" tag="div" class="v-messages__wrapper"></span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </form>
+  </div>
 </div>
 `;
