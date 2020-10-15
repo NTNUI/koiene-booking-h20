@@ -26,8 +26,18 @@ def koie_group():
 
 
 @pytest.fixture
+def other_group():
+    return GroupFactory()
+
+
+@pytest.fixture
 def board_membership(user, koie_group):
     return BoardMembershipFactory(member=user, group=koie_group)
+
+
+@pytest.fixture
+def other_board_membership(user, other_group):
+    return BoardMembershipFactory(member=user, group=other_group)
 
 
 @pytest.fixture
@@ -163,9 +173,9 @@ def test_list_report_succeeds_as_koie_admin(request_factory, user, board_members
 
 
 @pytest.mark.django_db
-def test_list_reports_denied_for_not_koie_admin_user(request_factory):
+def test_list_reports_denied_for_anonymous_user(request_factory):
     """
-    Tests non authorized user who is not a koie admin gets access to report data
+    Tests anonymous user does not get access to report data
     """
     request = request_factory.get("/koie/reports/")
     response = get_response(request=request)
@@ -189,11 +199,27 @@ def test_reports_filter_list_succeeds_as_koie_admin(
 
 
 @pytest.mark.django_db
-def test_reports_filter_list_denied_for_not_koie_admin_user(request_factory, koie):
+def test_reports_filter_list_denied_for_anonymous_user(request_factory, koie):
     """
-    Tests non authorized user who is not a koie admin gets access to report data
+    Tests anonymous user does not get access to report data
     """
     request = request_factory.get(f"/koie/reports/{koie.slug}")
+    response = get_response(request=request, koie_slug=koie.slug)
+
+    assert response.status_code == 403
+
+
+@pytest.mark.django_db
+def test_reports_filter_list_denied_for_other_board_member(
+    request_factory, koie, user, other_board_membership
+):
+    """
+    Tests board member from other group than koiene does not get access to report data
+    """
+    request = request_factory.get(f"/koie/reports/{koie.slug}")
+    force_authenticate(request, user=user)
+    print(user)
+    print(other_board_membership)
     response = get_response(request=request, koie_slug=koie.slug)
 
     assert response.status_code == 403
