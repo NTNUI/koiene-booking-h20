@@ -13,7 +13,6 @@ class BookingSerializer(serializers.ModelSerializer):
     koie = serializers.SlugRelatedField(
         many=False, slug_field="slug", queryset=KoieModel.objects.all()
     )
-    uuid = serializers.SerializerMethodField()
     booking_transaction_id = serializers.SerializerMethodField()
     price = serializers.SerializerMethodField()
 

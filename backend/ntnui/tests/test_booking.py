@@ -1,3 +1,4 @@
+import uuid
 import factory
 import pytest
 from rest_framework.test import APIRequestFactory, force_authenticate
@@ -73,7 +74,7 @@ def test_list_booking(request_factory, booking_batch):
 
     assert response.status_code == 200
     assert len(response.data) == 3
-    assert first_id == booking_batch[0].uuid
+    assert uuid.UUID(hex=first_id) == booking_batch[0].uuid
 
 
 @pytest.mark.django_db
@@ -83,7 +84,7 @@ def test_retrieve_booking_from_id(request_factory, booking):
     response = get_response(request=request, user=None)
     id = response.data[0]["uuid"]
 
-    assert id == booking.uuid
+    assert uuid.UUID(hex=id) == booking.uuid
     assert response.status_code == 200
 
 
