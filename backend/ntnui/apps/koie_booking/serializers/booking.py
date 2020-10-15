@@ -56,9 +56,6 @@ class BookingSerializer(serializers.ModelSerializer):
     def get_price(self, obj):
         return obj.get_total_price()
 
-    def get_uuid(self, obj):
-        return obj.get_uuid()
-
     def validate_arrival_date(self, arrival_date):
         """Checks that the arrival date is not in the past when the booking is made"""
         if now().date() > arrival_date:

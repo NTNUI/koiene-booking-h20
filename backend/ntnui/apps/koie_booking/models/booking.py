@@ -37,16 +37,13 @@ class BookingModel(models.Model):
         guests = self.guests_member + self.guests_not_member
         return f"Reservation for {self.koie.name} at {self.arrival_date} for {guests} guests"
 
-    def get_uuid(self):
-        return self.uuid
-
     def get_number_of_nights(self):
         return (self.departure_date - self.arrival_date).days
 
     def get_total_price(self):
         price_per_night = (
-            self.guests_member * self.koie.price_member
-            + self.guests_not_member * self.koie.price_not_member
+            self.guests_member * self.koie.price_member +
+            self.guests_not_member * self.koie.price_not_member
         )
 
         return price_per_night * self.get_number_of_nights()
