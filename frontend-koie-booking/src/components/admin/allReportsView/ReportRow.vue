@@ -1,10 +1,24 @@
 <template>
   <tr>
     <td v-for="column in columnDataOptions" :key="column.value">
+      <template v-if="column.value === 'equipment'">
+        <ChipWrapper
+          :color="columnDataOptions['equipment'].colorAndTextOptions[0].color"
+          :text="columnDataOptions['equipment'].colorAndTextOptions[0].text"
+        />
+        <ChipWrapper
+          :color="columnDataOptions['equipment'].colorAndTextOptions[1].color"
+          :text="columnDataOptions['equipment'].colorAndTextOptions[1].text"
+        />
+        <ChipWrapper
+          :color="columnDataOptions['equipment'].colorAndTextOptions[2].color"
+          :text="columnDataOptions['equipment'].colorAndTextOptions[2].text"
+        />
+      </template>
       <ChipWrapper
-        v-if="column.colorAndTextOptions"
-        :color="setColorAndText(column, report).color"
-        :text="setColorAndText(column, report).text"
+        v-else-if="column.colorAndTextOptions"
+        :color="getCorrectColorAndText(column, report).color"
+        :text="getCorrectColorAndText(column, report).text"
       />
       <StringDisplayer v-else :text="report[column.value].text" />
     </td>
@@ -53,7 +67,7 @@ export default Vue.extend({
     ];
   },
   methods: {
-    setColorAndText(column: ReportColumn, report: AdminReport): ColorAndText {
+    getCorrectColorAndText(column: ReportColumn, report: AdminReport): ColorAndText {
       let chipColorAndText: ColorAndText;
       try {
         chipColorAndText = column.colorAndTextOptions[report[column.value]];
