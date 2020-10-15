@@ -23,7 +23,7 @@ class BookingPayment(AbstractPayment):
     def __str__(self):
         if self.get_booking():
             return _(
-                f"Payment for booking {self.booking.id} from {self.get_buyer()} "
+                f"Payment for booking {self.booking.uuid} from {self.get_buyer()} "
                 f"to {self.get_seller()}"
             )
         return "Booking for this payment is not yet created"

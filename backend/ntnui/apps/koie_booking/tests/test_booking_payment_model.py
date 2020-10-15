@@ -83,7 +83,7 @@ def test_get_payment_key(payment):
 def test_str_representation(payment):
 
     assert (
-        str(payment) == f"Payment for booking {payment.booking.id} from {payment.get_buyer()}"
+        str(payment) == f"Payment for booking {payment.booking.uuid} from {payment.get_buyer()}"
         f" to {payment.get_seller()}"
     )
 

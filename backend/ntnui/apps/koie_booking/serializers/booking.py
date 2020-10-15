@@ -24,6 +24,7 @@ class BookingSerializer(serializers.ModelSerializer):
             "price",
             "koie",
             "user",
+            "uuid",
             "booking_transaction_id",
             "arrival_date",
             "departure_date",
@@ -33,7 +34,15 @@ class BookingSerializer(serializers.ModelSerializer):
             "paid",
             "created",
         ]
-        read_only_fields = ("price", "booking_transaction_id", "user", "id", "paid", "created")
+        read_only_fields = (
+            "price",
+            "booking_transaction_id",
+            "user",
+            "id",
+            "uuid",
+            "paid",
+            "created",
+        )
 
     def get_booking_transaction_id(self, obj):
         """Tries to get the transaction ID, if no payment object exists it returns
