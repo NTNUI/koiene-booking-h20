@@ -1,24 +1,12 @@
 import pytest
 
 from groups.factories.group_factory import GroupFactory
-from koie_booking.factories.booking_factory import BookingFactory
-from koie_booking.factories.koie_factory import KoieFactory
 from koie_report.factories.report_factory import ReportFactory
 
 
 @pytest.fixture(autouse=True)
 def koie_group():
     return GroupFactory(name="Koiene")
-
-
-@pytest.fixture
-def koie():
-    return KoieFactory()
-
-
-@pytest.fixture
-def booking():
-    return BookingFactory()
 
 
 @pytest.fixture()
