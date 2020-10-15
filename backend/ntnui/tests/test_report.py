@@ -7,8 +7,17 @@ from groups.factories.membership_factory import BoardMembershipFactory
 from koie_booking.factories.booking_factory import BookingFactory
 from koie_booking.factories.koie_factory import KoieFactory
 from koie_report.factories.report_factory import ReportFactory
-from koie_report.report_serializer import ReportSerializer
 from koie_report.views import ReportViewSet
+
+
+@pytest.fixture()
+def request_factory():
+    return APIRequestFactory()
+
+
+@pytest.fixture
+def user(autouse=True):
+    return UserFactory()
 
 
 @pytest.fixture(autouse=True)
@@ -17,23 +26,38 @@ def koie_group():
 
 
 @pytest.fixture
+def other_group():
+    return GroupFactory()
+
+
+@pytest.fixture
+def board_membership(user, koie_group):
+    return BoardMembershipFactory(member=user, group=koie_group)
+
+
+@pytest.fixture
+def other_board_membership(user, other_group):
+    return BoardMembershipFactory(member=user, group=other_group)
+
+
+@pytest.fixture
 def koie():
     return KoieFactory()
 
 
 @pytest.fixture
-def booking():
-    return BookingFactory()
-
-
-@pytest.fixture()
-def koie_report():
-    return ReportFactory()
+def bookingless_koie():
+    return KoieFactory(name="Mevasskoia")
 
 
 @pytest.fixture
-def serializer(koie_report):
-    return ReportSerializer(instance=koie_report)
+def booking(koie):
+    return BookingFactory(koie=koie)
+
+
+@pytest.fixture()
+def koie_report(booking):
+    return ReportFactory(booking=booking)
 
 
 @pytest.fixture
@@ -100,30 +124,14 @@ def valid_report_data():
     return data
 
 
-@pytest.fixture
-def user(autouse=True):
-    return UserFactory()
-
-
-@pytest.fixture
-def board_membership(user, koie_group):
-    return BoardMembershipFactory(member=user, group=koie_group)
-
-
-@pytest.fixture()
-def request_factory():
-    return APIRequestFactory()
-
-
-def get_response(request, user=None, booking_id=None):
+def get_response(request, user=None, booking_id=None, koie_slug=None):
     force_authenticate(request_factory, user=user)
     if booking_id:
         view = ReportViewSet.as_view({"post": "create"})
         return view(request, booking_id)
     else:
         view = ReportViewSet.as_view({"get": "list"})
-
-        return view(request)
+        return view(request, koie_slug)
 
 
 @pytest.mark.django_db
@@ -148,23 +156,67 @@ def test_create_report_with_valid_data(request_factory, booking, valid_report_da
 
 
 @pytest.mark.django_db
-def test_list_report_succeeds_as_koie_admin(request_factory, user, board_membership):
+def test_reports_list_succeeds_as_koie_admin(request_factory, user, board_membership, koie_report):
     """
     Tests that a koie admin (board member and member of koie group) has
     access to report information
     """
-
-    request = request_factory.get("/koie/reports/")
+    slug = "flakoia"
+    request = request_factory.get(f"/koie/reports/{slug}")
     force_authenticate(request, user=user)
-    response = get_response(request=request, user=user)
+    response = get_response(request=request, user=user, koie_slug=slug)
+
     assert response.status_code == 200
 
 
 @pytest.mark.django_db
-def test_list_reports_denied_for_not_koie_admin_user(request_factory):
+def test_reports_list_denied_for_anonymous_user(request_factory, koie):
     """
-    Tests non authorized user who is not a koie admin gets access to report data
+    Tests anonymous user does not get access to report data
     """
-    request = request_factory.get("/koie/reports/")
-    response = get_response(request=request)
+    request = request_factory.get(f"/koie/reports/{koie.slug}")
+    response = get_response(request=request, koie_slug=koie.slug)
+
     assert response.status_code == 403
+
+
+@pytest.mark.django_db
+def test_reports_list_denied_for_other_board_member(
+    request_factory, koie, user, other_board_membership
+):
+    """
+    Tests board member from other group than koiene does not get access to report data
+    """
+    request = request_factory.get(f"/koie/reports/{koie.slug}")
+    force_authenticate(request, user=user)
+    response = get_response(request=request, koie_slug=koie.slug)
+
+    assert response.status_code == 403
+
+
+@pytest.mark.django_db
+def test_reports_list_should_return_404_if_koie_not_found(request_factory, user, board_membership):
+    """
+    Method should return 404 if there is no koie with given slug
+    """
+
+    request = request_factory.get("/koie/reports/404koia")
+    force_authenticate(request, user=user)
+    response = get_response(request=request, user=user, koie_slug="404koia")
+
+    assert response.status_code == 404
+
+
+@pytest.mark.django_db
+def test_reports_list_should_return_404_if_no_reports_exist_for_given_koie(
+    request_factory, user, board_membership, bookingless_koie
+):
+    """
+    Method should return 404 if there does not exist any reports for given koie
+    """
+
+    request = request_factory.get(f"/koie/reports/{bookingless_koie.slug}")
+    force_authenticate(request, user=user)
+    response = get_response(request=request, user=user, koie_slug=bookingless_koie.slug)
+
+    assert response.status_code == 404

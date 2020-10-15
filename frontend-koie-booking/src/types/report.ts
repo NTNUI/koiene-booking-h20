@@ -2,7 +2,6 @@ import { TranslateResult } from 'vue-i18n';
 
 export interface ReportData {
   step: number;
-  steps: number;
 }
 
 export interface ReportSecondStepData {
@@ -13,13 +12,13 @@ export interface ReportSecondStepData {
 
 export interface ReportThirdStepData {
   validForm: boolean;
+}
+
+export interface ReportFourthStepData {
+  validForm: boolean;
   equipment: Array<{
     displayName: TranslateResult;
     value: number;
     mutation: string;
   }>;
-}
-
-export interface ReportFourthStepData {
-  validForm: boolean;
 }
