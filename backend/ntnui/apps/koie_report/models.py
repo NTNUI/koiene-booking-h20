@@ -105,11 +105,10 @@ class KoieReportModel(models.Model):
             self.fire_extinguisher,
         ]
 
-        for field in equipment_fields:
-            accumulated = equipment_status.get(str(field), None)
-            if accumulated:
-                equipment_status[str(field)] += 1
+        for equipment in equipment_fields:
+            if str(equipment) in equipment_status.keys():
+                equipment_status[str(equipment)] += 1
             else:
-                equipment_status[str(field)] = 1
+                equipment_status[str(equipment)] = 1
 
         return equipment_status
