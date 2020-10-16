@@ -14,7 +14,7 @@ function getReport(): AdminReport {
     id: 0,
     slug: 'flakoia',
     trip_date: '2020-08-10',
-    booking_id: 1,
+    booking_uuid: '',
     gas_is_full: false,
     firewood: 1,
     chopped_up_wood: 3,
