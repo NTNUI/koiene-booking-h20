@@ -1,10 +1,12 @@
 <template>
-  <v-dialog value="showModal" persistent width="300" @click:outside="closeModal">
+  <v-dialog :value="showModal" persistent width="500" @click:outside="closeModal">
     <v-card>
       <v-card-title class="headline">
         {{ title }}
       </v-card-title>
-      <v-card-text slot="modal-context" />
+      <v-card-text>
+        <slot name="modalContext" />
+      </v-card-text>
       <v-card-actions>
         <v-spacer></v-spacer>
         <v-btn color="green darken-1" text @click="closeModal">

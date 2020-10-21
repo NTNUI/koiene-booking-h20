@@ -1,6 +1,6 @@
 <template>
   <div @click="enableModal ? clickHandler : null">
-    <StatusChip :chipText="text" :chipColor="color" />
+    <StatusChip :chip-text="text" :chip-color="color" />
   </div>
 </template>
 

@@ -7,6 +7,18 @@
         :not-sure="report.equipmentNotSure"
         :ok="report.equipmentOk"
       />
+      <StringDisplayer
+        v-else-if="header.value === 'otherFaults' && report['otherFaults']"
+        :text="report['otherFaults']"
+        title="Andre feil"
+        :clickable="true"
+      />
+      <StringDisplayer
+        v-else-if="header.value === 'feedback' && report['feedback']"
+        :text="report['feedback']"
+        title="Tilbakemelding"
+        :clickable="true"
+      />
       <template v-else-if="report[header.value] !== undefined">
         <StatusChip
           v-if="reportTableColumns[header.value]"
