@@ -4,7 +4,14 @@
       <v-chip class="mx-1" :color="$scssVars.globalColorGreenStrong" @click="showDialog = true">
         {{ ok.length }}
       </v-chip>
-      <v-chip class="mx-1" :color="$scssVars.globalColorGrey" @click="showDialog = true"> {{ notSure.length }} </v-chip>
+      <v-chip
+        ref="equipmentColumnDisplayerNotSureChip"
+        class="mx-1"
+        :color="$scssVars.globalColorGrey"
+        @click="showDialog = true"
+      >
+        {{ notSure.length }}
+      </v-chip>
       <v-chip class="mx-1" :color="$scssVars.globalColorRedStrong" @click="showDialog = true">
         {{ notOk.length }}
       </v-chip>

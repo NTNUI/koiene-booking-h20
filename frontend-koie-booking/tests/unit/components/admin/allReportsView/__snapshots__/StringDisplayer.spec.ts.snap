@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component StringDisplayer Matches snapshot 1`] = `
+<div style="cursor: pointer;">
+  <div style="text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 150px;">
+    Example text
+  </div>
+  <reportdetailmodal-stub showmodal="true" closemodal="function () { [native code] }" title="Example title"><template></template></reportdetailmodal-stub>
+</div>
+`;

@@ -73,7 +73,9 @@ exports[`Component AllReportsTable Matches snapshot 1`] = `
             <div>
               <div class="row justify-center"><span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">
       4
-    </span></span> <span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content"> 7 </span></span> <span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">
+    </span></span> <span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">
+      7
+    </span></span> <span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">
       4
     </span></span></div>
               <div role="dialog" class="v-dialog__container">
@@ -138,7 +140,9 @@ exports[`Component AllReportsTable Matches snapshot 1`] = `
             <div>
               <div class="row justify-center"><span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">
       4
-    </span></span> <span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content"> 7 </span></span> <span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">
+    </span></span> <span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">
+      7
+    </span></span> <span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">
       4
     </span></span></div>
               <div role="dialog" class="v-dialog__container">
@@ -203,7 +207,9 @@ exports[`Component AllReportsTable Matches snapshot 1`] = `
             <div>
               <div class="row justify-center"><span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">
       4
-    </span></span> <span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content"> 7 </span></span> <span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">
+    </span></span> <span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">
+      7
+    </span></span> <span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">
       4
     </span></span></div>
               <div role="dialog" class="v-dialog__container">
@@ -268,7 +274,9 @@ exports[`Component AllReportsTable Matches snapshot 1`] = `
             <div>
               <div class="row justify-center"><span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">
       4
-    </span></span> <span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content"> 7 </span></span> <span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">
+    </span></span> <span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">
+      7
+    </span></span> <span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">
       4
     </span></span></div>
               <div role="dialog" class="v-dialog__container">
@@ -333,7 +341,9 @@ exports[`Component AllReportsTable Matches snapshot 1`] = `
             <div>
               <div class="row justify-center"><span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">
       4
-    </span></span> <span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content"> 7 </span></span> <span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">
+    </span></span> <span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">
+      7
+    </span></span> <span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">
       4
     </span></span></div>
               <div role="dialog" class="v-dialog__container">
@@ -398,7 +408,9 @@ exports[`Component AllReportsTable Matches snapshot 1`] = `
             <div>
               <div class="row justify-center"><span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">
       4
-    </span></span> <span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content"> 7 </span></span> <span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">
+    </span></span> <span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">
+      7
+    </span></span> <span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">
       4
     </span></span></div>
               <div role="dialog" class="v-dialog__container">
@@ -463,7 +475,9 @@ exports[`Component AllReportsTable Matches snapshot 1`] = `
             <div>
               <div class="row justify-center"><span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">
       4
-    </span></span> <span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content"> 7 </span></span> <span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">
+    </span></span> <span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">
+      7
+    </span></span> <span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">
       4
     </span></span></div>
               <div role="dialog" class="v-dialog__container">
@@ -528,7 +542,9 @@ exports[`Component AllReportsTable Matches snapshot 1`] = `
             <div>
               <div class="row justify-center"><span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">
       4
-    </span></span> <span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content"> 7 </span></span> <span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">
+    </span></span> <span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">
+      7
+    </span></span> <span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">
       4
     </span></span></div>
               <div role="dialog" class="v-dialog__container">
@@ -593,7 +609,9 @@ exports[`Component AllReportsTable Matches snapshot 1`] = `
             <div>
               <div class="row justify-center"><span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">
       4
-    </span></span> <span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content"> 7 </span></span> <span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">
+    </span></span> <span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">
+      7
+    </span></span> <span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">
       4
     </span></span></div>
               <div role="dialog" class="v-dialog__container">
@@ -658,7 +676,9 @@ exports[`Component AllReportsTable Matches snapshot 1`] = `
             <div>
               <div class="row justify-center"><span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">
       4
-    </span></span> <span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content"> 7 </span></span> <span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">
+    </span></span> <span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">
+      7
+    </span></span> <span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">
       4
     </span></span></div>
               <div role="dialog" class="v-dialog__container">

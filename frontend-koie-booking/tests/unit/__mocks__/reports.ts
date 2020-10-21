@@ -8,7 +8,7 @@ export default function getReportData(): Array<AdminReport> {
   return res;
 }
 
-function getReport(): AdminReport {
+export function getReport(): AdminReport {
   return {
     booking_id: 0,
     timestamp: '2020-10-10',

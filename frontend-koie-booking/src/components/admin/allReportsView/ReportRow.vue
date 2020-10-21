@@ -61,11 +61,10 @@ export default Vue.extend({
   methods: {
     getCorrectColorAndText(header: string): ColorAndText {
       let chipColorAndText: ColorAndText;
-      const options = reportTableColumns[header].colorAndTextOptions;
       try {
+        const options = reportTableColumns[header].colorAndTextOptions;
         chipColorAndText = options[this.report[header] as number];
       } catch (err) {
-        console.log(err);
         chipColorAndText = { color: '#8E24AA', text: 'Feil ved lesing' };
       }
       return chipColorAndText;

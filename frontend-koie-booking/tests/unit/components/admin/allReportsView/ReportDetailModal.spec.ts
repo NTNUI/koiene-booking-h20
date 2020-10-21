@@ -38,4 +38,12 @@ describe('Component ReportDetailModal', () => {
   it('Matches snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
+
+  it("Shows default values when no input is given", () => {
+      wrapper = createWrapper(ReportDetailModal);
+      expect(wrapper.vm.showModal).toBeTruthy();
+      expect(wrapper.vm.closeModal()).toBeNull();
+      expect(wrapper.vm.title).toBe('');
+  
+  })
 });

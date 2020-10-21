@@ -1,9 +1,9 @@
 <template>
-  <div :style="'cursor:' + (clickable ? 'pointer' : 'inherit')" @click="clickHandler">
+  <div ref="stringDisplayerClickHandler" :style="'cursor:' + (clickable ? 'pointer' : 'inherit')" @click="clickHandler">
     <div style="text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 150px">
       {{ text }}
     </div>
-    <ReportDetailModal v-if="clickable" :title="title" :close-modal="closeModal" :show-modal="showModal">
+    <ReportDetailModal v-if="clickable" :title="title" :close-modal="closeDialog" :show-modal="showDialog">
       <template slot="modalContext">
         <p>{{ text }}</p>
       </template>
@@ -34,15 +34,15 @@ export default Vue.extend({
   },
   data() {
     return {
-      showModal: false,
+      showDialog: false,
     };
   },
   methods: {
-    closeModal() {
-      this.showModal = false;
+    closeDialog() {
+      this.showDialog = false;
     },
     clickHandler() {
-      if (this.clickable) this.showModal = true;
+      if (this.clickable) this.showDialog = true;
     },
   },
 });

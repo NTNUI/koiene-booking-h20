@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component AllReportsView Matches snapshot 1`] = `
+<div>
+  <h2 style="text-align: center;">Oversikt over koierapporter</h2>
+  <v-row-stub tag="div" justify="center">
+    <reportsfilter-stub></reportsfilter-stub>
+  </v-row-stub>
+  <v-row-stub tag="div">
+    <allreportstable-stub></allreportstable-stub>
+  </v-row-stub>
+</div>
+`;
