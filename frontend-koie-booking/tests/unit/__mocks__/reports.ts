@@ -10,6 +10,7 @@ export default function getReportData(): Array<AdminReport> {
 
 function getReport(): AdminReport {
   return {
+    booking_id: 0,
     timestamp: '2020-10-10',
     id: 0,
     slug: 'flakoia',

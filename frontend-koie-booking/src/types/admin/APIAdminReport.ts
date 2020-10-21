@@ -4,6 +4,7 @@ export default interface APIAdminReport {
   slug: string;
   trip_date: string;
   booking_id: number;
+  booking_uuid: string;
   gas_is_full: boolean;
   firewood: number;
   chopped_up_wood: number;

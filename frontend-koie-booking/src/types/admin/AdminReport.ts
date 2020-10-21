@@ -4,6 +4,7 @@ export default interface AdminReport {
   slug: string;
   tripDate: string;
   bookingId: number;
+  bookingUUId: string;
   gasIsFull: number;
   firewood: number;
   choppedUpWood: number;

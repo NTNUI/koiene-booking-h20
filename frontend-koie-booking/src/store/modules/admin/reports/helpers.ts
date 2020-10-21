@@ -17,6 +17,7 @@ export function convertAPIReportToAdminReport(APIReport: APIAdminReport): AdminR
     slug: APIReport.slug,
     tripDate: APIReport.trip_date,
     bookingId: APIReport.booking_id,
+    bookingUUId: APIReport.booking_uuid,
     gasIsFull: APIReport.gas_is_full ? 1 : 0,
     firewood: APIReport.firewood,
     choppedUpWood: APIReport.chopped_up_wood,
