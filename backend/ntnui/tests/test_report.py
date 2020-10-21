@@ -125,7 +125,7 @@ def valid_report_data():
 
 
 def get_response(request, user=None, booking_uuid=None, koie_slug=None):
-    force_authenticate(request_factory, user=user)
+    force_authenticate(request=request, user=user)
     if booking_uuid:
         view = ReportViewSet.as_view({"post": "create"})
         return view(request, booking_uuid)
@@ -164,9 +164,7 @@ def test_list_report_succeeds_as_koie_admin(request_factory, user, board_members
     Tests that a koie admin (board member and member of koie group) has
     access to report information
     """
-
     request = request_factory.get("/koie/reports/")
-    force_authenticate(request, user=user)
     response = get_response(request=request, user=user)
 
     assert response.status_code == 200
@@ -178,8 +176,7 @@ def test_reports_list_denied_for_other_board_member(request_factory, user, other
     Tests board member from other group than koiene does not get access to report data
     """
     request = request_factory.get(f"/koie/reports/")
-    force_authenticate(request, user=user)
-    response = get_response(request=request)
+    response = get_response(request=request, user=user)
 
     assert response.status_code == 403
 
@@ -194,7 +191,6 @@ def test_reports_filter_list_succeeds_as_koie_admin(
     """
     slug = "flakoia"
     request = request_factory.get(f"/koie/reports/{slug}")
-    force_authenticate(request, user=user)
     response = get_response(request=request, user=user, koie_slug=slug)
 
     assert response.status_code == 200
@@ -219,8 +215,7 @@ def test_reports_filter_list_denied_for_other_board_member(
     Tests board member from other group than koiene does not get access to report data
     """
     request = request_factory.get(f"/koie/reports/{koie.slug}")
-    force_authenticate(request, user=user)
-    response = get_response(request=request, koie_slug=koie.slug)
+    response = get_response(request=request, user=user, koie_slug=koie.slug)
 
     assert response.status_code == 403
 
@@ -232,9 +227,7 @@ def test_reports_filter_list_should_return_404_if_koie_not_found(
     """
     Method should return 404 if there is no koie with given slug
     """
-
     request = request_factory.get("/koie/reports/404koia")
-    force_authenticate(request, user=user)
     response = get_response(request=request, user=user, koie_slug="404koia")
 
     assert response.status_code == 404
@@ -247,9 +240,7 @@ def test_reports_filter_list_should_return_404_if_no_reports_exist_for_given_koi
     """
     Method should return 404 if there does not exist any reports for given koie
     """
-
     request = request_factory.get(f"/koie/reports/{bookingless_koie.slug}")
-    force_authenticate(request, user=user)
     response = get_response(request=request, user=user, koie_slug=bookingless_koie.slug)
 
     assert response.status_code == 404
