@@ -33,7 +33,7 @@ class ReportViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
             )
 
     def create(self, request, uuid):
-        """ Create new report, {id} is booking_id for the booking the report is connected to """
+        """ Create new report, {uuid} is booking_uuid for the booking the report is connected to """
         serializer = ReportSerializer(data=request.data)
         booking = BookingModel.objects.get(uuid=uuid)
         if serializer.is_valid():
