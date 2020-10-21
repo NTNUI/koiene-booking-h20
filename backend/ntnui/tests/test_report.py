@@ -129,9 +129,12 @@ def get_response(request, user=None, booking_id=None, koie_slug=None):
     if booking_id:
         view = ReportViewSet.as_view({"post": "create"})
         return view(request, booking_id)
+    elif koie_slug:
+        view = ReportViewSet.as_view({"get": "reports_filter_list"})
+        return view(request, koie_slug)
     else:
         view = ReportViewSet.as_view({"get": "list"})
-        return view(request, koie_slug)
+        return view(request)
 
 
 @pytest.mark.django_db
@@ -156,7 +159,35 @@ def test_create_report_with_valid_data(request_factory, booking, valid_report_da
 
 
 @pytest.mark.django_db
-def test_reports_list_succeeds_as_koie_admin(request_factory, user, board_membership, koie_report):
+def test_list_report_succeeds_as_koie_admin(request_factory, user, board_membership, koie_report):
+    """
+    Tests that a koie admin (board member and member of koie group) has
+    access to report information
+    """
+
+    request = request_factory.get("/koie/reports/")
+    force_authenticate(request, user=user)
+    response = get_response(request=request, user=user)
+
+    assert response.status_code == 200
+
+
+@pytest.mark.django_db
+def test_reports_list_denied_for_other_board_member(request_factory, user, other_board_membership):
+    """
+    Tests board member from other group than koiene does not get access to report data
+    """
+    request = request_factory.get(f"/koie/reports/")
+    force_authenticate(request, user=user)
+    response = get_response(request=request)
+
+    assert response.status_code == 403
+
+
+@pytest.mark.django_db
+def test_reports_filter_list_succeeds_as_koie_admin(
+    request_factory, user, board_membership, koie_report
+):
     """
     Tests that a koie admin (board member and member of koie group) has
     access to report information
@@ -170,7 +201,7 @@ def test_reports_list_succeeds_as_koie_admin(request_factory, user, board_member
 
 
 @pytest.mark.django_db
-def test_reports_list_denied_for_anonymous_user(request_factory, koie):
+def test_reports_filter_list_denied_for_anonymous_user(request_factory, koie):
     """
     Tests anonymous user does not get access to report data
     """
@@ -181,7 +212,7 @@ def test_reports_list_denied_for_anonymous_user(request_factory, koie):
 
 
 @pytest.mark.django_db
-def test_reports_list_denied_for_other_board_member(
+def test_reports_filter_list_denied_for_other_board_member(
     request_factory, koie, user, other_board_membership
 ):
     """
@@ -195,7 +226,9 @@ def test_reports_list_denied_for_other_board_member(
 
 
 @pytest.mark.django_db
-def test_reports_list_should_return_404_if_koie_not_found(request_factory, user, board_membership):
+def test_reports_filter_list_should_return_404_if_koie_not_found(
+    request_factory, user, board_membership
+):
     """
     Method should return 404 if there is no koie with given slug
     """
@@ -208,7 +241,7 @@ def test_reports_list_should_return_404_if_koie_not_found(request_factory, user,
 
 
 @pytest.mark.django_db
-def test_reports_list_should_return_404_if_no_reports_exist_for_given_koie(
+def test_reports_filter_list_should_return_404_if_no_reports_exist_for_given_koie(
     request_factory, user, board_membership, bookingless_koie
 ):
     """
