@@ -77,6 +77,17 @@
     }
   },
   {
+    "model": "groups.groupmodel",
+    "pk": 8,
+    "fields": {
+      "name": "SiT",
+      "slug": "sit",
+      "founding_date": "2020-10-20",
+      "payment_key": "some-arbitrary-key",
+      "access": "O"
+    }
+  },
+  {
     "model": "sessions.session",
     "pk": "4q8ftennve5i0t2gtpcplvp66rv4tmz6",
     "fields": {
@@ -957,6 +968,27 @@
       "group_expiry": "2020-01-31",
       "member": 3,
       "group": 5
+    }
+  },
+  {
+    "model": "groups.membershipmodel",
+    "pk": 13,
+    "fields": {
+      "date_joined": "2020-10-16",
+      "group_expiry": "2021-10-16",
+      "type": "leader",
+      "member": 1,
+      "group": 7
+    }
+  },
+  {
+    "model": "groups.membershipmodel",
+    "pk": 14,
+    "fields": {
+      "date_joined": "2020-10-20",
+      "group_expiry": "2021-10-20",
+      "member": 1,
+      "group": 8
     }
   },
   {
