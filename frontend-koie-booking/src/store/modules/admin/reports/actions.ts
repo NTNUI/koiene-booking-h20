@@ -3,6 +3,7 @@ import Vue from 'vue';
 import { AdminReportsState, RootState } from '@/store/types';
 import axios from 'axios';
 
+import request from '@/service/request';
 import { APIAdminBooking } from '@/types/admin/AdminBooking';
 import { convertAPIBookingToKoieNameSlug, convertAPIReportToAdminReport } from './helpers';
 import getReportData from '../../../../../tests/unit/__mocks__/reports';
@@ -11,8 +12,8 @@ import APIAdminReport from '@/types/admin/APIAdminReport';
 export const actions: ActionTree<AdminReportsState, RootState> = {
   async MOUNT_CABINS({ commit }) {
     try {
-      const res = await axios.get(Vue.prototype.$apiUrl + '/koie/availability?days=0');
-      for (const cabin of res.data.koier as Array<APIAdminBooking>) {
+      const res = await request({ url: '/koie/availability?days=0' });
+      for (const cabin of res.koier as Array<APIAdminBooking>) {
         commit('setCabins', convertAPIBookingToKoieNameSlug(cabin));
       }
     } catch (e) {
@@ -35,8 +36,10 @@ export const actions: ActionTree<AdminReportsState, RootState> = {
     }
     commit('clearAllReports');
     try {
-      const res = await axios.get(Vue.prototype.$apiUrl + '/koie/reports/' + payload);
-      console.log(res.data);
+      const res = await request({ url: '/koie/reports/' + payload });
+      for (const report of res.koier as APIAdminReport[]) {
+        commit('setReport', convertAPIReportToAdminReport(report));
+      }
     } catch (e) {
       console.log(e);
     }
