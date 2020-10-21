@@ -4,7 +4,7 @@
     "pk": 1,
     "fields": {
       "user": 1,
-      "koie": 1,
+      "koie": 2,
       "arrival_date": "2020-01-01",
       "departure_date": "2020-01-10",
       "guests_member": 1,

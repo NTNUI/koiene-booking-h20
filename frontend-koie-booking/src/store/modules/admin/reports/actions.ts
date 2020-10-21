@@ -22,10 +22,8 @@ export const actions: ActionTree<AdminReportsState, RootState> = {
   },
   async MOUNT_REPORTS({ commit }) {
     commit('clearAllReports');
-    const res = getReportData();
-    let i = 0;
-    for (const report of res) {
-      report.id = i++;
+    const res = await request({ url: '/koie/reports/' });
+    for (const report of res as APIAdminReport[]) {
       commit('setReport', convertAPIReportToAdminReport(report));
     }
   },
@@ -37,7 +35,7 @@ export const actions: ActionTree<AdminReportsState, RootState> = {
     commit('clearAllReports');
     try {
       const res = await request({ url: '/koie/reports/' + payload });
-      for (const report of res.koier as APIAdminReport[]) {
+      for (const report of res.reports as APIAdminReport[]) {
         commit('setReport', convertAPIReportToAdminReport(report));
       }
     } catch (e) {
