@@ -1,3 +1,5 @@
+import uuid
+
 from django.db import models
 from enumchoicefield import EnumChoiceField
 
@@ -12,7 +14,7 @@ class BookingModel(models.Model):
     user = models.ForeignKey(UserModel, on_delete=models.CASCADE)
     koie = models.ForeignKey(KoieModel, null=True, on_delete=models.CASCADE)
     contact_email = models.CharField(max_length=40, default="")
-
+    uuid = models.UUIDField(primary_key=False, default=uuid.uuid4, editable=False)
     arrival_date = models.DateField()
     departure_date = models.DateField()
     guests_member = models.PositiveIntegerField(null=False, default=1)

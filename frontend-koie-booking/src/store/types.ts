@@ -86,7 +86,7 @@ export interface ReportState {
 
 export interface ReportData {
   id: number;
-  booking_id: number;
+  booking_uuid: string;
   firewood: number;
   chopped_up_wood: number;
   smoke_detector_is_working: boolean;
@@ -141,6 +141,7 @@ export interface CreateBookingInfo {
 
 export interface BookingInfo {
   id: number;
+  uuid: string;
   user: number;
   koie: string;
   price: number;

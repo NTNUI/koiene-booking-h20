@@ -35,10 +35,10 @@ class ReportViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
                 {"detail": _("You must be a koie admin to access report information.")}, status=403
             )
 
-    def create(self, request, pk):
+    def create(self, request, uuid):
         """ Create new report, {id} is booking_id for the booking the report is connected to """
         serializer = ReportSerializer(data=request.data)
-        booking = BookingModel.objects.get(pk=pk)
+        booking = BookingModel.objects.get(uuid=uuid)
         if serializer.is_valid():
             report = KoieReportModel.objects.create(
                 booking=booking, date_created_at=now(), **serializer.validated_data
