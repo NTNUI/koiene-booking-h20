@@ -1,10 +1,12 @@
 from rest_framework import mixins, viewsets
+from rest_framework.decorators import action
 from rest_framework.response import Response
 
 from koie_booking.models.booking import BookingModel
 from koie_booking.models.koie import KoieModel
 from koie_report.models import KoieReportModel
 from koie_report.permissions import IsKoieAdmin
+from groups.permissions import IsAdminUser
 from koie_report.report_serializer import FilteredReportSerializer, ReportSerializer
 
 from django.utils.timezone import now
@@ -13,7 +15,7 @@ from django.utils.translation import gettext as _
 
 class ReportViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
     """
-    ViewSet for getting reports from koie_slug and post a koie report.
+    ViewSet for getting and creating koie reports.
     """
 
     queryset = KoieReportModel.objects.all()
@@ -21,24 +23,11 @@ class ReportViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
     permission_classes = [IsKoieAdmin]
 
     def list(self, request, slug):
-        """ Lists all reports for given koie_slug """
+        """ Lists all reports sorted on date """
         if IsKoieAdmin.has_object_permission(request.user, request=request, view=self):
-            try:
-                koie = KoieModel.objects.get(slug=slug)
-                reports = KoieReportModel.objects.filter(booking__koie=koie)
-            except KoieModel.DoesNotExist:
-                return Response(
-                    {"detail": _(f"Koie with specified slug: {slug}, not found.")}, status=404
-                )
-
-            serializer = FilteredReportSerializer(reports, context={"request": request}, many=True)
-            if len(serializer.data) == 0:
-                return Response(
-                    {"detail": _(f"No reports found for given koie_slug: {slug}.")}, status=404
-                )
-
-            return Response({"reports": serializer.data}, status=200)
-
+            reports = KoieReportModel.objects.all()
+            serializer = ReportSerializer(reports, context={"request": request}, many=True)
+            return Response(serializer.data)
         else:
             return Response(
                 {"detail": _("You must be a koie admin to access report information.")}, status=403
@@ -59,3 +48,32 @@ class ReportViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
             {"detail": _("You have passed in invalid data. Make sure to pass valid data.")},
             status=400,
         )
+
+    @action(
+        url_path="", detail=True, methods=["get"], serializer_class=FilteredReportSerializer,
+    )
+    def reports_filter_list(self, request, slug):
+        """ Lists all reports for given koie_slug """
+        if IsKoieAdmin.has_object_permission(
+            request.user, request=request, view=self
+        ) or IsAdminUser.has_permission(request.user, request=request, view=self):
+            try:
+                koie = KoieModel.objects.get(slug=slug)
+                reports = KoieReportModel.objects.filter(booking__koie=koie)
+            except KoieModel.DoesNotExist:
+                return Response(
+                    {"detail": _(f"Koie with specified slug: {slug}, not found.")}, status=404
+                )
+
+            serializer = FilteredReportSerializer(reports, context={"request": request}, many=True)
+            if len(serializer.data) == 0:
+                return Response(
+                    {"detail": _(f"No reports found for given koie_slug: {slug}.")}, status=404
+                )
+
+            return Response({"reports": serializer.data}, status=200)
+
+        else:
+            return Response(
+                {"detail": _("You must be a koie admin to access report information.")}, status=403
+            )
