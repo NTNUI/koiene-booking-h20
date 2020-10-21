@@ -17,6 +17,7 @@ class BookingViewSet(
 ):
     queryset = BookingModel.objects.all()
     serializer_class = BookingSerializer
+    lookup_field = "uuid"
 
     def list(self, request):
         bookings = BookingModel.objects.all()
@@ -46,9 +47,9 @@ class BookingViewSet(
         else:
             return Response({"detail": serializer.errors}, status=400)
 
-    def retrieve(self, request, pk):
+    def retrieve(self, request, uuid):
         try:
-            booking = self.queryset.get(uuid=pk)
+            booking = self.queryset.get(uuid=uuid)
             serializer = BookingSerializer(booking, context={"request": request})
             return Response({"booking": serializer.data})
         except BookingModel.DoesNotExist:

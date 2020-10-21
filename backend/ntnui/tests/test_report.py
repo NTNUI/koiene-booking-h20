@@ -125,13 +125,16 @@ def valid_report_data():
 
 
 def get_response(request, user=None, booking_uuid=None, koie_slug=None):
-    force_authenticate(request_factory, user=user)
+    force_authenticate(request=request, user=user)
     if booking_uuid:
         view = ReportViewSet.as_view({"post": "create"})
         return view(request, booking_uuid)
+    elif koie_slug:
+        view = ReportViewSet.as_view({"get": "reports_filter_list"})
+        return view(request, koie_slug)
     else:
         view = ReportViewSet.as_view({"get": "list"})
-        return view(request, koie_slug)
+        return view(request)
 
 
 @pytest.mark.django_db
@@ -156,21 +159,45 @@ def test_create_report_with_valid_data(request_factory, booking, valid_report_da
 
 
 @pytest.mark.django_db
-def test_reports_list_succeeds_as_koie_admin(request_factory, user, board_membership, koie_report):
+def test_list_report_succeeds_as_koie_admin(request_factory, user, board_membership, koie_report):
+    """
+    Tests that a koie admin (board member and member of koie group) has
+    access to report information
+    """
+    request = request_factory.get("/koie/reports/")
+    response = get_response(request=request, user=user)
+
+    assert response.status_code == 200
+
+
+@pytest.mark.django_db
+def test_reports_list_denied_for_other_board_member(request_factory, user, other_board_membership):
+    """
+    Tests board member from other group than koiene does not get access to report data
+    """
+    request = request_factory.get(f"/koie/reports/")
+    response = get_response(request=request, user=user)
+
+    assert response.status_code == 403
+
+
+@pytest.mark.django_db
+def test_reports_filter_list_succeeds_as_koie_admin(
+    request_factory, user, board_membership, koie_report
+):
     """
     Tests that a koie admin (board member and member of koie group) has
     access to report information
     """
     slug = "flakoia"
     request = request_factory.get(f"/koie/reports/{slug}")
-    force_authenticate(request, user=user)
     response = get_response(request=request, user=user, koie_slug=slug)
 
     assert response.status_code == 200
 
 
 @pytest.mark.django_db
-def test_reports_list_denied_for_anonymous_user(request_factory, koie):
+def test_reports_filter_list_denied_for_anonymous_user(request_factory, koie):
     """
     Tests anonymous user does not get access to report data
     """
@@ -181,42 +208,39 @@ def test_reports_list_denied_for_anonymous_user(request_factory, koie):
 
 
 @pytest.mark.django_db
-def test_reports_list_denied_for_other_board_member(
+def test_reports_filter_list_denied_for_other_board_member(
     request_factory, koie, user, other_board_membership
 ):
     """
     Tests board member from other group than koiene does not get access to report data
     """
     request = request_factory.get(f"/koie/reports/{koie.slug}")
-    force_authenticate(request, user=user)
-    response = get_response(request=request, koie_slug=koie.slug)
+    response = get_response(request=request, user=user, koie_slug=koie.slug)
 
     assert response.status_code == 403
 
 
 @pytest.mark.django_db
-def test_reports_list_should_return_404_if_koie_not_found(request_factory, user, board_membership):
+def test_reports_filter_list_should_return_404_if_koie_not_found(
+    request_factory, user, board_membership
+):
     """
     Method should return 404 if there is no koie with given slug
     """
-
     request = request_factory.get("/koie/reports/404koia")
-    force_authenticate(request, user=user)
     response = get_response(request=request, user=user, koie_slug="404koia")
 
     assert response.status_code == 404
 
 
 @pytest.mark.django_db
-def test_reports_list_should_return_404_if_no_reports_exist_for_given_koie(
+def test_reports_filter_list_should_return_404_if_no_reports_exist_for_given_koie(
     request_factory, user, board_membership, bookingless_koie
 ):
     """
     Method should return 404 if there does not exist any reports for given koie
     """
-
     request = request_factory.get(f"/koie/reports/{bookingless_koie.slug}")
-    force_authenticate(request, user=user)
     response = get_response(request=request, user=user, koie_slug=bookingless_koie.slug)
 
     assert response.status_code == 404
