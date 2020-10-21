@@ -111,4 +111,29 @@ class KoieReportModel(models.Model):
             else:
                 equipment_status[str(equipment)] = 1
 
+        equipment_fields_alt = [
+            "gas_burner_primus",
+            "axe",
+            "hammer",
+            "saw",
+            "saw_blade",
+            "saw_bench",
+            "spade",
+            "kerosene_lamp",
+            "detergent",
+            "dishware",
+            "cookware",
+            "cabin_book",
+            "candle_holders",
+            "fire_blanket",
+            "fire_extinguisher",
+        ]
+
+        equipment_status_alt = {"0": [], "1": [], "2": []}
+
+        for field_name in equipment_fields_alt:
+            value = getattr(self, field_name, None)
+            equipment_status_alt[str(value)].append(field_name)
+
+        return equipment_status_alt
         return equipment_status

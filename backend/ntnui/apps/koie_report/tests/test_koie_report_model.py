@@ -20,9 +20,10 @@ def expected_data():
 
 
 @pytest.mark.django_db
-def test_get_sorted_equipment_status_returns_correct_count(koie_report, expected_data):
+def test_get_sorted_equipment_status_returns_correct_grouping(koie_report, expected_data):
     """
     Tests helper function of report_model that counts equipment
     status and groups them into their respective answers
     """
+    print(koie_report.get_sorted_equipment_status())
     assert koie_report.get_sorted_equipment_status() == expected_data
