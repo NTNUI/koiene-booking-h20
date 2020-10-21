@@ -15,7 +15,7 @@ export const state: ReportState = {
   step: 1,
   reportData: {
     id: 0,
-    booking_id: 0,
+    booking_uuid: '',
     firewood: 2,
     chopped_up_wood: 2,
     smoke_detector_is_working: true,
@@ -43,6 +43,7 @@ export const state: ReportState = {
   },
   bookingInfo: {
     id: 0,
+    uuid: '',
     user: 0,
     koie: '',
     price: 0,
@@ -53,6 +54,7 @@ export const state: ReportState = {
     guests_not_member: 0,
   },
 };
+
 const namespaced: boolean = true;
 
 export const report: Module<ReportState, RootState> = {

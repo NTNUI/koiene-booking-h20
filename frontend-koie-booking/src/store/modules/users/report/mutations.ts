@@ -18,8 +18,8 @@ export const mutations: MutationTree<ReportState> = {
   setError(state, error: boolean) {
     state.error = error;
   },
-  setBookingID(state, id: number) {
-    Vue.set(state.reportData, 'booking_id', id);
+  setBookingID(state, id: string) {
+    Vue.set(state.reportData, 'booking_uuid', id);
   },
   setGasIsFull(state, gasIsFull: boolean) {
     state.reportData.gas_is_full = gasIsFull;

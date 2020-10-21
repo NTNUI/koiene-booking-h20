@@ -48,7 +48,7 @@ class BookingViewSet(
 
     def retrieve(self, request, pk):
         try:
-            booking = self.queryset.get(id=pk)
+            booking = self.queryset.get(uuid=pk)
             serializer = BookingSerializer(booking, context={"request": request})
             return Response({"booking": serializer.data})
         except BookingModel.DoesNotExist:

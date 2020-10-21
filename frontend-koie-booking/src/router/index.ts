@@ -37,7 +37,7 @@ const routes = [
     meta: { requiresAuth: true, requiresAdmin: true },
   },
   {
-    path: '/report/:booking_id',
+    path: '/report/:booking_uuid',
     name: 'Report',
     component: () => import('@/views/Report.vue'),
     meta: { requiresAuth: true, requiresAdmin: false },
