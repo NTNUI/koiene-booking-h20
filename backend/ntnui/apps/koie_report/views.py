@@ -6,7 +6,6 @@ from koie_booking.models.booking import BookingModel
 from koie_booking.models.koie import KoieModel
 from koie_report.models import KoieReportModel
 from koie_report.permissions import IsKoieAdmin
-from groups.permissions import IsAdminUser
 from koie_report.report_serializer import FilteredReportSerializer, ReportSerializer
 
 from django.utils.timezone import now
@@ -24,9 +23,7 @@ class ReportViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
 
     def list(self, request):
         """ Lists all reports sorted on departure_date """
-        if IsKoieAdmin.has_object_permission(
-            request.user, request=request, view=self
-        ) or IsAdminUser.has_permission(request.user, request=request, view=self):
+        if IsKoieAdmin.has_object_permission(request.user, request=request, view=self):
             reports = KoieReportModel.objects.all().order_by("booking__departure_date")
             serializer = ReportSerializer(reports, context={"request": request}, many=True)
             return Response(serializer.data)
@@ -56,9 +53,7 @@ class ReportViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
     )
     def reports_filter_list(self, request, slug):
         """ Lists all reports for given koie_slug sorted on departure_date"""
-        if IsKoieAdmin.has_object_permission(
-            request.user, request=request, view=self
-        ) or IsAdminUser.has_permission(request.user, request=request, view=self):
+        if IsKoieAdmin.has_object_permission(request.user, request=request, view=self):
             try:
                 koie = KoieModel.objects.get(slug=slug)
                 reports = KoieReportModel.objects.filter(booking__koie=koie).order_by(
