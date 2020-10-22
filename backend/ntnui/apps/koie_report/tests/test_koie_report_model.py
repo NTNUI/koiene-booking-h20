@@ -2,7 +2,6 @@ import pytest
 
 from groups.factories.group_factory import GroupFactory
 from koie_report.factories.report_factory import ReportFactory
-from django.template.defaultfilters import slugify
 
 
 @pytest.fixture(autouse=True)
