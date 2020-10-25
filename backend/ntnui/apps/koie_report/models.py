@@ -86,29 +86,29 @@ class KoieReportModel(models.Model):
         Returns collected equipment status sorted into
         dict according to status, for easy display on front-end
         """
-        equipment_status = {}
+
         equipment_fields = [
-            self.gas_burner_primus,
-            self.axe,
-            self.hammer,
-            self.saw,
-            self.saw_blade,
-            self.saw_bench,
-            self.spade,
-            self.kerosene_lamp,
-            self.detergent,
-            self.dishware,
-            self.cookware,
-            self.cabin_book,
-            self.candle_holders,
-            self.fire_blanket,
-            self.fire_extinguisher,
+            "gas_burner_primus",
+            "axe",
+            "hammer",
+            "saw",
+            "saw_blade",
+            "saw_bench",
+            "spade",
+            "kerosene_lamp",
+            "detergent",
+            "dishware",
+            "cookware",
+            "cabin_book",
+            "candle_holders",
+            "fire_blanket",
+            "fire_extinguisher",
         ]
 
-        for equipment in equipment_fields:
-            if str(equipment) in equipment_status.keys():
-                equipment_status[str(equipment)] += 1
-            else:
-                equipment_status[str(equipment)] = 1
+        equipment_status = {"0": [], "1": [], "2": []}
+
+        for field_name in equipment_fields:
+            value = getattr(self, field_name, None)
+            equipment_status[str(value)].append(field_name)
 
         return equipment_status
