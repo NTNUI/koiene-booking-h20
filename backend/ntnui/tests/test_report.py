@@ -234,13 +234,14 @@ def test_reports_filter_list_should_return_404_if_koie_not_found(
 
 
 @pytest.mark.django_db
-def test_reports_filter_list_should_return_404_if_no_reports_exist_for_given_koie(
+def test_reports_filter_list_should_return_empty_list_if_no_reports_exist_for_given_koie(
     request_factory, user, board_membership, bookingless_koie
 ):
     """
-    Method should return 404 if there does not exist any reports for given koie
+    Method should return empty list if there does not exist any reports for given koie
     """
     request = request_factory.get(f"/koie/reports/{bookingless_koie.slug}")
     response = get_response(request=request, user=user, koie_slug=bookingless_koie.slug)
 
-    assert response.status_code == 404
+    assert response.status_code == 200
+    assert len(response.data["reports"]) == 0

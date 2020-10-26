@@ -1,3 +1,4 @@
+from django.template.defaultfilters import slugify
 from rest_framework import mixins, viewsets
 from rest_framework.decorators import action
 from rest_framework.response import Response
@@ -25,7 +26,7 @@ class ReportViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
         """ Lists all reports sorted on departure_date """
         if IsKoieAdmin.has_object_permission(request.user, request=request, view=self):
             reports = KoieReportModel.objects.all().order_by("booking__departure_date")
-            serializer = ReportSerializer(reports, context={"request": request}, many=True)
+            serializer = FilteredReportSerializer(reports, context={"request": request}, many=True)
             return Response(serializer.data)
         else:
             return Response(
@@ -55,6 +56,7 @@ class ReportViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
         """ Lists all reports for given koie_slug sorted on departure_date"""
         if IsKoieAdmin.has_object_permission(request.user, request=request, view=self):
             try:
+                slug = slugify(slug)
                 koie = KoieModel.objects.get(slug=slug)
                 reports = KoieReportModel.objects.filter(booking__koie=koie).order_by(
                     "booking__departure_date"
@@ -65,13 +67,8 @@ class ReportViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
                 )
 
             serializer = FilteredReportSerializer(reports, context={"request": request}, many=True)
-            if len(serializer.data) == 0:
-                return Response(
-                    {"detail": _(f"No reports found for given koie_slug: {slug}.")}, status=404
-                )
 
             return Response({"reports": serializer.data}, status=200)
-
         else:
             return Response(
                 {"detail": _("You must be a koie admin to access report information.")}, status=403
