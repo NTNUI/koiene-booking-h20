@@ -1,3 +1,4 @@
+from django.template.defaultfilters import slugify
 from rest_framework import mixins, viewsets
 from rest_framework.decorators import action
 from rest_framework.response import Response
@@ -55,6 +56,7 @@ class ReportViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
         """ Lists all reports for given koie_slug sorted on departure_date"""
         if IsKoieAdmin.has_object_permission(request.user, request=request, view=self):
             try:
+                slug = slugify(slug)
                 koie = KoieModel.objects.get(slug=slug)
                 reports = KoieReportModel.objects.filter(booking__koie=koie).order_by(
                     "booking__departure_date"
