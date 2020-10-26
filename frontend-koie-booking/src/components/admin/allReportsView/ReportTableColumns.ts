@@ -54,7 +54,8 @@ const boatOptions: Array<ColorAndText> = [
   },
 ];
 
-const lifeJacketOptions = boatOptions.splice(2, 1);
+const lifeJacketOptions = [...boatOptions];
+lifeJacketOptions.splice(2, 1);
 
 export const reportTableColumns: { [value: string]: ReportColumn } = {
   gasIsFull: {

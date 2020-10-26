@@ -7,6 +7,7 @@ export const reportTableHeaders: Array<TableHeader> = [
     justify: 'center',
     sortable: true,
     value: 'timestamp',
+    width: '7%',
   },
   {
     text: 'Koie',
@@ -14,6 +15,7 @@ export const reportTableHeaders: Array<TableHeader> = [
     justify: 'center',
     sortable: true,
     value: 'slug',
+    width: '9%',
   },
   {
     text: 'Turdato',
@@ -21,6 +23,7 @@ export const reportTableHeaders: Array<TableHeader> = [
     justify: 'center',
     sortable: true,
     value: 'tripDate',
+    width: '7%',
   },
   {
     text: 'Gassbestand',
@@ -28,6 +31,7 @@ export const reportTableHeaders: Array<TableHeader> = [
     justify: 'center',
     sortable: false,
     value: 'gasIsFull',
+    width: '6%',
   },
   {
     text: 'Vedstokker',
@@ -35,6 +39,7 @@ export const reportTableHeaders: Array<TableHeader> = [
     justify: 'center',
     sortable: false,
     value: 'firewood',
+    width: '7%',
   },
   {
     text: 'Opphuggd ved',
@@ -42,6 +47,7 @@ export const reportTableHeaders: Array<TableHeader> = [
     justify: 'center',
     sortable: false,
     value: 'choppedUpWood',
+    width: '8%',
   },
   {
     text: 'Båt',
@@ -49,6 +55,7 @@ export const reportTableHeaders: Array<TableHeader> = [
     justify: 'center',
     sortable: false,
     value: 'boatStatus',
+    width: '9%',
   },
   {
     text: 'Kano',
@@ -56,6 +63,7 @@ export const reportTableHeaders: Array<TableHeader> = [
     justify: 'center',
     sortable: false,
     value: 'canoeStatus',
+    width: '9%',
   },
   {
     text: 'Redningsvest',
@@ -63,6 +71,7 @@ export const reportTableHeaders: Array<TableHeader> = [
     justify: 'center',
     sortable: false,
     value: 'lifeJacketsStatus',
+    width: '6%',
   },
   {
     text: 'Røykvarsler',
@@ -70,6 +79,7 @@ export const reportTableHeaders: Array<TableHeader> = [
     justify: 'center',
     sortable: false,
     value: 'smokeDetectorIsWorking',
+    width: '5%',
   },
   {
     text: 'Utstyr',
@@ -77,7 +87,7 @@ export const reportTableHeaders: Array<TableHeader> = [
     justify: 'center',
     sortable: false,
     value: 'equipment',
-    width: '150',
+    width: '10%',
   },
   {
     text: 'Andre utstyrsfeil',
@@ -85,7 +95,7 @@ export const reportTableHeaders: Array<TableHeader> = [
     justify: 'center',
     sortable: false,
     value: 'otherFaults',
-    width: '150',
+    width: '9%',
   },
   {
     text: 'Tilbakemelding',
@@ -93,6 +103,6 @@ export const reportTableHeaders: Array<TableHeader> = [
     justify: 'center',
     sortable: false,
     value: 'feedback',
-    width: '150',
+    width: '8%',
   },
 ];

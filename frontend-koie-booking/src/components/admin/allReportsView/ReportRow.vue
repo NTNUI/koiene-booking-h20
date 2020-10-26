@@ -1,6 +1,6 @@
 <template>
   <tr>
-    <td v-for="header in reportTableHeaders" :key="header.value">
+    <td v-for="header in reportTableHeaders" :key="header.value" style="text-align:center">
       <EquipmentColumnDisplayer
         v-if="header.value === 'equipment'"
         :not-ok="report.equipmentNotOk"
