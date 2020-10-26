@@ -1,3 +1,4 @@
+from django.template.defaultfilters import slugify
 from rest_framework import mixins, viewsets
 from rest_framework.response import Response
 
@@ -23,6 +24,7 @@ class KoieViewSet(
     def retrieve(self, request, slug):
         """ Retrieve one koie from slug """
         try:
+            slug = slugify(slug)
             koie = self.queryset.get(slug=slug)
             serializer = KoieSerializer(koie, context={"request": request})
             return Response({"koie": serializer.data})
