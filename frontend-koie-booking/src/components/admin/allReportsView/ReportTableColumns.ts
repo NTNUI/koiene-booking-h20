@@ -33,8 +33,12 @@ const woodOptions: Array<ColorAndText> = [
 
 const boatOptions: Array<ColorAndText> = [
   {
+    color: green,
+    text: 'Ok',
+  },
+  {
     color: red,
-    text: 'Mangler',
+    text: 'Defekt',
   },
   {
     color: red,
@@ -42,11 +46,7 @@ const boatOptions: Array<ColorAndText> = [
   },
   {
     color: red,
-    text: 'Defekt',
-  },
-  {
-    color: green,
-    text: 'Ok',
+    text: 'Mangler',
   },
   {
     color: grey,
@@ -54,7 +54,7 @@ const boatOptions: Array<ColorAndText> = [
   },
 ];
 
-const lifeJacketOptions = boatOptions.splice(1, 1);
+const lifeJacketOptions = boatOptions.splice(2, 1);
 
 export const reportTableColumns: { [value: string]: ReportColumn } = {
   gasIsFull: {

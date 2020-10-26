@@ -12,12 +12,10 @@ export function convertAPIBookingToKoieNameSlug(APIBooking: APIAdminBooking): Ko
 
 export function convertAPIReportToAdminReport(APIReport: APIAdminReport): AdminReport {
   return {
-    timestamp: APIReport.timestamp,
+    timestamp: APIReport.date_created_at,
     id: APIReport.id,
-    slug: APIReport.slug,
-    tripDate: APIReport.trip_date,
-    bookingId: APIReport.booking_id,
-    bookingUUId: APIReport.booking_uuid,
+    slug: APIReport.koie_name,
+    tripDate: APIReport.date_of_stay,
     gasIsFull: APIReport.gas_is_full ? 1 : 0,
     firewood: APIReport.firewood,
     choppedUpWood: APIReport.chopped_up_wood,
@@ -25,9 +23,9 @@ export function convertAPIReportToAdminReport(APIReport: APIAdminReport): AdminR
     canoeStatus: APIReport.canoe_status,
     lifeJacketsStatus: APIReport.life_jackets_status,
     smokeDetectorIsWorking: APIReport.smoke_detector_is_working ? 1 : 0,
-    equipmentOk: APIReport.equipment_ok,
-    equipmentNotOk: APIReport.equipment_not_ok,
-    equipmentNotSure: APIReport.equipment_not_sure,
+    equipmentOk: APIReport.equipment_status[0],
+    equipmentNotSure: APIReport.equipment_status[1],
+    equipmentNotOk: APIReport.equipment_status[2],
     otherFaults: APIReport.other_faults,
     feedback: APIReport.feedback,
   };

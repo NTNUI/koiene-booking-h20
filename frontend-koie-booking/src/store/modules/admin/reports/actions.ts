@@ -1,12 +1,9 @@
 import { ActionTree } from 'vuex';
-import Vue from 'vue';
 import { AdminReportsState, RootState } from '@/store/types';
-import axios from 'axios';
 
 import request from '@/service/request';
 import { APIAdminBooking } from '@/types/admin/AdminBooking';
 import { convertAPIBookingToKoieNameSlug, convertAPIReportToAdminReport } from './helpers';
-import getReportData from '../../../../../tests/unit/__mocks__/reports';
 import APIAdminReport from '@/types/admin/APIAdminReport';
 
 export const actions: ActionTree<AdminReportsState, RootState> = {

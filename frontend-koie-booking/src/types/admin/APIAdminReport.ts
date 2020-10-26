@@ -1,10 +1,8 @@
 export default interface APIAdminReport {
-  timestamp: string;
+  date_created_at: string;
   id: number;
-  slug: string;
-  trip_date: string;
-  booking_id: number;
-  booking_uuid: string;
+  koie_name: string;
+  date_of_stay: string;
   gas_is_full: boolean;
   firewood: number;
   chopped_up_wood: number;
@@ -12,9 +10,7 @@ export default interface APIAdminReport {
   canoe_status: number;
   life_jackets_status: number;
   smoke_detector_is_working: boolean;
-  equipment_ok: Array<string>;
-  equipment_not_ok: Array<string>;
-  equipment_not_sure: Array<string>;
+  equipment_status: Array<Array<string>>;
   other_faults: string;
   feedback: string;
 }

@@ -3,8 +3,6 @@ export default interface AdminReport {
   id: number;
   slug: string;
   tripDate: string;
-  bookingId: number;
-  bookingUUId: string;
   gasIsFull: number;
   firewood: number;
   choppedUpWood: number;
