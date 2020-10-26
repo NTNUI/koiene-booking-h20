@@ -2,7 +2,7 @@
 
 exports[`Component ReportRow Matches snapshot 1`] = `
 <tr>
-  <td>
+  <td style="text-align: center;">
     <div style="cursor: inherit;">
       <div style="text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 150px;">
         2020-10-10
@@ -10,15 +10,15 @@ exports[`Component ReportRow Matches snapshot 1`] = `
       <!---->
     </div>
   </td>
-  <td>
+  <td style="text-align: center;">
     <div style="cursor: inherit;">
       <div style="text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 150px;">
-        flakoia
+        Flåkoia
       </div>
       <!---->
     </div>
   </td>
-  <td>
+  <td style="text-align: center;">
     <div style="cursor: inherit;">
       <div style="text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 150px;">
         2020-08-10
@@ -26,28 +26,28 @@ exports[`Component ReportRow Matches snapshot 1`] = `
       <!---->
     </div>
   </td>
-  <td><span class="v-chip theme--light v-size--default tomt white--text"><span class="v-chip__content">Tomt</span></span></td>
-  <td><span class="v-chip theme--light v-size--default tomt white--text"><span class="v-chip__content">Lite</span></span></td>
-  <td><span class="v-chip theme--light v-size--default tomt white--text"><span class="v-chip__content">En del</span></span></td>
-  <td><span class="v-chip theme--light v-size--default tomt white--text"><span class="v-chip__content">Ok</span></span></td>
-  <td><span class="v-chip theme--light v-size--default tomt white--text"><span class="v-chip__content">Defekt</span></span></td>
-  <td><span class="v-chip theme--light v-size--default tomt white--text"><span class="v-chip__content">Mangler årer</span></span></td>
-  <td><span class="v-chip theme--light v-size--default tomt white--text"><span class="v-chip__content">Defekt</span></span></td>
-  <td>
+  <td style="text-align: center;"><span class="v-chip theme--light v-size--default tomt white--text"><span class="v-chip__content">Tomt</span></span></td>
+  <td style="text-align: center;"><span class="v-chip theme--light v-size--default tomt white--text"><span class="v-chip__content">Lite</span></span></td>
+  <td style="text-align: center;"><span class="v-chip theme--light v-size--default tomt white--text"><span class="v-chip__content">En del</span></span></td>
+  <td style="text-align: center;"><span class="v-chip theme--light v-size--default tomt white--text"><span class="v-chip__content">Mangler årer</span></span></td>
+  <td style="text-align: center;"><span class="v-chip theme--light v-size--default tomt white--text"><span class="v-chip__content">Defekt</span></span></td>
+  <td style="text-align: center;"><span class="v-chip theme--light v-size--default tomt white--text"><span class="v-chip__content">Ok</span></span></td>
+  <td style="text-align: center;"><span class="v-chip theme--light v-size--default tomt white--text"><span class="v-chip__content">Defekt</span></span></td>
+  <td style="text-align: center;">
     <div>
       <div class="row justify-center"><span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">
       4
     </span></span> <span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">
-      7
-    </span></span> <span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">
       4
+    </span></span> <span class="mx-1 v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">
+      7
     </span></span></div>
       <div role="dialog" class="v-dialog__container">
         <!---->
       </div>
     </div>
   </td>
-  <td>
+  <td style="text-align: center;">
     <div style="cursor: pointer;">
       <div style="text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 150px;">
         The cabin was missing
@@ -57,7 +57,7 @@ exports[`Component ReportRow Matches snapshot 1`] = `
       </div>
     </div>
   </td>
-  <td>
+  <td style="text-align: center;">
     <div style="cursor: pointer;">
       <div style="text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 150px;">
         Next time make sure the cabin is there
