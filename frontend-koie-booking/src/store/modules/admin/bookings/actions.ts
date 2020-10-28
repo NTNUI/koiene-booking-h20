@@ -9,6 +9,8 @@ import { convertAPIBookingToAdminBooking } from '@/store/modules/admin/bookings/
 export const actions: ActionTree<AdminBookingsState, RootState> = {
   async MOUNT_CABINS_WITH_BOOKINGS({ commit }, payload: { startDate: string; endDate: string }) {
     if (!payload) return;
+    commit('setLoading', true);
+    commit('clearAllBookings');
     try {
       const res = await axios.get(
         Vue.prototype.$apiUrl +
@@ -23,5 +25,6 @@ export const actions: ActionTree<AdminBookingsState, RootState> = {
     } catch (e) {
       console.log(e);
     }
+    commit('setLoading', false);
   },
 };

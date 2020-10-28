@@ -6,6 +6,7 @@
     :items-per-page="24"
     :hide-default-footer="true"
     :custom-sort="customSort"
+    :loading="$store.state.adminBookings.loading"
     loading-text="Henter inn bookinger"
     no-data-text="Det skjedde noe feil da vi prøvde å hente bookinger"
   >
