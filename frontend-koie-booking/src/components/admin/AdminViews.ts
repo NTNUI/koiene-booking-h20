@@ -1,6 +1,7 @@
 import { AdminView } from '@/types/admin/AdminView';
 import AllCabinsView from '@/components/admin/allCabinsView/AllCabinsView.vue';
 import AllReportsView from '@/components/admin/allReportsView/AllReportsView.vue';
+import KeyManagerOverview from '@/components/keyManager/KeyManagerOverview.vue';
 
 const adminViews: Array<AdminView> = [
   {
@@ -14,6 +15,12 @@ const adminViews: Array<AdminView> = [
     title: 'Rapporter',
     icon: 'file-document-outline',
     component: AllReportsView,
+  },
+  {
+    id: 'keyOverview',
+    title: 'Nøkler',
+    icon: 'key',
+    component: KeyManagerOverview,
   },
 ];
 
