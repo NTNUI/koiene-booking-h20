@@ -37,6 +37,7 @@ import Input from '@/components/login/Input.vue';
 import { fetchToken } from '@/service/auth';
 import { TokenPayload } from '@/types/tokenPayload';
 import { loginFormData } from '@/types/login';
+
 export default Vue.extend({
   name: 'LoginForm',
   components: {
@@ -73,7 +74,11 @@ export default Vue.extend({
         try {
           this.loading = true;
           await fetchToken(payload);
-          this.$router.push((this.$route.query.redirect as string) || '/');
+          this.$router.push(
+            this.checkIfUserIsKeyManagerAndNotAdmin()
+              ? '/key_management'
+              : (this.$route.query.redirect as string) || '/'
+          );
         } catch (error) {
           this.$notify({
             group: 'memberships_system',
@@ -85,6 +90,9 @@ export default Vue.extend({
           this.loading = false;
         }
       }
+    },
+    checkIfUserIsKeyManagerAndNotAdmin(): boolean {
+      return !this.$store.getters['auth/isAdmin'] && this.$store.getters['auth/isKeyManager'];
     },
   },
 });
