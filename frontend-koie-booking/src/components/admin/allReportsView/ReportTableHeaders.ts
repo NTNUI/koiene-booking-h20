@@ -87,7 +87,7 @@ export const reportTableHeaders: Array<TableHeader> = [
     justify: 'center',
     sortable: false,
     value: 'equipment',
-    width: '10%',
+    width: '150px',
   },
   {
     text: 'Andre utstyrsfeil',

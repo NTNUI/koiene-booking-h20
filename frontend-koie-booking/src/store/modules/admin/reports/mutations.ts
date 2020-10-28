@@ -14,6 +14,9 @@ export const mutations: MutationTree<AdminReportsState> = {
   setCabins(state, cabin: KoieNameSlug) {
     Vue.set(state.cabins, cabin.slug, cabin);
   },
+  setLoading(state, payload: boolean) {
+    state.loading = payload;
+  },
   setReport(state, report: AdminReport) {
     Vue.set(state.reports, report.id, report);
   },

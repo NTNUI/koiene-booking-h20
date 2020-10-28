@@ -179,4 +179,5 @@ export interface AdminReportsState {
   expanded: boolean;
   cabins: AdminReportKoieDictionary;
   reports: AdminReportDictionary;
+  loading: boolean;
 }

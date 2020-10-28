@@ -19,10 +19,12 @@ export const actions: ActionTree<AdminReportsState, RootState> = {
   },
   async MOUNT_REPORTS({ commit }) {
     commit('clearAllReports');
+    commit('setLoading', true);
     const res = await request({ url: '/koie/reports/' });
     for (const report of res as APIAdminReport[]) {
       commit('setReport', convertAPIReportToAdminReport(report));
     }
+    commit('setLoading', false);
   },
   async MOUNT_REPORTS_FOR_CABIN({ commit, dispatch }, payload: string) {
     if (!payload) {
@@ -30,6 +32,7 @@ export const actions: ActionTree<AdminReportsState, RootState> = {
       return;
     }
     commit('clearAllReports');
+    commit('setLoading', true);
     try {
       const res = await request({ url: '/koie/reports/' + payload });
       for (const report of res.reports as APIAdminReport[]) {
@@ -38,5 +41,6 @@ export const actions: ActionTree<AdminReportsState, RootState> = {
     } catch (e) {
       console.log(e);
     }
+    commit('setLoading', false);
   },
 };
