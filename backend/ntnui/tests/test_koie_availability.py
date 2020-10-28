@@ -104,7 +104,6 @@ def test_list_koie_availability_from_date_range(request_factory, user, board_mem
         f"/koie/availability/range/?from_date={from_date}&to_date={to_date}"
     )
     response = get_response(request=request, user=user)
-    print(response.status_code, response.data)
     bed_availability = response.data["koier"][0]["beds_available_in_date_range"]
 
     assert len(response.data["koier"]) == KoieModel.objects.count()
