@@ -7,10 +7,10 @@
       {{ keyDetail.koieName }}
     </td>
     <td>
-      <span :style="getColorForPickUp(keyDetail.startDate)">{{ keyDetail.startDate }} </span>
+      {{ keyDetail.startDate }}
     </td>
     <td>
-      {{ keyDetail.endDate }}
+      <span :style="getColorForPickUp(keyDetail.startDate)">{{ keyDetail.endDate }} </span>
     </td>
     <td>
       {{ keyDetail.status }}
@@ -24,6 +24,7 @@ import keyTableHeaders from '@/components/keyManager/keyTableHeaders';
 import KeyDetail from '../../types/keyManager/KeyDetail';
 import dayjs from 'dayjs';
 import scssVars from '@/styles/variables.scss';
+import { addToDate } from '@/utils/dates';
 
 export default Vue.extend({
   name: 'KeyPickUpRow',
@@ -41,9 +42,10 @@ export default Vue.extend({
     };
   },
   methods: {
-    getColorForPickUp(startDate: string): { color: string } {
+    getColorForPickUp(endDate: string): { color: string } {
+      const limit = addToDate(endDate, 7, 'day');
       const today = dayjs().format('YYYY-MM-DD');
-      if (today.localeCompare(startDate) > 0) return { color: scssVars.globalColorRedWeak };
+      if (today.localeCompare(limit) > 0) return { color: scssVars.globalColorRedWeak };
       return { color: 'white' };
     },
   },

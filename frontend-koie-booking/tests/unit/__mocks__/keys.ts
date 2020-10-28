@@ -1,7 +1,7 @@
 import KEY_STATUS from '@/types/keyManager/KeyStatus';
 import KeyDetail from '@/types/keyManager/KeyDetail';
 
-export function getKeyDeliveries(): Array<KeyDetail> {
+export function getKeyPickUps(): Array<KeyDetail> {
   return [
     {
       email: 'ola@normann.com',
@@ -13,14 +13,21 @@ export function getKeyDeliveries(): Array<KeyDetail> {
     {
       email: 'ola@normann.com',
       koieName: 'Mevasskoia',
-      startDate: '2020-10-29',
+      startDate: '2020-10-30',
       endDate: '2020-11-01',
       status: KEY_STATUS.PICKED_UP,
+    },
+    {
+      email: 'ola@normann.com',
+      koieName: 'Flåkoia',
+      startDate: '2020-10-25',
+      endDate: '2020-11-01',
+      status: KEY_STATUS.NOT_PICKED_UP,
     },
   ];
 }
 
-export function getKeyPickups(): Array<KeyDetail> {
+export function getKeyDeliveries(): Array<KeyDetail> {
   return [
     {
       email: 'ola@normann.com',
@@ -39,8 +46,8 @@ export function getKeyPickups(): Array<KeyDetail> {
     {
       email: 'ola@normann.com',
       koieName: 'Mevasskoia',
-      startDate: '2020-10-23',
-      endDate: '2020-10-26',
+      startDate: '2020-10-14',
+      endDate: '2020-10-16',
       status: KEY_STATUS.PICKED_UP,
     },
   ];
