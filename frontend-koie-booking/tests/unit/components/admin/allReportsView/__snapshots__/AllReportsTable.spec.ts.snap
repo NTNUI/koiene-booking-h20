@@ -31,14 +31,28 @@ exports[`Component AllReportsTable Matches snapshot 1`] = `
           <th role="columnheader" scope="col" aria-label="Kano" class="text-center" style="width: 9%; min-width: 9%;"><span>Kano</span></th>
           <th role="columnheader" scope="col" aria-label="Redningsvest" class="text-center" style="width: 6%; min-width: 6%;"><span>Redningsvest</span></th>
           <th role="columnheader" scope="col" aria-label="Røykvarsler" class="text-center" style="width: 5%; min-width: 5%;"><span>Røykvarsler</span></th>
-          <th role="columnheader" scope="col" aria-label="Utstyr" class="text-center" style="width: 10%; min-width: 10%;"><span>Utstyr</span></th>
+          <th role="columnheader" scope="col" aria-label="Utstyr" class="text-center" style="width: 150px; min-width: 150px;"><span>Utstyr</span></th>
           <th role="columnheader" scope="col" aria-label="Andre utstyrsfeil" class="text-center" style="width: 9%; min-width: 9%;"><span>Andre utstyrsfeil</span></th>
           <th role="columnheader" scope="col" aria-label="Tilbakemelding" class="text-center" style="width: 8%; min-width: 8%;"><span>Tilbakemelding</span></th>
         </tr>
       </thead>
+      <thead>
+        <tr class="v-data-table__progress">
+          <th colspan="13" class="column">
+            <div role="progressbar" aria-valuemin="0" aria-valuemax="100" class="v-progress-linear theme--light" style="height: 2px;">
+              <div class="v-progress-linear__background primary" style="opacity: 0.3; left: 0%; width: 100%;"></div>
+              <div class="v-progress-linear__buffer"></div>
+              <div class="v-progress-linear__indeterminate v-progress-linear__indeterminate--active">
+                <div class="v-progress-linear__indeterminate long primary"></div>
+                <div class="v-progress-linear__indeterminate short primary"></div>
+              </div>
+            </div>
+          </th>
+        </tr>
+      </thead>
       <tbody>
         <tr class="v-data-table__empty-wrapper">
-          <td colspan="13">Det skjedde noe feil da vi prøvde å hente rapporter</td>
+          <td colspan="13">Henter inn rapporter</td>
         </tr>
       </tbody>
     </table>
