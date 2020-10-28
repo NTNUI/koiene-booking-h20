@@ -8,6 +8,7 @@ import dayjs from 'dayjs';
 export const state: AdminBookingsState = {
   cabinsWithBookings: {},
   startDate: dayjs().format('YYYY-MM-DD'),
+  loading: false,
 };
 
 const namespaced = true;

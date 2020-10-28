@@ -10,4 +10,10 @@ export const mutations: MutationTree<AdminBookingsState> = {
   setStartDate(state, payload: string) {
     state.startDate = payload;
   },
+  setLoading(state, payload: boolean) {
+    state.loading = payload;
+  },
+  clearAllBookings(state) {
+    state.cabinsWithBookings = {};
+  },
 };
