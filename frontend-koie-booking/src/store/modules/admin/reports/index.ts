@@ -8,6 +8,8 @@ export const state: AdminReportsState = {
   chosenCabin: '',
   cabins: {},
   expanded: false,
+  reports: {},
+  loading: false,
 };
 
 const namespaced = true;

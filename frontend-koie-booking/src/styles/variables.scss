@@ -13,6 +13,7 @@ $global-color-red-weak: #FF5722;
 $global-color-yellow: #FFB300;
 $global-color-green-weak: #C0CA33;
 $global-color-green-strong: #4CAF50;
+$global-color-grey: #9E9E9E;
 
 // Breakpoints:
 $break-xs: 600px;
@@ -77,4 +78,5 @@ a {
   globalColorYellow: $global-color-yellow;
   globalColorGreenWeak: $global-color-green-weak;
   globalColorGreenStrong: $global-color-green-strong;
+  globalColorGrey: $global-color-grey;
 }

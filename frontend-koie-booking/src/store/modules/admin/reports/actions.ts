@@ -1,20 +1,46 @@
 import { ActionTree } from 'vuex';
-import Vue from 'vue';
 import { AdminReportsState, RootState } from '@/store/types';
-import axios from 'axios';
 
+import request from '@/service/request';
 import { APIAdminBooking } from '@/types/admin/AdminBooking';
-import { convertAPIBookingToKoieNameSlug } from './helpers';
+import { convertAPIBookingToKoieNameSlug, convertAPIReportToAdminReport } from './helpers';
+import APIAdminReport from '@/types/admin/APIAdminReport';
 
 export const actions: ActionTree<AdminReportsState, RootState> = {
   async MOUNT_CABINS({ commit }) {
     try {
-      const res = await axios.get(Vue.prototype.$apiUrl + '/koie/availability?days=0');
-      for (const cabin of res.data.koier as Array<APIAdminBooking>) {
+      const res = await request({ url: '/koie/availability?days=0' });
+      for (const cabin of res.koier as Array<APIAdminBooking>) {
         commit('setCabins', convertAPIBookingToKoieNameSlug(cabin));
       }
     } catch (e) {
       console.log(e);
     }
+  },
+  async MOUNT_REPORTS({ commit }) {
+    commit('clearAllReports');
+    commit('setLoading', true);
+    const res = await request({ url: '/koie/reports/' });
+    for (const report of res as APIAdminReport[]) {
+      commit('setReport', convertAPIReportToAdminReport(report));
+    }
+    commit('setLoading', false);
+  },
+  async MOUNT_REPORTS_FOR_CABIN({ commit, dispatch }, payload: string) {
+    if (!payload) {
+      dispatch('MOUNT_REPORTS');
+      return;
+    }
+    commit('clearAllReports');
+    commit('setLoading', true);
+    try {
+      const res = await request({ url: '/koie/reports/' + payload });
+      for (const report of res.reports as APIAdminReport[]) {
+        commit('setReport', convertAPIReportToAdminReport(report));
+      }
+    } catch (e) {
+      console.log(e);
+    }
+    commit('setLoading', false);
   },
 };

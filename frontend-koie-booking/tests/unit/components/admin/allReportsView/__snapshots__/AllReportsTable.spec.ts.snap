@@ -21,24 +21,38 @@ exports[`Component AllReportsTable Matches snapshot 1`] = `
       </colgroup>
       <thead class="v-data-table-header">
         <tr>
-          <th role="columnheader" scope="col" aria-label="Tidsmerke: Not sorted. Activate to sort ascending." aria-sort="none" class="text-center sortable"><span>Tidsmerke</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size: 18px;"></i></th>
-          <th role="columnheader" scope="col" aria-label="Koie: Not sorted. Activate to sort ascending." aria-sort="none" class="text-center sortable"><span>Koie</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size: 18px;"></i></th>
-          <th role="columnheader" scope="col" aria-label="Turdato: Not sorted. Activate to sort ascending." aria-sort="none" class="text-center sortable"><span>Turdato</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size: 18px;"></i></th>
-          <th role="columnheader" scope="col" aria-label="Gassbestand: Not sorted. Activate to sort ascending." aria-sort="none" class="text-center sortable"><span>Gassbestand</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size: 18px;"></i></th>
-          <th role="columnheader" scope="col" aria-label="Vedstokker: Not sorted. Activate to sort ascending." aria-sort="none" class="text-center sortable"><span>Vedstokker</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size: 18px;"></i></th>
-          <th role="columnheader" scope="col" aria-label="Opphuggd ved: Not sorted. Activate to sort ascending." aria-sort="none" class="text-center sortable"><span>Opphuggd ved</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size: 18px;"></i></th>
-          <th role="columnheader" scope="col" aria-label="Båt: Not sorted. Activate to sort ascending." aria-sort="none" class="text-center sortable"><span>Båt</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size: 18px;"></i></th>
-          <th role="columnheader" scope="col" aria-label="Kano: Not sorted. Activate to sort ascending." aria-sort="none" class="text-center sortable"><span>Kano</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size: 18px;"></i></th>
-          <th role="columnheader" scope="col" aria-label="Redningsvest: Not sorted. Activate to sort ascending." aria-sort="none" class="text-center sortable"><span>Redningsvest</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size: 18px;"></i></th>
-          <th role="columnheader" scope="col" aria-label="Røykvarsler: Not sorted. Activate to sort ascending." aria-sort="none" class="text-center sortable"><span>Røykvarsler</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size: 18px;"></i></th>
-          <th role="columnheader" scope="col" aria-label="Utstyr" class="text-center"><span>Utstyr</span></th>
-          <th role="columnheader" scope="col" aria-label="Andre utstyrsfeil" class="text-center"><span>Andre utstyrsfeil</span></th>
-          <th role="columnheader" scope="col" aria-label="Tilbakemelding" class="text-center"><span>Tilbakemelding</span></th>
+          <th role="columnheader" scope="col" aria-label="Tidsmerke: Not sorted. Activate to sort ascending." aria-sort="none" class="text-center sortable" style="width: 7%; min-width: 7%;"><span>Tidsmerke</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size: 18px;"></i></th>
+          <th role="columnheader" scope="col" aria-label="Koie: Not sorted. Activate to sort ascending." aria-sort="none" class="text-center sortable" style="width: 9%; min-width: 9%;"><span>Koie</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size: 18px;"></i></th>
+          <th role="columnheader" scope="col" aria-label="Turdato: Not sorted. Activate to sort ascending." aria-sort="none" class="text-center sortable" style="width: 7%; min-width: 7%;"><span>Turdato</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size: 18px;"></i></th>
+          <th role="columnheader" scope="col" aria-label="Gassbestand" class="text-center" style="width: 6%; min-width: 6%;"><span>Gassbestand</span></th>
+          <th role="columnheader" scope="col" aria-label="Vedstokker" class="text-center" style="width: 7%; min-width: 7%;"><span>Vedstokker</span></th>
+          <th role="columnheader" scope="col" aria-label="Opphuggd ved" class="text-center" style="width: 8%; min-width: 8%;"><span>Opphuggd ved</span></th>
+          <th role="columnheader" scope="col" aria-label="Båt" class="text-center" style="width: 9%; min-width: 9%;"><span>Båt</span></th>
+          <th role="columnheader" scope="col" aria-label="Kano" class="text-center" style="width: 9%; min-width: 9%;"><span>Kano</span></th>
+          <th role="columnheader" scope="col" aria-label="Redningsvest" class="text-center" style="width: 6%; min-width: 6%;"><span>Redningsvest</span></th>
+          <th role="columnheader" scope="col" aria-label="Røykvarsler" class="text-center" style="width: 5%; min-width: 5%;"><span>Røykvarsler</span></th>
+          <th role="columnheader" scope="col" aria-label="Utstyr" class="text-center" style="width: 150px; min-width: 150px;"><span>Utstyr</span></th>
+          <th role="columnheader" scope="col" aria-label="Andre utstyrsfeil" class="text-center" style="width: 9%; min-width: 9%;"><span>Andre utstyrsfeil</span></th>
+          <th role="columnheader" scope="col" aria-label="Tilbakemelding" class="text-center" style="width: 8%; min-width: 8%;"><span>Tilbakemelding</span></th>
+        </tr>
+      </thead>
+      <thead>
+        <tr class="v-data-table__progress">
+          <th colspan="13" class="column">
+            <div role="progressbar" aria-valuemin="0" aria-valuemax="100" class="v-progress-linear theme--light" style="height: 2px;">
+              <div class="v-progress-linear__background primary" style="opacity: 0.3; left: 0%; width: 100%;"></div>
+              <div class="v-progress-linear__buffer"></div>
+              <div class="v-progress-linear__indeterminate v-progress-linear__indeterminate--active">
+                <div class="v-progress-linear__indeterminate long primary"></div>
+                <div class="v-progress-linear__indeterminate short primary"></div>
+              </div>
+            </div>
+          </th>
         </tr>
       </thead>
       <tbody>
         <tr class="v-data-table__empty-wrapper">
-          <td colspan="13">Det skjedde noe feil da vi prøvde å hente rapporter</td>
+          <td colspan="13">Henter inn rapporter</td>
         </tr>
       </tbody>
     </table>

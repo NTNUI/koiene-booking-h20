@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component EquipmentColumnDisplayer Matches snapshot 1`] = `
+<div notok="axe,hammer">
+  <v-row-stub tag="div" justify="center">
+    <v-chip-stub activeclass="" tag="span" active="true" closeicon="$delete" filtericon="$complete" class="mx-1">
+      1
+    </v-chip-stub>
+    <v-chip-stub activeclass="" tag="span" active="true" closeicon="$delete" filtericon="$complete" class="mx-1">
+      3
+    </v-chip-stub>
+    <v-chip-stub activeclass="" tag="span" active="true" closeicon="$delete" filtericon="$complete" class="mx-1">
+      0
+    </v-chip-stub>
+  </v-row-stub>
+  <reportdetailmodal-stub showmodal="true" closemodal="function () { [native code] }" title="Utstyr"></reportdetailmodal-stub>
+</div>
+`;
