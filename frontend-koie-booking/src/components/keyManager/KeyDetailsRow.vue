@@ -7,10 +7,12 @@
       {{ keyDetail.koieName }}
     </td>
     <td>
-      {{ keyDetail.startDate }}
+      <span v-if="isPickup" :style="getColorFn(keyDetail.startDate)">{{ keyDetail.startDate }} </span>
+      <span v-else> {{ keyDetail.startDate }} </span>
     </td>
     <td>
-      <span :style="getColorForPickUp(keyDetail.startDate)">{{ keyDetail.endDate }} </span>
+      <span v-if="!isPickup" :style="getColorFn(keyDetail.startDate)">{{ keyDetail.endDate }} </span>
+      <span v-else> {{ keyDetail.endDate }} </span>
     </td>
     <td>
       {{ keyDetail.status }}
@@ -24,7 +26,6 @@ import keyTableHeaders from '@/components/keyManager/keyTableHeaders';
 import KeyDetail from '../../types/keyManager/KeyDetail';
 import dayjs from 'dayjs';
 import scssVars from '@/styles/variables.scss';
-import { addToDate } from '@/utils/dates';
 
 export default Vue.extend({
   name: 'KeyPickUpRow',
@@ -35,19 +36,19 @@ export default Vue.extend({
         return null;
       },
     },
+    getColorFn: {
+      type: Function,
+      default: (startDate: string) => Object,
+    },
+    isPickup: {
+      type: Boolean,
+      default: true,
+    },
   },
   data() {
     return {
       headers: keyTableHeaders,
     };
-  },
-  methods: {
-    getColorForPickUp(endDate: string): { color: string } {
-      const limit = addToDate(endDate, 7, 'day');
-      const today = dayjs().format('YYYY-MM-DD');
-      if (today.localeCompare(limit) > 0) return { color: scssVars.globalColorRedWeak };
-      return { color: 'white' };
-    },
   },
 });
 </script>

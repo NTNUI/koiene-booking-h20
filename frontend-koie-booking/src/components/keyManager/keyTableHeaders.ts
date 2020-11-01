@@ -13,7 +13,7 @@ const reportTableHeaders: Array<TableHeader> = [
     align: 'center',
     justify: 'center',
     sortable: true,
-    value: 'name',
+    value: 'koieName',
   },
   {
     text: 'Startdato',

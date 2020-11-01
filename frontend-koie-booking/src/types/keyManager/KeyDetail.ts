@@ -5,5 +5,5 @@ export default interface KeyDetail {
   koieName: string;
   startDate: string;
   endDate: string;
-  status: KEY_STATUS;
+  keyStatus: KEY_STATUS;
 }

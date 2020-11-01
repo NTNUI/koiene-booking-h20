@@ -9,10 +9,14 @@
       :headers="headers"
       :items="items"
       :loading="loading"
+      :search="search"
       loading-text="Henter inn status for nøkler"
       no-data-text="Det skjedde noe feil da vi prøvde å hente status for nøkler"
       height="100%"
     >
+      <template v-slot:top>
+        <v-text-field v-model="search" label="Søk på e-post, koie eller dato" class="mx-4" />
+      </template>
       <template slot="item" slot-scope="row">
         <slot name="row" :row="row" />
       </template>
@@ -51,7 +55,15 @@ export default Vue.extend({
   data() {
     return {
       headers: keyTableHeaders,
+      search: '',
     };
+  },
+  methods: {
+    filterKeyRows(value: any, search: string | null, item: any): boolean {
+      if (!value || !search) return true;
+      console.log('Value ' + value);
+      console.log('Item' + item.koieName);
+    },
   },
 });
 </script>
