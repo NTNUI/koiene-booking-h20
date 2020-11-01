@@ -19,13 +19,14 @@
 </template>
 
 <script lang="ts">
-import KeyStatusOption from '@/types/keyManager/KeyStatusOption';
+import KeyStatusOption, { KeyStatusOptions } from '@/types/keyManager/KeyStatusOption';
+import Vue, { PropType } from 'vue';
 
-export default {
+export default Vue.extend({
   name: 'KeyStatusSelector',
   props: {
     items: {
-      type: Object,
+      type: Object as PropType<KeyStatusOptions>,
       default() {
         return {};
       },
@@ -49,11 +50,11 @@ export default {
   },
   methods: {
     updateStatus(selectedStatus: KeyStatusOption) {
-      if (!this.items[selectedStatus]) return;
-      this.backgroundColor = this.items[selectedStatus].color;
+      if (!this.items[String(selectedStatus)]) return;
+      this.backgroundColor = this.items[String(selectedStatus)].color;
     },
   },
-};
+});
 </script>
 
 <style scoped></style>
