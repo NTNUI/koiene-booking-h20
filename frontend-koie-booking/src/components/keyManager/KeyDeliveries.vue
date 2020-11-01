@@ -1,7 +1,11 @@
 <template>
   <KeyTable title="Levering" description="Nøkler skal leveres innen en uke etter sluttdato" :items="items">
     <template slot="row" slot-scope="row">
-      <KeyDetailsRow :key-detail="row.row.item" :is-pickup="false" :get-color-fn="getColorForDelivery" />
+      <KeyDetailsRow :key-detail="row.row.item" :is-pickup="false" :get-color-fn="getColorForDelivery">
+        <template v-slot:keyStatusSelector>
+          <KeyStatusSelector :items="keyDeliverStatusOptions" :status="row.row.item.keyStatus" />
+        </template>
+      </KeyDetailsRow>
       <tr style="color: #4CAF50; height: 10px" />
     </template>
   </KeyTable>
@@ -15,13 +19,16 @@ import { getKeyDeliveries } from '../../../tests/unit/__mocks__/keys';
 import { addToDate } from '@/utils/dates';
 import dayjs from 'dayjs';
 import scssVars from '@/styles/variables.scss';
+import KeyStatusSelector from '@/components/keyManager/KeyStatusSelector.vue';
+import { keyDeliverStatusOptions } from '@/components/keyManager/keyStatusOptions';
 
 export default Vue.extend({
   name: 'KeyPickUps',
-  components: { KeyDetailsRow, KeyTable },
+  components: { KeyStatusSelector, KeyDetailsRow, KeyTable },
   data() {
     return {
       items: getKeyDeliveries(),
+      keyDeliverStatusOptions: keyDeliverStatusOptions,
     };
   },
   methods: {

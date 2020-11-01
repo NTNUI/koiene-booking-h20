@@ -17,7 +17,7 @@
       <template v-slot:top>
         <v-text-field v-model="search" label="Søk på e-post, koie eller dato" class="mx-4" />
       </template>
-      <template slot="item" slot-scope="row">
+      <template v-slot:item="row">
         <slot name="row" :row="row" />
       </template>
     </v-data-table>
@@ -57,13 +57,6 @@ export default Vue.extend({
       headers: keyTableHeaders,
       search: '',
     };
-  },
-  methods: {
-    filterKeyRows(value: any, search: string | null, item: any): boolean {
-      if (!value || !search) return true;
-      console.log('Value ' + value);
-      console.log('Item' + item.koieName);
-    },
   },
 });
 </script>

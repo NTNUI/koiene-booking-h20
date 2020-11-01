@@ -15,7 +15,7 @@
       <span v-else> {{ keyDetail.endDate }} </span>
     </td>
     <td>
-      {{ keyDetail.status }}
+      <slot name="keyStatusSelector" />
     </td>
   </tr>
 </template>
