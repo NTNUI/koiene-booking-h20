@@ -17,7 +17,6 @@ import KeyTable from '@/components/keyManager/KeyTable.vue';
 import KeyDetailsRow from '@/components/keyManager/KeyDetailsRow.vue';
 import { getKeyPickUps } from '../../../tests/unit/__mocks__/keys';
 import dayjs from 'dayjs';
-import scssVars from '@/styles/variables.scss';
 import KeyStatusSelector from '@/components/keyManager/KeyStatusSelector.vue';
 import { keyPickUpStatusOptions } from '@/components/keyManager/keyStatusOptions';
 
@@ -33,7 +32,7 @@ export default Vue.extend({
   methods: {
     getColorForPickUp(startDate: string): { color: string } {
       const today = dayjs().format('YYYY-MM-DD');
-      if (today.localeCompare(startDate) > 0) return { color: scssVars.globalColorRedWeak };
+      if (today.localeCompare(startDate) > 0) return { color: '#FF5722' };
       return { color: 'white' };
     },
   },

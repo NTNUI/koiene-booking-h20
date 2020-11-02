@@ -35,7 +35,7 @@ export default Vue.extend({
     getColorForDelivery(endDate: string): { color: string } {
       const limit = addToDate(endDate, 7, 'day');
       const today = dayjs().format('YYYY-MM-DD');
-      if (today.localeCompare(limit) > 0) return { color: scssVars.globalColorRedWeak };
+      if (today.localeCompare(limit) > 0) return { color: '#FF5722' };
       return { color: 'white' };
     },
   },

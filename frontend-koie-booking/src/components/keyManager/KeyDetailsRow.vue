@@ -1,5 +1,5 @@
 <template>
-  <tr style="background-color: #222222;">
+  <tr v-if="keyDetail" style="background-color: #222222;">
     <td>
       {{ keyDetail.email }}
     </td>
@@ -7,15 +7,22 @@
       {{ keyDetail.koieName }}
     </td>
     <td>
-      <span v-if="isPickup" :style="getColorFn(keyDetail.startDate)">{{ keyDetail.startDate }} </span>
+      <span v-if="isPickup" ref="pickUpStartDate" :style="getColorFn(keyDetail.startDate)"
+        >{{ keyDetail.startDate }}
+      </span>
       <span v-else> {{ keyDetail.startDate }} </span>
     </td>
     <td>
-      <span v-if="!isPickup" :style="getColorFn(keyDetail.startDate)">{{ keyDetail.endDate }} </span>
+      <span v-if="!isPickup" :style="getColorFn(keyDetail.endDate)">{{ keyDetail.endDate }} </span>
       <span v-else> {{ keyDetail.endDate }} </span>
     </td>
     <td>
       <slot name="keyStatusSelector" />
+    </td>
+  </tr>
+  <tr v-else>
+    <td>
+      Det skjedde en feil.
     </td>
   </tr>
 </template>
@@ -38,7 +45,11 @@ export default Vue.extend({
     },
     getColorFn: {
       type: Function,
-      default: (startDate: string) => Object,
+      default: (startDate: string) => {
+        return {
+          color: 'white',
+        };
+      },
     },
     isPickup: {
       type: Boolean,

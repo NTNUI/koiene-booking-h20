@@ -49,7 +49,7 @@ export default Vue.extend({
     this.backgroundColor = selectedItem && selectedItem.color ? selectedItem.color : '';
   },
   methods: {
-    updateStatus(selectedStatus: KeyStatusOption) {
+    updateStatus(selectedStatus: String) {
       if (!this.items[String(selectedStatus)]) return;
       this.backgroundColor = this.items[String(selectedStatus)].color;
     },

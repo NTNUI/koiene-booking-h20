@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component KeyDetailsRow Handles no props without crashing 1`] = `
+<tr>
+  <td>
+    Det skjedde en feil.
+  </td>
+</tr>
+`;
+
+exports[`Component KeyDetailsRow Matches snapshot 1`] = `
+<tr style="background-color: rgb(34, 34, 34);">
+  <td>
+    ola1@normann.com
+  </td>
+  <td>
+    Mevasskoia
+  </td>
+  <td><span>2020-10-29
+    </span></td>
+  <td><span> 2020-11-01 </span></td>
+  <td></td>
+</tr>
+`;

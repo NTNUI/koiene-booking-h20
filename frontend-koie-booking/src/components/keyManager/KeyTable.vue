@@ -5,7 +5,7 @@
       <span>{{ description }}</span>
     </v-row>
     <v-data-table
-      style="width: 100%; background-color: rgba(0,0,0,0)"
+      style="width: 100%; background-color: rgba(0,0,0,0); height: 40vh"
       :headers="headers"
       :items="items"
       :loading="loading"
@@ -63,8 +63,7 @@ export default Vue.extend({
 
 <style scoped lang="scss">
 #dataTable {
-  height: 60vh;
-  max-height: 60vh;
+  height: 70vh;
   background-color: black;
   border-left: 3px solid #4caf50;
   padding: 10px;
