@@ -1,10 +1,9 @@
-from django.core.exceptions import ValidationError, ObjectDoesNotExist
+from django.core.exceptions import ObjectDoesNotExist, ValidationError
 from rest_framework import mixins, viewsets
 from rest_framework.response import Response
 
 from koie_booking.models.booking import BookingModel
 from koie_booking.serializers.booking_sit import BookingSitSerializer
-from ntnui.enums import KeyStatus
 
 from django.utils.translation import gettext as _
 
@@ -58,4 +57,3 @@ class BookingSitViewSet(
             return Response({"detail": "Could not find group"}, status=400)
         except ObjectDoesNotExist:
             return Response({"detail": "Could not find object"}, status=400)
-

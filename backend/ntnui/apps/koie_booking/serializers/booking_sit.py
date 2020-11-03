@@ -1,12 +1,10 @@
+from enumchoicefield import EnumChoiceField
 from rest_framework import serializers
 
 from koie_booking.models.booking import BookingModel
 from koie_booking.models.koie import KoieModel
-from koie_booking.utils import date_utils
 from ntnui.enums import KeyStatus
-from enumchoicefield import EnumChoiceField
 
-from django.utils.timezone import now, timedelta
 from django.utils.translation import gettext as _
 
 
