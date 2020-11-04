@@ -16,7 +16,7 @@
       <span v-if="!isPickup" :style="getColorFn(keyDetail.endDate)">{{ keyDetail.endDate }} </span>
       <span v-else> {{ keyDetail.endDate }} </span>
     </td>
-    <td>
+    <td style="width: 200px">
       <slot name="keyStatusSelector" />
     </td>
   </tr>
