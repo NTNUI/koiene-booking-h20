@@ -4,6 +4,7 @@ from rest_framework.response import Response
 
 from koie_booking.models.booking import BookingModel
 from koie_booking.serializers.booking_sit import BookingSitSerializer
+from koie_report.permissions import IsSitMember
 
 from django.utils.translation import gettext as _
 
@@ -17,6 +18,7 @@ class BookingSitViewSet(
     queryset = BookingModel.objects.all()
     serializer_class = BookingSitSerializer
     lookup_field = "uuid"
+    permission_classes = (IsSitMember,)
 
     def list(self, request):
         bookings = BookingModel.objects.all()
@@ -37,7 +39,7 @@ class BookingSitViewSet(
         return Response({"detail": "Not yet implemented use PATCH"}, status=400)
 
     def partial_update(self, request, uuid=None):
-        """ Changes field: key_status. """
+        """ Changes field: key_status. Requires fields key_status and koie to be specified """
 
         try:
             self.check_object_permissions(self.request, self.get_object())
