@@ -69,10 +69,11 @@ class BookingSitSerializer(serializers.ModelSerializer):
 
     def validate_has_key_status(self, data):
         """Checks that the request contains valid key_status """
+        key_status = data.pop("key_status", None)
         if not (
-            (data["key_status"] == KeyStatus.not_picked_up)
-            or (data["key_status"] == KeyStatus.picked_up)
-            or (data["key_status"] == KeyStatus.delivered)
+            (key_status == KeyStatus.not_picked_up)
+            or (key_status == KeyStatus.picked_up)
+            or (key_status == KeyStatus.delivered)
         ):
             raise serializers.ValidationError(
                 detail={
@@ -87,7 +88,7 @@ class BookingSitSerializer(serializers.ModelSerializer):
         return data
 
     def update(self, instance, validated_data):
-        key_status = validated_data.pop("key_status")
+        key_status = validated_data.pop("key_status", None)
         if (key_status is not None) and (
             (key_status == KeyStatus.not_picked_up)
             or (key_status == KeyStatus.picked_up)
