@@ -10,6 +10,7 @@ export const state: AuthState = {
   tokens: {
     access: localStorage.getItem('a'),
     refresh: localStorage.getItem('r'),
+    expires: Number(localStorage.getItem('t-expires') || '0'),
   },
 };
 
