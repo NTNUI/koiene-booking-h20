@@ -31,7 +31,7 @@ describe('Component EquipmentColumnDisplayer', () => {
 
   it('Shows dialog when notSureChip is clicked', () => {
     const notSureChip = wrapper.find({ ref: 'equipmentColumnDisplayerNotSureChip' });
-    notSureChip.trigger("click");
+    notSureChip.trigger('click');
 
     expect(wrapper.vm.showDialog).toBeTruthy();
   });

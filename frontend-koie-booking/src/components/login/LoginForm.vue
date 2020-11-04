@@ -50,7 +50,7 @@ export default Vue.extend({
   },
   data(): loginFormData {
     return {
-      authType: 'Vanlig bruker',
+      authType: 'Vanlig bruker', // TODO: Remove this
       email: '',
       password: '',
       error: '',
@@ -79,7 +79,7 @@ export default Vue.extend({
         };
         try {
           this.loading = true;
-          this.setAuthType();
+          this.setAuthType(); // TODO: Remove this
           await fetchToken(payload);
           this.$router.push(
             this.checkIfUserIsKeyManagerAndNotAdmin()
@@ -101,6 +101,7 @@ export default Vue.extend({
     checkIfUserIsKeyManagerAndNotAdmin(): boolean {
       return !this.$store.getters['auth/isAdmin'] && this.$store.getters['auth/isKeyManager'];
     },
+    // TODO: Remove this
     setAuthType() {
       if (this.authType === 'Admin') {
         this.$store.commit('auth/setAdmin', true);
