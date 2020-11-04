@@ -26,7 +26,7 @@ jobs:
           npm run build --if-present
       - name: Audit packages
         working-directory: ./frontend-koie-booking
-        run: npm audit --audit-level=high
+        run: npm audit --parseable --audit-level=high
       - name: Lint
         working-directory: ./frontend-koie-booking
         run: npm run lint
