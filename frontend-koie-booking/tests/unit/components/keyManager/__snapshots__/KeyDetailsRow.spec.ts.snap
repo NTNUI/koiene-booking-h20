@@ -11,6 +11,6 @@ exports[`Component KeyDetailsRow Matches snapshot 1`] = `
   <td><span style="color: white;">2020-10-29
     </span></td>
   <td><span> 2020-11-01 </span></td>
-  <td></td>
+  <td style="width: 200px;"></td>
 </tr>
 `;
