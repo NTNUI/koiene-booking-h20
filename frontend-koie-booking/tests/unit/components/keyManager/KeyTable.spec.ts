@@ -18,7 +18,7 @@ describe('Component KeyTable', () => {
         loading: false,
       },
     };
-    const wrapper = createShallowWrapper(KeyTable, wrapperOptions) as Wrapper<KeyTable>;
+    const wrapper = createShallowWrapper(KeyTable, wrapperOptions);
     expect(wrapper).toMatchSnapshot();
   });
   it('Defaults to empty array when no items are provided', () => {
