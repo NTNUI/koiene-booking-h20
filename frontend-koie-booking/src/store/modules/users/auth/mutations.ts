@@ -11,6 +11,9 @@ export const mutations: MutationTree<AuthState> = {
   setAdmin(state, payload: boolean) {
     state.isAdmin = payload;
   },
+  setKeyManager(state, payload: boolean) {
+    state.isKeyManager = payload;
+  },
   setToken(state, newToken) {
     setAccessToken(state, newToken);
     localStorage.setItem('r', newToken.refresh);
@@ -19,6 +22,11 @@ export const mutations: MutationTree<AuthState> = {
 
   updateToken(state, newToken) {
     setAccessToken(state, newToken);
+  },
+
+  logOut(state) {
+    state.isAdmin = false;
+    state.isKeyManager = false;
   },
 
   removeToken(state) {

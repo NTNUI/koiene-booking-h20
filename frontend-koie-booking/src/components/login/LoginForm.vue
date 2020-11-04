@@ -21,6 +21,11 @@
           autocomplete="current-password"
         />
       </label>
+      <div style="border: 1px red solid; padding: 2px; margin: 2px">
+        <h4 style="color: red">Kun for testformål</h4>
+        <v-select v-model="authType" label="Velg brukertype" :items="['Vanlig bruker', 'SiT', 'Admin']" />
+      </div>
+      <!--      TODO: Remove this when the backend returns role on auth endpoint -->
       <div v-show="error" :class="$style.error">
         <p>{{ error }}</p>
       </div>
@@ -45,6 +50,7 @@ export default Vue.extend({
   },
   data(): loginFormData {
     return {
+      authType: 'Vanlig bruker', // TODO: Remove this
       email: '',
       password: '',
       error: '',
@@ -73,6 +79,7 @@ export default Vue.extend({
         };
         try {
           this.loading = true;
+          this.setAuthType(); // TODO: Remove this
           await fetchToken(payload);
           this.$router.push(
             this.checkIfUserIsKeyManagerAndNotAdmin()
@@ -93,6 +100,14 @@ export default Vue.extend({
     },
     checkIfUserIsKeyManagerAndNotAdmin(): boolean {
       return !this.$store.getters['auth/isAdmin'] && this.$store.getters['auth/isKeyManager'];
+    },
+    // TODO: Remove this
+    setAuthType() {
+      if (this.authType === 'Admin') {
+        this.$store.commit('auth/setAdmin', true);
+      } else if (this.authType === 'SiT') {
+        this.$store.commit('auth/setKeyManager', true);
+      }
     },
   },
 });
