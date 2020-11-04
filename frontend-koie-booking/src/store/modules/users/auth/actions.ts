@@ -9,6 +9,7 @@ export const actions: ActionTree<AuthState, RootState> = {
     commit('updateToken', data);
   },
   deleteTokens({ commit }) {
+    commit('logOut');
     commit('removeToken');
   },
 };

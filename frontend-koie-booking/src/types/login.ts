@@ -3,6 +3,7 @@ export interface inputData {
 }
 
 export interface loginFormData {
+  authType: string;
   email: string;
   password: string;
   error: string;
