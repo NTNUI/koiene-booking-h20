@@ -1,7 +1,7 @@
 <template>
   <KeyTable title="Utlevering" description="Nøkler kan tidligst bli plukket opp to dager før startdato" :items="items">
     <template v-slot:row="row">
-      <KeyDetailsRow :key-detail="row.row.item" :is-pickup="true" :color-fn="getColorForPickUp">
+      <KeyDetailsRow :key-detail="row.row.item" :is-pickup="true" :get-color-fn="getColorForPickUp">
         <template v-slot:keyStatusSelector>
           <KeyStatusSelector :items="keyPickUpStatusOptions" :status="row.row.item.keyStatus" />
         </template>
