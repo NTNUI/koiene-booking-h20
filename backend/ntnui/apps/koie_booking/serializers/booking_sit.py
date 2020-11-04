@@ -78,8 +78,7 @@ class BookingSitSerializer(serializers.ModelSerializer):
                 detail={
                     "detail": _(
                         "You cannot change key_status without supplying valid key_status in request"
-                    ),
-                    "data": _(data["key_status"]),
+                    )
                 }
             )
 
