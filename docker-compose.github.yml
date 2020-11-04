@@ -31,6 +31,7 @@ services:
         black --check ntnui/ --config pyproject.toml &&
         isort --check-only &&
         flake8 &&
+        safety check -r requirements.txt &&
         python manage.py makemigrations --check &&
         pytest
         "
