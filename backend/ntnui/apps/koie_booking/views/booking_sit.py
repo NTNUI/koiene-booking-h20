@@ -1,4 +1,4 @@
-from django.core.exceptions import ObjectDoesNotExist, ValidationError
+from django.core.exceptions import ObjectDoesNotExist
 from django.template.defaultfilters import slugify
 from rest_framework import mixins, viewsets
 from rest_framework.response import Response
@@ -36,7 +36,7 @@ class BookingSitViewSet(
 
     def list(self, request):
         """
-        Gets bookings for sit view. 
+        Gets bookings for sit view.
         QueryParams: [key_status, koie, arrival_date_start,
         arrival_date_end, departure_date_start, departure_date_end,
         order_by]
@@ -115,7 +115,8 @@ class BookingSitViewSet(
         except KeyError:
             return Response(
                 {
-                    "detail": "key_status can only be one of: 'not_picked_up', 'picked_up', 'delivered'"
+                    "detail": "key_status can only be one of: 'not_picked_up',"
+                    + "'picked_up', 'delivered'"
                 },
                 status=400,
             )

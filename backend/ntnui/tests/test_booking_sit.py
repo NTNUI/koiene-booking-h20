@@ -1,6 +1,4 @@
 import uuid
-
-import factory
 import pytest
 from rest_framework.test import APIRequestFactory, force_authenticate
 
@@ -10,8 +8,6 @@ from groups.factories.membership_factory import BoardMembershipFactory, Membersh
 from koie_booking.factories.booking_factory import BookingFactory
 from koie_booking.factories.koie_factory import KoieFactory
 from koie_booking.views.booking_sit import BookingSitViewSet
-
-from django.utils.timezone import now, timedelta
 
 
 @pytest.fixture()

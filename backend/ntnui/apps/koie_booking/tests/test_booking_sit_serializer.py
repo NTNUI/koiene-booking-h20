@@ -1,5 +1,4 @@
 import pytest
-from rest_framework.exceptions import ValidationError
 
 from accounts.factories.user_factory import UserFactory
 from groups.factories.group_factory import GroupFactory

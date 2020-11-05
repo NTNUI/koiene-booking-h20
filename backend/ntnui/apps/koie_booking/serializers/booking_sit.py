@@ -1,4 +1,3 @@
-from enumchoicefield import EnumChoiceField
 from rest_framework import serializers
 
 from koie_booking.models.booking import BookingModel
