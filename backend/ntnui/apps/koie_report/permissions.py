@@ -28,3 +28,14 @@ class IsSitMember(permissions.BasePermission):
         return (
             request.user.is_authenticated and sit_group and sit_group.get_membership(request.user)
         )
+
+
+class IsSitMemberOrKoieAdmin(permissions.BasePermission):
+    """Checks that user is member of the SiT-group or is board member of Koiene"""
+
+    message = "You must be member of SiT or Koiene boad member"
+
+    def has_permission(self, request, view):
+        return IsKoieAdmin.has_object_permission(
+            request.user, request=request, view=view
+        ) or IsSitMember.has_permission(request.user, request=request, view=view)
