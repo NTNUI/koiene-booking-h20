@@ -84,7 +84,7 @@ def get_response(request, user=None, uuid=None, key_status_change=None):
         return view(request, uuid=uuid)
     elif uuid:
         view = BookingSitViewSet.as_view({"get": "retrieve",})
-        return view(request, uuid)
+        return view(request, uuid=uuid)
     else:
         view = BookingSitViewSet.as_view({"get": "list"})
         return view(request)
@@ -93,7 +93,7 @@ def get_response(request, user=None, uuid=None, key_status_change=None):
 @pytest.mark.django_db
 def test_list_booking_success_if_sit_member(request_factory, user, booking_batch, sit_membership):
 
-    request = request_factory.get(f"/koie/sit/booking")
+    request = request_factory.get(f"/koie/sit")
     response = get_response(request=request, user=user)
 
     first_id = response.data[0]["uuid"]
@@ -108,9 +108,9 @@ def test_retrieve_booking_from_uuid_success_if_sit_member(
     request_factory, user, booking, sit_membership
 ):
 
-    request = request_factory.get(f"/koie/sit/booking/{booking.uuid}/")
-    response = get_response(request=request, user=user)
-    id = response.data[0]["uuid"]
+    request = request_factory.get(f"/koie/sit/{booking.uuid}")
+    response = get_response(request=request, user=user, uuid=booking.uuid)
+    id = response.data["uuid"]
 
     assert uuid.UUID(hex=id) == booking.uuid
     assert response.status_code == 200
@@ -121,9 +121,9 @@ def test_retrieve_booking_from_uuid_success_if_koie_admin(
     request_factory, user, booking, koie_board_membership
 ):
 
-    request = request_factory.get(f"/koie/sit/booking/{booking.uuid}/")
-    response = get_response(request=request, user=user)
-    id = response.data[0]["uuid"]
+    request = request_factory.get(f"/koie/sit/{booking.uuid}")
+    response = get_response(request=request, user=user, uuid=booking.uuid)
+    id = response.data["uuid"]
 
     assert uuid.UUID(hex=id) == booking.uuid
     assert response.status_code == 200
@@ -134,17 +134,39 @@ def test_list_booking_regular_koie_member_should_fail(
     booking_data, request_factory, booking, user, koie_membership
 ):
 
-    request = request_factory.get(f"/koie/sit/booking/{booking.uuid}/")
+    request = request_factory.get(f"/koie/sit")
     response = get_response(request=request, user=user)
 
     assert response.status_code == 403
 
 
 @pytest.mark.django_db
-def test_list_booking_not_logged_in_should_fail(booking_data, request_factory, booking):
+def test_list_booking_not_logged_in_should_fail(request_factory, booking):
 
-    request = request_factory.post(f"/koie/koie/booking/", booking_data)
+    request = request_factory.get(f"/koie/sit")
     response = get_response(request=request)
+
+    assert response.status_code == 403
+    assert response.data["detail"] == "Authentication credentials were not provided."
+
+
+@pytest.mark.django_db
+def test_retrieve_booking_not_logged_in_should_fail(request_factory, booking):
+
+    request = request_factory.get(f"/koie/sit/{booking.uuid}")
+    response = get_response(request=request, uuid=booking.uuid)
+
+    assert response.status_code == 403
+    assert response.data["detail"] == "Authentication credentials were not provided."
+
+
+@pytest.mark.django_db
+def test_change_key_status_not_logged_in_should_fail(request_factory, booking):
+
+    booking_data = {"koie": booking.koie.slug, "key_status": "delivered"}
+
+    request = request_factory.patch(f"/koie/sit/?uuid={booking.uuid}", booking_data)
+    response = get_response(request=request, uuid=booking.uuid, key_status_change=True)
 
     assert response.status_code == 403
     assert response.data["detail"] == "Authentication credentials were not provided."
@@ -167,12 +189,12 @@ def test_change_key_status_valid_status(
     """
     booking_data = {"koie": booking.koie.slug, "key_status": key_status}
 
-    request = request_factory.patch(f"/koie/sit/booking/?uuid={booking.uuid}", booking_data)
+    request = request_factory.patch(f"/koie/sit/?uuid={booking.uuid}", booking_data)
     response = get_response(request=request, user=user, uuid=booking.uuid, key_status_change=True)
 
     assert response.status_code == expected
 
-    request = request_factory.get(f"/koie/sit/booking/{booking.uuid}/")
+    request = request_factory.get(f"/koie/sit/{booking.uuid}/")
     response = get_response(request=request, user=user)
 
     response_key_status = response.data[0]["key_status"]
