@@ -4,7 +4,7 @@ from rest_framework.response import Response
 
 from koie_booking.models.booking import BookingModel
 from koie_booking.serializers.booking_sit import BookingSitSerializer
-from koie_report.permissions import IsSitMember
+from koie_report.permissions import IsSitMemberOrKoieAdmin
 
 from django.utils.translation import gettext as _
 
@@ -18,7 +18,7 @@ class BookingSitViewSet(
     queryset = BookingModel.objects.all()
     serializer_class = BookingSitSerializer
     lookup_field = "uuid"
-    permission_classes = (IsSitMember,)
+    permission_classes = (IsSitMemberOrKoieAdmin,)
 
     def list(self, request):
         bookings = BookingModel.objects.all()
@@ -56,6 +56,13 @@ class BookingSitViewSet(
             else:
                 return Response({"detail": serializer.errors}, status=400)
         except BookingModel.DoesNotExist:
-            return Response({"detail": "Could not find group"}, status=400)
+            return Response({"detail": "Could not find booking"}, status=400)
         except ObjectDoesNotExist:
             return Response({"detail": "Could not find object"}, status=400)
+        except KeyError:
+            return Response(
+                {
+                    "detail": "key_status can only be one of: 'not_picked_up', 'picked_up', 'delivered'"
+                },
+                status=400,
+            )
