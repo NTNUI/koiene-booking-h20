@@ -46,7 +46,6 @@ export async function refreshToken() {
     return data;
   } catch (error) {
     await store.dispatch('auth/deleteTokens');
-    router.push('/login');
   }
 }
 
