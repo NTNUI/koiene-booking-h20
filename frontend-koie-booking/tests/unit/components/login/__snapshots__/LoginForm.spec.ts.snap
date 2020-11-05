@@ -15,6 +15,29 @@ exports[`Component LoginForm.vue Matches snapshot 1`] = `
         <div><input autocomplete="current-password" type="password" class="input"></div>
       </div>
     </label>
+    <div style="border: 1px solid red; padding: 2px; margin: 2px;">
+      <h4 style="color: red;">Kun for testformål</h4>
+      <div class="v-input v-input--is-label-active v-input--is-dirty theme--light v-text-field v-select">
+        <div class="v-input__control">
+          <div role="button" aria-haspopup="listbox" aria-expanded="false" aria-owns="list-10" class="v-input__slot">
+            <div class="v-select__slot"><label for="input-10" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Velg brukertype</label>
+              <div class="v-select__selections">
+                <div class="v-select__selection v-select__selection--comma">Vanlig bruker</div><input id="input-10" readonly="readonly" type="text" aria-readonly="false" autocomplete="off">
+              </div>
+              <div class="v-input__append-inner">
+                <div class="v-input__icon v-input__icon--append"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu-down theme--light"></i></div>
+              </div><input type="hidden" value="Vanlig bruker">
+            </div>
+            <div class="v-menu">
+              <!---->
+            </div>
+          </div>
+          <div class="v-text-field__details">
+            <div class="v-messages theme--light"><span name="message-transition" tag="div" class="v-messages__wrapper"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="error" style="display: none;">
       <p></p>
     </div> <button type="submit" class="v-btn v-btn--contained theme--light v-size--default"><span class="v-btn__content">

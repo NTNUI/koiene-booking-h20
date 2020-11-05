@@ -157,10 +157,13 @@ export interface BookingInfo {
 export interface AuthState {
   isAdmin: boolean;
   isKeyManager: boolean;
-  tokens: {
-    access: string | null;
-    refresh: string | null;
-  };
+  tokens: Tokens;
+}
+
+export interface Tokens {
+  access: string | null;
+  refresh: string | null;
+  expires: number | null;
 }
 
 export interface Guest {

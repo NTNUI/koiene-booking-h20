@@ -39,11 +39,10 @@ describe('Component ReportDetailModal', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it("Shows default values when no input is given", () => {
-      wrapper = createWrapper(ReportDetailModal);
-      expect(wrapper.vm.showModal).toBeTruthy();
-      expect(wrapper.vm.closeModal()).toBeNull();
-      expect(wrapper.vm.title).toBe('');
-  
-  })
+  it('Shows default values when no input is given', () => {
+    wrapper = createWrapper(ReportDetailModal);
+    expect(wrapper.vm.showModal).toBeTruthy();
+    expect(wrapper.vm.closeModal()).toBeNull();
+    expect(wrapper.vm.title).toBe('');
+  });
 });
