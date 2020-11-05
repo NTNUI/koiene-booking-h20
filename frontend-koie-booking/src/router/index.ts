@@ -40,7 +40,7 @@ const routes = [
     path: '/report/:booking_uuid',
     name: 'Report',
     component: () => import('@/views/Report.vue'),
-    meta: { requiresAuth: true, requiresAdmin: false, requiresKeyManager: false },
+    meta: { requiresAuth: false, requiresAdmin: false, requiresKeyManager: false },
   },
   {
     path: '/key_management',

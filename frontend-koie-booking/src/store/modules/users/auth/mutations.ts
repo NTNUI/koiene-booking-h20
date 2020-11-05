@@ -25,6 +25,9 @@ export const mutations: MutationTree<AuthState> = {
     localStorage.setItem('r', newToken.refresh);
     state.tokens.refresh = newToken.refresh;
   },
+  setTokenExpires(state, tokenExpires: number) {
+    state.tokens.expires = tokenExpires;
+  },
 
   updateToken(state, newToken) {
     setAccessToken(state, newToken);
@@ -44,5 +47,6 @@ export const mutations: MutationTree<AuthState> = {
     localStorage.removeItem('t-expires');
     state.tokens.access = null;
     state.tokens.refresh = null;
+    state.tokens.expires = null;
   },
 };
