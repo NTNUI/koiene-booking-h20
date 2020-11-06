@@ -52,6 +52,9 @@ export default Vue.extend({
     updateStatus(selectedStatus: String) {
       if (!this.items[String(selectedStatus)]) return;
       this.backgroundColor = this.items[String(selectedStatus)].color;
+      // Kall request methoden som ligger i service/request med et pach kall.
+      // optionsObjekt { method: 'PATCH', data: { koie, key_status: selectedStatus.toLowerCase() } }
+      //  const res = await request({ url: '/koie/sit/{uuid}' });
     },
   },
 });

@@ -29,7 +29,7 @@ export default async function request(options: any): Promise<any> {
     ...options.headers,
   };
 
-  if (options.method === 'POST' || options.method === 'PUT') {
+  if (options.method === 'POST' || options.method === 'PUT' || options.method === 'PATCH') {
     headers['content-type'] = 'application/json';
   }
   let tokens = store.state.auth.tokens;
