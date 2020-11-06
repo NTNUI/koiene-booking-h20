@@ -4,7 +4,6 @@ import KEY_STATUS from '@/types/keyManager/KeyStatus';
 
 export function convertAPIKeyDetailToKeyDetail(apiKeyDetail: APIKeyDetail): KeyDetail {
   const keyStatus = apiKeyDetail.key_status.toUpperCase() as KEY_STATUS;
-  console.log(apiKeyDetail);
   return {
     email: apiKeyDetail.contact_email,
     koie: apiKeyDetail.koie,

@@ -61,7 +61,6 @@ export default Vue.extend({
     async updateStatus(selectedStatus: String) {
       if (!this.items[String(selectedStatus)]) return;
       this.backgroundColor = this.items[String(selectedStatus)].color;
-      console.log(this.uuid);
       const options = {
         method: 'PATCH',
         url: '/koie/sit/' + this.uuid + '/',
