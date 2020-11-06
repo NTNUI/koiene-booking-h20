@@ -21,6 +21,7 @@
 <script lang="ts">
 import KeyStatusOption, { KeyStatusOptions } from '@/types/keyManager/KeyStatusOption';
 import Vue, { PropType } from 'vue';
+import request from '@/service/request';
 
 export default Vue.extend({
   name: 'KeyStatusSelector',
@@ -32,6 +33,14 @@ export default Vue.extend({
       },
     },
     status: {
+      type: String,
+      default: '',
+    },
+    uuid: {
+      type: String,
+      default: '',
+    },
+    koieSlug: {
       type: String,
       default: '',
     },
@@ -49,12 +58,17 @@ export default Vue.extend({
     this.backgroundColor = selectedItem && selectedItem.color ? selectedItem.color : '';
   },
   methods: {
-    updateStatus(selectedStatus: String) {
+    async updateStatus(selectedStatus: String) {
       if (!this.items[String(selectedStatus)]) return;
       this.backgroundColor = this.items[String(selectedStatus)].color;
-      // Kall request methoden som ligger i service/request med et pach kall.
-      // optionsObjekt { method: 'PATCH', data: { koie, key_status: selectedStatus.toLowerCase() } }
-      //  const res = await request({ url: '/koie/sit/{uuid}' });
+      // Consider doing this update through the store
+      // At the moment the old value is kept in the store until the table content is updated
+      const options = {
+        method: 'PATCH',
+        url: '/koie/sit/{' + this.uuid + '}',
+        data: { koie: this.koieSlug, key_status: selectedStatus.toLowerCase() },
+      };
+      const res = await request(options)
     },
   },
 });

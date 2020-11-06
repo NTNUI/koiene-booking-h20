@@ -3,8 +3,12 @@
     <template v-slot:row="row">
       <KeyDetailsRow :key-detail="row.row.item" :is-pickup="true" :get-color-fn="getColorForPickUp">
         <template v-slot:keyStatusSelector>
-<!--          Semd inn booking uuid og koie som prop-->
-          <KeyStatusSelector :items="keyPickUpStatusOptions" :status="row.row.item.keyStatus" />
+          <KeyStatusSelector
+            :items="keyPickUpStatusOptions"
+            :status="row.row.item.keyStatus"
+            :uuid="row.row.item.uuid"
+            :koieSlug="row.row.item.koieName"
+          />
         </template>
       </KeyDetailsRow>
       <tr style="color: #4CAF50; height: 10px" />

@@ -2,6 +2,7 @@
 import AdminBooking, { AdminBookingDictionary } from '@/types/admin/AdminBooking';
 import { AdminReportKoieDictionary } from '@/types/admin/AdminReports';
 import { AdminReportDictionary } from '@/types/admin/AdminReport';
+import { KeyDetailDictionary } from '@/types/keyManager/KeyDetail';
 
 export interface RootState {
   version: string;
@@ -11,6 +12,7 @@ export interface RootState {
   avalanche: AvalancheState;
   adminBookings: AdminBookingsState;
   reports: AdminReportsState;
+  keyDetails: KeyDetailsState;
 }
 
 export interface KoieState {
@@ -185,4 +187,9 @@ export interface AdminReportsState {
   cabins: AdminReportKoieDictionary;
   reports: AdminReportDictionary;
   loading: boolean;
+}
+
+export interface KeyDetailsState {
+  pickUpKeys: KeyDetailDictionary;
+  deliveryKeys:  KeyDetailDictionary;
 }

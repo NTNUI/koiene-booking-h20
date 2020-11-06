@@ -3,7 +3,12 @@
     <template slot="row" slot-scope="row">
       <KeyDetailsRow :key-detail="row.row.item" :is-pickup="false" :get-color-fn="getColorForDelivery">
         <template v-slot:keyStatusSelector>
-          <KeyStatusSelector :items="keyDeliverStatusOptions" :status="row.row.item.keyStatus" />
+          <KeyStatusSelector
+            :items="keyDeliverStatusOptions"
+            :status="row.row.item.keyStatus"
+            :uuid="row.row.item.uuid"
+            :koieSlug="row.row.item.koieName"
+          />
         </template>
       </KeyDetailsRow>
       <tr style="color: #4CAF50; height: 10px" />
