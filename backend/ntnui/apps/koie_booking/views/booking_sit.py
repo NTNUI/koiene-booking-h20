@@ -115,8 +115,10 @@ class BookingSitViewSet(
         except KeyError:
             return Response(
                 {
-                    "detail": "key_status can only be one of: 'not_picked_up',"
-                    + "'picked_up', 'delivered'"
+                    "detail": (
+                        "key_status can only be one of:"
+                        " 'not_picked_up', 'picked_up', 'delivered'"
+                    )
                 },
                 status=400,
             )
