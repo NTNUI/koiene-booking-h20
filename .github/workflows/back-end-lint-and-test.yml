@@ -22,6 +22,6 @@ jobs:
     - name: Build Docker image
       run: |
         docker-compose -f docker-compose.github.yml build
-    - name: Run formatting check and test suite
+    - name: Run saftey and formatting check and test suite
       run: |
         docker-compose -f docker-compose.github.yml up --abort-on-container-exit

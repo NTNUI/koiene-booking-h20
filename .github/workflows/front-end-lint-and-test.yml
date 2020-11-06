@@ -22,8 +22,11 @@ jobs:
       - name: Install and build
         working-directory: ./frontend-koie-booking
         run: |
-          npm install
+          npm ci
           npm run build --if-present
+      - name: Audit packages
+        working-directory: ./frontend-koie-booking
+        run: npm audit --parseable --audit-level=high
       - name: Lint
         working-directory: ./frontend-koie-booking
         run: npm run lint
