@@ -11,7 +11,7 @@ export const state: KeyDetailsState = {
 
 const namespaced = true;
 
-export const adminReports: Module<KeyDetailsState, RootState> = {
+export const keyDetails: Module<KeyDetailsState, RootState> = {
   namespaced,
   state,
   getters,

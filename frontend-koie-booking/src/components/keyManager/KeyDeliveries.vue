@@ -1,5 +1,5 @@
 <template>
-  <KeyTable title="Levering" description="Nøkler skal leveres innen en uke etter sluttdato" :items="items">
+  <KeyTable title="Levering" description="Nøkler skal leveres innen en uke etter sluttdato" :items="allKeyDeliveries">
     <template slot="row" slot-scope="row">
       <KeyDetailsRow :key-detail="row.row.item" :is-pickup="false" :get-color-fn="getColorForDelivery">
         <template v-slot:keyStatusSelector>
@@ -26,13 +26,13 @@ import dayjs from 'dayjs';
 import scssVars from '@/styles/variables.scss';
 import KeyStatusSelector from '@/components/keyManager/KeyStatusSelector.vue';
 import { keyDeliverStatusOptions } from '@/components/keyManager/keyStatusOptions';
+import KeyDetail from '@/types/keyManager/KeyDetail';
 
 export default Vue.extend({
   name: 'KeyPickUps',
   components: { KeyStatusSelector, KeyDetailsRow, KeyTable },
   data() {
     return {
-      items: getKeyDeliveries(),
       keyDeliverStatusOptions: keyDeliverStatusOptions,
     };
   },
@@ -43,6 +43,14 @@ export default Vue.extend({
       if (today.localeCompare(limit) > 0) return { color: '#FF5722' };
       return { color: 'white' };
     },
+  },
+  computed: {
+    allKeyDeliveries(): Array<KeyDetail> {
+      return this.$store.getters['keyDetails/getDeliveryKeysArray'];
+    },
+  },
+  mounted() {
+    this.$store.dispatch('keyDetails/MOUNT_KEY_DELIVERIES');
   },
 });
 </script>
