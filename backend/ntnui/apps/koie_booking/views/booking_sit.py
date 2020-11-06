@@ -89,7 +89,7 @@ class BookingSitViewSet(
     def update(self, request, *args, **kwargs):
         """ Returns a response saying that the method is not allowed. """
 
-        return Response({"detail": "Not yet implemented use PATCH"}, status=400)
+        return Response({"detail": "Not yet implemented use PATCH"}, status=501)
 
     def partial_update(self, request, uuid=None):
         """ Changes field: key_status. Requires fields key_status and koie to be specified """
