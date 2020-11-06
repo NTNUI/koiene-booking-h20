@@ -1,3 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Component KeyDeliveries Matches snapshot 1`] = `<keytable-stub title="Levering" description="Nøkler skal leveres innen en uke etter sluttdato" items="[object Object],[object Object],[object Object]"></keytable-stub>`;
+exports[`Component KeyDeliveries Matches snapshot 1`] = `<keytable-stub title="Levering" description="Nøkler skal leveres innen en uke etter sluttdato" items=""></keytable-stub>`;
