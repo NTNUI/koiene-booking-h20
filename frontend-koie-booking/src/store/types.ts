@@ -191,5 +191,5 @@ export interface AdminReportsState {
 
 export interface KeyDetailsState {
   pickUpKeys: KeyDetailDictionary;
-  deliveryKeys:  KeyDetailDictionary;
+  deliveryKeys: KeyDetailDictionary;
 }

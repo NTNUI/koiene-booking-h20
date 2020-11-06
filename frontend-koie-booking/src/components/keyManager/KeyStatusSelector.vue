@@ -68,7 +68,7 @@ export default Vue.extend({
         url: '/koie/sit/{' + this.uuid + '}',
         data: { koie: this.koieSlug, key_status: selectedStatus.toLowerCase() },
       };
-      const res = await request(options)
+      const res = await request(options);
     },
   },
 });
