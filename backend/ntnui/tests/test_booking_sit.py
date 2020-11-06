@@ -26,6 +26,11 @@ def sit_group():
     return GroupFactory(name="SiT")
 
 
+@pytest.fixture()
+def other_group():
+    return GroupFactory()
+
+
 @pytest.fixture
 def sit_membership(user, sit_group):
     return MembershipFactory(member=user, group=sit_group)
@@ -34,6 +39,11 @@ def sit_membership(user, sit_group):
 @pytest.fixture
 def koie_membership(user, koie_group):
     return MembershipFactory(member=user, group=koie_group)
+
+
+@pytest.fixture
+def other_membership(user, other_group):
+    return MembershipFactory(member=user, group=other_group)
 
 
 @pytest.fixture
@@ -91,7 +101,7 @@ def get_response(request, user=None, uuid=None, key_status_change=None):
 def test_list_booking_success_if_sit_member(request_factory, user, booking_batch, sit_membership):
 
     request = request_factory.get(f"/koie/sit")
-    response = get_response(request=request, user=user)
+    response = get_response(request=request, user=sit_membership.member)
 
     first_id = response.data[0]["uuid"]
 
@@ -106,7 +116,7 @@ def test_retrieve_booking_from_uuid_success_if_sit_member(
 ):
 
     request = request_factory.get(f"/koie/sit/{booking.uuid}")
-    response = get_response(request=request, user=user, uuid=booking.uuid)
+    response = get_response(request=request, user=sit_membership.member, uuid=booking.uuid)
     id = response.data["uuid"]
 
     assert uuid.UUID(hex=id) == booking.uuid
@@ -119,7 +129,7 @@ def test_retrieve_booking_from_uuid_success_if_koie_admin(
 ):
 
     request = request_factory.get(f"/koie/sit/{booking.uuid}")
-    response = get_response(request=request, user=user, uuid=booking.uuid)
+    response = get_response(request=request, user=koie_board_membership.member, uuid=booking.uuid)
     id = response.data["uuid"]
 
     assert uuid.UUID(hex=id) == booking.uuid
@@ -128,11 +138,19 @@ def test_retrieve_booking_from_uuid_success_if_koie_admin(
 
 @pytest.mark.django_db
 def test_list_booking_regular_koie_member_should_fail(
-    booking_data, request_factory, booking, user, koie_membership
+    request_factory, booking, user, koie_membership
 ):
 
     request = request_factory.get(f"/koie/sit")
-    response = get_response(request=request, user=user)
+    response = get_response(request=request, user=koie_membership.member)
+
+    assert response.status_code == 403
+
+
+@pytest.mark.django_db
+def test_list_booking_regular_user_should_fail(request_factory, booking, user, other_membership):
+    request = request_factory.get(f"/koie/sit")
+    response = get_response(request=request, user=other_membership.member)
 
     assert response.status_code == 403
 
@@ -187,12 +205,14 @@ def test_change_key_status_valid_status(
     booking_data = {"koie": booking.koie.slug, "key_status": key_status}
 
     request = request_factory.patch(f"/koie/sit/?uuid={booking.uuid}", booking_data)
-    response = get_response(request=request, user=user, uuid=booking.uuid, key_status_change=True)
+    response = get_response(
+        request=request, user=sit_membership.member, uuid=booking.uuid, key_status_change=True
+    )
 
     assert response.status_code == expected
 
     request = request_factory.get(f"/koie/sit/{booking.uuid}/")
-    response = get_response(request=request, user=user)
+    response = get_response(request=request, user=sit_membership.member)
 
     response_key_status = response.data[0]["key_status"]
 
