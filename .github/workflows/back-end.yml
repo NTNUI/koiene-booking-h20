@@ -1,12 +1,10 @@
-# This workflow will install Python dependencies, run tests and lint with a single version of Python
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
-
-name: Backend build, test and lint
+name: Back end CI
 
 on:
+  push:
+    branches: [master]
   pull_request:
-    branches:
-      - master
+    branches: [master]
 
 jobs:
   test_using_docker_compose:
@@ -22,6 +20,6 @@ jobs:
     - name: Build Docker image
       run: |
         docker-compose -f docker-compose.github.yml build
-    - name: Run saftey and formatting check and test suite
+    - name: Run saftey check, formatting check and test suite
       run: |
         docker-compose -f docker-compose.github.yml up --abort-on-container-exit
