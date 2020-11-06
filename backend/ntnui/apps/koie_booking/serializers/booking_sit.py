@@ -1,3 +1,4 @@
+from enumchoicefield.fields import EnumChoiceField
 from rest_framework import serializers
 
 from koie_booking.models.booking import BookingModel
@@ -14,6 +15,7 @@ class BookingSitSerializer(serializers.ModelSerializer):
     )
     booking_transaction_id = serializers.SerializerMethodField()
     price = serializers.SerializerMethodField()
+    key_status = EnumChoiceField(enum_class=KeyStatus)
 
     def __init__(self, *args, **kwargs):
         kwargs["partial"] = True
@@ -67,8 +69,8 @@ class BookingSitSerializer(serializers.ModelSerializer):
 
     def validate_has_key_status(self, data):
         """Checks that the request contains valid key_status """
-        key_status = data.pop("key_status", None)
-        if not (
+        key_status = data.get("key_status", None)
+        if key_status is not None and not (
             (key_status == KeyStatus.not_picked_up)
             or (key_status == KeyStatus.picked_up)
             or (key_status == KeyStatus.delivered)
@@ -78,20 +80,18 @@ class BookingSitSerializer(serializers.ModelSerializer):
                     "detail": _(
                         "You cannot change key_status without supplying valid key_status in request"
                     ),
-                    "data": data,
                     "error": self.error_messages,
                     "key_status": str(key_status),
                 }
             )
-        else:
-            data["key_status"] = key_status
+        return key_status
 
     def validate(self, data):
         self.validate_has_key_status(data)
         return data
 
     def update(self, instance, validated_data):
-        key_status = validated_data.pop("key_status", None)
+        key_status = validated_data.get("key_status", instance.key_status)
         if key_status is not None:
             instance.key_status = key_status
         instance.save()

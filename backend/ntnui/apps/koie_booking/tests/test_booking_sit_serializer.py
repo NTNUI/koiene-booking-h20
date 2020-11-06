@@ -80,7 +80,8 @@ def test_validate_key_status_lets_through_valid(data, key_status):
 @pytest.mark.parametrize("key_status", [("picked_upasdf"), ("not_pickqwefup"), ("delivereqwed")])
 def test_validate_key_status_picks_up_invalid(data, key_status):
     data["key_status"] = key_status
-    try:
+
+    with pytest.raises(KeyError) as error:
         serializer = BookingSitSerializer(data=data)
-    except Exception:
-        assert not serializer.is_valid()
+        serializer.is_valid()
+    assert key_status in str(error.value)
