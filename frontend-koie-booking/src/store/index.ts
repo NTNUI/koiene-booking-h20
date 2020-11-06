@@ -10,6 +10,7 @@ import { report } from './modules/users/report/index';
 import { auth } from './modules/users/auth/index';
 import { adminBookings } from '@/store/modules/admin/bookings';
 import { adminReports } from '@/store/modules/admin/reports';
+import { keyManager } from '@/store/modules/keymanager';
 
 Vue.use(Vuex, VueAxios, axios);
 
@@ -22,6 +23,7 @@ const store: StoreOptions<RootState> = {
     avalanche,
     report,
     auth,
+    keyManager,
   },
 };
 

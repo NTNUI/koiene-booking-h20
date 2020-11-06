@@ -7,7 +7,7 @@
             :items="keyDeliverStatusOptions"
             :status="row.row.item.keyStatus"
             :uuid="row.row.item.uuid"
-            :koieSlug="row.row.item.koieName"
+            :koie-slug="row.row.item.koie"
           />
         </template>
       </KeyDetailsRow>
@@ -20,10 +20,8 @@
 import Vue from 'vue';
 import KeyTable from '@/components/keyManager/KeyTable.vue';
 import KeyDetailsRow from '@/components/keyManager/KeyDetailsRow.vue';
-import { getKeyDeliveries } from '../../../tests/unit/__mocks__/keys';
 import { addToDate } from '@/utils/dates';
 import dayjs from 'dayjs';
-import scssVars from '@/styles/variables.scss';
 import KeyStatusSelector from '@/components/keyManager/KeyStatusSelector.vue';
 import { keyDeliverStatusOptions } from '@/components/keyManager/keyStatusOptions';
 import KeyDetail from '@/types/keyManager/KeyDetail';
@@ -36,6 +34,14 @@ export default Vue.extend({
       keyDeliverStatusOptions: keyDeliverStatusOptions,
     };
   },
+  computed: {
+    allKeyDeliveries(): Array<KeyDetail> {
+      return this.$store.getters['keyManager/getDeliveryKeysArray'];
+    },
+  },
+  mounted() {
+    this.$store.dispatch('keyManager/MOUNT_KEY_DELIVERIES');
+  },
   methods: {
     getColorForDelivery(endDate: string): { color: string } {
       const limit = addToDate(endDate, 7, 'day');
@@ -43,14 +49,6 @@ export default Vue.extend({
       if (today.localeCompare(limit) > 0) return { color: '#FF5722' };
       return { color: 'white' };
     },
-  },
-  computed: {
-    allKeyDeliveries(): Array<KeyDetail> {
-      return this.$store.getters['keyDetails/getDeliveryKeysArray'];
-    },
-  },
-  mounted() {
-    this.$store.dispatch('keyDetails/MOUNT_KEY_DELIVERIES');
   },
 });
 </script>

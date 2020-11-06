@@ -35,8 +35,7 @@ export default async function request(options: any): Promise<any> {
   let tokens = store.state.auth.tokens;
   if (checkIfUserHasToken(tokens) && checkIfTokenHasExpired(tokens)) {
     try {
-      // In order to make sure we don't refresh the token again while we call 'refresh token',
-      // we set the token to expire tomorrow
+      // We set the token to expire tomorrow in order to make sure we don't refresh the token again while we call 'refresh token',
       const tomorrow = dayjs()
         .add(1, 'day')
         .unix();

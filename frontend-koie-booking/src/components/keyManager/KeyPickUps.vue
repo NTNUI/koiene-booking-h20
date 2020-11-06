@@ -11,7 +11,7 @@
             :items="keyPickUpStatusOptions"
             :status="row.row.item.keyStatus"
             :uuid="row.row.item.uuid"
-            :koieSlug="row.row.item.koieName"
+            :koie-slug="row.row.item.koie"
           />
         </template>
       </KeyDetailsRow>
@@ -38,20 +38,23 @@ export default Vue.extend({
       keyPickUpStatusOptions: keyPickUpStatusOptions,
     };
   },
+  computed: {
+    allKeyPickUps(): Array<KeyDetail> {
+      return this.$store.getters['keyManager/getPickUpKeysArray'];
+    },
+  },
+  mounted() {
+    const arrivalDateEnd: string = dayjs()
+      .add(2, 'day')
+      .format('YYYY-MM-DD');
+    this.$store.dispatch('keyManager/MOUNT_KEY_PICKUPS', arrivalDateEnd);
+  },
   methods: {
     getColorForPickUp(startDate: string): { color: string } {
       const today = dayjs().format('YYYY-MM-DD');
       if (today.localeCompare(startDate) > 0) return { color: '#FF5722' };
       return { color: 'white' };
     },
-  },
-  computed: {
-    allKeyPickUps(): Array<KeyDetail> {
-      return this.$store.getters['keyDetails/getPickUpKeysArray'];
-    },
-  },
-  mounted() {
-    this.$store.dispatch('keyDetails/MOUNT_KEY_PICKUPS');
   },
 });
 </script>

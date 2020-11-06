@@ -61,14 +61,17 @@ export default Vue.extend({
     async updateStatus(selectedStatus: String) {
       if (!this.items[String(selectedStatus)]) return;
       this.backgroundColor = this.items[String(selectedStatus)].color;
-      // Consider doing this update through the store
-      // At the moment the old value is kept in the store until the table content is updated
+      console.log(this.uuid);
       const options = {
         method: 'PATCH',
-        url: '/koie/sit/{' + this.uuid + '}',
+        url: '/koie/sit/' + this.uuid + '/',
         data: { koie: this.koieSlug, key_status: selectedStatus.toLowerCase() },
       };
-      const res = await request(options);
+      try {
+        await request(options);
+      } catch (e) {
+        console.log(e);
+      }
     },
   },
 });

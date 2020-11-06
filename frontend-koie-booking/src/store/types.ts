@@ -12,7 +12,7 @@ export interface RootState {
   avalanche: AvalancheState;
   adminBookings: AdminBookingsState;
   reports: AdminReportsState;
-  keyDetails: KeyDetailsState;
+  keyManager: KeyManagerState;
 }
 
 export interface KoieState {
@@ -189,7 +189,7 @@ export interface AdminReportsState {
   loading: boolean;
 }
 
-export interface KeyDetailsState {
+export interface KeyManagerState {
   pickUpKeys: KeyDetailDictionary;
   deliveryKeys: KeyDetailDictionary;
 }

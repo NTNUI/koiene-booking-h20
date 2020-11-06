@@ -4,7 +4,7 @@
       {{ keyDetail.email }}
     </td>
     <td>
-      {{ keyDetail.koieName }}
+      {{ keyDetail.koie }}
     </td>
     <td>
       <span v-if="isPickup" ref="pickUpStartDate" :style="getColorFn(keyDetail.startDate)"
