@@ -5,11 +5,11 @@ ENV PYTHONUNBUFFERED 1
 RUN apt-get update
 RUN apt-get -f install
 
-# install and cache dependencies
+# install and cache dependencies in /tmp directory.
 # doing it this way also installs any newly added dependencies.
 RUN pip3 install --upgrade pip
-COPY config/django/requirements.txt requirements.txt
-RUN pip3 install -r requirements.txt
+COPY config/django/requirements.txt /tmp/requirements.txt
+RUN pip3 install -r /tmp/requirements.txt
 
 # create directories
 WORKDIR /code
