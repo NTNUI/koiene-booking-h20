@@ -3,10 +3,9 @@
 </p>
 
 ### CI
-![Front end](https://github.com/NTNUI/koiene-booking/workflows/Front-end%20lint%20and%20test%20CI/badge.svg)
-![Back end](https://github.com/NTNUI/koiene-booking/workflows/Backend%20build,%20test%20and%20lint/badge.svg)
+![Front end CI](https://github.com/NTNUI/koiene-booking/workflows/Front%20end%20CI/badge.svg)
+![Back end CI](https://github.com/NTNUI/koiene-booking/workflows/Back%20end%20CI/badge.svg)
 
 ## Description
-
 Internal system for members and volunteers in NTNUI. The backendfolder contains the Django app, while the frontendfolder contains the vue app.
  
