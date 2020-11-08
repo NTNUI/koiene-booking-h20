@@ -6,7 +6,7 @@ import { storeConfig } from '@/store';
 import scssVars from '@/styles/variables.scss';
 import i18n from '@/i18n';
 
-export function createWrapper(component: any, additionalOptions?: ThisTypedShallowMountOptions<any>): Wrapper<Vue> {
+export function createWrapper(component: any, additionalOptions?: ThisTypedShallowMountOptions<any>): Wrapper<any> {
   const options = mergeOptions(additionalOptions);
   return mount(component, options);
 }
@@ -16,7 +16,7 @@ export function createShallowWrapper(component: any, additionalOptions?: ThisTyp
   return shallowMount(component, options);
 }
 
-function mergeOptions(additionalOptions?: any) {
+function mergeOptions(additionalOptions?: ThisTypedShallowMountOptions<any>) {
   const localVue = createLocalVue();
   const vuetify = new Vuetify();
   localVue.use(Vuetify);

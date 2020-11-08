@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component KeyPickUps Matches snapshot 1`] = `<keytable-stub title="Utlevering" description="Nøkler kan tidligst bli plukket opp to dager før startdato" items=""></keytable-stub>`;

@@ -8,9 +8,9 @@ export const state: AuthState = {
   isAdmin: false,
   isKeyManager: false,
   tokens: {
-    access: localStorage.getItem('a'),
-    refresh: localStorage.getItem('r'),
-    expires: Number(localStorage.getItem('t-expires') || '0'),
+    access: null,
+    expires: null,
+    refresh: null,
   },
 };
 

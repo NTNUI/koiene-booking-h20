@@ -847,6 +847,31 @@
     }
   },
   {
+    "model": "accounts.usermodel",
+    "pk": 8,
+    "fields": {
+      "password": "pbkdf2_sha256$120000$TEKvcJwGR1c9$wnDaLTjerRlcie0kGvIZbvWACuwWETcXDzx64Ih4STo=",
+      "last_login": "2019-01-31T10:18:46.915Z",
+      "is_superuser": false,
+      "is_active": true,
+      "is_admin": false,
+      "is_staff": false,
+      "first_name": "Sit",
+      "last_name": "Sittesen",
+      "date_of_birth": "2019-01-31",
+      "gender": "-",
+      "customer_no": "9",
+      "register_date": "2019-01-31",
+      "card_no": "123456",
+      "language": "no",
+      "phone_number": "+4724546781",
+      "email": "sit_test@sit.no",
+      "contact_email": null,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
     "model": "groups.membershipmodel",
     "pk": 1,
     "fields": {
@@ -988,6 +1013,16 @@
       "date_joined": "2020-10-20",
       "group_expiry": "2021-10-20",
       "member": 1,
+      "group": 8
+    }
+  },
+  {
+    "model": "groups.membershipmodel",
+    "pk": 14,
+    "fields": {
+      "date_joined": "2020-10-20",
+      "group_expiry": "2021-10-20",
+      "member": 8,
       "group": 8
     }
   },

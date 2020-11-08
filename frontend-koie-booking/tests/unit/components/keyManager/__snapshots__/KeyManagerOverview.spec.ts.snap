@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component KeyManagerOverview Matches snapshot 1`] = `
+<div>
+  <v-row-stub tag="div" justify="center">
+    <h1 style="padding-top: 30px;">Nøkkeloversikt</h1>
+  </v-row-stub>
+  <v-row-stub tag="div">
+    <v-col-stub cols="6" tag="div">
+      <keypickups-stub></keypickups-stub>
+    </v-col-stub>
+    <v-col-stub cols="6" tag="div">
+      <keydeliveries-stub></keydeliveries-stub>
+    </v-col-stub>
+  </v-row-stub>
+</div>
+`;
