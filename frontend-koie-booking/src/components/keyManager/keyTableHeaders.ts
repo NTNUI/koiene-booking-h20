@@ -1,6 +1,6 @@
 import TableHeader from '@/types/admin/TableHeader';
 
-const reportTableHeaders: Array<TableHeader> = [
+const keyTableHeaders: Array<TableHeader> = [
   {
     text: 'E-post',
     align: 'center',
@@ -38,4 +38,4 @@ const reportTableHeaders: Array<TableHeader> = [
   },
 ];
 
-export default reportTableHeaders;
+export default keyTableHeaders;

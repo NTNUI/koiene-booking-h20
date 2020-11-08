@@ -10,7 +10,7 @@ import { report } from './modules/users/report/index';
 import { auth } from './modules/users/auth/index';
 import { adminBookings } from '@/store/modules/admin/bookings';
 import { adminReports } from '@/store/modules/admin/reports';
-import { keyManager } from '@/store/modules/keymanager';
+import { keyManager } from '@/store/modules/keyManager';
 
 Vue.use(Vuex, VueAxios, axios);
 

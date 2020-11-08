@@ -6,7 +6,6 @@ export const getters: GetterTree<KeyManagerState, RootState> = {
   getPickUpKeysArray(state): Array<KeyDetail> {
     return Object.values(state.pickUpKeys);
   },
-  // Same as above ^
   getDeliveryKeysArray(state): Array<KeyDetail> {
     return Object.values(state.deliveryKeys);
   },

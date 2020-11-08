@@ -2,7 +2,7 @@ import { ActionTree } from 'vuex';
 import { KeyManagerState, RootState } from '@/store/types';
 import { APIKeyDetail } from '@/types/keyManager/KeyDetail';
 import request from '@/service/request';
-import { convertAPIKeyDetailToKeyDetail } from '@/store/modules/keymanager/helpers';
+import { convertAPIKeyDetailToKeyDetail } from '@/store/modules/keyManager/helpers';
 import dayjs from 'dayjs';
 
 export const actions: ActionTree<KeyManagerState, RootState> = {

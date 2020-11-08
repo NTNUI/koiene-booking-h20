@@ -1,8 +1,8 @@
 import { KeyManagerState, RootState } from '@/store/types';
 import { Module } from 'vuex';
-import { getters } from '@/store/modules/keymanager/getters';
-import { actions } from '@/store/modules/keymanager/actions';
-import { mutations } from '@/store/modules/keymanager/mutations';
+import { getters } from '@/store/modules/keyManager/getters';
+import { actions } from '@/store/modules/keyManager/actions';
+import { mutations } from '@/store/modules/keyManager/mutations';
 
 export const state: KeyManagerState = {
   pickUpKeys: {},
