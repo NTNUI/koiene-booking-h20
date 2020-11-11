@@ -19,6 +19,11 @@ The `accounts`, `groups` and `payments` folders are inherited from the bachelor 
 
 Integration tests are found in the `tests` folder of the ``ntnui` directory.
 
+### Quick tour of the file structure
+The files found in the `views` folder defines the api-endpoint-handlers.
+`urls.py` is the file where the routing from the url to the handlers are defined.
+Inside `models` are the files that defines the database models. These are serialized to-and-from postgreSQL db entries and native python dictionaries. The logic for doing this and specifying which fields are wanted can be found in the `serializers` folder.
+
 Each app follows a structured template like this:
 ```
 ┣ 📂app
@@ -34,10 +39,7 @@ Each app follows a structured template like this:
 ┃ ┣ 📜urls.py (url routing)
 
 ```
-### Quick tour of the file structure
-The files found in the `views` folder defines the api-endpoint-handlers.
-`urls.py` is the file where the routing from the url to the handlers are defined.
-Inside `models` are the files that defines the database models. These are serialized to-and-from postgreSQL db entries and native python dictionaries. The logic for doing this and specifying which fields are wanted can be found in the `serializers` folder.
+
 
 ## Detailed File Structure
 This is a detailed overview of the complete file structure of the back-end. Folders containing work by the kundestyre-group are expanded.
