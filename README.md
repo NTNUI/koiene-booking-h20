@@ -9,7 +9,7 @@
 ## Description
 Internal system for members and volunteers in NTNUI used for administering cabin bookings. 
 
-The `backend` folder contains the back-end Django app, while the `frontend-koie-booking` folder contains the front-end vue app. Please see the README.md in those directories for the respective setup and installation processes.
+The `backend` folder contains the back-end Django app, while the `frontend-koie-booking` folder contains the front-end vue app. Please see the `README.md` in those directories for the respective setup and installation processes.
 
 ## Back-end File Structure
 The entire back-end is located in the `backend` folder. In this folder you will find configuration files and the source code for the backend. The `ntnui` folder serves as the base folder for the django-project. 
@@ -41,7 +41,7 @@ Each app follows a structured template like this:
 ```
 
 ## Contributing
-To contribute to this project, please contact NTNUI Sprint for questions, as they will do the further development of this repository. The repository is private, so you will need to be a member of the NTNUI organization and recieve special permissions to develop on this repository. Note that [`membership-system`](https://github.com/NTNUI/membership-system) is a dependency of this project, so permission to this is also necessary.
+To contribute to this project, please contact NTNUI Sprint for questions, as they will do the further development of this repository. The repository and internal documentation is private, so you will need to be a member of the NTNUI organization and recieve special permissions to develop on this repository. Note that [`membership-system`](https://github.com/NTNUI/membership-system) is a dependency of this project, so permission to this is also necessary.
 
 Please make sure that any commited code is covered by unit tests and integration tests. This can be checked running the command 
 
@@ -61,10 +61,11 @@ When writing commit-messages please follow the conventions of [conventional comm
 
 
 ## Implementing features
-NTNUI Sprint keeps their backlog of features on a service called [ClickUp](https://app.clickup.com). Please head over here to see the status of features in the backlog.
+NTNUI Sprint keeps their backlog of features on a service called [ClickUp](https://app.clickup.com) (requires invite). Please head over there to see the status of features in the backlog.
 
 Implementing a feature in the back-end usually consists of creating a new endpoint. This is done by creating a url config, a viewset, a serializer(optional), a model(optional), unit tests and integration tests of the endpoint.
 
+### Example
 An example of an implemented feature includes the possibility to list bookings for the sit-panel. To do this the following files were created: 
 
 + `backend/ntnui/apps/koie_booking/serializers/booking_sit.py`
@@ -72,6 +73,56 @@ An example of an implemented feature includes the possibility to list bookings f
 + `backend/ntnui/apps/koie_booking/urls.py`
 + `backend/ntnui/apps/koie_booking/views/booking_sit.py`
 + `backend/ntnui/tests/test_booking_sit.py` 
+
+The main logic of the endpoint is located in [`booking_sit.py`](https://github.com/NTNUI/koiene-booking/blob/master/backend/ntnui/apps/koie_booking/views/booking_sit.py) 
+So looking here might be a good start.
+The created method for handling the specified get-endpoint looks like this: 
+```python
+def list(self, request):
+    """
+    Gets bookings for sit view.
+    QueryParams: [key_status, koie, arrival_date_start,
+    arrival_date_end, departure_date_start, departure_date_end,
+    order_by]
+    Dates are provided in ISO-format: YYYY-MM-DD
+    """
+    # Filter on key_status
+    self.queryset = self.filter_queryset_key_status()
+
+    # Filter on koie
+    koie = self.request.query_params.get("koie", None)
+    if koie:
+        self.queryset = self.queryset.filter(koie__slug=slugify(koie))
+
+    # Filter on arrival_date
+    arrival_date_start = self.request.query_params.get("arrival_date_start", None)
+    if arrival_date_start:
+        self.queryset = self.queryset.filter(arrival_date__gte=arrival_date_start)
+
+    arrival_date_end = self.request.query_params.get("arrival_date_end", None)
+    if arrival_date_end:
+        self.queryset = self.queryset.filter(arrival_date__lte=arrival_date_end)
+
+    # Filter on departure_date
+    departure_date_start = self.request.query_params.get("departure_date_start", None)
+    if departure_date_start:
+        self.queryset = self.queryset.filter(departure_date__gte=departure_date_start)
+
+    departure_date_end = self.request.query_params.get("departure_date_end", None)
+    if departure_date_end:
+        self.queryset = self.queryset.filter(departure_date__lte=departure_date_end)
+
+    # Ordering
+    order = self.request.query_params.get("order_by", None)
+    if order and order in self.ordering_fields:
+        self.queryset = self.queryset.order_by(order)
+    else:
+        self.queryset = self.queryset.order_by(self.ordering_fields[0])
+
+    serializer = BookingSitSerializer(self.queryset, context={"request": request}, many=True)
+    return Response(serializer.data)
+ 
+```
 
 
 ## Detailed File Structure
