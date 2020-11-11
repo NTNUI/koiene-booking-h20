@@ -48,26 +48,74 @@ This is a detailed overview of the complete file structure of the back-end. Fold
  ┃ ┃ ┣ 📁accounts
  ┃ ┃ ┣ 📁groups
  ┃ ┃ ┣ 📂koie_booking
- ┃ ┃ ┃ ┣ 📁admin
- ┃ ┃ ┃ ┣ 📁factories
+ ┃ ┃ ┃ ┣ 📂admin
+ ┃ ┃ ┃ ┃ ┣ 📜booking.py
+ ┃ ┃ ┃ ┃ ┣ 📜booking_payment.py
+ ┃ ┃ ┃ ┃ ┣ 📜koie.py
+ ┃ ┃ ┃ ┣ 📂factories
+ ┃ ┃ ┃ ┃ ┣ 📜booking_factory.py
+ ┃ ┃ ┃ ┃ ┣ 📜booking_payment_factory.py
+ ┃ ┃ ┃ ┃ ┣ 📜description_factory.py
+ ┃ ┃ ┃ ┃ ┣ 📜koie_factory.py
+ ┃ ┃ ┃ ┃ ┣ 📜location_factory.py
  ┃ ┃ ┃ ┣ 📁migrations
- ┃ ┃ ┃ ┣ 📁models
+ ┃ ┃ ┃ ┣ 📂models
+ ┃ ┃ ┃ ┃ ┣ 📜booking.py
+ ┃ ┃ ┃ ┃ ┣ 📜booking_payment.py
+ ┃ ┃ ┃ ┃ ┣ 📜description.py
+ ┃ ┃ ┃ ┃ ┣ 📜koie.py
+ ┃ ┃ ┃ ┃ ┣ 📜location.py
  ┃ ┃ ┃ ┣ 📂reminder
  ┃ ┃ ┃ ┃ ┣ 📂management
- ┃ ┃ ┃ ┃ ┃ ┗ 📁commands
- ┃ ┃ ┃ ┣ 📁serializers
- ┃ ┃ ┃ ┣ 📁templates
- ┃ ┃ ┃ ┣ 📁tests
+ ┃ ┃ ┃ ┃ ┃ ┗ 📂commands
+ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜send_daily_departure_emails.py
+ ┃ ┃ ┃ ┣ 📂serializers
+ ┃ ┃ ┃ ┃ ┣ 📜all_koier.py
+ ┃ ┃ ┃ ┃ ┣ 📜all_koier_detailed.py
+ ┃ ┃ ┃ ┃ ┣ 📜booking.py
+ ┃ ┃ ┃ ┃ ┣ 📜booking_sit.py
+ ┃ ┃ ┃ ┃ ┣ 📜description.py
+ ┃ ┃ ┃ ┃ ┣ 📜koie.py
+ ┃ ┃ ┃ ┃ ┣ 📜location.py
+ ┃ ┃ ┃ ┣ 📂templates
+ ┃ ┃ ┃ ┃ ┣ 📜booking_confirmation.html
+ ┃ ┃ ┃ ┃ ┣ 📜booking_confirmation.txt
+ ┃ ┃ ┃ ┃ ┣ 📜checklist_reminder.html
+ ┃ ┃ ┃ ┃ ┣ 📜checklist_reminder.txt
+ ┃ ┃ ┃ ┃ ┣ 📜koie_information.html
+ ┃ ┃ ┃ ┃ ┗ 📜koie_information.txt
+ ┃ ┃ ┃ ┣ 📂tests
+ ┃ ┃ ┃ ┃ ┣ 📜test_all_koier_detailed_serializer.py
+ ┃ ┃ ┃ ┃ ┣ 📜test_all_koier_serializer.py
+ ┃ ┃ ┃ ┃ ┣ 📜test_booking_model.py
+ ┃ ┃ ┃ ┃ ┣ 📜test_booking_payment_model.py
+ ┃ ┃ ┃ ┃ ┣ 📜test_booking_report_reminder.py
+ ┃ ┃ ┃ ┃ ┣ 📜test_booking_serializer.py
+ ┃ ┃ ┃ ┃ ┣ 📜test_booking_sit_serializer.py
+ ┃ ┃ ┃ ┃ ┣ 📜test_date_utils.py
+ ┃ ┃ ┃ ┃ ┣ 📜test_description_serializer.py
+ ┃ ┃ ┃ ┃ ┣ 📜test_koie_model.py
+ ┃ ┃ ┃ ┃ ┣ 📜test_koie_serializer.py
+ ┃ ┃ ┃ ┃ ┣ 📜test_location_serializer.py
+ ┃ ┃ ┃ ┃ ┗ 📜test_mail_utils.py
  ┃ ┃ ┃ ┣ 📁utils
- ┃ ┃ ┃ ┣ 📁views
+ ┃ ┃ ┃ ┣ 📂views
+ ┃ ┃ ┃ ┃ ┣ 📜booking.py
+ ┃ ┃ ┃ ┃ ┣ 📜booking_sit.py
+ ┃ ┃ ┃ ┃ ┣ 📜koie.py
+ ┃ ┃ ┃ ┃ ┣ 📜koie_dashboard.py
  ┃ ┃ ┃ ┣ 📜apps.py
  ┃ ┃ ┃ ┣ 📜constants.py
  ┃ ┃ ┃ ┣ 📜README.md
  ┃ ┃ ┃ ┣ 📜urls.py
  ┃ ┃ ┣ 📂koie_report
- ┃ ┃ ┃ ┣ 📁factories
+ ┃ ┃ ┃ ┣ 📂factories
+ ┃ ┃ ┃ ┃ ┗ 📜report_factory.py
  ┃ ┃ ┃ ┣ 📁migrations
- ┃ ┃ ┃ ┣ 📁tests
+ ┃ ┃ ┃ ┣ 📂tests
+ ┃ ┃ ┃ ┃ ┣ 📜test_koie_report_model.py
+ ┃ ┃ ┃ ┃ ┣ 📜test_koie_report_serializer.py
+ ┃ ┃ ┃ ┃ ┗ 📜test_koie_report_serializer_filtered.py
  ┃ ┃ ┃ ┣ 📜admin.py
  ┃ ┃ ┃ ┣ 📜apps.py
  ┃ ┃ ┃ ┣ 📜models.py
@@ -75,12 +123,26 @@ This is a detailed overview of the complete file structure of the back-end. Fold
  ┃ ┃ ┃ ┣ 📜report_serializer.py
  ┃ ┃ ┃ ┣ 📜urls.py
  ┃ ┃ ┃ ┣ 📜views.py
- ┃ ┃ ┣ 📂payments
- ┃ ┣ 📁fixture
+ ┃ ┃ ┣ 📁payments
+ ┃ ┣ 📂fixture
+ ┃ ┃ ┣ 📜booking.json
+ ┃ ┃ ┣ 📜description.json
+ ┃ ┃ ┣ 📜fixture.json
+ ┃ ┃ ┣ 📜koier.json
+ ┃ ┃ ┣ 📜koie_report.json
+ ┃ ┃ ┗ 📜location.json
  ┃ ┣ 📁media
  ┃ ┣ 📁settings
  ┃ ┣ 📁static
- ┃ ┣ 📁tests
+ ┃ ┣ 📂tests
+ ┃ ┃ ┣ 📜test_booking.py
+ ┃ ┃ ┣ 📜test_booking_sit.py
+ ┃ ┃ ┣ 📜test_constants.py
+ ┃ ┃ ┣ 📜test_enums.py
+ ┃ ┃ ┣ 📜test_koie.py
+ ┃ ┃ ┣ 📜test_koie_availability.py
+ ┃ ┃ ┣ 📜test_report.py
+ ┃ ┃ ┣ 📜test_stripe_transaction_integration.py
  ┃ ┣ 📁utils
  ┃ ┣ 📜admin.py
  ┃ ┣ 📜enums.py
