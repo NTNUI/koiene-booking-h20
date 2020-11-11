@@ -65,7 +65,9 @@ NTNUI Sprint keeps their backlog of features on a service called [ClickUp](https
 
 Implementing a feature in the back-end usually consists of creating a new endpoint. This is done by creating a url config, a viewset, a serializer(optional), a model(optional), unit tests and integration tests of the endpoint.
 
-### Example
+## Examples
+
+### Implementing a new endpoint
 An example of an implemented feature includes the possibility to list bookings for the sit-panel. To do this the following files were created: 
 
 + `backend/ntnui/apps/koie_booking/serializers/booking_sit.py`
@@ -124,6 +126,60 @@ def list(self, request):
  
 ```
 
+### Implementing authentication for an endpoint
+Authentication is an important part of having secure endpoints. To ensure this, make sure that every endpoint that you commit are tested for different access levels in the testing of your viewset. For inspiration see [the tests from the endpoint above](https://github.com/NTNUI/koiene-booking/blob/master/backend/ntnui/tests/test_booking_sit.py).
+
+Here is an example from that file:
+```python
+@pytest.mark.django_db
+def test_list_booking_regular_user_should_fail(request_factory, booking, user, other_membership):
+    request = request_factory.get(f"/koie/sit")
+    response = get_response(request=request, user=other_membership.member)
+
+    assert response.status_code == 403
+```
+
+The standard way of authenticating in `django-rest-framework` is to specify the wanted permission classes in the `permission_classes` field of your viewset, and django will handle it automatically. Here is a quick mock example:
+```python
+class MyViewSet(
+    mixins.RetrieveModelMixin,
+    viewsets.GenericViewSet,
+):
+    queryset = DataModel.objects.all()
+    serializer_class = DataSerializer
+    lookup_field = "uuid"
+    permission_classes = (IsAdmin | IsBoardMember, HasReadAccess)
+
+    def retrieve(self, request, uuid):
+        try:
+            item = self.queryset.get(uuid=uuid)
+            serializer = DataSerializer(item, context={"request": request})
+            return Response(serializer.data)
+        except DataModel.DoesNotExist:
+            return Response({"detail": _("Booking not found.")}, status=404)
+```
+
+If custom authentication logic is required, for example if you only want authentication on some of the methods of a viewSet, you can create a custom permission class and implement the method `has_object_permission()`.
+This will enable you to specifically call the permission check when you want in your viewset. This can be seen in the example below snipped from [`koie_dashboard.py`](https://github.com/NTNUI/koiene-booking/blob/master/backend/ntnui/apps/koie_booking/views/koie_dashboard.py)
+```python
+def list(self, request):
+    """ List dashboard details of all koier from current date and given number of days forward
+        {days} is supplied as query_parameter
+    """
+    if IsKoieAdmin.has_object_permission(request.user, request=request, view=self):
+        days = request.query_params.get("days")
+        if not days:
+            days = constants.DEFAULT_BOOKING_WINDOW
+
+        serializer = KoierDetailedSerializer(
+            self.queryset, context={"request": request, "days": days}, many=True
+        )
+        return Response({"koier": serializer.data})
+    else:
+        return Response(
+            {"detail": _("You must be a koie admin to access koie availability.")}, status=403
+        )
+```
 
 ## Detailed File Structure
 This is a detailed overview of the complete file structure of the back-end. Folders containing work by the kundestyre-group are expanded.
