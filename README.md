@@ -7,7 +7,7 @@
 ![Back end CI](https://github.com/NTNUI/koiene-booking/workflows/Back%20end%20CI/badge.svg)
 
 ## Description
-Internal system for members and volunteers in NTNUI. 
+Internal system for members and volunteers in NTNUI used for administering cabin bookings. 
 
 The `backend` folder contains the Django app, while the `frontend-koie-booking` folder contains the vue app.
 
@@ -39,6 +39,28 @@ Each app follows a structured template like this:
 ┃ ┣ 📜urls.py (url routing)
 
 ```
+
+## Contributing
+To contribute to this project, please contact NTNUI Sprint for questions, as they will do the further development of this repository. The repository is private, so you will need to be a member of the NTNUI organization and recieve special permissions to develop on this repository. Note that [`membership-system`](https://github.com/NTNUI/membership-system) is a dependency of this project, so permission to this is also necessary.
+
+### Pull Request Process
+To contribute please create a pull request for review, and get the som reviewers to look at it.
+
+When writing commit-messages please follow the conventions of [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/).
+
+
+## Implementing features
+NTNUI Sprint keeps their backlog of features on a service called [ClickUp](https://app.clickup.com). Please head over here to see the status of features in the backlog.
+
+Implementing a feature in the back-end usually consists of creating a new endpoint. This is done by creating a url config, a viewset, a serializer(optional), a model(optional), unit tests and integration tests of the endpoint.
+
+An example of an implemented feature includes the possibility to list bookings for the sit-panel. To do this the following files were created: 
+
++ `backend/ntnui/apps/koie_booking/serializers/booking_sit.py`
++ `backend/ntnui/apps/koie_booking/tests/test_booking_sit_serializer.py`
++ `backend/ntnui/apps/koie_booking/urls.py`
++ `backend/ntnui/apps/koie_booking/views/booking_sit.py`
++ `backend/ntnui/tests/test_booking_sit.py`
 
 
 ## Detailed File Structure
@@ -157,11 +179,3 @@ This is a detailed overview of the complete file structure of the back-end. Fold
  ┣ 📜whitelist.txt
  ┗ 📜wsgi.py
 ```
-
-## Contributing
-To contribute to this project, please contact NTNUI Sprint for questions, as they will do the further development of this repository. The repository is private, so you will need to be a member of the NTNUI organization, and recieve special permissions to develop on this repository. Note that [`membership-system`](https://github.com/NTNUI/membership-system) is a dependency of this project, so permission to this is also necessary.
-
-### Pull Request Process
-To contribute please create a pull request up for review, and get the som reviewers to look at it.
-
-When writing commit-messages please follow the conventions of [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/).
