@@ -6,10 +6,12 @@
 ![Front end CI](https://github.com/NTNUI/koiene-booking/workflows/Front%20end%20CI/badge.svg)
 ![Back end CI](https://github.com/NTNUI/koiene-booking/workflows/Back%20end%20CI/badge.svg)
 
-## Description
+# Description
 Internal system for members and volunteers in NTNUI used for administering cabin bookings. 
 
 The `backend` folder contains the back-end Django app, while the `frontend-koie-booking` folder contains the front-end vue app. Please see the `README.md` in those directories for the respective setup and installation processes.
+
+## File Structure
 
 ## Back-end File Structure
 The entire back-end is located in the `backend` folder. In this folder you will find configuration files and the source code for the backend. The `ntnui` folder serves as the base folder for the django-project. 
@@ -55,7 +57,7 @@ make format
 ```
 
 ### Pull Request Process
-To contribute please create a pull request for review, and get the som reviewers to look at it.
+To contribute please create a pull request for review, and get the some reviewers to look at it. It should be approved by at least two reviewers before commiting.
 
 When writing commit-messages please follow the conventions of [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
@@ -65,7 +67,7 @@ NTNUI Sprint keeps their backlog of features on a service called [ClickUp](https
 
 Implementing a feature in the back-end usually consists of creating a new endpoint. This is done by creating a url config, a viewset, a serializer(optional), a model(optional), unit tests and integration tests of the endpoint.
 
-## Examples of implementing new features
+## Examples of implementing new features in the backend
 
 ### Implementing a new endpoint
 An example of an implemented feature includes the possibility to list bookings for the sit-panel. To do this the following files were created: 
@@ -129,7 +131,7 @@ def list(self, request):
 ### Implementing authentication for an endpoint
 Authentication is an important part of having secure endpoints. To ensure this, make sure that every endpoint that you commit are tested for different access levels in the testing of your viewset. For inspiration see [the tests from the endpoint above](https://github.com/NTNUI/koiene-booking/blob/master/backend/ntnui/tests/test_booking_sit.py).
 
-Here is an example from that file:
+Here is a test method from that file that checks whether an unauthorized user is rejected or not:
 ```python
 @pytest.mark.django_db
 def test_list_booking_regular_user_should_fail(request_factory, booking, user, other_membership):
@@ -181,7 +183,7 @@ def list(self, request):
         )
 ```
 
-## Detailed File Structure
+## Detailed File Structure of the Backend
 This is a detailed overview of the complete file structure of the back-end. Folders containing work by the kundestyre-group are expanded.
 ```
 📦backend
