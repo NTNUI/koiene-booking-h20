@@ -10,7 +10,7 @@ Internal backendsystem for members and volunteers in NTNUI.
 
 
 ### Create .env file
-For the system to run corretly it requires a set of environment variables:
+For the system to run correctly it requires a set of environment variables:
 
 ```
 # Django
