@@ -65,7 +65,7 @@ NTNUI Sprint keeps their backlog of features on a service called [ClickUp](https
 
 Implementing a feature in the back-end usually consists of creating a new endpoint. This is done by creating a url config, a viewset, a serializer(optional), a model(optional), unit tests and integration tests of the endpoint.
 
-## Examples
+## Examples of implementing new features
 
 ### Implementing a new endpoint
 An example of an implemented feature includes the possibility to list bookings for the sit-panel. To do this the following files were created: 
@@ -78,7 +78,7 @@ An example of an implemented feature includes the possibility to list bookings f
 
 The main logic of the endpoint is located in [`booking_sit.py`](https://github.com/NTNUI/koiene-booking/blob/master/backend/ntnui/apps/koie_booking/views/booking_sit.py) 
 So looking here might be a good start.
-The created method for handling the specified get-endpoint looks like this: 
+The created method for handling the specified GET-endpoint looks like this: 
 ```python
 def list(self, request):
     """
