@@ -9,7 +9,7 @@
 ## Description
 Internal system for members and volunteers in NTNUI used for administering cabin bookings. 
 
-The `backend` folder contains the Django app, while the `frontend-koie-booking` folder contains the vue app.
+The `backend` folder contains the back-end Django app, while the `frontend-koie-booking` folder contains the front-end vue app. Please see the README.md in those directories for the respective setup and installation processes.
 
 ## Back-end File Structure
 The entire back-end is located in the `backend` folder. In this folder you will find configuration files and the source code for the backend. The `ntnui` folder serves as the base folder for the django-project. 
@@ -17,7 +17,7 @@ The entire back-end is located in the `backend` folder. In this folder you will 
 Inside the django project are several apps, that each contain key functionality.
 The `accounts`, `groups` and `payments` folders are inherited from the bachelor project group, while the job done for kundestyrt can be found in the `koie_booking`, and `koie_report` folders.
 
-Integration tests are found in the `tests` folder of the ``ntnui` directory.
+Integration tests are found in the `tests` folder of the `ntnui` directory.
 
 ### Quick tour of the file structure
 The files found in the `views` folder defines the api-endpoint-handlers.
@@ -43,6 +43,17 @@ Each app follows a structured template like this:
 ## Contributing
 To contribute to this project, please contact NTNUI Sprint for questions, as they will do the further development of this repository. The repository is private, so you will need to be a member of the NTNUI organization and recieve special permissions to develop on this repository. Note that [`membership-system`](https://github.com/NTNUI/membership-system) is a dependency of this project, so permission to this is also necessary.
 
+Please make sure that any commited code is covered by unit tests and integration tests. This can be checked running the command 
+
+```bash
+make pytest
+```
+
+Code should also be passed through formatting with [black](https://black.readthedocs.io/en/stable/), a lint check by [flake8](https://flake8.pycqa.org/en/latest/) and import sorting by [isort](https://pycqa.github.io/isort/). To do this run
+```bash
+make format
+```
+
 ### Pull Request Process
 To contribute please create a pull request for review, and get the som reviewers to look at it.
 
@@ -60,7 +71,7 @@ An example of an implemented feature includes the possibility to list bookings f
 + `backend/ntnui/apps/koie_booking/tests/test_booking_sit_serializer.py`
 + `backend/ntnui/apps/koie_booking/urls.py`
 + `backend/ntnui/apps/koie_booking/views/booking_sit.py`
-+ `backend/ntnui/tests/test_booking_sit.py`
++ `backend/ntnui/tests/test_booking_sit.py` 
 
 
 ## Detailed File Structure
