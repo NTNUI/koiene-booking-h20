@@ -11,3 +11,14 @@
 
 Booking system and administration system for NTNUI Cabin group. This project involves features for booking a cabin, submission of the cabin report form and admin panels for SiT and the NTNUI Cabin group for tracking data of the cabin's condition and key status handling.
 Backend folder includes all backend files and the frontend folder includes all frontend files.
+
+## Installation guide
+
+### Back end
+
+[Link to readme detailing set up for running the backend code](../tree/master/backend)
+
+### Front end
+
+[Link to readme detailing set up for running the frontend code](../tree/master/frontend-koie-booking)
+Make sure to rund the backend code before running the frontend code.
