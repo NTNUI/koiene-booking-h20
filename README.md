@@ -16,9 +16,9 @@ Backend folder includes all backend files and the frontend folder includes all f
 
 ### Back end
 
-[Link to readme detailing set up for running the backend code](../backend)
+[Link to readme detailing set up for running the backend code](./backend)
 
 ### Front end
 
-[Link to readme detailing set up for running the frontend code](../frontend-koie-booking)
+[Link to readme detailing set up for running the frontend code](./frontend-koie-booking)
 Make sure to rund the backend code before running the frontend code.
