@@ -1,12 +1,12 @@
 #---- COMMANDS ----#
 
-s: ##@Docker (start) Start the webserver on http://localhost:8000
+s: ##@Docker (start) Start the webserver on http://localhost:9000
 	docker-compose up
 
-start: ##@Docker (start) Start the webserver on http://localhost:8000
+start: ##@Docker (start) Start the webserver on http://localhost:9000
 	docker-compose up --build
 
-start-d: ##@Docker (start) Start the webserver on http://localhost:8000, in the background
+start-d: ##@Docker (start) Start the webserver on http://localhost:9000, in the background
 	docker-compose up -d
 
 down:
@@ -25,8 +25,8 @@ load-data:
 	docker-compose run backend python manage.py loaddata ./ntnui/fixture/fixture.json
 	docker-compose run backend python manage.py loaddata ./ntnui/fixture/booking.json
 	docker-compose run backend python manage.py loaddata ./ntnui/fixture/koie_report.json
-	
-	
+
+
 dump-data:  ##@TestEnv Create a JSON Dump of $APP (use APP="appname" from console)
 	docker-compose run backend python manage.py dumpdata --format=json> ./ntnui/fixture/fixture.json
 
@@ -106,4 +106,3 @@ check: ##@Runs formatting checks
 	make isort ARGS="--check-only"
 	make flake8
 	docker-compose run backend python manage.py makemigrations --check
-
