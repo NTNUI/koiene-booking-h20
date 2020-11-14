@@ -146,7 +146,7 @@ export interface ExampleState {
 
 We also need to add the ExampleState to the RootState interface like this:
 
-``typescript
+```typescript
 export interface RootState {
   ...
   example: ExampleState
