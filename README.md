@@ -70,7 +70,7 @@ Implementing a feature in the back-end usually consists of creating a new endpoi
 ## Examples of implementing new features in the backend
 
 ### Implementing a new endpoint
-An example of an implemented feature includes the possibility to list bookings for the sit-panel. To do this the following files were created: 
+An example of an implemented feature includes the possibility to list bookings for the sit-panel. To do this the following files were created or changed: 
 
 + `backend/ntnui/apps/koie_booking/serializers/booking_sit.py`
 + `backend/ntnui/apps/koie_booking/tests/test_booking_sit_serializer.py`
