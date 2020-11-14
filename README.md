@@ -10,7 +10,7 @@
 
 # Description
 
-Booking system and administration system for NTNUI Cabin group. This project involves features for booking a cabin, submission of the cabin report form and admin panels for SiT and the NTNUI Cabin group for tracking data of the cabin's condition and key status handling.
+Booking and administration system for NTNUI Cabin group. This project involves features for booking a cabin, submission of the cabin report form and admin panels for SiT and the NTNUI Cabin group for tracking data of the cabin's condition and key status handling.
 
 The `backend` folder contains the back-end Django app, while the `frontend-koie-booking` folder contains the front-end vue app.
 
