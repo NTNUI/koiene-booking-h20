@@ -1,6 +1,9 @@
 <template>
   <div>
     <h2 style="text-align: center;">Oversikt over bookinger</h2>
+    <v-btn @click="createMockData">
+      Generer mock data
+    </v-btn>
     <v-row justify="center">
       <DatePicker />
     </v-row>
@@ -26,6 +29,7 @@ import DateSkippers from '@/components/admin/allCabinsView/DateSkippers';
 import dayjs from 'dayjs';
 import store from '@/store/index';
 import { addToDate } from '@/utils/dates';
+import { createMockData } from '@/components/admin/allCabinsView/generateMockBookings';
 
 export default Vue.extend({
   name: 'AllCabinsView',
@@ -40,6 +44,7 @@ export default Vue.extend({
       store.commit('adminBookings/setStartDate', startDate);
       store.dispatch('adminBookings/MOUNT_CABINS_WITH_BOOKINGS', { startDate: startDate, endDate: endDate });
     },
+    createMockData: () => createMockData(),
   },
 });
 </script>
