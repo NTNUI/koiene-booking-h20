@@ -16,14 +16,15 @@ const createBooking = (koie: string, maxCap: number): any => {
     departure_date: endDate,
     koie,
     guests,
-    guests_member: guests.length / 2,
-    guests_not_member: guests.length / 2,
+    guests_member: Math.ceil(guests.length / 2),
+    guests_not_member: Math.floor(guests.length / 2),
+    contact_email: guests[0].email,
   };
 };
 
 const getRandomStartAndEndDate = (): { startDate: string; endDate: string } => {
   const refDate = dayjs()
-    .subtract(5, 'day')
+    .subtract(10, 'day')
     .format('YYYY-MM-DD');
   const randomStartNumber = Math.floor(Math.random() * 20);
   const startDate = addToDate(refDate, randomStartNumber, 'day');
@@ -46,7 +47,7 @@ const guests: string[] = [
   'Victoria Ahmadi',
 ];
 
-const randomEmails = ['@ntnuisthebest.no', '@koieneismyhome.com', '@customerdrivesisfun.com'];
+const randomEmails = ['@ntnuiisthebest.no', '@koieneismyhome.io', '@customerdrivesnisfun.com', '@sprintforlife.com'];
 
 const getRandomGuest = (): Guest => {
   const name = guests[Math.floor(Math.random() * guests.length)];
@@ -74,19 +75,17 @@ export const createMockData = async () => {
   const cabins: Array<AdminBooking> = store.getters['adminBookings/getCabinsWithBookingsArray'];
   for (const cabin of cabins) {
     if (!cabin.name || !cabin.numberOfBeds) continue;
-    if (cabin.slug === 'flakoia') continue;
-    for (let i = 0; i < 5; i++) {
-      console.log('name' + cabin.name);
+    for (let i = 0; i < 10; i++) {
       const booking = createBooking(cabin.slug, cabin.numberOfBeds);
-      console.log(booking);
       try {
         await request({
           method: 'POST',
           url: '/koie/booking/',
           data: booking,
         });
+        console.log('Booking complete!');
       } catch (e) {
-        console.log(e);
+        console.log('Booking failed :(');
       }
     }
   }
