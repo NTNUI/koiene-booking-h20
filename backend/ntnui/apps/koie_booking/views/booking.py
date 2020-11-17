@@ -1,4 +1,5 @@
 from django.core.exceptions import ValidationError
+from django.template.defaultfilters import slugify
 from rest_framework import mixins, viewsets
 from rest_framework.response import Response
 
@@ -25,7 +26,13 @@ class BookingViewSet(
         return Response(serializer.data)
 
     def create(self, request):
-        serializer = BookingSerializer(data=request.data)
+        request_data = request.data.copy()
+        koie_slug = request.data.get("koie", None)
+        if koie_slug:
+            request_data["koie"] = slugify(koie_slug)
+        else:
+            return Response({"detail": "koie_slug is missing"}, status=400)
+        serializer = BookingSerializer(data=request_data)
         if serializer.is_valid():
             try:
                 booking = BookingModel.objects.create(
