@@ -23,15 +23,13 @@ const createBooking = (koie: string, maxCap: number): any => {
 };
 
 const getRandomStartAndEndDate = (): { startDate: string; endDate: string } => {
-  const refDate = dayjs()
-    .subtract(10, 'day')
-    .format('YYYY-MM-DD');
-  const randomStartNumber = Math.ceil(Math.random() * 20);
+  const refDate = dayjs().format('YYYY-MM-DD');
+  const randomStartNumber = Math.ceil(Math.random() * 5);
   const startDate = addToDate(refDate, randomStartNumber, 'day');
   const endDateRef = dayjs()
     .add(randomStartNumber, 'day')
     .format('YYYY-MM-DD');
-  const randomEndNumber = Math.ceil(Math.random() * 10);
+  const randomEndNumber = Math.ceil(Math.random() * 9);
   const endDate = addToDate(endDateRef, randomEndNumber, 'day');
   return { startDate, endDate };
 };
