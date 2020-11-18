@@ -26,12 +26,12 @@ const getRandomStartAndEndDate = (): { startDate: string; endDate: string } => {
   const refDate = dayjs()
     .subtract(10, 'day')
     .format('YYYY-MM-DD');
-  const randomStartNumber = Math.floor(Math.random() * 20);
+  const randomStartNumber = Math.ceil(Math.random() * 20);
   const startDate = addToDate(refDate, randomStartNumber, 'day');
   const endDateRef = dayjs()
     .add(randomStartNumber, 'day')
     .format('YYYY-MM-DD');
-  const randomEndNumber = Math.floor(Math.random() * 20);
+  const randomEndNumber = Math.ceil(Math.random() * 10);
   const endDate = addToDate(endDateRef, randomEndNumber, 'day');
   return { startDate, endDate };
 };

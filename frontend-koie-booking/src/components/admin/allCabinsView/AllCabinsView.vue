@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2 style="text-align: center;">Oversikt over bookinger</h2>
-    <v-btn @click="createMockData">
+    <v-btn v-if="false" @click="createMockData">
       Generer mock data
     </v-btn>
     <v-row justify="center">

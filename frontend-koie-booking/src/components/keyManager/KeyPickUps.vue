@@ -8,6 +8,7 @@
       <KeyDetailsRow :key-detail="row.row.item" :is-pickup="true" :get-color-fn="getColorForPickUp">
         <template v-slot:keyStatusSelector>
           <KeyStatusSelector
+            :key="'pickUpStatus' + row.row.item.uuid"
             :items="keyPickUpStatusOptions"
             :status="row.row.item.keyStatus"
             :uuid="row.row.item.uuid"

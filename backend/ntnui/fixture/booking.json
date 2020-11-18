@@ -9,6 +9,7 @@
       "departure_date": "2020-01-10",
       "guests_member": 1,
       "guests_not_member": 1,
+      "contact_email": "sprint@ntnui.no",
       "paid": false,
       "booking_payment": null
     }

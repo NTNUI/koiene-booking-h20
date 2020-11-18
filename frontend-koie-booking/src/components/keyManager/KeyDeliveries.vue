@@ -4,6 +4,7 @@
       <KeyDetailsRow :key-detail="row.row.item" :is-pickup="false" :get-color-fn="getColorForDelivery">
         <template v-slot:keyStatusSelector>
           <KeyStatusSelector
+            :key="'deliveryStatus' + row.row.item.uuid"
             :items="keyDeliverStatusOptions"
             :status="row.row.item.keyStatus"
             :uuid="row.row.item.uuid"

@@ -21,7 +21,7 @@ export const actions: ActionTree<KeyManagerState, RootState> = {
             '&arrival_date_end=' +
             arrivalDateEnd,
         }),
-        request({ url: '/koie/sit?key_status=not_picked_up&arrival_date_end=' + arrivalDateStart }),
+        request({ url: '/koie/sit?key_status=not_picked_up&arrival_date_end=' + arrivalDateEnd }),
       ]);
       for (const keyDetail of startingInTwoDaysOrLess as Array<APIKeyDetail>) {
         commit('setPickUpKeys', convertAPIKeyDetailToKeyDetail(keyDetail));
@@ -41,7 +41,7 @@ export const actions: ActionTree<KeyManagerState, RootState> = {
       .format('YYYY-MM-DD');
     try {
       const [notDeliveredInThePast, endingInAWeekOrLess] = await Promise.all([
-        request({ url: '/koie/sit?key_status=picked_up&departure_date_end=' + departureDateStart }),
+        request({ url: '/koie/sit?key_status=picked_up' }),
         request({
           url:
             '/koie/sit?key_status=picked_up&departure_date_start=' +
