@@ -30,5 +30,37 @@
       "canoe_status": 0,
       "life_jackets_status": 0
     }
+  },
+   {
+    "model": "koie_report.koiereportmodel",
+    "pk": 2,
+    "fields": {
+      "booking": 2,
+      "date_created_at": "2020-09-30",
+      "feedback": "The cabin was great :-)",
+      "firewood": 1,
+      "chopped_up_wood": 2,
+      "smoke_detector_is_working": false,
+      "gas_is_full": true,
+      "gas_burner_primus": 2,
+      "axe": 0,
+      "hammer": 1,
+      "saw": 0,
+      "saw_blade": 1,
+      "saw_bench": 0,
+      "spade": 1,
+      "kerosene_lamp": 0,
+      "detergent": 2,
+      "dishware": 0,
+      "cookware": 2,
+      "cabin_book": 0,
+      "candle_holders": 1,
+      "fire_blanket": 0,
+      "fire_extinguisher": 0,
+      "other_faults": "Couldn't find any faults",
+      "boat_status": 0,
+      "canoe_status": 0,
+      "life_jackets_status": 0
+    }
   }
 ]

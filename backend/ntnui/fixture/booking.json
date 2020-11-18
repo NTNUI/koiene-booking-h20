@@ -10,7 +10,38 @@
       "guests_member": 1,
       "guests_not_member": 1,
       "contact_email": "sprint@ntnui.no",
-      "paid": false,
+      "paid": true,
+      "booking_payment": null
+    }
+  },
+   {
+    "model": "koie_booking.bookingmodel",
+    "pk": 2,
+    "fields": {
+      "user": 1,
+      "koie": 5,
+      "arrival_date": "2020-11-14",
+      "departure_date": "2020-11-16",
+      "guests_member": 2,
+      "guests_not_member": 1,
+      "contact_email": "test@ntnui.no",
+      "paid": true,
+      "booking_payment": null
+    }
+  },
+   {
+    "model": "koie_booking.bookingmodel",
+    "pk": "3",
+    "fields": {
+      "user": 1,
+      "koie": 5,
+      "uuid": "ffee5e71-2e68-40f8-9f17-48a69db5935d",
+      "arrival_date": "2020-11-19",
+      "departure_date": "2020-11-20",
+      "guests_member": 2,
+      "guests_not_member": 1,
+      "contact_email": "jespergpaulsen@gmail.com",
+      "paid": true,
       "booking_payment": null
     }
   }
