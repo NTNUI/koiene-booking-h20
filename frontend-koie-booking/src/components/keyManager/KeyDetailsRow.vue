@@ -1,6 +1,6 @@
 <template>
   <tr v-if="keyDetail" style="background-color: #222222;">
-    <td style="max-width: 275px; overflow-wrap: break-word">
+    <td style="max-width: 240px; overflow-wrap: break-word">
       {{ keyDetail.email }}
     </td>
     <td>
