@@ -1,6 +1,6 @@
 <template>
   <v-layout :class="$style.container" :dark="true">
-    <h1 :class="$style.heading">{{ $t('report.step4') }}</h1>
+    <h1 :class="$style.heading">{{ $t('report.step3') }}</h1>
     <v-form v-model="validForm" :class="$style.form">
       <v-layout :class="$style.separator">
         <h3 class="py-4" :class="$style.supplyRegistration">{{ $t('report.water_equipment.boat') }}</h3>

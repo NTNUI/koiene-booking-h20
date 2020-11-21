@@ -1,6 +1,6 @@
 <template>
   <v-layout :class="$style.container" :dark="true">
-    <h1 :class="$style.heading">{{ $t('report.step3') }}</h1>
+    <h1 :class="$style.heading">{{ $t('report.step4') }}</h1>
     <v-layout :class="$style.separator">
       <h3 class="py-4" :class="$style.form">{{ $t('report.smoke_detector_is_working') }}</h3>
       <v-layout class="px-4">
